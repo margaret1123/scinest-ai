@@ -15,7 +15,8 @@ function isMarket(value: unknown): value is Market {
 
 export async function POST(req: NextRequest) {
   try {
-    const { market } = await req.json();
+    const body = await req.json();
+    const market: Market = body.market === undefined ? "cny" : body.market;
 
     if (!isMarket(market)) {
       return NextResponse.json({ error: "Invalid market" }, { status: 400 });
