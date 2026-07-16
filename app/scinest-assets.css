@@ -1,1 +1,22 @@
-[lang="zh-CN"] img[alt="SciNest continuous research workspace"],[lang="zh-CN"] img[alt="SciNest writing workspace"],[lang="zh-CN"] img[alt="SciNest scientific figure editor"],[lang="zh-CN"] img[alt="SciNest presentation workflow"]{content:url('/scinest/real-ui-zh.webp')}[lang="en"] img[alt="SciNest continuous research workspace"],[lang="en"] img[alt="SciNest writing workspace"],[lang="en"] img[alt="SciNest scientific figure editor"],[lang="en"] img[alt="SciNest presentation workflow"]{content:url('/scinest/real-ui-en.webp')}
+[lang="zh-CN"] img[alt="SciNest continuous research workspace"],
+[lang="zh-CN"] img[alt="SciNest writing workspace"],
+[lang="zh-CN"] img[alt="SciNest scientific figure editor"],
+[lang="zh-CN"] img[alt="SciNest presentation workflow"] {
+  content: url('/scinest/real-ui-zh.webp');
+}
+
+[lang="en"] img[alt="SciNest continuous research workspace"] {
+  content: url('/scinest/hero-en.svg');
+}
+
+[lang="en"] img[alt="SciNest writing workspace"] {
+  content: url('/scinest/writing-ui-en.svg');
+}
+
+[lang="en"] img[alt="SciNest scientific figure editor"] {
+  content: url('/scinest/figures-ui-en.svg');
+}
+
+[lang="en"] img[alt="SciNest presentation workflow"] {
+  content: url('/scinest/ppt-ui-en.svg');
+}
