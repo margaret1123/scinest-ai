@@ -4,21 +4,28 @@ import { useRouter } from "next/navigation";
 import { createClient } from "@/lib/supabase-client";
 import { useState } from "react";
 
+interface Order {
+  id: string;
+  product_name: string;
+  amount: number;
+  currency: string;
+  created_at: string;
+}
+
 interface DashboardContentProps {
   email: string;
-  hasBasic: boolean;
-  hasPro: boolean;
-  orders: any[];
+  hasFoundingEdition: boolean;
+  orders: Order[];
 }
 
 export function DashboardContent({
   email,
-  hasBasic,
-  hasPro,
+  hasFoundingEdition,
   orders,
 }: DashboardContentProps) {
   const router = useRouter();
-  const [loading, setLoading] = useState<string | null>(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
 
   const handleLogout = async () => {
     const supabase = createClient();
@@ -27,289 +34,91 @@ export function DashboardContent({
     router.refresh();
   };
 
-  const handleBuy = async (productId: string) => {
-    setLoading(productId);
+  const handleBuy = async () => {
+    setLoading(true);
+    setError("");
+
     try {
-      const res = await fetch("/api/stripe/checkout", {
+      const response = await fetch("/api/stripe/checkout", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          productId,
-          userId: "", // will be filled by webhook
-          email,
-        }),
+        body: JSON.stringify({ market: "cny" }),
       });
-      const data = await res.json();
-      if (data.url) {
-        window.location.href = data.url;
+      const data = await response.json();
+
+      if (!response.ok) {
+        setError(data.error || "暂时无法开始付款，请稍后再试。");
+        return;
       }
-    } catch (e) {
-      console.error(e);
+
+      window.location.href = data.url;
+    } catch {
+      setError("网络连接失败，请稍后再试。");
+    } finally {
+      setLoading(false);
     }
-    setLoading(null);
+  };
+
+  const formatAmount = (order: Order) => {
+    const currency = order.currency?.toUpperCase() || "CNY";
+    return new Intl.NumberFormat("zh-CN", {
+      style: "currency",
+      currency,
+    }).format(order.amount / 100);
   };
 
   return (
-    <div
-      style={{
-        minHeight: "100vh",
-        background: "linear-gradient(180deg, #f9ffff 0%, #f5fbfb 50%, #ffffff 100%)",
-        fontFamily: '-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",Arial,sans-serif',
-      }}
-    >
-      {/* Header */}
-      <header
-        style={{
-          background: "rgba(248,255,255,.78)",
-          backdropFilter: "blur(18px)",
-          borderBottom: "1px solid rgba(15,148,136,.16)",
-          padding: "16px 22px",
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-          position: "sticky",
-          top: 0,
-          zIndex: 20,
-        }}
-      >
-        <a
-          href="/"
-          style={{
-            display: "flex",
-            alignItems: "center",
-            gap: 12,
-            textDecoration: "none",
-            color: "inherit",
-          }}
-        >
-          <span
-            style={{
-              width: 38,
-              height: 38,
-              borderRadius: 12,
-              background: "linear-gradient(135deg, #09b39f, #087c75)",
-              display: "inline-grid",
-              placeItems: "center",
-              color: "#fff",
-              fontWeight: 900,
-            }}
-          >
-            K
-          </span>
-          <span style={{ fontWeight: 800, fontSize: 18 }}>Kmate</span>
+    <div style={{ minHeight: "100vh", background: "#f7fbfb", color: "#102326" }}>
+      <header style={{ borderBottom: "1px solid #dcebea", background: "#fff", padding: "16px 24px", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+        <a href="/" style={{ display: "flex", alignItems: "center", gap: 10, color: "inherit", textDecoration: "none" }}>
+          <span style={{ width: 38, height: 38, borderRadius: 12, background: "#087c75", color: "#fff", display: "grid", placeItems: "center", fontWeight: 800 }}>S</span>
+          <strong>SciNest · 科研小棉袄</strong>
         </a>
         <div style={{ display: "flex", gap: 16, alignItems: "center" }}>
-          <span style={{ color: "#5d6b7c", fontSize: 14 }}>{email}</span>
-          <button
-            onClick={handleLogout}
-            style={{
-              padding: "8px 18px",
-              borderRadius: 999,
-              border: "1px solid rgba(10,166,150,.22)",
-              background: "transparent",
-              color: "#087c75",
-              cursor: "pointer",
-              fontWeight: 600,
-              fontSize: 13,
-            }}
-          >
-            退出
-          </button>
+          <span style={{ color: "#607477", fontSize: 14 }}>{email}</span>
+          <button onClick={handleLogout} style={{ border: "1px solid #b9d8d5", borderRadius: 999, background: "#fff", padding: "8px 16px", cursor: "pointer" }}>退出</button>
         </div>
       </header>
 
-      {/* Main Content */}
-      <main style={{ maxWidth: 900, margin: "0 auto", padding: "48px 22px" }}>
-        <h1
-          style={{
-            fontSize: 32,
-            color: "#0b1220",
-            letterSpacing: "-0.03em",
-            marginBottom: 8,
-          }}
-        >
-          👋 欢迎回来
-        </h1>
-        <p style={{ color: "#5d6b7c", fontSize: 16, marginBottom: 40 }}>
-          {hasPro
-            ? "你已是专业版用户，可以下载所有资源"
-            : hasBasic
-            ? "你已是基础版用户"
-            : "你还没有购买任何方案"}
-        </p>
+      <main style={{ maxWidth: 860, margin: "0 auto", padding: "48px 24px" }}>
+        <h1 style={{ marginBottom: 8 }}>账户与授权</h1>
+        <p style={{ color: "#607477", marginTop: 0 }}>查看 SciNest Personal · Founding Edition 的购买与授权状态。</p>
 
-        {/* Purchase Card */}
-        {!hasPro && (
-          <div
-            style={{
-              background: "linear-gradient(135deg, rgba(10,166,150,.97), rgba(8,124,117,.98))",
-              borderRadius: 28,
-              padding: 36,
-              color: "#fff",
-              marginBottom: 32,
-            }}
-          >
-            <h3 style={{ margin: "0 0 12px", fontSize: 22 }}>
-              {!hasBasic ? "开始你的科研写作之旅" : "升级到专业版"}
-            </h3>
-            <p style={{ color: "rgba(255,255,255,.82)", lineHeight: 1.7, marginBottom: 24 }}>
-              {!hasBasic
-                ? "一次性购买，永久使用。包含桌面端APP + AI写作工具。"
-                : "解锁50篇文献库、高级图表方案、PPT模板包等全部功能。"}
-            </p>
-            <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
-              {!hasBasic && (
-                <button
-                  onClick={() => handleBuy("basic")}
-                  disabled={loading === "basic"}
-                  style={{
-                    padding: "14px 28px",
-                    borderRadius: 999,
-                    border: "none",
-                    background: "#fff",
-                    color: "#087c75",
-                    fontWeight: 700,
-                    fontSize: 15,
-                    cursor: "pointer",
-                  }}
-                >
-                  {loading === "basic" ? "跳转中..." : "¥299 购买基础版"}
-                </button>
-              )}
-              <button
-                onClick={() => handleBuy("pro")}
-                disabled={loading === "pro"}
-                style={{
-                  padding: "14px 28px",
-                  borderRadius: 999,
-                  border: "2px solid rgba(255,255,255,.6)",
-                  background: "transparent",
-                  color: "#fff",
-                  fontWeight: 700,
-                  fontSize: 15,
-                  cursor: "pointer",
-                }}
-              >
-                {loading === "pro" ? "跳转中..." : "¥599 购买专业版"}
+        <section style={{ marginTop: 32, padding: 32, borderRadius: 24, background: "#fff", border: "1px solid #dcebea" }}>
+          <p style={{ color: "#087c75", fontWeight: 700, marginTop: 0 }}>SciNest Personal · Founding Edition</p>
+          {hasFoundingEdition ? (
+            <>
+              <h2>授权已生效</h2>
+              <p style={{ color: "#607477" }}>包含 12 个月功能更新；更新期结束后，已购买版本仍可继续使用。</p>
+              <div style={{ padding: 16, borderRadius: 14, background: "#f1f8f7", color: "#40595c" }}>
+                下载与设备授权入口将在交付文件完成验证后开放。当前页面不会提供无效下载链接。
+              </div>
+            </>
+          ) : (
+            <>
+              <h2>尚未购买</h2>
+              <p style={{ color: "#607477" }}>创始价格 ¥299。模型服务商 API 调用费不包含在软件授权中。</p>
+              <button onClick={handleBuy} disabled={loading} style={{ border: 0, borderRadius: 999, background: "#087c75", color: "#fff", padding: "13px 24px", fontWeight: 700, cursor: loading ? "wait" : "pointer" }}>
+                {loading ? "正在准备付款…" : "购买 Founding Edition"}
               </button>
-            </div>
-          </div>
-        )}
+              {error && <p style={{ color: "#b42318", marginBottom: 0 }}>{error}</p>}
+            </>
+          )}
+        </section>
 
-        {/* Downloads */}
-        {hasPro && (
-          <div
-            style={{
-              borderRadius: 28,
-              background: "rgba(255,255,255,.82)",
-              border: "1px solid rgba(15,148,136,.16)",
-              padding: 36,
-              marginBottom: 32,
-              boxShadow: "0 18px 48px rgba(16,82,92,.09)",
-            }}
-          >
-            <h3 style={{ margin: "0 0 16px", fontSize: 20, color: "#0aa696" }}>
-              📥 你的下载
-            </h3>
-            <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
-              <a
-                href="#"
-                onClick={(e) => {
-                  e.preventDefault();
-                  alert("APP即将上线。请通过邮件收到的链接下载。");
-                }}
-                style={{
-                  display: "block",
-                  padding: "14px 20px",
-                  borderRadius: 14,
-                  background: "#f5fbfb",
-                  border: "1px solid rgba(15,148,136,.16)",
-                  color: "#0b1220",
-                  textDecoration: "none",
-                  fontWeight: 600,
-                }}
-              >
-                🖥️ Kmate 桌面端 (Windows)
-              </a>
-              <a
-                href="#"
-                onClick={(e) => {
-                  e.preventDefault();
-                  alert("macOS版本即将推出。");
-                }}
-                style={{
-                  display: "block",
-                  padding: "14px 20px",
-                  borderRadius: 14,
-                  background: "#f5fbfb",
-                  border: "1px solid rgba(15,148,136,.16)",
-                  color: "#0b1220",
-                  textDecoration: "none",
-                  fontWeight: 600,
-                }}
-              >
-                🍎 Kmate 桌面端 (macOS)
-              </a>
-              <a
-                href="#"
-                onClick={(e) => {
-                  e.preventDefault();
-                  alert("PPT模板即将上线。");
-                }}
-                style={{
-                  display: "block",
-                  padding: "14px 20px",
-                  borderRadius: 14,
-                  background: "#f5fbfb",
-                  border: "1px solid rgba(15,148,136,.16)",
-                  color: "#0b1220",
-                  textDecoration: "none",
-                  fontWeight: 600,
-                }}
-              >
-                📊 PPT 模板包
-              </a>
-            </div>
-          </div>
-        )}
-
-        {/* Order History */}
         {orders.length > 0 && (
-          <div
-            style={{
-              borderRadius: 28,
-              background: "rgba(255,255,255,.76)",
-              border: "1px solid rgba(15,148,136,.12)",
-              padding: 36,
-              boxShadow: "0 12px 30px rgba(16,82,92,.06)",
-            }}
-          >
-            <h3 style={{ margin: "0 0 16px", fontSize: 18, color: "#0b1220" }}>
-              📋 订单记录
-            </h3>
-            {orders.map((order: any) => (
-              <div
-                key={order.id}
-                style={{
-                  display: "flex",
-                  justifyContent: "space-between",
-                  alignItems: "center",
-                  padding: "12px 0",
-                  borderBottom: "1px solid rgba(15,148,136,.08)",
-                }}
-              >
+          <section style={{ marginTop: 24, padding: 32, borderRadius: 24, background: "#fff", border: "1px solid #dcebea" }}>
+            <h2 style={{ marginTop: 0 }}>订单记录</h2>
+            {orders.map((order) => (
+              <div key={order.id} style={{ display: "flex", justifyContent: "space-between", gap: 20, padding: "14px 0", borderBottom: "1px solid #edf4f3" }}>
                 <div>
-                  <strong style={{ color: "#0b1220" }}>{order.product_name}</strong>
-                  <div style={{ color: "#5d6b7c", fontSize: 13 }}>
-                    {new Date(order.created_at).toLocaleDateString("zh-CN")}
-                  </div>
+                  <strong>{order.product_name}</strong>
+                  <div style={{ color: "#607477", fontSize: 13 }}>{new Date(order.created_at).toLocaleDateString("zh-CN")}</div>
                 </div>
-                <span style={{ color: "#0aa696", fontWeight: 700 }}>
-                  ¥{(order.amount / 100).toFixed(0)}
-                </span>
+                <strong style={{ color: "#087c75" }}>{formatAmount(order)}</strong>
               </div>
             ))}
-          </div>
+          </section>
         )}
       </main>
     </div>
