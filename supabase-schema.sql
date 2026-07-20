@@ -1,7 +1,6 @@
--- Kmate 数据库表初始化
--- 在 Supabase SQL Editor 中执行以下语句
+-- SciNest 商业订单表初始化
+-- 在 Supabase SQL Editor 中执行以下语句。
 
--- 1. 用户订单表
 CREATE TABLE IF NOT EXISTS public.orders (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   user_id UUID NOT NULL REFERENCES auth.users(id) ON DELETE CASCADE,
@@ -10,29 +9,27 @@ CREATE TABLE IF NOT EXISTS public.orders (
   amount INTEGER NOT NULL,
   currency TEXT NOT NULL DEFAULT 'cny',
   status TEXT NOT NULL DEFAULT 'pending',
-  stripe_session_id TEXT,
+  stripe_session_id TEXT UNIQUE,
   created_at TIMESTAMPTZ DEFAULT now(),
   updated_at TIMESTAMPTZ DEFAULT now()
 );
 
--- 2. 启用 RLS（行级安全）
 ALTER TABLE public.orders ENABLE ROW LEVEL SECURITY;
 
--- 3. 用户只能查看自己的订单
+DROP POLICY IF EXISTS "Users can view own orders" ON public.orders;
 CREATE POLICY "Users can view own orders"
   ON public.orders FOR SELECT
   USING (auth.uid() = user_id);
 
--- 4. 用户只能创建自己的订单
-CREATE POLICY "Users can create own orders"
-  ON public.orders FOR INSERT
-  WITH CHECK (auth.uid() = user_id);
+-- 客户端不得直接创建已付款订单；订单只由经过签名验证的 Stripe Webhook
+-- 使用 SUPABASE_SERVICE_ROLE_KEY 写入。
+DROP POLICY IF EXISTS "Users can create own orders" ON public.orders;
 
--- 5. 创建索引
 CREATE INDEX IF NOT EXISTS orders_user_id_idx ON public.orders(user_id);
-CREATE INDEX IF NOT EXISTS orders_stripe_session_idx ON public.orders(stripe_session_id);
+CREATE UNIQUE INDEX IF NOT EXISTS orders_stripe_session_unique_idx
+  ON public.orders(stripe_session_id)
+  WHERE stripe_session_id IS NOT NULL;
 
--- 6. 自动更新 updated_at 时间戳
 CREATE OR REPLACE FUNCTION update_updated_at_column()
 RETURNS TRIGGER AS $$
 BEGIN
@@ -41,6 +38,7 @@ BEGIN
 END;
 $$ language 'plpgsql';
 
+DROP TRIGGER IF EXISTS update_orders_updated_at ON public.orders;
 CREATE TRIGGER update_orders_updated_at
   BEFORE UPDATE ON public.orders
   FOR EACH ROW
