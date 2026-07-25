@@ -18,10 +18,11 @@ export function LoginForm() {
     setLoading(true);
     setError("");
 
+    const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://scinest-ai.vercel.app";
     const supabase = createClient();
     const { error: loginError } = await supabase.auth.signInWithOtp({
       email,
-      options: { emailRedirectTo: `${window.location.origin}/auth/callback?next=${encodeURIComponent(redirect)}` },
+      options: { emailRedirectTo: `${siteUrl}/auth/callback?next=${encodeURIComponent(redirect)}` },
     });
 
     if (loginError) setError(loginError.message);
