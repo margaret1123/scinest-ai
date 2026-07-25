@@ -1,0 +1,103 @@
+.launchStrip {
+  padding: 12px 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+  background: #082f31;
+  color: #e9fffb;
+  font-size: 14px;
+  font-weight: 750;
+  text-align: center;
+}
+
+.launchStrip strong { color: #72e3d4; }
+
+.heroOffer {
+  margin: 24px 0 0;
+  padding: 18px;
+  border: 1px solid rgba(7, 153, 135, 0.22);
+  border-radius: 20px;
+  background: linear-gradient(135deg, rgba(231, 246, 242, 0.94), rgba(255,255,255,0.96));
+}
+
+.heroOffer h2 {
+  margin: 0;
+  font-size: 20px;
+  line-height: 1.35;
+}
+
+.heroOffer p {
+  margin: 7px 0 0;
+  color: #526b72;
+  line-height: 1.6;
+}
+
+.countdown {
+  margin-top: 16px;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(70px, 1fr));
+  gap: 10px;
+}
+
+.countdown div {
+  padding: 12px 10px;
+  border-radius: 14px;
+  background: #0c2d32;
+  color: #fff;
+  text-align: center;
+}
+
+.countdown strong,
+.countdown span { display: block; }
+.countdown strong { font-size: 24px; line-height: 1; }
+.countdown span { margin-top: 6px; color: #add9d3; font-size: 11px; text-transform: uppercase; }
+.launched { margin-top: 16px; padding: 14px; border-radius: 14px; background: #0c2d32; color: #fff; font-weight: 800; text-align: center; }
+
+.planGrid {
+  max-width: 1080px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.planCard {
+  padding: 34px;
+  border: 1px solid rgba(5, 94, 84, 0.16);
+  border-radius: 26px;
+  background: #fff;
+}
+
+.planCardPro {
+  border-color: rgba(7, 153, 135, 0.42);
+  background: linear-gradient(145deg, #0c2d32, #0a665f);
+  color: #fff;
+  box-shadow: 0 26px 68px rgba(21,79,84,.16);
+}
+
+.planBadge {
+  display: inline-flex;
+  padding: 7px 11px;
+  border-radius: 999px;
+  background: #e7f6f2;
+  color: #087569;
+  font-size: 12px;
+  font-weight: 850;
+}
+
+.planCardPro .planBadge { background: rgba(255,255,255,.14); color: #8ee8dc; }
+.planCard h3 { margin: 18px 0 6px; font-size: 30px; }
+.planCard > p { margin: 0; color: #60717d; line-height: 1.65; }
+.planCardPro > p { color: #c2dad7; }
+.planCard ul { margin: 26px 0 0; padding: 0; display: grid; gap: 13px; list-style: none; }
+.planCard li { display: flex; gap: 10px; line-height: 1.55; }
+.planCard li span { color: #079987; font-weight: 900; }
+.planCardPro li span { color: #72e3d4; }
+.planNote { max-width: 900px; margin: 24px auto 0; color: #60717d; font-size: 13px; line-height: 1.7; text-align: center; }
+
+@media (max-width: 760px) {
+  .launchStrip { align-items: flex-start; flex-direction: column; gap: 4px; }
+  .countdown { grid-template-columns: repeat(2, 1fr); }
+  .planGrid { grid-template-columns: 1fr; }
+}

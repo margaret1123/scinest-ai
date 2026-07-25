@@ -1,5 +1,5 @@
 # SciNest · 科研小棉袄
-> A Windows desktop research productivity application for deadline-driven students and early researchers who need to turn existing materials into editable academic writing, scientific figures and presentations.
+> A pre-launch Windows desktop research productivity application for students and early researchers who need to turn existing materials into connected academic writing, scientific figures and presentations.
 
 ## Site information
 - Canonical site: https://scinest-ai.vercel.app/
@@ -8,18 +8,23 @@
 - Operator: Jiaempower Pathways Limited, New Zealand
 - Category: Research productivity software
 
+## Current availability
+- Pre-launch registration is open.
+- Windows downloads are scheduled to open on August 1, 2026.
+- Public payment is not open during pre-launch.
+- Accounts registered before launch receive 30 days of SciNest Pro when downloads open.
+- No credit card is required and there is no automatic charge.
+- After 30 days, early-bird accounts return to SciNest Free unless the user chooses to upgrade.
+
 ## Primary pages
-- / : English product and pricing page
-- /zh : Chinese product and pricing page
+- / : English product and pre-launch page
+- /zh : Chinese product and pre-launch page
 - /privacy : Privacy policy
 - /terms : Terms of service
 - /refund-policy : Refund policy
-- /api/ai/summary : Machine-readable product summary
-- /api/ai/faq : Structured product FAQ
-- /api/ai/service : Capabilities, pricing and usage boundaries
 
 ## What SciNest is for
-SciNest is designed for users who already have papers, references, notes, a partial draft, data, supervisor feedback or submission requirements, but still need to complete one or more academic deliverables before a deadline.
+SciNest is designed for users who already have papers, references, notes, a partial draft, data, supervisor feedback or submission requirements, but still need to complete academic deliverables before a deadline.
 
 Typical tasks include:
 1. Thesis and dissertation revision.
@@ -27,24 +32,29 @@ Typical tasks include:
 3. Revision from supervisor feedback.
 4. Scientific figures, mechanism diagrams and research roadmaps.
 5. Paper-to-PowerPoint conversion.
-6. Editable thesis defense and academic presentations.
+6. Thesis defense and academic presentations.
 
 ## Product difference
-General AI tools usually return one answer or output at a time. SciNest keeps source materials, writing, figures, slides and project decisions connected so that work can continue across deliverables without repeatedly rebuilding the same research context.
+General AI tools usually return one answer or output at a time. SciNest keeps source materials, writing, figures, slides and project decisions connected so work can continue across deliverables without repeatedly rebuilding the same research context.
 
-## Output model
-- Generated writing remains open to user review and editing.
-- Scientific figures are intended to remain adjustable rather than being treated as locked decorative images.
-- Presentation content and layouts are intended to remain editable.
-- Users remain responsible for checking facts, citations, calculations, originality and final submissions.
+## Free and Pro plans
+Both plans use the user's own AI API key and SciNest does not limit generation counts.
 
-## Product and pricing model
-- SciNest Personal founding licence: ¥299 or US$49.
-- Standard reference price: ¥399 or US$69.
-- The founding licence includes 12 months of feature updates.
-- The purchased version remains usable after the update period, subject to technical compatibility and the licence terms.
-- AI model usage charges are separate and are paid to the model provider selected by the user.
-- A 7-day trial is available through the current trial flow.
+SciNest Free:
+- One active project.
+- Academic writing generation and revision.
+- Scientific figure export with a watermark.
+- Presentation export as PDF.
+- No scientific figure layer editing.
+
+SciNest Pro:
+- Multiple projects.
+- Watermark-free scientific figure export.
+- Scientific figure layer, label and element editing.
+- Editable PowerPoint export.
+- Unlimited SciNest generations.
+
+AI provider usage charges are separate and are paid to the model provider selected by the user.
 
 ## Data and AI-provider boundary
 - SciNest is designed as a local-first desktop workspace.
@@ -53,11 +63,10 @@ General AI tools usually return one answer or output at a time. SciNest keeps so
 - SciNest does not claim that every part of AI processing remains on-device.
 
 ## Intended users
-Primary users are postgraduate students, final-year students and early researchers who already have academic materials but need to finish writing, figures or presentations under time pressure. SciNest is also relevant to non-native English academic users who want to continue editing and checking their own work.
+Primary users are postgraduate students, final-year students and early researchers who already have academic materials but need to finish writing, figures or presentations under time pressure.
 
 ## Important limits
 - SciNest is not a thesis-submission, ghostwriting or academic-misconduct service.
 - SciNest does not guarantee grades, graduation, thesis approval, publication, journal acceptance or research outcomes.
 - SciNest does not guarantee that generated content is factually correct, complete, original or compliant with a specific institution's AI policy.
-- SciNest does not claim guaranteed Nature, Science or Cell quality.
 - Users must review generated work and follow applicable institutional, professional and legal requirements.
