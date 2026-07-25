@@ -40,6 +40,9 @@ export const metadata: Metadata = {
     title: "AI Thesis Writing, Scientific Figures & Defense Presentations | SciNest",
     description: "Turn the research materials you already have into editable writing, figures and a defense-ready presentation.",
   },
+  verification: {
+    google: "7mLz2N52DJFJlAp8T_pJAJIqmuC9E92pVTkNJnG3eMM",
+  },
   robots: { index: true, follow: true },
 };
 
