@@ -3,48 +3,59 @@ import { NextResponse } from "next/server";
 export async function GET() {
   return NextResponse.json(
     {
-      site: "SciNest · 科研小棉袄",
+      site: "SciNest",
+      alternateName: "科研小棉袄",
       url: "https://scinest-ai.vercel.app",
       operator: "Jiaempower Pathways Limited",
-      lastModified: "2026-07-20",
+      defaultLanguage: "en",
+      availableLanguages: ["en", "zh-CN"],
+      lastModified: "2026-07-25",
       questions: [
         {
-          q: "SciNest 是什么？",
-          a: "SciNest 是一个连续科研创作工作台。它把论文、参考资料、笔记和项目材料保留在同一个项目上下文中，并连接研究理解、大纲、长文写作与修改、科研图和可编辑 PPT。",
+          q: "What is SciNest?",
+          a: "SciNest is a local-first academic productivity application that turns existing papers, references, drafts, requirements and feedback into editable academic writing, scientific figures and presentation slides.",
         },
         {
-          q: "SciNest 和分别使用聊天工具、Word、绘图工具及 PPT 工具有何不同？",
-          a: "核心区别不是多一个生成按钮，而是减少工具切换和上下文丢失。用户可以在同一项目中从资料理解继续到写作、科研图和演示文稿，不必为每一步重新整理背景和提示词。",
+          q: "Who is SciNest for?",
+          a: "It is designed primarily for deadline-driven postgraduate students, final-year students and early researchers who already have source material but still need to finish a thesis draft, literature review, research proposal, scientific figure, paper-to-PowerPoint deck or thesis defense presentation.",
         },
         {
-          q: "生成的文章、科研图和 PPT 可以继续修改吗？",
-          a: "SciNest 的产品方向是生成后继续编辑。文稿、科研图方案与演示内容都应作为可继续调整的工作成果，而不是只能使用的整页图片或不可修改输出。",
+          q: "How is SciNest different from a general AI chatbot?",
+          a: "A general AI chatbot is centred on individual conversations. SciNest keeps project materials, structure, writing, figures, slides and citations connected so later outputs can reuse and remain consistent with earlier work.",
         },
         {
-          q: "SciNest 会保证论文发表或期刊录用吗？",
-          a: "不会。SciNest 不保证发表、期刊录用、学术评价或任何研究结果。生成内容必须由用户核查、修改并承担最终使用责任。",
+          q: "Can SciNest create editable outputs?",
+          a: "SciNest is designed so writing, scientific figure structures and presentations can be revised after generation rather than being treated as locked final images or one-off responses.",
         },
         {
-          q: "SciNest 的资料是否完全不会离开电脑？",
-          a: "项目文件默认作为本地工作区保存。需要调用 AI 模型的任务会发送给用户选择并配置的模型服务商，因此不能表述为所有处理始终完全在设备本地完成。",
+          q: "Does SciNest include AI model usage?",
+          a: "No. Users connect their own supported AI API. The SciNest licence covers the software, while the selected model provider charges separately for actual API usage.",
         },
         {
-          q: "SciNest 如何收费？",
-          a: "当前创始版本价格为人民币 299 元或 49 美元，标准参考价为人民币 399 元或 69 美元。购买包含 12 个月功能更新，之后已购买版本仍可继续使用。模型服务商的 API 费用在适用时另行产生。",
+          q: "Where are project files stored?",
+          a: "Project files and outputs are stored locally by default. When an AI task runs, the content required for that task is sent to the model provider selected and configured by the user.",
         },
         {
-          q: "是否可以先试用？",
-          a: "当前产品提供 7 天试用入口。具体账号、下载和使用权限以网站实际流程为准。",
+          q: "Does SciNest guarantee grades, graduation, publication or journal acceptance?",
+          a: "No. SciNest is a research and academic-expression tool. Generated content must be reviewed and edited by the user, and the software does not guarantee any academic or publication outcome.",
         },
         {
-          q: "SciNest 适合哪些人？",
-          a: "适合需要持续处理资料、长文写作、科研图和汇报演示的研究生、科研人员、高校教师、技术专业人员及研究团队。",
+          q: "Is SciNest a ghostwriting or contract-cheating service?",
+          a: "No. SciNest is self-service software that helps users organise and develop their own materials. Users remain responsible for the content, compliance with institutional rules and final submission.",
         },
         {
-          q: "SciNest 是否等同于通用聊天机器人？",
-          a: "不是。通用聊天机器人以单次对话为主，SciNest 的定位是围绕一个研究项目维持连续上下文，并把资料、写作、科研图和演示输出连接起来。",
+          q: "How much does SciNest cost?",
+          a: "The current founding personal licence is US$49 or CNY 299, with a standard reference price of US$69 or CNY 399. It includes 12 months of feature updates, and the purchased version remains usable after that period. Model API charges are separate.",
+        },
+        {
+          q: "Can users try SciNest before purchasing?",
+          a: "The current site offers a 7-day trial so users can test the workflow with their own project materials before purchasing a licence.",
         },
       ],
+      chineseSummary: {
+        q: "SciNest 适合什么人？",
+        a: "适合已经有论文、文献、草稿、课程要求或导师意见，但仍需要在截止日期前完成可编辑文稿、科研图、paper-to-PPT 或答辩演示的学生和早期研究者。",
+      },
     },
     { headers: { "Content-Type": "application/json", "Cache-Control": "public, max-age=86400" } }
   );
