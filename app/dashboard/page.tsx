@@ -19,6 +19,7 @@ export default async function DashboardPage() {
 
   const hasFoundingEdition = orders?.some((order: { product_id?: string }) => order.product_id === "scinest_founding");
   const earlyBirdEligible = new Date(user.created_at).getTime() < EARLY_BIRD_CUTOFF;
+  const license = (user.app_metadata as Record<string, string> | undefined)?.license ?? "free";
 
-  return <DashboardContent email={user.email!} hasFoundingEdition={hasFoundingEdition || false} earlyBirdEligible={earlyBirdEligible} orders={orders || []} />;
+  return <DashboardContent email={user.email!} hasFoundingEdition={hasFoundingEdition || false} earlyBirdEligible={earlyBirdEligible} license={license} orders={orders || []} />;
 }

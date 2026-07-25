@@ -15,10 +15,11 @@ interface DashboardContentProps {
   email: string;
   hasFoundingEdition: boolean;
   earlyBirdEligible: boolean;
+  license: string;
   orders: Order[];
 }
 
-export function DashboardContent({ email, hasFoundingEdition, earlyBirdEligible, orders }: DashboardContentProps) {
+export function DashboardContent({ email, hasFoundingEdition, earlyBirdEligible, license, orders }: DashboardContentProps) {
   const router = useRouter();
 
   const handleLogout = async () => {
@@ -47,16 +48,24 @@ export function DashboardContent({ email, hasFoundingEdition, earlyBirdEligible,
         <h1 style={{ marginBottom: 8 }}>账户与预开放资格</h1>
         <p style={{ color: "#607477", marginTop: 0 }}>SciNest Free 计划于 2026 年 8 月 1 日开放 Windows 下载。</p>
 
-        <section style={{ marginTop: 32, padding: 32, borderRadius: 24, background: earlyBirdEligible ? "#0c2d32" : "#fff", color: earlyBirdEligible ? "#fff" : "#102326", border: "1px solid #dcebea" }}>
-          <p style={{ color: earlyBirdEligible ? "#72e3d4" : "#087c75", fontWeight: 700, marginTop: 0 }}>{earlyBirdEligible ? "EARLY BIRD PRO" : "SCINEST FREE"}</p>
-          <h2>{earlyBirdEligible ? "30天 Pro 资格已锁定" : "账户已注册"}</h2>
-          <p style={{ color: earlyBirdEligible ? "#c2dad7" : "#607477", lineHeight: 1.7 }}>
-            {earlyBirdEligible ? "下载开放后，你将获得30天 SciNest Pro。无需银行卡，不会自动扣费；到期后自动回到 Free。" : "你可以在下载开放后使用 SciNest Free。公开付款目前未开放。"}
-          </p>
-          <div style={{ padding: 16, borderRadius: 14, background: earlyBirdEligible ? "rgba(255,255,255,.08)" : "#f1f8f7", color: earlyBirdEligible ? "#d8efec" : "#40595c" }}>
-            下载入口将在安装包完成验证后开放。当前页面不会提供无效下载链接。
-          </div>
-        </section>
+        {license === "pro_founding" ? (
+          <section style={{ marginTop: 32, padding: 32, borderRadius: 24, background: "#0c2d32", color: "#fff", border: "1px solid #1a4a52" }}>
+            <p style={{ color: "#72e3d4", fontWeight: 700, marginTop: 0 }}>FOUNDING EDITION</p>
+            <h2>永久 Pro 授权已激活</h2>
+            <p style={{ color: "#c2dad7", lineHeight: 1.7 }}>你拥有 SciNest Founding Edition 永久授权。全部功能已解锁，包括无水印导出、图层编辑和可编辑 PPT 导出。</p>
+          </section>
+        ) : (
+          <section style={{ marginTop: 32, padding: 32, borderRadius: 24, background: earlyBirdEligible ? "#0c2d32" : "#fff", color: earlyBirdEligible ? "#fff" : "#102326", border: "1px solid #dcebea" }}>
+            <p style={{ color: earlyBirdEligible ? "#72e3d4" : "#087c75", fontWeight: 700, marginTop: 0 }}>{earlyBirdEligible ? "EARLY BIRD PRO" : "SCINEST FREE"}</p>
+            <h2>{earlyBirdEligible ? "30天 Pro 资格已锁定" : "账户已注册"}</h2>
+            <p style={{ color: earlyBirdEligible ? "#c2dad7" : "#607477", lineHeight: 1.7 }}>
+              {earlyBirdEligible ? "下载开放后，你将获得30天 SciNest Pro。无需银行卡，不会自动扣费；到期后自动回到 Free。" : "你可以在下载开放后使用 SciNest Free。公开付款目前未开放。"}
+            </p>
+            <div style={{ padding: 16, borderRadius: 14, background: earlyBirdEligible ? "rgba(255,255,255,.08)" : "#f1f8f7", color: earlyBirdEligible ? "#d8efec" : "#40595c" }}>
+              下载入口将在安装包完成验证后开放。当前页面不会提供无效下载链接。
+            </div>
+          </section>
+        )}
 
         {hasFoundingEdition && (
           <section style={{ marginTop: 24, padding: 24, borderRadius: 20, background: "#fff", border: "1px solid #dcebea" }}>

@@ -43,3 +43,42 @@ CREATE TRIGGER update_orders_updated_at
   BEFORE UPDATE ON public.orders
   FOR EACH ROW
   EXECUTE FUNCTION update_updated_at_column();
+
+-- ════════════════════════════════════════════════════════════════
+-- 注册时自动分配 license
+-- ════════════════════════════════════════════════════════════════
+
+CREATE OR REPLACE FUNCTION auth.set_license_on_signup()
+RETURNS TRIGGER AS $$
+DECLARE
+  cutoff timestamptz := '2026-08-01T00:00:00+12:00'::timestamptz;
+  expiry  timestamptz := '2026-09-01T00:00:00Z'::timestamptz;
+BEGIN
+  IF NEW.created_at < cutoff THEN
+    NEW.raw_app_meta_data = jsonb_set(
+      COALESCE(NEW.raw_app_meta_data, '{}'::jsonb),
+      '{license}',
+      '"early_bird_pro"'
+    );
+    NEW.raw_app_meta_data = jsonb_set(
+      NEW.raw_app_meta_data,
+      '{early_bird_expires_at}',
+      to_jsonb(expiry)
+    );
+  ELSE
+    NEW.raw_app_meta_data = jsonb_set(
+      COALESCE(NEW.raw_app_meta_data, '{}'::jsonb),
+      '{license}',
+      '"free"'
+    );
+  END IF;
+  RETURN NEW;
+END;
+$$ LANGUAGE plpgsql SECURITY DEFINER;
+
+-- 删除旧 trigger 后重建（幂等）
+DROP TRIGGER IF EXISTS on_auth_user_created ON auth.users;
+CREATE TRIGGER on_auth_user_created
+  BEFORE INSERT ON auth.users
+  FOR EACH ROW
+  EXECUTE FUNCTION auth.set_license_on_signup();

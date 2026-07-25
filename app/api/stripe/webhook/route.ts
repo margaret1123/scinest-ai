@@ -52,6 +52,18 @@ export async function POST(req: NextRequest) {
       { onConflict: "stripe_session_id" }
     );
 
+    // Update user license to pro_founding
+    if (!error) {
+      const { error: updateError } = await supabaseAdmin.auth.admin.updateUserById(
+        userId,
+        { app_metadata: { license: "pro_founding", purchased_at: new Date().toISOString() } }
+      );
+      if (updateError) {
+        console.error("License update failed:", updateError.message);
+        // non-fatal: order is recorded, license can be fixed manually
+      }
+    }
+
     if (error) {
       console.error("Order persistence failed:", error.message);
       return NextResponse.json({ error: "Unable to record order" }, { status: 500 });
