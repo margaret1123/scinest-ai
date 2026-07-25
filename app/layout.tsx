@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     template: "%s | SciNest",
   },
   description:
-    "Turn existing papers, drafts, supervisor feedback and research materials into editable academic writing, scientific figures and thesis defense presentations. Windows desktop software with local project files and your own AI key.",
+    "SciNest is a pre-launch Windows research workspace for editable academic writing, scientific figures and thesis defense presentations. Register before August 1, 2026 for 30 days of Pro when downloads open.",
   keywords: [
     "AI thesis writing assistant",
     "thesis revision assistant",
@@ -30,15 +30,15 @@ export const metadata: Metadata = {
     type: "website",
     url: "/",
     siteName: "SciNest",
-    title: "AI Thesis Writing, Scientific Figures & Defense Presentations | SciNest",
-    description: "One deadline. A thesis to revise. Figures to finish. Slides to build.",
+    title: "SciNest Free opens August 1 · 30 days of Pro for early registrations",
+    description: "Generate without SciNest limits. Upgrade for multiple projects, watermark-free figures, layer editing and editable PowerPoint export.",
     locale: "en_US",
     alternateLocale: ["zh_CN"],
   },
   twitter: {
     card: "summary_large_image",
-    title: "AI Thesis Writing, Scientific Figures & Defense Presentations | SciNest",
-    description: "Turn the research materials you already have into editable writing, figures and a defense-ready presentation.",
+    title: "SciNest Free opens August 1",
+    description: "Register before launch and unlock 30 days of Pro. No card and no automatic charge.",
   },
   verification: {
     google: "7mLz2N52DJFJlAp8T_pJAJIqmuC9E92pVTkNJnG3eMM",
@@ -69,25 +69,22 @@ const structuredData = [
     alternateName: "科研小棉袄",
     applicationCategory: "ProductivityApplication",
     operatingSystem: "Windows",
+    releaseNotes: "Pre-launch registration is open. Windows downloads are scheduled to open on August 1, 2026.",
     description:
-      "A Windows desktop research productivity application that helps students and early researchers turn existing papers, references, drafts, data and supervisor feedback into editable academic writing, scientific figures and thesis defense presentations.",
+      "A Windows desktop research productivity application that connects academic writing, scientific figures and thesis defense presentations inside one project.",
     featureList: [
+      "Unlimited SciNest generations with the user's own AI API key",
       "Thesis and dissertation revision",
-      "Literature review and research proposal workflows",
-      "Scientific figure and research roadmap creation",
+      "Scientific figure generation",
       "Paper-to-PowerPoint and thesis defense presentation workflows",
-      "Editable outputs",
+      "Free plan with one active project, watermarked figure export and PDF presentation export",
+      "Pro plan with multiple projects, watermark-free figures, layer editing and editable PowerPoint export",
       "Local project workspace",
-      "Bring your own AI model API key",
     ],
     audience: {
       "@type": "Audience",
       audienceType: "Postgraduate students, final-year students and early researchers",
     },
-    offers: [
-      { "@type": "Offer", price: "299", priceCurrency: "CNY", category: "Founding licence" },
-      { "@type": "Offer", price: "49", priceCurrency: "USD", category: "Founding licence" },
-    ],
     author: { "@type": "Organization", name: "Jiaempower Pathways Limited" },
   },
 ];
@@ -96,10 +93,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <head>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
-        />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
       </head>
       <body>{children}</body>
     </html>
