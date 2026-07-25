@@ -1,5 +1,5 @@
-import { SciNestHome } from "../scinest-home";
+import { permanentRedirect } from "next/navigation";
 
-export default function EnglishHomePage() {
-  return <SciNestHome locale="en" />;
+export default function LegacyEnglishHomePage() {
+  permanentRedirect("/");
 }
