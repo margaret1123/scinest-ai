@@ -9,7 +9,7 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
       disallow: ["/login", "/dashboard", "/api/stripe/"],
     },
-    sitemap: [`${siteUrl}/sitemap.xml`, `${siteUrl}/sitemap-llm.xml`],
+    sitemap: `${siteUrl}/sitemap.xml`,
     host: siteUrl,
   };
 }
