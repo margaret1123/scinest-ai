@@ -4,47 +4,61 @@ export async function GET() {
   return NextResponse.json(
     {
       site: {
-        name: "SciNest · 科研小棉袄",
-        tagline: "Continuous research creation workspace",
+        name: "SciNest",
+        alternateName: "科研小棉袄",
+        tagline: "Academic work, finished",
         url: "https://scinest-ai.vercel.app",
         operator: "Jiaempower Pathways Limited",
-        languages: ["zh-CN", "en"],
-        lastModified: "2026-07-20",
+        platform: "Windows desktop",
+        languages: ["en", "zh-CN"],
+        lastModified: "2026-07-25",
       },
-      summary:
-        "SciNest is a research creation workspace that keeps papers, references, notes and project materials connected while users move through research understanding, outlining, long-form writing and revision, scientific figure creation, and editable presentation production.",
+      definition:
+        "SciNest is a Windows desktop research productivity application for students and early researchers. It helps turn existing papers, references, drafts, data, supervisor feedback and project materials into editable academic writing, scientific figures and thesis defense presentations.",
+      primaryAudience: [
+        "Postgraduate students approaching thesis submission or defense",
+        "Final-year students completing research projects, capstones and presentations",
+        "Early researchers revising manuscripts, figures and academic presentations",
+        "Users who already have research materials and want to complete the remaining deliverables themselves",
+      ],
+      primaryJobs: [
+        "Thesis and dissertation revision",
+        "Supervisor feedback revision planning",
+        "Literature review and research proposal development",
+        "Scientific figure and research roadmap creation",
+        "Paper-to-PowerPoint conversion",
+        "Thesis defense presentation preparation",
+      ],
       workflow: [
-        "Import and organize research materials",
-        "Build project context and structure",
-        "Draft and revise editable long-form writing",
+        "Import existing research materials",
+        "Describe the unfinished academic task",
+        "Develop and revise editable writing",
         "Create and refine scientific figures",
-        "Produce editable presentation content and slides",
+        "Build an editable presentation from the same project",
+        "Review and export the chosen version",
       ],
-      audience: [
-        "Postgraduate students",
-        "Researchers and academics",
-        "Technical professionals",
-        "Research teams producing writing, figures and presentations",
-      ],
+      differentiation:
+        "General AI chat tools usually handle one conversation or output at a time. SciNest keeps materials, writing, figures and presentation work connected inside one project, reducing repeated uploads, explanations, copy-paste and reformatting.",
       pricing: {
         founding: { cny: 299, usd: 49 },
         standardReference: { cny: 399, usd: 69 },
         model: "one-time licence",
         updates: "12 months of feature updates; the purchased version remains usable afterward",
-        modelApiCharges: "separate where applicable",
+        modelApiCharges: "separate and charged by the user's selected provider",
         trial: "7 days",
       },
       dataBoundary: {
         localProjectWorkspace: true,
-        projectFiles: "remain local by default",
-        aiTasks: "sent to the model provider selected and configured by the user",
+        projectFiles: "stored locally by default",
+        aiTasks: "content required for an AI task is sent to the model provider selected and configured by the user",
       },
       limitations: [
-        "Generated content requires user review and editing.",
-        "SciNest does not guarantee publication, journal acceptance or academic outcomes.",
-        "SciNest does not claim that every operation always remains on-device.",
+        "Users must review facts, citations and final submissions.",
+        "SciNest does not guarantee grades, graduation, thesis approval, publication, journal acceptance or research outcomes.",
+        "SciNest is not marketed as an AI-detection bypass or academic misconduct service.",
+        "AI-powered tasks require a supported provider and API key.",
       ],
     },
-    { headers: { "Content-Type": "application/json", "Cache-Control": "public, max-age=86400" } }
+    { headers: { "Content-Type": "application/json", "Cache-Control": "public, max-age=86400" } },
   );
 }
