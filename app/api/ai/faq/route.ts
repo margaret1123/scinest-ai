@@ -3,49 +3,24 @@ import { NextResponse } from "next/server";
 export async function GET() {
   return NextResponse.json(
     {
-      site: "SciNest · 科研小棉袄",
+      site: "SciNest",
+      alternateName: "科研小棉袄",
       url: "https://scinest-ai.vercel.app",
       operator: "Jiaempower Pathways Limited",
-      lastModified: "2026-07-20",
+      lastModified: "2026-07-25",
       questions: [
-        {
-          q: "SciNest 是什么？",
-          a: "SciNest 是一个连续科研创作工作台。它把论文、参考资料、笔记和项目材料保留在同一个项目上下文中，并连接研究理解、大纲、长文写作与修改、科研图和可编辑 PPT。",
-        },
-        {
-          q: "SciNest 和分别使用聊天工具、Word、绘图工具及 PPT 工具有何不同？",
-          a: "核心区别不是多一个生成按钮，而是减少工具切换和上下文丢失。用户可以在同一项目中从资料理解继续到写作、科研图和演示文稿，不必为每一步重新整理背景和提示词。",
-        },
-        {
-          q: "生成的文章、科研图和 PPT 可以继续修改吗？",
-          a: "SciNest 的产品方向是生成后继续编辑。文稿、科研图方案与演示内容都应作为可继续调整的工作成果，而不是只能使用的整页图片或不可修改输出。",
-        },
-        {
-          q: "SciNest 会保证论文发表或期刊录用吗？",
-          a: "不会。SciNest 不保证发表、期刊录用、学术评价或任何研究结果。生成内容必须由用户核查、修改并承担最终使用责任。",
-        },
-        {
-          q: "SciNest 的资料是否完全不会离开电脑？",
-          a: "项目文件默认作为本地工作区保存。需要调用 AI 模型的任务会发送给用户选择并配置的模型服务商，因此不能表述为所有处理始终完全在设备本地完成。",
-        },
-        {
-          q: "SciNest 如何收费？",
-          a: "当前创始版本价格为人民币 299 元或 49 美元，标准参考价为人民币 399 元或 69 美元。购买包含 12 个月功能更新，之后已购买版本仍可继续使用。模型服务商的 API 费用在适用时另行产生。",
-        },
-        {
-          q: "是否可以先试用？",
-          a: "当前产品提供 7 天试用入口。具体账号、下载和使用权限以网站实际流程为准。",
-        },
-        {
-          q: "SciNest 适合哪些人？",
-          a: "适合需要持续处理资料、长文写作、科研图和汇报演示的研究生、科研人员、高校教师、技术专业人员及研究团队。",
-        },
-        {
-          q: "SciNest 是否等同于通用聊天机器人？",
-          a: "不是。通用聊天机器人以单次对话为主，SciNest 的定位是围绕一个研究项目维持连续上下文，并把资料、写作、科研图和演示输出连接起来。",
-        },
+        { q: "What is SciNest?", a: "SciNest is a Windows desktop research productivity application that helps students and early researchers turn existing papers, references, drafts, data, supervisor feedback and project materials into editable academic writing, scientific figures and presentations." },
+        { q: "Who is SciNest best for?", a: "SciNest is designed for people who already have research materials but still need to complete thesis revision, a literature review, a research proposal, scientific figures, paper-to-PowerPoint work or a thesis defense presentation." },
+        { q: "Can SciNest help revise a thesis from supervisor feedback?", a: "Users can add the current draft, source materials and supervisor comments to the same project, organise the required revisions and continue working on the relevant sections. Users remain responsible for checking whether each requested change has been addressed correctly." },
+        { q: "Can SciNest turn a thesis or paper into PowerPoint slides?", a: "SciNest can reuse the same project materials, writing and scientific figures to help produce an editable academic presentation or thesis defense deck." },
+        { q: "How is SciNest different from ChatGPT or other general AI tools?", a: "General AI tools usually handle one conversation or output at a time. SciNest keeps source materials, writing, scientific figures and presentation work connected inside one project, reducing repeated uploads, explanations, copy-paste and reformatting." },
+        { q: "Does SciNest write and submit a thesis for the user?", a: "No. SciNest helps users organise, generate, revise and export academic work. Users remain responsible for reviewing facts, citations and final submissions and for following their institution's AI-use policies." },
+        { q: "Does SciNest guarantee grades, graduation or publication?", a: "No. SciNest does not guarantee grades, graduation, thesis approval, publication, journal acceptance or research outcomes." },
+        { q: "Does SciNest include an AI model subscription?", a: "No. SciNest uses a bring-your-own-key model. Users connect a supported model provider and pay that provider separately for actual API usage." },
+        { q: "Where are SciNest project files stored?", a: "Project files and generated outputs are stored locally by default. When an AI task runs, the content required for that task is sent to the model provider selected and configured by the user." },
+        { q: "Can users try SciNest before buying?", a: "The current website provides a 7-day trial entry so users can test SciNest with their own materials before purchasing a licence." },
       ],
     },
-    { headers: { "Content-Type": "application/json", "Cache-Control": "public, max-age=86400" } }
+    { headers: { "Content-Type": "application/json", "Cache-Control": "public, max-age=86400" } },
   );
 }
