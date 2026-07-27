@@ -250,7 +250,10 @@
 .materialSlide h3 { margin: 18px 0; font-size: 28px; }
 .chartMock { height: 180px; padding: 20px; display: flex; gap: 14px; align-items: end; border-radius: 16px; background: #eff8f6; }
 .chartMock i { flex: 1; border-radius: 8px 8px 2px 2px; background: var(--teal); }
-.chartMock i:nth-child(1) { height: 42%; }.chartMock i:nth-child(2) { height: 67%; }.chartMock i:nth-child(3) { height: 88%; }.chartMock i:nth-child(4) { height: 58%; }
+.chartMock i:nth-child(1) { height: 42%; }
+.chartMock i:nth-child(2) { height: 67%; }
+.chartMock i:nth-child(3) { height: 88%; }
+.chartMock i:nth-child(4) { height: 58%; }
 .materialSlide > p { color: var(--muted); line-height: 1.7; }
 .materialSlide footer { display: flex; gap: 8px; }
 .materialSlide footer span { padding: 7px 9px; border-radius: 999px; background: var(--mint); color: var(--teal-dark); font-size: 11px; font-weight: 800; }
@@ -285,12 +288,13 @@
 
 .comparisonSection { background: #eef7f4; }
 .tableWrap { max-width: 1220px; margin: 0 auto; overflow-x: auto; border: 1px solid var(--line); border-radius: 22px; background: white; }
-table { width: 100%; min-width: 860px; border-collapse: collapse; }
-th, td { padding: 18px 20px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
-thead th { background: #102d33; color: white; font-size: 13px; }
-tbody th { width: 24%; color: var(--ink); }
-tbody td { color: var(--muted); }
-tbody td:last-child { color: var(--teal-dark); font-weight: 850; background: #f0faf7; }
+.tableWrap table { width: 100%; min-width: 860px; border-collapse: collapse; }
+.tableWrap th,
+.tableWrap td { padding: 18px 20px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
+.tableWrap thead th { background: #102d33; color: white; font-size: 13px; }
+.tableWrap tbody th { width: 24%; color: var(--ink); }
+.tableWrap tbody td { color: var(--muted); }
+.tableWrap tbody td:last-child { color: var(--teal-dark); font-weight: 850; background: #f0faf7; }
 
 .useCases { background: white; }
 .useCases > div:last-child { max-width: 1050px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
