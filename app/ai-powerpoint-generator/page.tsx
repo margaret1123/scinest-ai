@@ -1,0 +1,329 @@
+import type { Metadata } from "next";
+import styles from "./ai-powerpoint-generator.module.css";
+
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://scinest-ai.vercel.app";
+const registerUrl = "/login?redirect=/dashboard&intent=early-bird";
+
+export const metadata: Metadata = {
+  title: "AI PowerPoint Generator | Create Real Editable PPTX With Your Materials",
+  description:
+    "Upload papers, documents, data and images. SciNest creates a real editable PowerPoint presentation—not an image-based PDF or HTML slideshow. Edit the outline, slides, text and visuals, then export a ready-to-use PPTX.",
+  alternates: { canonical: "/ai-powerpoint-generator" },
+  openGraph: {
+    type: "website",
+    url: "/ai-powerpoint-generator",
+    title: "AI PowerPoint Generator for Real Editable PPTX | SciNest",
+    description:
+      "Create a real editable PowerPoint from your own materials, with source-bound content, visuals, an editable outline and WYSIWYG preview.",
+    images: [{ url: "/scinest/ppt-ui-en.webp", width: 1280, height: 800, alt: "SciNest editable PowerPoint workspace" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Create a real editable PowerPoint with AI",
+    description: "Not an image, PDF or HTML slideshow. Generate an editable PPTX from your own materials.",
+    images: ["/scinest/ppt-ui-en.webp"],
+  },
+};
+
+const faq = [
+  ["Does SciNest generate a real PowerPoint file?", "Yes. The final output is a standard .pptx file that can be opened, presented and continued in Microsoft PowerPoint, WPS and compatible software."],
+  ["Is every slide just one flattened image?", "No. Titles, text, images and supported slide elements remain structured for editing instead of being flattened into a single page image."],
+  ["Can I edit the outline before generating the full deck?", "Yes. You can review and adjust the number of slides, order, titles and emphasis before generating the presentation."],
+  ["Will SciNest use everything I upload?", "You choose which project materials belong to the current task. SciNest builds the outline and slides from the selected materials rather than treating every file as equally relevant."],
+  ["Can I reuse my existing figures and images?", "Yes. Existing project images and scientific figures can be reused in the presentation where supported by the current version."],
+  ["Can I keep editing after generation?", "Yes. You can continue refining the outline, slide order, titles, body copy, visuals and speaker notes before exporting."],
+];
+
+const structuredData = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: "AI PowerPoint Generator",
+    url: `${siteUrl}/ai-powerpoint-generator`,
+    description: metadata.description,
+    inLanguage: "en",
+    isPartOf: { "@type": "WebSite", name: "SciNest", url: siteUrl },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    name: "SciNest",
+    applicationCategory: "ProductivityApplication",
+    operatingSystem: "Windows",
+    url: `${siteUrl}/ai-powerpoint-generator`,
+    featureList: [
+      "Real editable PPTX export",
+      "Source-bound presentation generation",
+      "Editable slide outline",
+      "Scientific figure and image reuse",
+      "WYSIWYG slide preview",
+      "Slide-level revision and speaker notes",
+    ],
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faq.map(([question, answer]) => ({
+      "@type": "Question",
+      name: question,
+      acceptedAnswer: { "@type": "Answer", text: answer },
+    })),
+  },
+];
+
+const falseOutputs = [
+  ["Flattened pages", "Every slide is one image. A typo can force a full-page regeneration."],
+  ["HTML slideshows", "They may look fine in a browser, then shift when converted to PowerPoint."],
+  ["Outline only", "You still copy text, find visuals, format pages and rebuild the deck yourself."],
+  ["Unbound agents", "Uploading many files does not guarantee the right material is used or verified."],
+];
+
+const workflow = [
+  ["01", "Add the real project", "Bring in papers, reports, data, images, existing slides and presentation requirements."],
+  ["02", "Set the purpose", "Choose a defense, research talk, course report, conference presentation or another real use case."],
+  ["03", "Review the outline", "Adjust slide count, sequence, titles, emphasis, audience and speaking time before full generation."],
+  ["04", "Generate the deck", "Create slide content, visual placements, supporting figures and speaker notes from the selected materials."],
+  ["05", "Edit what you see", "Refine slide text, order, images and individual pages without restarting the whole presentation."],
+  ["06", "Export the PPTX", "Download a standard PowerPoint file that remains editable after it leaves SciNest."],
+];
+
+const comparison = [
+  ["Standard editable PPTX", "Usually no", "Conversion can break", "Usually content only", "Yes"],
+  ["Editable text and elements", "No or limited", "Mostly inside browser", "You rebuild the slides", "Yes"],
+  ["Uses selected materials", "Unclear", "Varies", "May miss sources", "Source-bound"],
+  ["Editable outline", "Limited", "Sometimes", "Text outline only", "Before generation"],
+  ["Visual planning", "Page image", "Varies", "Separate work", "Built into slide plan"],
+  ["WYSIWYG export", "Fixed but flattened", "Often changes", "Not applicable", "Preview matches slide structure"],
+  ["Targeted revision", "Regenerate page", "HTML constraints", "Regenerate text", "Edit a page or selected content"],
+];
+
+export default function AiPowerPointGeneratorPage() {
+  return (
+    <div className={styles.page}>
+      {structuredData.map((data, index) => (
+        <script key={index} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }} />
+      ))}
+
+      <header className={styles.header}>
+        <a className={styles.brand} href="/"><span>S</span><strong>SciNest<small>Academic work, finished</small></strong></a>
+        <nav aria-label="Page navigation">
+          <a href="#difference">Why it is different</a>
+          <a href="#materials">Your materials</a>
+          <a href="#workflow">How it works</a>
+          <a href="#faq">FAQ</a>
+        </nav>
+        <div className={styles.headerActions}>
+          <a href="/login">Sign in</a>
+          <a className={styles.smallCta} href={registerUrl}>Claim 30 days of Pro</a>
+        </div>
+      </header>
+
+      <main>
+        <section className={styles.hero}>
+          <div className={styles.heroCopy}>
+            <p className={styles.eyebrow}>REAL POWERPOINT · NOT AN IMAGE OR HTML PREVIEW</p>
+            <h1>AI creates a <em>real PowerPoint.</em><br />Ready now. Editable next.</h1>
+            <p className={styles.lead}>Upload papers, reports, data and images. SciNest turns the material into a presentation you can open, present and continue editing as a standard PowerPoint file.</p>
+            <div className={styles.heroPoints}>
+              {['Real PPTX', 'Source-bound', 'Visuals included', 'Editable outline', 'WYSIWYG'].map(item => <span key={item}>✓ {item}</span>)}
+            </div>
+            <div className={styles.ctas}>
+              <a className={styles.primary} href={registerUrl}>Generate my real PowerPoint ↗</a>
+              <a className={styles.secondary} href="#proof">See the editable result</a>
+            </div>
+            <p className={styles.note}>Windows desktop · Bring your own AI key · Project files stay local by default</p>
+          </div>
+
+          <div className={styles.heroStage} id="proof">
+            <div className={styles.stageTop}><span>SCI NEST PRESENTATION WORKSPACE</span><b>Export · .PPTX</b></div>
+            <img src="/scinest/ppt-ui-en.webp" alt="SciNest workspace showing an editable PowerPoint presentation generated from research materials" width="1280" height="800" />
+            <div className={`${styles.callout} ${styles.calloutOutline}`}><b>01</b><span>Outline stays editable</span></div>
+            <div className={`${styles.callout} ${styles.calloutSources}`}><b>02</b><span>Slides stay tied to materials</span></div>
+            <div className={`${styles.callout} ${styles.calloutExport}`}><b>03</b><span>Exports as real PPTX</span></div>
+          </div>
+        </section>
+
+        <section className={styles.claimStrip} aria-label="Product capabilities">
+          <div><strong>.PPTX</strong><span>Not a flattened PDF</span></div>
+          <div><strong>Editable</strong><span>Text, sequence and supported elements</span></div>
+          <div><strong>Bound</strong><span>Built from selected project materials</span></div>
+          <div><strong>Visual</strong><span>Figures, images and page-level planning</span></div>
+        </section>
+
+        <section className={`${styles.section} ${styles.darkSection}`} id="difference">
+          <div className={styles.sectionIntro}>
+            <p className={styles.kicker}>THE OUTPUT PROBLEM</p>
+            <h2>Many “AI presentations” are not presentations when the work is finished.</h2>
+            <p>They look complete during generation, then hand the editing work back to you.</p>
+          </div>
+          <div className={styles.falseGrid}>
+            {falseOutputs.map(([title, body], index) => (
+              <article key={title}><span>0{index + 1}</span><h3>{title}</h3><p>{body}</p></article>
+            ))}
+          </div>
+        </section>
+
+        <section className={`${styles.section} ${styles.realFile}`}>
+          <div className={styles.realCopy}>
+            <p className={styles.kicker}>A REAL PRESENTATION FILE</p>
+            <h2>When generation ends, the PowerPoint work does not restart.</h2>
+            <p>SciNest creates structured slides instead of screenshotting every page and calling it a deck.</p>
+            <ul>
+              <li>Titles remain titles.</li>
+              <li>Body text remains editable.</li>
+              <li>Images can be replaced and repositioned.</li>
+              <li>Slide order can be changed.</li>
+              <li>Speaker notes can continue evolving.</li>
+              <li>The final file exports as standard .pptx.</li>
+            </ul>
+          </div>
+          <div className={styles.fileVisual} aria-label="Editable PowerPoint file structure">
+            <div className={styles.fileBadge}>PPTX</div>
+            <div className={styles.fileLayers}>
+              <span>Title block</span><span>Editable text</span><span>Figure slot</span><span>Speaker notes</span>
+            </div>
+            <p>One presentation. Separate editable parts.</p>
+          </div>
+        </section>
+
+        <section className={`${styles.section} ${styles.outlineSection}`}>
+          <div className={styles.sectionIntro}>
+            <p className={styles.kicker}>EDIT THE STORY BEFORE THE SLIDES</p>
+            <h2>Fix the outline before it becomes twenty pages of rework.</h2>
+            <p>Every slide gets a purpose before the full deck is generated.</p>
+          </div>
+          <div className={styles.outlineDemo}>
+            <ol>
+              <li><b>01</b><span><strong>Research problem</strong><small>Why this work exists</small></span></li>
+              <li><b>02</b><span><strong>Gap and objective</strong><small>What the project resolves</small></span></li>
+              <li className={styles.activeSlide}><b>03</b><span><strong>Method and design</strong><small>What earns a visual explanation</small></span></li>
+              <li><b>04</b><span><strong>Key results</strong><small>What deserves presentation time</small></span></li>
+              <li><b>05</b><span><strong>Contribution</strong><small>What the audience should remember</small></span></li>
+            </ol>
+            <div className={styles.outlineInspector}>
+              <span>SLIDE 03 · EDITABLE PLAN</span>
+              <h3>Explain the method with one visual</h3>
+              <dl>
+                <div><dt>Source</dt><dd>Methods chapter + uploaded workflow image</dd></div>
+                <div><dt>Visual</dt><dd>Three-stage experimental roadmap</dd></div>
+                <div><dt>Speaking time</dt><dd>55 seconds</dd></div>
+              </dl>
+              <button type="button">Move slide</button><button type="button">Rewrite title</button><button type="button">Change visual</button>
+            </div>
+          </div>
+        </section>
+
+        <section className={`${styles.section} ${styles.materialSection}`} id="materials">
+          <div className={styles.materialGrid}>
+            <div className={styles.materialSources}>
+              <p className={styles.kicker}>BUILT FROM YOUR SOURCES</p>
+              <h2>Uploading files is not enough. The slide should show which material shaped it.</h2>
+              <div className={styles.sourceList}>
+                <span><b>PDF</b> Thesis-final.pdf</span>
+                <span><b>DOCX</b> Supervisor-comments.docx</span>
+                <span><b>XLSX</b> Experiment-results.xlsx</span>
+                <span><b>PNG</b> Mechanism-figure.png</span>
+              </div>
+            </div>
+            <div className={styles.materialBridge}><span>SELECTED</span><i>→</i><span>BOUND</span></div>
+            <div className={styles.materialSlide}>
+              <small>SLIDE 08 · KEY FINDING</small>
+              <h3>Intervention reduced the primary outcome</h3>
+              <div className={styles.chartMock}><i /><i /><i /><i /></div>
+              <p>Built from the selected results table and thesis discussion—not from a blank prompt.</p>
+              <footer><span>Source 03</span><span>Figure 04</span></footer>
+            </div>
+          </div>
+        </section>
+
+        <section className={`${styles.section} ${styles.visualSection}`}>
+          <div className={styles.sectionIntro}>
+            <p className={styles.kicker}>TEXT ALONE IS NOT A PRESENTATION</p>
+            <h2>SciNest plans where the research needs a figure, chart or visual relationship.</h2>
+            <p>Existing project assets can be reused. Missing visual explanations can be built from the same project context.</p>
+          </div>
+          <div className={styles.visualModes}>
+            <article><span>01</span><h3>Reuse existing figures</h3><p>Bring an approved scientific figure into the correct slide instead of recreating it.</p></article>
+            <article><span>02</span><h3>Turn data into charts</h3><p>Use selected tables and results where a chart communicates faster than paragraphs.</p></article>
+            <article><span>03</span><h3>Explain a process visually</h3><p>Convert methods, stages or relationships into a roadmap or structured diagram.</p></article>
+          </div>
+        </section>
+
+        <section className={`${styles.section} ${styles.wysiwyg}`}>
+          <div className={styles.wysiwygCopy}>
+            <p className={styles.kicker}>WHAT YOU SEE IS WHAT YOU EXPORT</p>
+            <h2>The preview should not promise one layout and export another.</h2>
+            <p>Review density, hierarchy, image scale, text overflow and slide balance before exporting the PowerPoint.</p>
+            <div className={styles.checks}><span>✓ Safe margins</span><span>✓ Text fit</span><span>✓ Image scale</span><span>✓ Slide hierarchy</span></div>
+          </div>
+          <div className={styles.previewCompare}>
+            <div><small>IN SCINEST</small><div className={styles.miniSlide}><b>Key result</b><i /><p>Clear hierarchy</p></div></div>
+            <span>=</span>
+            <div><small>IN POWERPOINT</small><div className={styles.miniSlide}><b>Key result</b><i /><p>Same structure</p></div></div>
+          </div>
+        </section>
+
+        <section className={`${styles.section} ${styles.revisionSection}`}>
+          <div className={styles.sectionIntro}>
+            <p className={styles.kicker}>EDIT THE PART THAT NEEDS EDITING</p>
+            <h2>One wrong number should not regenerate the whole deck.</h2>
+          </div>
+          <div className={styles.revisionCommands}>
+            {["Shorten this slide", "Move slide 3 after slide 5", "Replace this visual", "Turn this table into a chart", "Add speaker notes", "Regenerate this page only"].map(command => <span key={command}>{command}</span>)}
+          </div>
+        </section>
+
+        <section className={`${styles.section} ${styles.workflowSection}`} id="workflow">
+          <div className={styles.sectionIntro}>
+            <p className={styles.kicker}>ONE CONTINUOUS WORKFLOW</p>
+            <h2>From real materials to a real PowerPoint—without rebuilding the presentation in five tools.</h2>
+          </div>
+          <div className={styles.workflowGrid}>
+            {workflow.map(([number, title, body]) => <article key={number}><b>{number}</b><h3>{title}</h3><p>{body}</p></article>)}
+          </div>
+        </section>
+
+        <section className={`${styles.section} ${styles.comparisonSection}`}>
+          <div className={styles.sectionIntro}>
+            <p className={styles.kicker}>NOT ALL “PRESENTATION GENERATORS” DELIVER THE SAME THING</p>
+            <h2>Compare the result you actually receive.</h2>
+          </div>
+          <div className={styles.tableWrap}>
+            <table>
+              <thead><tr><th>Capability</th><th>Image / PDF tools</th><th>HTML slides</th><th>General AI agent</th><th>SciNest</th></tr></thead>
+              <tbody>{comparison.map(row => <tr key={row[0]}>{row.map((cell, index) => index === 0 ? <th key={cell} scope="row">{cell}</th> : <td key={`${row[0]}-${cell}`}>{cell}</td>)}</tr>)}</tbody>
+            </table>
+          </div>
+        </section>
+
+        <section className={`${styles.section} ${styles.useCases}`}>
+          <div className={styles.sectionIntro}><p className={styles.kicker}>BUILT FOR REAL DELIVERY</p><h2>One editable deck for the presentation you actually have to give.</h2></div>
+          <div>{['Thesis defense', 'Dissertation defense', 'Research presentation', 'Paper to PowerPoint', 'Literature review', 'Research proposal', 'Conference talk', 'Course report', 'Technical roadmap'].map(item => <span key={item}>{item}</span>)}</div>
+        </section>
+
+        <section className={`${styles.section} ${styles.boundarySection}`}>
+          <div><p className={styles.kicker}>YOU REMAIN IN CONTROL</p><h2>AI builds the presentation. You confirm what represents your work.</h2></div>
+          <ul><li>No guaranteed grade, defense result or publication.</li><li>No invented experiments or unsupported results.</li><li>Facts, citations, numbers and institutional rules still require user review.</li><li>Selected sources guide the deck; missing evidence should be surfaced, not disguised.</li></ul>
+        </section>
+
+        <section className={`${styles.section} ${styles.faqSection}`} id="faq">
+          <div className={styles.sectionIntro}><p className={styles.kicker}>FAQ</p><h2>What “real editable PowerPoint” means.</h2></div>
+          <div className={styles.faq}>{faq.map(([question, answer]) => <details key={question}><summary>{question}<b>+</b></summary><p>{answer}</p></details>)}</div>
+        </section>
+
+        <section className={styles.finalCta}>
+          <p>STOP GENERATING CONTENT THAT STILL NEEDS TO BECOME A PRESENTATION</p>
+          <h2>Upload the material.<br />Get a real, visual, editable PowerPoint.</h2>
+          <a href={registerUrl}>Generate my real PowerPoint ↗</a>
+          <span>Use your own AI key · Local project files by default · Real PPTX export</span>
+        </section>
+      </main>
+
+      <footer className={styles.footer}>
+        <div><strong>SciNest</strong><span>Operated by Jiaempower Pathways Limited</span></div>
+        <nav><a href="/">Home</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a><a href="/refund-policy">Refund policy</a></nav>
+        <small>© {new Date().getFullYear()} Jiaempower Pathways Limited</small>
+      </footer>
+    </div>
+  );
+}
