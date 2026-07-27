@@ -3,7 +3,7 @@ import type { MetadataRoute } from "next";
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://scinest-ai.vercel.app";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const lastModified = new Date("2026-07-25T00:00:00.000Z");
+  const lastModified = new Date("2026-07-28T00:00:00.000Z");
   const languages = {
     en: `${siteUrl}/`,
     "zh-CN": `${siteUrl}/zh`,
@@ -24,6 +24,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly",
       priority: 0.9,
       alternates: { languages },
+    },
+    {
+      url: `${siteUrl}/ai-powerpoint-generator`,
+      lastModified,
+      changeFrequency: "weekly",
+      priority: 0.9,
     },
     {
       url: `${siteUrl}/privacy`,
