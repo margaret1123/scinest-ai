@@ -32,6 +32,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
+      url: `${siteUrl}/scientific-figure-generator`,
+      lastModified,
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    {
       url: `${siteUrl}/privacy`,
       lastModified,
       changeFrequency: "monthly",
