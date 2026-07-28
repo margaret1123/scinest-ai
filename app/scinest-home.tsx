@@ -1,4 +1,5 @@
 import styles from "./scinest-home.module.css";
+import galleryStyles from "./scinest-home-gallery.module.css";
 import launchStyles from "./prelaunch.module.css";
 import { LaunchCountdown } from "./launch-countdown";
 import type { Locale } from "./home-content";
@@ -169,6 +170,8 @@ export function SciNestHome({ locale }: { locale: Locale }) {
   const writingAlt = locale === "zh" ? "SciNest 可编辑论文与研究文稿工作区" : "SciNest editable thesis and academic writing workspace";
   const figureAlt = locale === "zh" ? "SciNest 科研图编辑界面" : "SciNest scientific figure editor";
   const pptAlt = locale === "zh" ? "SciNest 答辩PPT工作流" : "SciNest thesis defense presentation workflow";
+  const workspaceAlt = locale === "zh" ? "SciNest 连续科研工作区完整界面" : "SciNest connected academic workspace interface";
+  const outputsAlt = locale === "zh" ? "SciNest 文稿科研图与PPT成果总览" : "SciNest writing scientific figure and presentation output overview";
 
   return <div className={styles.page} lang={c.lang}>
     <div className={launchStyles.launchStrip}><strong>{c.strip}</strong><span>{c.stripOffer}</span></div>
@@ -189,6 +192,16 @@ export function SciNestHome({ locale }: { locale: Locale }) {
         <article className={styles.outputRow}><div><small>{c.outputs[0][0]}</small><h3>{c.outputs[0][1]}</h3><p>{c.outputs[0][2]}</p><ul>{c.outputs[0][3].map(x => <li key={x}>✓ {x}</li>)}</ul></div><figure><img src={image("writing-ui")} alt={writingAlt} width="1280" height="800" loading="lazy" /></figure></article>
         <article className={styles.figureFeature}><div><small>{c.outputs[1][0]}</small><h3>{c.outputs[1][1]}</h3><p>{c.outputs[1][2]}</p><ul>{c.outputs[1][3].map(x => <li key={x}>✓ {x}</li>)}</ul></div><figure><img src={image("figures-ui")} alt={figureAlt} width="1280" height="640" loading="lazy" /></figure></article>
         <article className={`${styles.outputRow} ${styles.reverse}`}><figure><img src={image("ppt-ui")} alt={pptAlt} width="1280" height="800" loading="lazy" /></figure><div><small>{c.outputs[2][0]}</small><h3>{c.outputs[2][1]}</h3><p>{c.outputs[2][2]}</p><ul>{c.outputs[2][3].map(x => <li key={x}>✓ {x}</li>)}</ul></div></article>
+      </section>
+      <section className={`${styles.section} ${galleryStyles.gallery}`} aria-labelledby="product-gallery-title">
+        <div className={galleryStyles.galleryHead}><p>{locale === "zh" ? "真实界面，不只展示一张图" : "MORE THAN ONE PRODUCT SCREEN"}</p><h2 id="product-gallery-title">{locale === "zh" ? "从完整工作区，到每一种可交付成果" : "See the connected workspace and the outputs it produces"}</h2><span>{locale === "zh" ? "每张图对应不同的工作阶段，不再用同一张合成图覆盖整页。" : "Each image now represents a different stage of the workflow instead of repeating one composite screen."}</span></div>
+        <div className={galleryStyles.galleryGrid}>
+          <figure className={`${galleryStyles.galleryCard} ${galleryStyles.galleryTall}`}><img src={image("real-ui")} alt={workspaceAlt} width="1280" height="800" loading="lazy" /><figcaption><strong>{locale === "zh" ? "一个项目持续承接上下文" : "One project keeps the context connected"}</strong><span>{locale === "zh" ? "材料、对话、文稿、科研图与PPT围绕同一研究任务继续推进。" : "Sources, conversations, writing, figures and slides continue around the same research task."}</span></figcaption></figure>
+          <div className={galleryStyles.gallerySide}>
+            <figure className={galleryStyles.galleryCard}><img src={image("outputs")} alt={outputsAlt} width="1066" height="1700" loading="lazy" /><figcaption><strong>{locale === "zh" ? "三类成果分别可见" : "Three deliverables, shown separately"}</strong><span>{locale === "zh" ? "不是一张泛化效果图，而是文稿、科研图和PPT的实际工作界面。" : "Writing, figures and presentations are shown as real working surfaces, not a generic mockup."}</span></figcaption></figure>
+            <figure className={galleryStyles.galleryCard}><img src={image("hero")} alt={heroAlt} width="1280" height="800" loading="lazy" /><figcaption><strong>{locale === "zh" ? "从任务总览进入具体工作" : "Move from overview into focused work"}</strong><span>{locale === "zh" ? "总览负责串联任务，具体页面负责完成和编辑。" : "The overview connects the task while focused pages handle production and editing."}</span></figcaption></figure>
+          </div>
+        </div>
       </section>
       <section className={`${styles.section} ${styles.bento}`}><div className={styles.bentoIntro}><p className={styles.kicker}>{c.bentoKicker}</p><h2>{c.bentoTitle}</h2><p>{c.bentoBody}</p></div><article className={styles.bentoMain}><span>01</span><h3>{c.contextTitle}</h3><p>{c.contextBody}</p></article><article><span>02</span><h3>{c.editTitle}</h3><p>{c.editBody}</p></article><article><span>03</span><h3>{c.modelTitle}</h3><p>{c.modelBody}</p></article></section>
       <section className={styles.section} id="pricing"><div className={styles.sectionHead}><p>{c.planKicker}</p><h2>{c.planTitle}</h2></div><div className={launchStyles.planGrid}><article className={launchStyles.planCard}><span className={launchStyles.planBadge}>FREE</span><h3>{c.freeName}</h3><p>{c.freeDesc}</p><ul>{c.freeFeatures.map(x => <li key={x}><span>✓</span>{x}</li>)}</ul></article><article className={`${launchStyles.planCard} ${launchStyles.planCardPro}`}><span className={launchStyles.planBadge}>PRO</span><h3>{c.proName}</h3><p>{c.proDesc}</p><ul>{c.proFeatures.map(x => <li key={x}><span>✓</span>{x}</li>)}</ul></article></div><p className={launchStyles.planNote}>{c.planNote}</p><div className={styles.ctas} style={{justifyContent:"center"}}><a className={styles.primary} href={registerUrl}>{c.primary} ↗</a></div></section>
