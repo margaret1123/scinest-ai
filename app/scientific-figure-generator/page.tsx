@@ -4,6 +4,10 @@ import styles from "./scientific-figure-generator.module.css";
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://scinest-ai.vercel.app";
 const registerUrl = "/login?redirect=/dashboard&intent=early-bird";
 
+const proofFigureStyle = { margin: 0, overflow: "hidden" } as const;
+const proofImageStyle = { display: "block", width: "100%", height: "auto", borderRadius: 18 } as const;
+const proofCaptionStyle = { padding: "16px 4px 2px", color: "#607471", fontSize: 13, lineHeight: 1.65 } as const;
+
 export const metadata: Metadata = {
   title: "AI Scientific Figure Generator With Editable Layers | SciNest",
   description:
@@ -162,9 +166,9 @@ export default function ScientificFigureGeneratorPage() {
               <li>Continue refining the figure instead of starting again.</li>
             </ul>
           </div>
-          <figure className={styles.productProof}>
-            <img src="/scinest/figure-layer-edit-en.svg" alt="SciNest scientific figure editor with one DNA element selected and a layer-specific AI edit panel" width="1200" height="760" />
-            <figcaption>Select one element, describe the correction and keep the surrounding figure intact.</figcaption>
+          <figure className={styles.layerPanel} style={proofFigureStyle}>
+            <img src="/scinest/figure-layer-edit-en.svg" alt="SciNest scientific figure editor with one DNA element selected and a layer-specific AI edit panel" width="1200" height="760" style={proofImageStyle} />
+            <figcaption style={proofCaptionStyle}>Select one element, describe the correction and keep the surrounding figure intact.</figcaption>
           </figure>
         </section>
 
@@ -187,9 +191,8 @@ export default function ScientificFigureGeneratorPage() {
             <h2>Edit the labels directly. Do not ask an image model to spell them again.</h2>
             <p>SciNest separates editable labels from the generated visual layer, avoiding the common problem of distorted or unreadable lettering inside AI images.</p>
           </div>
-          <div className={styles.textProofGrid}>
-            <article className={styles.textProblem}>
-              <span>WHY THIS MATTERS</span>
+          <div className={styles.textGrid}>
+            <article className={styles.badText}>
               <h3>A spelling correction should not redraw the science.</h3>
               <p>When text is painted into an AI image, correcting one scientific term can introduce new errors across the figure.</p>
               <ul>
@@ -198,9 +201,9 @@ export default function ScientificFigureGeneratorPage() {
                 <li>Keep scientific names readable and under your control.</li>
               </ul>
             </article>
-            <figure className={styles.productProof}>
-              <img src="/scinest/figure-text-edit-en.svg" alt="SciNest scientific figure editor with the Fasciola spp. eggs label selected as an editable text object" width="1200" height="760" />
-              <figcaption>The label remains a separate text object while the scientific visual stays unchanged.</figcaption>
+            <figure className={styles.goodText} style={proofFigureStyle}>
+              <img src="/scinest/figure-text-edit-en.svg" alt="SciNest scientific figure editor with the Fasciola spp. eggs label selected as an editable text object" width="1200" height="760" style={proofImageStyle} />
+              <figcaption style={proofCaptionStyle}>The label remains a separate text object while the scientific visual stays unchanged.</figcaption>
             </figure>
           </div>
         </section>
