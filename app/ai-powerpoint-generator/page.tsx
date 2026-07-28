@@ -4,6 +4,25 @@ import styles from "./ai-powerpoint-generator.module.css";
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://scinest-ai.vercel.app";
 const registerUrl = "/login?redirect=/dashboard&intent=early-bird";
 
+const proofFigureStyle = {
+  maxWidth: 1180,
+  margin: "0 auto",
+  overflow: "hidden",
+  border: "1px solid rgba(7, 95, 85, 0.16)",
+  borderRadius: 24,
+  background: "#fff",
+  boxShadow: "0 24px 70px rgba(18, 72, 77, 0.12)",
+} as const;
+const proofImageStyle = { display: "block", width: "100%", height: "auto" } as const;
+const proofCaptionStyle = {
+  margin: 0,
+  padding: "15px 20px 18px",
+  color: "#5e6f7c",
+  fontSize: 13,
+  lineHeight: 1.65,
+  borderTop: "1px solid rgba(7, 95, 85, 0.12)",
+} as const;
+
 export const metadata: Metadata = {
   title: "AI PowerPoint Generator | Create Real Editable PPTX With Your Materials",
   description:
@@ -157,9 +176,7 @@ export default function AiPowerPointGeneratorPage() {
             <p>They look complete during generation, then hand the editing work back to you.</p>
           </div>
           <div className={styles.falseGrid}>
-            {falseOutputs.map(([title, body], index) => (
-              <article key={title}><span>0{index + 1}</span><h3>{title}</h3><p>{body}</p></article>
-            ))}
+            {falseOutputs.map(([title, body], index) => <article key={title}><span>0{index + 1}</span><h3>{title}</h3><p>{body}</p></article>)}
           </div>
         </section>
 
@@ -169,19 +186,13 @@ export default function AiPowerPointGeneratorPage() {
             <h2>When generation ends, the PowerPoint work does not restart.</h2>
             <p>SciNest creates structured slides instead of screenshotting every page and calling it a deck.</p>
             <ul>
-              <li>Titles remain titles.</li>
-              <li>Body text remains editable.</li>
-              <li>Images can be replaced and repositioned.</li>
-              <li>Slide order can be changed.</li>
-              <li>Speaker notes can continue evolving.</li>
-              <li>The final file exports as standard .pptx.</li>
+              <li>Titles remain titles.</li><li>Body text remains editable.</li><li>Images can be replaced and repositioned.</li>
+              <li>Slide order can be changed.</li><li>Speaker notes can continue evolving.</li><li>The final file exports as standard .pptx.</li>
             </ul>
           </div>
           <div className={styles.fileVisual} aria-label="Editable PowerPoint file structure">
             <div className={styles.fileBadge}>PPTX</div>
-            <div className={styles.fileLayers}>
-              <span>Title block</span><span>Editable text</span><span>Figure slot</span><span>Speaker notes</span>
-            </div>
+            <div className={styles.fileLayers}><span>Title block</span><span>Editable text</span><span>Figure slot</span><span>Speaker notes</span></div>
             <p>One presentation. Separate editable parts.</p>
           </div>
         </section>
@@ -190,50 +201,24 @@ export default function AiPowerPointGeneratorPage() {
           <div className={styles.sectionIntro}>
             <p className={styles.kicker}>EDIT THE STORY BEFORE THE SLIDES</p>
             <h2>Fix the outline before it becomes twenty pages of rework.</h2>
-            <p>Every slide gets a purpose before the full deck is generated.</p>
+            <p>Set the purpose, audience, slide count and template, then edit the generated structure before full generation.</p>
           </div>
-          <div className={styles.outlineDemo}>
-            <ol>
-              <li><b>01</b><span><strong>Research problem</strong><small>Why this work exists</small></span></li>
-              <li><b>02</b><span><strong>Gap and objective</strong><small>What the project resolves</small></span></li>
-              <li className={styles.activeSlide}><b>03</b><span><strong>Method and design</strong><small>What earns a visual explanation</small></span></li>
-              <li><b>04</b><span><strong>Key results</strong><small>What deserves presentation time</small></span></li>
-              <li><b>05</b><span><strong>Contribution</strong><small>What the audience should remember</small></span></li>
-            </ol>
-            <div className={styles.outlineInspector}>
-              <span>SLIDE 03 · EDITABLE PLAN</span>
-              <h3>Explain the method with one visual</h3>
-              <dl>
-                <div><dt>Source</dt><dd>Methods chapter + uploaded workflow image</dd></div>
-                <div><dt>Visual</dt><dd>Three-stage experimental roadmap</dd></div>
-                <div><dt>Speaking time</dt><dd>55 seconds</dd></div>
-              </dl>
-              <button type="button">Move slide</button><button type="button">Rewrite title</button><button type="button">Change visual</button>
-            </div>
-          </div>
+          <figure style={proofFigureStyle}>
+            <img src="/scinest/ppt-outline-edit-en.svg" alt="SciNest PowerPoint task settings with AI optimization and an editable generated slide outline" width="1200" height="760" style={proofImageStyle} />
+            <figcaption style={proofCaptionStyle}>The real task screen keeps presentation goals, audience, page count, template and every generated slide title editable before the deck is built.</figcaption>
+          </figure>
         </section>
 
         <section className={`${styles.section} ${styles.materialSection}`} id="materials">
-          <div className={styles.materialGrid}>
-            <div className={styles.materialSources}>
-              <p className={styles.kicker}>BUILT FROM YOUR SOURCES</p>
-              <h2>Uploading files is not enough. The slide should show which material shaped it.</h2>
-              <div className={styles.sourceList}>
-                <span><b>PDF</b> Thesis-final.pdf</span>
-                <span><b>DOCX</b> Supervisor-comments.docx</span>
-                <span><b>XLSX</b> Experiment-results.xlsx</span>
-                <span><b>PNG</b> Mechanism-figure.png</span>
-              </div>
-            </div>
-            <div className={styles.materialBridge}><span>SELECTED</span><i>→</i><span>BOUND</span></div>
-            <div className={styles.materialSlide}>
-              <small>SLIDE 08 · KEY FINDING</small>
-              <h3>Intervention reduced the primary outcome</h3>
-              <div className={styles.chartMock}><i /><i /><i /><i /></div>
-              <p>Built from the selected results table and thesis discussion—not from a blank prompt.</p>
-              <footer><span>Source 03</span><span>Figure 04</span></footer>
-            </div>
+          <div className={styles.sectionIntro}>
+            <p className={styles.kicker}>BUILT FROM YOUR SOURCES</p>
+            <h2>The selected papers stay visible beside the slide they help create.</h2>
+            <p>Choose the materials that belong to this presentation instead of letting an agent treat every upload as equally relevant.</p>
           </div>
+          <figure style={proofFigureStyle}>
+            <img src="/scinest/ppt-source-bound-en.svg" alt="SciNest PowerPoint editor showing selected source papers beside a generated research slide" width="1200" height="760" style={proofImageStyle} />
+            <figcaption style={proofCaptionStyle}>Selected project papers remain in the same workspace as the generated slide, its visual and its evidence context.</figcaption>
+          </figure>
         </section>
 
         <section className={`${styles.section} ${styles.visualSection}`}>
@@ -251,49 +236,30 @@ export default function AiPowerPointGeneratorPage() {
 
         <section className={`${styles.section} ${styles.wysiwyg}`}>
           <div className={styles.wysiwygCopy}>
-            <p className={styles.kicker}>WHAT YOU SEE IS WHAT YOU EXPORT</p>
-            <h2>The preview should not promise one layout and export another.</h2>
-            <p>Review density, hierarchy, image scale, text overflow and slide balance before exporting the PowerPoint.</p>
-            <div className={styles.checks}><span>✓ Safe margins</span><span>✓ Text fit</span><span>✓ Image scale</span><span>✓ Slide hierarchy</span></div>
+            <p className={styles.kicker}>EDIT THE ACTUAL SLIDE</p>
+            <h2>Select the element on the page—not a flattened screenshot of the page.</h2>
+            <p>The real editor exposes slide thumbnails, text controls and selection handles so supported objects can be moved, resized and revised directly.</p>
+            <div className={styles.checks}><span>✓ Select objects</span><span>✓ Move and resize</span><span>✓ Edit text</span><span>✓ Review the full deck</span></div>
           </div>
-          <div className={styles.previewCompare}>
-            <div><small>IN SCINEST</small><div className={styles.miniSlide}><b>Key result</b><i /><p>Clear hierarchy</p></div></div>
-            <span>=</span>
-            <div><small>IN POWERPOINT</small><div className={styles.miniSlide}><b>Key result</b><i /><p>Same structure</p></div></div>
-          </div>
+          <figure style={{ ...proofFigureStyle, margin: 0 }}>
+            <img src="/scinest/ppt-element-edit-en.svg" alt="SciNest PowerPoint editor with a slide title selected using real resize and rotation handles" width="1200" height="760" style={proofImageStyle} />
+            <figcaption style={proofCaptionStyle}>The selected title remains an independent slide object with visible handles for direct editing and positioning.</figcaption>
+          </figure>
         </section>
 
         <section className={`${styles.section} ${styles.revisionSection}`}>
-          <div className={styles.sectionIntro}>
-            <p className={styles.kicker}>EDIT THE PART THAT NEEDS EDITING</p>
-            <h2>One wrong number should not regenerate the whole deck.</h2>
-          </div>
-          <div className={styles.revisionCommands}>
-            {["Shorten this slide", "Move slide 3 after slide 5", "Replace this visual", "Turn this table into a chart", "Add speaker notes", "Regenerate this page only"].map(command => <span key={command}>{command}</span>)}
-          </div>
+          <div className={styles.sectionIntro}><p className={styles.kicker}>EDIT THE PART THAT NEEDS EDITING</p><h2>One wrong number should not regenerate the whole deck.</h2></div>
+          <div className={styles.revisionCommands}>{["Shorten this slide", "Move slide 3 after slide 5", "Replace this visual", "Turn this table into a chart", "Add speaker notes", "Regenerate this page only"].map(command => <span key={command}>{command}</span>)}</div>
         </section>
 
         <section className={`${styles.section} ${styles.workflowSection}`} id="workflow">
-          <div className={styles.sectionIntro}>
-            <p className={styles.kicker}>ONE CONTINUOUS WORKFLOW</p>
-            <h2>From real materials to a real PowerPoint—without rebuilding the presentation in five tools.</h2>
-          </div>
-          <div className={styles.workflowGrid}>
-            {workflow.map(([number, title, body]) => <article key={number}><b>{number}</b><h3>{title}</h3><p>{body}</p></article>)}
-          </div>
+          <div className={styles.sectionIntro}><p className={styles.kicker}>ONE CONTINUOUS WORKFLOW</p><h2>From real materials to a real PowerPoint—without rebuilding the presentation in five tools.</h2></div>
+          <div className={styles.workflowGrid}>{workflow.map(([number, title, body]) => <article key={number}><b>{number}</b><h3>{title}</h3><p>{body}</p></article>)}</div>
         </section>
 
         <section className={`${styles.section} ${styles.comparisonSection}`}>
-          <div className={styles.sectionIntro}>
-            <p className={styles.kicker}>NOT ALL “PRESENTATION GENERATORS” DELIVER THE SAME THING</p>
-            <h2>Compare the result you actually receive.</h2>
-          </div>
-          <div className={styles.tableWrap}>
-            <table>
-              <thead><tr><th>Capability</th><th>Image / PDF tools</th><th>HTML slides</th><th>General AI agent</th><th>SciNest</th></tr></thead>
-              <tbody>{comparison.map(row => <tr key={row[0]}>{row.map((cell, index) => index === 0 ? <th key={cell} scope="row">{cell}</th> : <td key={`${row[0]}-${cell}`}>{cell}</td>)}</tr>)}</tbody>
-            </table>
-          </div>
+          <div className={styles.sectionIntro}><p className={styles.kicker}>NOT ALL “PRESENTATION GENERATORS” DELIVER THE SAME THING</p><h2>Compare the result you actually receive.</h2></div>
+          <div className={styles.tableWrap}><table><thead><tr><th>Capability</th><th>Image / PDF tools</th><th>HTML slides</th><th>General AI agent</th><th>SciNest</th></tr></thead><tbody>{comparison.map(row => <tr key={row[0]}>{row.map((cell, index) => index === 0 ? <th key={cell} scope="row">{cell}</th> : <td key={`${row[0]}-${cell}`}>{cell}</td>)}</tr>)}</tbody></table></div>
         </section>
 
         <section className={`${styles.section} ${styles.useCases}`}>
