@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import type { CSSProperties } from "react";
 import styles from "./ai-thesis-writing-assistant.module.css";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://scinest-ai.vercel.app";
@@ -79,6 +80,32 @@ const workflow = [
   ["05", "Revise the right section", "Edit a chapter, rewrite a passage or respond to feedback without discarding the confirmed structure."],
 ];
 
+const proofFigureStyle: CSSProperties = {
+  maxWidth: 1200,
+  margin: "42px auto 0",
+  padding: 14,
+  border: "1px solid rgba(7, 95, 85, 0.16)",
+  borderRadius: 28,
+  background: "linear-gradient(145deg, #ffffff, #edf7f4)",
+  boxShadow: "0 30px 80px rgba(18, 72, 77, 0.16)",
+};
+
+const proofImageStyle: CSSProperties = {
+  display: "block",
+  width: "100%",
+  height: "auto",
+  borderRadius: 18,
+  border: "1px solid rgba(7, 95, 85, 0.12)",
+  background: "white",
+};
+
+const proofCaptionStyle: CSSProperties = {
+  margin: "14px 8px 2px",
+  color: "#5e6f7c",
+  fontSize: 13,
+  lineHeight: 1.65,
+};
+
 export default function AiThesisWritingAssistantPage() {
   return (
     <div className={styles.page}>
@@ -137,28 +164,41 @@ export default function AiThesisWritingAssistantPage() {
         </section>
 
         <section className={`${styles.section} ${styles.outlineSection}`} id="outline">
-          <div className={styles.sectionIntro}><p className={styles.kicker}>THE OUTLINE IS THE CONTROL LAYER</p><h2>Decide the structure before the word count grows.</h2><p>The outline is not a decorative table of contents. It defines what each section must achieve, which materials it can use and how the argument progresses.</p></div>
-          <div className={styles.outlineDemo}>
-            <ol>
-              <li><b>01</b><span><strong>Introduction</strong><small>Problem, context and research objective</small></span></li>
-              <li className={styles.active}><b>02</b><span><strong>Literature review</strong><small>Three themes · eight selected sources</small></span></li>
-              <li><b>03</b><span><strong>Methodology</strong><small>Design, data and analytical approach</small></span></li>
-              <li><b>04</b><span><strong>Results and discussion</strong><small>Evidence, interpretation and limitations</small></span></li>
-              <li><b>05</b><span><strong>Conclusion</strong><small>Contribution, implications and next steps</small></span></li>
-            </ol>
-            <div className={styles.outlineInspector}><span>SECTION 02 · EDITABLE PLAN</span><h3>Compare the literature instead of listing it</h3><dl><div><dt>Target length</dt><dd>2,400 words</dd></div><div><dt>Selected sources</dt><dd>8 papers + project notes</dd></div><div><dt>Section job</dt><dd>Establish the gap and position the study</dd></div></dl><div className={styles.fakeButtons}><span>Move section</span><span>Change scope</span><span>Add evidence</span></div></div>
+          <div className={styles.sectionIntro}>
+            <p className={styles.kicker}>THE OUTLINE IS THE CONTROL LAYER</p>
+            <h2>Decide the structure before the word count grows.</h2>
+            <p>The real task screen assigns a word target to every chapter and keeps the generated structure editable before the document expands.</p>
           </div>
+          <figure style={proofFigureStyle}>
+            <img src="/scinest/writing-outline-overview-en.svg" alt="SciNest writing task showing selected source papers and an editable AI-generated chapter structure with word targets" width="1200" height="760" style={proofImageStyle} />
+            <figcaption style={proofCaptionStyle}>Selected project papers remain visible beside the complete AI-generated structure, including chapter order, word targets and edit controls.</figcaption>
+          </figure>
         </section>
 
         <section className={`${styles.section} ${styles.referenceSection}`} id="references">
-          <div className={styles.referenceCopy}><p className={styles.kicker}>MATERIALS AND REFERENCES STAY ATTACHED</p><h2>Uploading twenty papers is not the same as using the right evidence.</h2><p>Select which materials belong to the task, then connect them to the sections where they are relevant. The writing context stays tied to the project instead of disappearing after one answer.</p><ul><li>Choose the sources included in the task.</li><li>Keep source context available while drafting.</li><li>Carry reference information into relevant sections.</li><li>Review citations before final use.</li></ul></div>
-          <div className={styles.referenceVisual}><div className={styles.sourceStack}><span><b>S1</b> Literature-review.pdf</span><span><b>S2</b> Methods-notes.docx</span><span><b>S3</b> Dataset-summary.xlsx</span><span><b>S4</b> Reference-library.bib</span></div><div className={styles.bindLine}>SELECTED → BOUND</div><div className={styles.paragraphCard}><small>SECTION 2.3 · DRAFT</small><p>The existing literature converges on three explanations, but the evidence remains fragmented across context, mechanism and implementation.</p><footer><span>[S1]</span><span>[S4]</span></footer></div></div>
+          <div className={styles.referenceCopy}>
+            <p className={styles.kicker}>MATERIALS AND REFERENCES STAY ATTACHED</p>
+            <h2>Each chapter has a job, key points and an evidence area before drafting begins.</h2>
+            <p>Expand a chapter to review its goal, refine the points it must cover and keep the evidence and materials area attached to that section.</p>
+            <ul><li>Choose the papers included in the task.</li><li>Edit the chapter goal before generation.</li><li>Add or remove key points.</li><li>Review evidence and materials by section.</li></ul>
+          </div>
+          <figure style={{ ...proofFigureStyle, margin: 0 }}>
+            <img src="/scinest/writing-outline-detail-en.svg" alt="SciNest expanded writing chapter plan with editable chapter goal, key points and evidence and materials area" width="1200" height="760" style={proofImageStyle} />
+            <figcaption style={proofCaptionStyle}>The expanded chapter plan is the real control surface for scope, points and section-level evidence—not a decorative table of contents.</figcaption>
+          </figure>
         </section>
 
         <section className={`${styles.section} ${styles.longForm}`} id="long-form">
-          <div className={styles.sectionIntro}><p className={styles.kicker}>LONG-FORM MEANS ONE CONNECTED DOCUMENT</p><h2>Generate the whole draft without losing the structure halfway through.</h2><p>SciNest expands the approved plan into a connected document with section goals, shared terminology and project context carried across the draft.</p></div>
+          <div className={styles.sectionIntro}>
+            <p className={styles.kicker}>LONG-FORM MEANS ONE CONNECTED DOCUMENT</p>
+            <h2>Generate the whole draft, then edit the exact passage that needs work.</h2>
+            <p>The real editor keeps the Smart Outline, complete document and selected-text AI Edit in the same writing workspace.</p>
+          </div>
           <div className={styles.metricRow}><div><strong>10,000+</strong><span>word long-form target</span></div><div><strong>1</strong><span>approved outline</span></div><div><strong>Selected</strong><span>materials and references</span></div><div><strong>Editable</strong><span>chapters and passages</span></div></div>
-          <div className={styles.documentFlow}><span>Outline approved</span><i>→</i><span>Sections generated</span><i>→</i><span>References carried</span><i>→</i><span>Document revised</span></div>
+          <figure style={proofFigureStyle}>
+            <img src="/scinest/writing-long-form-edit-en.svg" alt="SciNest long-form academic document editor with Smart Outline, character count and selected passage AI Edit" width="1200" height="760" style={proofImageStyle} />
+            <figcaption style={proofCaptionStyle}>A 100,000-character document remains inside a structured editor, with navigation by heading and targeted AI revision for the selected passage.</figcaption>
+          </figure>
         </section>
 
         <section className={`${styles.section} ${styles.workflowSection}`}>
@@ -167,7 +207,7 @@ export default function AiThesisWritingAssistantPage() {
         </section>
 
         <section className={`${styles.section} ${styles.revisionSection}`}>
-          <div className={styles.sectionIntro}><p className={styles.kicker}>KEEP THE DOCUMENT. CHANGE THE PART.</p><h2>A supervisor comment should not trigger a full rewrite.</h2><p>After the long-form draft exists, you can work on the exact chapter or passage that needs attention while keeping the approved structure and the rest of the document intact.</p></div>
+          <div className={styles.sectionIntro}><p className={styles.kicker}>KEEP THE DOCUMENT. CHANGE THE PART.</p><h2>A supervisor comment should not trigger a full rewrite.</h2><p>After the long-form draft exists, work on the exact chapter or passage that needs attention while keeping the approved structure and the rest of the document intact.</p></div>
           <div className={styles.commands}>{['Shorten this section', 'Strengthen the evidence', 'Rewrite this paragraph', 'Respond to supervisor feedback', 'Reorganise chapter 3', 'Keep citations while revising'].map(command => <span key={command}>{command}</span>)}</div>
         </section>
 
