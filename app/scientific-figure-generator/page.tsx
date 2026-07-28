@@ -15,13 +15,13 @@ export const metadata: Metadata = {
     title: "AI Scientific Figure Generator With Editable Layers | SciNest",
     description:
       "Create scientific figures whose layers, text and selected regions remain editable after AI generation.",
-    images: [{ url: "/scinest/figures-ui-en.webp", width: 1280, height: 640, alt: "SciNest layered scientific figure editor" }],
+    images: [{ url: "/scinest/figures-ui-en.svg", width: 1280, height: 720, alt: "SciNest layered scientific figure editor" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Generate scientific figures you can still edit",
     description: "Drag layers, edit text directly and regenerate only the selected area.",
-    images: ["/scinest/figures-ui-en.webp"],
+    images: ["/scinest/figures-ui-en.svg"],
   },
 };
 
@@ -125,7 +125,7 @@ export default function ScientificFigureGeneratorPage() {
 
           <div className={styles.editorStage}>
             <div className={styles.stageBar}><span>SCINEST FIGURE WORKSPACE</span><b>Layers · Text · AI selection</b></div>
-            <img src="/scinest/figures-ui-en.webp" alt="SciNest scientific figure editor with editable layers and text" width="1280" height="640" />
+            <img src="/scinest/figures-ui-en.svg" alt="SciNest scientific figure editor with editable layers and text" width="1280" height="720" />
             <div className={`${styles.callout} ${styles.calloutLayers}`}><b>01</b><span>Drag separate layers</span></div>
             <div className={`${styles.callout} ${styles.calloutText}`}><b>02</b><span>Edit text directly</span></div>
             <div className={`${styles.callout} ${styles.calloutAi}`}><b>03</b><span>Regenerate selected area</span></div>
@@ -152,31 +152,20 @@ export default function ScientificFigureGeneratorPage() {
 
         <section className={`${styles.section} ${styles.editorSection}`} id="layers">
           <div className={styles.editorCopy}>
-            <p className={styles.kicker}>SEPARATE LAYERS, NOT ONE LOCKED IMAGE</p>
-            <h2>Select it. Drag it. Reorder it. Keep editing.</h2>
-            <p>The figure workspace treats supported labels, nodes, arrows and sections as separate objects instead of one flattened picture.</p>
+            <p className={styles.kicker}>SEPARATE ELEMENTS, NOT ONE LOCKED IMAGE</p>
+            <h2>Select one element. Correct only that element.</h2>
+            <p>The figure workspace keeps supported visual elements selectable after generation, so one weak part does not force a complete redraw.</p>
             <ul>
-              <li>Move an element without moving the whole figure.</li>
-              <li>Change the order of overlapping layers.</li>
-              <li>Adjust visual hierarchy after generation.</li>
-              <li>Keep the approved parts while repairing one relationship.</li>
+              <li>Select an individual visual element on the canvas.</li>
+              <li>Describe the correction in the layer-specific AI panel.</li>
+              <li>Keep the surrounding scientific composition in place.</li>
+              <li>Continue refining the figure instead of starting again.</li>
             </ul>
           </div>
-          <div className={styles.layerPanel} aria-label="Layer editing demonstration">
-            <div className={styles.layerPanelHeader}><span>FIGURE LAYERS</span><b>Drag to reorder</b></div>
-            <div className={styles.layerRows}>
-              {['Annotations', 'Validation stage', 'Mechanism arrows', 'Cell structure', 'Background'].map((layer, index) => (
-                <div className={styles.layerRow} key={layer}><span className={styles.drag}>⠿</span><strong>{layer}</strong><em>Layer {5 - index}</em></div>
-              ))}
-            </div>
-            <div className={styles.canvasMock}>
-              <div className={`${styles.node} ${styles.nodeA}`}>Input</div>
-              <div className={`${styles.node} ${styles.nodeB} ${styles.selected}`}>Mechanism<span className={`${styles.handle} ${styles.h1}`} /><span className={`${styles.handle} ${styles.h2}`} /></div>
-              <div className={`${styles.node} ${styles.nodeC}`}>Response</div>
-              <div className={`${styles.node} ${styles.nodeD}`}>Validation</div>
-              <i className={`${styles.arrow} ${styles.arrow1}`} /><i className={`${styles.arrow} ${styles.arrow2}`} /><i className={`${styles.arrow} ${styles.arrow3}`} />
-            </div>
-          </div>
+          <figure className={styles.productProof}>
+            <img src="/scinest/figure-layer-edit-en.svg" alt="SciNest scientific figure editor with one DNA element selected and a layer-specific AI edit panel" width="1200" height="760" />
+            <figcaption>Select one element, describe the correction and keep the surrounding figure intact.</figcaption>
+          </figure>
         </section>
 
         <section className={`${styles.section} ${styles.aiSection}`} id="regenerate">
@@ -198,9 +187,21 @@ export default function ScientificFigureGeneratorPage() {
             <h2>Edit the labels directly. Do not ask an image model to spell them again.</h2>
             <p>SciNest separates editable labels from the generated visual layer, avoiding the common problem of distorted or unreadable lettering inside AI images.</p>
           </div>
-          <div className={styles.textGrid}>
-            <article className={styles.badText}><h3>Text baked into an AI image</h3><div className={styles.garble}>Mec han1sm R3sp0nse</div><p>A spelling correction can require another full image generation—and may introduce new errors elsewhere.</p></article>
-            <article className={styles.goodText}><h3>Editable SciNest label</h3><div className={styles.editableText}><span>TEXT LAYER · EDITING</span><strong>Mechanism response</strong></div><p>Click the label, rewrite it normally and keep the visual content untouched.</p></article>
+          <div className={styles.textProofGrid}>
+            <article className={styles.textProblem}>
+              <span>WHY THIS MATTERS</span>
+              <h3>A spelling correction should not redraw the science.</h3>
+              <p>When text is painted into an AI image, correcting one scientific term can introduce new errors across the figure.</p>
+              <ul>
+                <li>Select the label as its own object.</li>
+                <li>Rewrite terminology without rebuilding the visual.</li>
+                <li>Keep scientific names readable and under your control.</li>
+              </ul>
+            </article>
+            <figure className={styles.productProof}>
+              <img src="/scinest/figure-text-edit-en.svg" alt="SciNest scientific figure editor with the Fasciola spp. eggs label selected as an editable text object" width="1200" height="760" />
+              <figcaption>The label remains a separate text object while the scientific visual stays unchanged.</figcaption>
+            </figure>
           </div>
         </section>
 
