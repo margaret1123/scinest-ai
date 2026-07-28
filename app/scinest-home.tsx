@@ -160,6 +160,12 @@ const content = {
   },
 } as const;
 
+const productPages = {
+  writing: "/ai-thesis-writing-assistant",
+  figures: "/scientific-figure-generator",
+  powerpoint: "/ai-powerpoint-generator",
+} as const;
+
 export function SciNestHome({ locale }: { locale: Locale }) {
   const c = content[locale];
   const other = locale === "zh" ? "/" : "/zh";
@@ -169,6 +175,7 @@ export function SciNestHome({ locale }: { locale: Locale }) {
   const writingAlt = locale === "zh" ? "SciNest 可编辑论文与研究文稿工作区" : "SciNest editable thesis and academic writing workspace";
   const figureAlt = locale === "zh" ? "SciNest 科研图编辑界面" : "SciNest scientific figure editor";
   const pptAlt = locale === "zh" ? "SciNest 答辩PPT工作流" : "SciNest thesis defense presentation workflow";
+  const showProductLinks = locale === "en";
 
   return <div className={styles.page} lang={c.lang}>
     <div className={launchStyles.launchStrip}><strong>{c.strip}</strong><span>{c.stripOffer}</span></div>
@@ -186,9 +193,18 @@ export function SciNestHome({ locale }: { locale: Locale }) {
       <section className={`${styles.section} ${styles.darkCompare}`} id="why"><div className={styles.sectionHead}><p>{c.painKicker}</p><h2>{c.painTitle}</h2><span>{c.painBody}</span></div><div className={styles.compare}><article className={styles.old}><h3>{c.oldTitle}</h3><ol>{c.old.map((x, i) => <li key={x}><b>{String(i + 1).padStart(2, "0")}</b>{x}</li>)}</ol></article><div className={styles.bridge}>→</div><article className={styles.new}><h3>{c.newTitle}</h3><ol>{c.newer.map((x, i) => <li key={x}><b>{String(i + 1).padStart(2, "0")}</b>{x}</li>)}</ol></article></div></section>
       <section className={`${styles.section} ${styles.workflow}`} id="workflow"><div className={styles.sectionHead}><p>{c.flowKicker}</p><h2>{c.flowTitle}</h2><span>{c.flowBody}</span></div><div className={styles.flow}>{c.flow.map(([n, t, b]) => <article key={n}><b>{n}</b><h3>{t}</h3><p>{b}</p></article>)}</div></section>
       <section className={`${styles.section} ${styles.outputs}`} id="outputs"><div className={styles.sectionHead}><p>{c.outputKicker}</p><h2>{c.outputTitle}</h2><span>{c.outputBody}</span></div>
-        <article className={styles.outputRow}><div><small>{c.outputs[0][0]}</small><h3>{c.outputs[0][1]}</h3><p>{c.outputs[0][2]}</p><ul>{c.outputs[0][3].map(x => <li key={x}>✓ {x}</li>)}</ul></div><figure><img src={image("writing-ui")} alt={writingAlt} width="1280" height="800" loading="lazy" /></figure></article>
-        <article className={styles.figureFeature}><div><small>{c.outputs[1][0]}</small><h3>{c.outputs[1][1]}</h3><p>{c.outputs[1][2]}</p><ul>{c.outputs[1][3].map(x => <li key={x}>✓ {x}</li>)}</ul></div><figure><img src={image("figures-ui")} alt={figureAlt} width="1280" height="640" loading="lazy" /></figure></article>
-        <article className={`${styles.outputRow} ${styles.reverse}`}><figure><img src={image("ppt-ui")} alt={pptAlt} width="1280" height="800" loading="lazy" /></figure><div><small>{c.outputs[2][0]}</small><h3>{c.outputs[2][1]}</h3><p>{c.outputs[2][2]}</p><ul>{c.outputs[2][3].map(x => <li key={x}>✓ {x}</li>)}</ul></div></article>
+        <article className={styles.outputRow}>
+          <div><small>{c.outputs[0][0]}</small><h3>{c.outputs[0][1]}</h3><p>{c.outputs[0][2]}</p><ul>{c.outputs[0][3].map(x => <li key={x}>✓ {x}</li>)}</ul>{showProductLinks && <div className={styles.ctas}><a className={styles.secondary} href={productPages.writing}>Explore academic writing →</a></div>}</div>
+          <figure>{showProductLinks ? <a href={productPages.writing} aria-label="Explore the SciNest academic writing assistant" style={{ display: "block" }}><img src={image("writing-ui")} alt={writingAlt} width="1280" height="800" loading="lazy" /></a> : <img src={image("writing-ui")} alt={writingAlt} width="1280" height="800" loading="lazy" />}</figure>
+        </article>
+        <article className={styles.figureFeature}>
+          <div><small>{c.outputs[1][0]}</small><h3>{c.outputs[1][1]}</h3><p>{c.outputs[1][2]}</p><ul>{c.outputs[1][3].map(x => <li key={x}>✓ {x}</li>)}</ul>{showProductLinks && <div className={styles.ctas} style={{ justifyContent: "center" }}><a className={styles.secondary} href={productPages.figures}>Explore editable scientific figures →</a></div>}</div>
+          <figure>{showProductLinks ? <a href={productPages.figures} aria-label="Explore the SciNest editable scientific figure generator" style={{ display: "block" }}><img src={image("figures-ui")} alt={figureAlt} width="1280" height="640" loading="lazy" /></a> : <img src={image("figures-ui")} alt={figureAlt} width="1280" height="640" loading="lazy" />}</figure>
+        </article>
+        <article className={`${styles.outputRow} ${styles.reverse}`}>
+          <figure>{showProductLinks ? <a href={productPages.powerpoint} aria-label="Explore the SciNest editable PowerPoint generator" style={{ display: "block" }}><img src={image("ppt-ui")} alt={pptAlt} width="1280" height="800" loading="lazy" /></a> : <img src={image("ppt-ui")} alt={pptAlt} width="1280" height="800" loading="lazy" />}</figure>
+          <div><small>{c.outputs[2][0]}</small><h3>{c.outputs[2][1]}</h3><p>{c.outputs[2][2]}</p><ul>{c.outputs[2][3].map(x => <li key={x}>✓ {x}</li>)}</ul>{showProductLinks && <div className={styles.ctas}><a className={styles.secondary} href={productPages.powerpoint}>Explore editable PowerPoint →</a></div>}</div>
+        </article>
       </section>
       <section className={`${styles.section} ${styles.bento}`}><div className={styles.bentoIntro}><p className={styles.kicker}>{c.bentoKicker}</p><h2>{c.bentoTitle}</h2><p>{c.bentoBody}</p></div><article className={styles.bentoMain}><span>01</span><h3>{c.contextTitle}</h3><p>{c.contextBody}</p></article><article><span>02</span><h3>{c.editTitle}</h3><p>{c.editBody}</p></article><article><span>03</span><h3>{c.modelTitle}</h3><p>{c.modelBody}</p></article></section>
       <section className={styles.section} id="pricing"><div className={styles.sectionHead}><p>{c.planKicker}</p><h2>{c.planTitle}</h2></div><div className={launchStyles.planGrid}><article className={launchStyles.planCard}><span className={launchStyles.planBadge}>FREE</span><h3>{c.freeName}</h3><p>{c.freeDesc}</p><ul>{c.freeFeatures.map(x => <li key={x}><span>✓</span>{x}</li>)}</ul></article><article className={`${launchStyles.planCard} ${launchStyles.planCardPro}`}><span className={launchStyles.planBadge}>PRO</span><h3>{c.proName}</h3><p>{c.proDesc}</p><ul>{c.proFeatures.map(x => <li key={x}><span>✓</span>{x}</li>)}</ul></article></div><p className={launchStyles.planNote}>{c.planNote}</p><div className={styles.ctas} style={{justifyContent:"center"}}><a className={styles.primary} href={registerUrl}>{c.primary} ↗</a></div></section>
