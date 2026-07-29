@@ -45,8 +45,18 @@ export function DashboardContent({ email, hasFoundingEdition, earlyBirdEligible,
       </header>
 
       <main style={{ maxWidth: 860, margin: "0 auto", padding: "48px 24px" }}>
-        <h1 style={{ marginBottom: 8 }}>账户与预开放资格</h1>
-        <p style={{ color: "#607477", marginTop: 0 }}>SciNest Free 计划于 2026 年 8 月 1 日开放 Windows 下载。</p>
+        <h1 style={{ marginBottom: 8 }}>账户与下载</h1>
+
+        {/* ── Download section ── */}
+        <section style={{ marginTop: 24, padding: 24, borderRadius: 20, background: "#fff", border: "1px solid #dcebea" }}>
+          <h2 style={{ marginTop: 0 }}>下载 SciNest</h2>
+          <div style={{ display: "flex", gap: 12, flexWrap: "wrap", marginBottom: 12 }}>
+            <a href="https://github.com/margaret1123/scinest-ai/releases/latest/download/SciNest-win-x64.exe" style={{ padding: "10px 18px", borderRadius: 10, background: "#0D9488", color: "#fff", textDecoration: "none", fontWeight: 700 }}>Windows</a>
+            <a href="https://github.com/margaret1123/scinest-ai/releases/latest/download/SciNest-mac-arm64.dmg" style={{ padding: "10px 18px", borderRadius: 10, background: "#f1f8f7", color: "#0D9488", textDecoration: "none" }}>macOS</a>
+            <a href="https://github.com/margaret1123/scinest-ai/releases/latest/download/SciNest-linux-x86_64.AppImage" style={{ padding: "10px 18px", borderRadius: 10, background: "#f1f8f7", color: "#0D9488", textDecoration: "none" }}>Linux</a>
+          </div>
+          <p style={{ color: "#94A3A8", fontSize: 13, margin: 0 }}>Windows 可能提示 SmartScreen 警告，点击「更多信息」→「仍要运行」。macOS 首次打开需右键选择「打开」。</p>
+        </section>
 
         {license === "pro_founding" ? (
           <section style={{ marginTop: 32, padding: 32, borderRadius: 24, background: "#0c2d32", color: "#fff", border: "1px solid #1a4a52" }}>
@@ -59,11 +69,8 @@ export function DashboardContent({ email, hasFoundingEdition, earlyBirdEligible,
             <p style={{ color: earlyBirdEligible ? "#72e3d4" : "#087c75", fontWeight: 700, marginTop: 0 }}>{earlyBirdEligible ? "EARLY BIRD PRO" : "SCINEST FREE"}</p>
             <h2>{earlyBirdEligible ? "30天 Pro 资格已锁定" : "账户已注册"}</h2>
             <p style={{ color: earlyBirdEligible ? "#c2dad7" : "#607477", lineHeight: 1.7 }}>
-              {earlyBirdEligible ? "下载开放后，你将获得30天 SciNest Pro。无需银行卡，不会自动扣费；到期后自动回到 Free。" : "你可以在下载开放后使用 SciNest Free。公开付款目前未开放。"}
+              {earlyBirdEligible ? "你已获得30天 SciNest Pro。无需银行卡，不会自动扣费；到期后自动回到 Free。" : "你当前使用 SciNest Free。公开付款目前未开放。"}
             </p>
-            <div style={{ padding: 16, borderRadius: 14, background: earlyBirdEligible ? "rgba(255,255,255,.08)" : "#f1f8f7", color: earlyBirdEligible ? "#d8efec" : "#40595c" }}>
-              下载入口将在安装包完成验证后开放。当前页面不会提供无效下载链接。
-            </div>
           </section>
         )}
 

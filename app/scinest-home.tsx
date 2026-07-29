@@ -19,7 +19,7 @@ const content = {
     offerBody: "No credit card. No automatic charge. Pro access starts immediately, then returns to the Free plan after 30 days unless you choose to upgrade.",
     primary: "Download Free",
     secondary: "See Free vs Pro",
-    note: "You pay AI providers directly at cost — no markup, no SciNest usage limits",
+    note: "You pay AI providers directly at cost. Windows may show a SmartScreen warning — click More info → Run anyway.",
     stats: [
       ["Unlimited generation", "BYOK means no AI markup and no usage limits — you pay your chosen provider directly at cost"],
       ["Scientific figures", "Generate research visuals; Pro unlocks layer editing and watermark-free export"],
@@ -96,7 +96,7 @@ const content = {
     offerBody: "无需银行卡，不会自动扣费。Pro 权益即时生效，30天后自动回到 Free，是否升级由你决定。",
     primary: "免费下载",
     secondary: "查看 Free 与 Pro",
-    note: "模型调用费通过你自己的 API 支付 — SciNest 不抽成、不限次数",
+    note: "模型调用费通过你自己的 API 支付。Windows 可能提示 SmartScreen 警告，点击「更多信息」→「仍要运行」即可。",
     stats: [
       ["生成不限次数", "Free 与 Pro 均使用你自己的 AI Key，SciNest 不限制生成次数"],
       ["科研图", "两种方案都能生成；Pro 解锁图层编辑和无水印导出"],
