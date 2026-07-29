@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="public/scinest/hero-en.svg" alt="SciNest Hero" width="100%" />
+  <img src="public/scinest/hero-en.webp" alt="SciNest Hero" width="100%" />
 </p>
 
 <h1 align="center">SciNest（科研小棉袄）</h1>
