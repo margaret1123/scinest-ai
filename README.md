@@ -86,8 +86,8 @@ SciNest works with 12+ model providers. Bring your own key from OpenAI, Anthropi
 ### 3. Create a project
 Add your research materials (PDF, DOCX, TXT, MD), write your goal, and start generating.
 
-### 4. Edit & export
-Every output is editable — text, labels, arrows, slide content. Export to PDF, SVG, PNG, PPTX, or DOCX.
+### 4. Export
+Free users can export generated results to basic formats. Pro users get full editing capabilities and professional export formats (DOCX, PPTX, SVG).
 
 ---
 
@@ -97,17 +97,30 @@ OpenAI · Anthropic Claude · DeepSeek · Google Gemini · Moonshot (Kimi) · Zh
 
 ---
 
-## License Tiers
+## Free vs Pro
 
-| | Free | Pro |
+**Generation is always unlimited.** You control the cost through your own API keys.
+The difference is in what you can do with the results.
+
+| | SciNest Free | SciNest Pro |
 |---|---|---|
-| Writing | 3 / month | Unlimited |
-| Figures | 3 / month | Unlimited |
-| PPT | 1 / month | Unlimited |
-| Reference exports | 3 / month | Unlimited |
-| Export watermark | Watermarked | Clean |
+| **Writing** generate | Unlimited | Unlimited |
+| **Writing** edit | — | ✅ |
+| **Writing** export | 2 / month | Unlimited (DOCX, PDF) |
+| **Figures** generate | Unlimited | Unlimited |
+| **Figures** edit (labels, layers) | — | ✅ |
+| **Figures** export | 2 / month, watermarked | Unlimited, watermark-free (SVG, PNG) |
+| **PPT** generate | Unlimited | Unlimited |
+| **PPT** edit | — | ✅ |
+| **PPT** export | PDF, watermarked, unlimited | PDF + editable PPTX, unlimited |
+| **Active projects** | 1 | Unlimited |
+| **AI API keys** | Your own | Your own |
 
-Upgrade at [scinest.ai](https://scinest.ai).
+### Early Bird
+
+Register before August 1, 2026 and get **30 days of Pro free**. No credit card required.
+
+[Upgrade to Pro](https://scinest.ai) · [Download Free](https://github.com/margaret1123/scinest-ai/releases/latest)
 
 ---
 
