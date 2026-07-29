@@ -175,7 +175,7 @@ export function SciNestHome({ locale }: { locale: Locale }) {
   const downloads = {
     win: `${downloadBase}/SciNest-win-x64.exe`,
     mac: `${downloadBase}/SciNest-mac-arm64.dmg`,
-    linux: `${downloadBase}/SciNest-linux-x64.AppImage`,
+    linux: `${downloadBase}/SciNest-linux-x86_64.AppImage`,
   };
   const heroAlt = locale === "zh" ? "SciNest 论文修改、科研图与答辩PPT工作台" : "SciNest thesis revision, scientific figure and thesis defense presentation workspace";
   const writingAlt = locale === "zh" ? "SciNest 可编辑论文与研究文稿工作区" : "SciNest editable thesis and academic writing workspace";
