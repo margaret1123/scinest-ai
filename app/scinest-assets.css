@@ -1,6 +1,2 @@
-[lang="zh-CN"] img[alt="SciNest continuous research workspace"],
-[lang="zh-CN"] img[alt="SciNest writing workspace"],
-[lang="zh-CN"] img[alt="SciNest scientific figure editor"],
-[lang="zh-CN"] img[alt="SciNest presentation workflow"] {
-  content: url('/scinest/real-ui-zh.webp');
-}
+/* Homepage screenshots use the verified English product assets for every locale.
+   Localized text remains in HTML; screenshots are not duplicated by language. */

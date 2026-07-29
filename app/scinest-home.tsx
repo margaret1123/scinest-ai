@@ -90,7 +90,7 @@ const content = {
     strip: "SciNest Free 将于 2026 年 8 月 1 日开放下载",
     stripOffer: "上线前注册，免费获得30天 Pro。",
     eyebrow: "预开放 · WINDOWS 桌面端 · 使用自己的 AI KEY",
-    title: <>一个截止日期。<em>论文要改，科研图要补，答辩 PPT 还没做。</em></>,
+    title: <>材料多，任务重，时间紧，<br /><em>真正可编辑的</em><br />万字长文、图片、PPT，SciNest 全线解决方案</>,
     intro: "把论文、文献、草稿、数据和导师意见放进同一个项目，继续完成文稿、科研图与答辩 PPT，不必每换一个工具就重新解释和返工。",
     offerTitle: "8月1日前注册，免费获得30天 SciNest Pro。",
     offerBody: "无需银行卡，不会自动扣费。下载开放后开始计算 Pro 权益，30天后自动回到 Free，是否升级由你决定。",
@@ -160,15 +160,24 @@ const content = {
   },
 } as const;
 
+const productPages = {
+  writing: "/ai-thesis-writing-assistant",
+  figures: "/scientific-figure-generator",
+  powerpoint: "/ai-powerpoint-generator",
+} as const;
+
 export function SciNestHome({ locale }: { locale: Locale }) {
   const c = content[locale];
   const other = locale === "zh" ? "/" : "/zh";
-  const image = (name: string) => `/scinest/${name}-${locale}.webp`;
+  const image = (name: string) => `/scinest/${name}-en.webp`;
   const registerUrl = "/login?redirect=/dashboard&intent=early-bird";
   const heroAlt = locale === "zh" ? "SciNest 论文修改、科研图与答辩PPT工作台" : "SciNest thesis revision, scientific figure and thesis defense presentation workspace";
   const writingAlt = locale === "zh" ? "SciNest 可编辑论文与研究文稿工作区" : "SciNest editable thesis and academic writing workspace";
   const figureAlt = locale === "zh" ? "SciNest 科研图编辑界面" : "SciNest scientific figure editor";
   const pptAlt = locale === "zh" ? "SciNest 答辩PPT工作流" : "SciNest thesis defense presentation workflow";
+  const productLinkLabels = locale === "zh"
+    ? { writing: "查看论文写作详情 →", figures: "查看科研图详情 →", powerpoint: "查看可编辑 PPT 详情 →" }
+    : { writing: "Explore academic writing →", figures: "Explore editable scientific figures →", powerpoint: "Explore editable PowerPoint →" };
 
   return <div className={styles.page} lang={c.lang}>
     <div className={launchStyles.launchStrip}><strong>{c.strip}</strong><span>{c.stripOffer}</span></div>
@@ -186,9 +195,18 @@ export function SciNestHome({ locale }: { locale: Locale }) {
       <section className={`${styles.section} ${styles.darkCompare}`} id="why"><div className={styles.sectionHead}><p>{c.painKicker}</p><h2>{c.painTitle}</h2><span>{c.painBody}</span></div><div className={styles.compare}><article className={styles.old}><h3>{c.oldTitle}</h3><ol>{c.old.map((x, i) => <li key={x}><b>{String(i + 1).padStart(2, "0")}</b>{x}</li>)}</ol></article><div className={styles.bridge}>→</div><article className={styles.new}><h3>{c.newTitle}</h3><ol>{c.newer.map((x, i) => <li key={x}><b>{String(i + 1).padStart(2, "0")}</b>{x}</li>)}</ol></article></div></section>
       <section className={`${styles.section} ${styles.workflow}`} id="workflow"><div className={styles.sectionHead}><p>{c.flowKicker}</p><h2>{c.flowTitle}</h2><span>{c.flowBody}</span></div><div className={styles.flow}>{c.flow.map(([n, t, b]) => <article key={n}><b>{n}</b><h3>{t}</h3><p>{b}</p></article>)}</div></section>
       <section className={`${styles.section} ${styles.outputs}`} id="outputs"><div className={styles.sectionHead}><p>{c.outputKicker}</p><h2>{c.outputTitle}</h2><span>{c.outputBody}</span></div>
-        <article className={styles.outputRow}><div><small>{c.outputs[0][0]}</small><h3>{c.outputs[0][1]}</h3><p>{c.outputs[0][2]}</p><ul>{c.outputs[0][3].map(x => <li key={x}>✓ {x}</li>)}</ul></div><figure><img src={image("writing-ui")} alt={writingAlt} width="1280" height="800" loading="lazy" /></figure></article>
-        <article className={styles.figureFeature}><div><small>{c.outputs[1][0]}</small><h3>{c.outputs[1][1]}</h3><p>{c.outputs[1][2]}</p><ul>{c.outputs[1][3].map(x => <li key={x}>✓ {x}</li>)}</ul></div><figure><img src={image("figures-ui")} alt={figureAlt} width="1280" height="640" loading="lazy" /></figure></article>
-        <article className={`${styles.outputRow} ${styles.reverse}`}><figure><img src={image("ppt-ui")} alt={pptAlt} width="1280" height="800" loading="lazy" /></figure><div><small>{c.outputs[2][0]}</small><h3>{c.outputs[2][1]}</h3><p>{c.outputs[2][2]}</p><ul>{c.outputs[2][3].map(x => <li key={x}>✓ {x}</li>)}</ul></div></article>
+        <article className={styles.outputRow}>
+          <div><small>{c.outputs[0][0]}</small><h3>{c.outputs[0][1]}</h3><p>{c.outputs[0][2]}</p><ul>{c.outputs[0][3].map(x => <li key={x}>✓ {x}</li>)}</ul><div className={styles.ctas}><a className={styles.secondary} href={productPages.writing}>{productLinkLabels.writing}</a></div></div>
+          <figure><a href={productPages.writing} aria-label={productLinkLabels.writing} style={{ display: "block" }}><img src={image("writing-ui")} alt={writingAlt} width="1280" height="800" loading="lazy" /></a></figure>
+        </article>
+        <article className={styles.figureFeature}>
+          <div><small>{c.outputs[1][0]}</small><h3>{c.outputs[1][1]}</h3><p>{c.outputs[1][2]}</p><ul>{c.outputs[1][3].map(x => <li key={x}>✓ {x}</li>)}</ul><div className={styles.ctas} style={{ justifyContent: "center" }}><a className={styles.secondary} href={productPages.figures}>{productLinkLabels.figures}</a></div></div>
+          <figure><a href={productPages.figures} aria-label={productLinkLabels.figures} style={{ display: "block" }}><img src={image("figures-ui")} alt={figureAlt} width="1280" height="640" loading="lazy" /></a></figure>
+        </article>
+        <article className={`${styles.outputRow} ${styles.reverse}`}>
+          <figure><a href={productPages.powerpoint} aria-label={productLinkLabels.powerpoint} style={{ display: "block" }}><img src={image("ppt-ui")} alt={pptAlt} width="1280" height="800" loading="lazy" /></a></figure>
+          <div><small>{c.outputs[2][0]}</small><h3>{c.outputs[2][1]}</h3><p>{c.outputs[2][2]}</p><ul>{c.outputs[2][3].map(x => <li key={x}>✓ {x}</li>)}</ul><div className={styles.ctas}><a className={styles.secondary} href={productPages.powerpoint}>{productLinkLabels.powerpoint}</a></div></div>
+        </article>
       </section>
       <section className={`${styles.section} ${styles.bento}`}><div className={styles.bentoIntro}><p className={styles.kicker}>{c.bentoKicker}</p><h2>{c.bentoTitle}</h2><p>{c.bentoBody}</p></div><article className={styles.bentoMain}><span>01</span><h3>{c.contextTitle}</h3><p>{c.contextBody}</p></article><article><span>02</span><h3>{c.editTitle}</h3><p>{c.editBody}</p></article><article><span>03</span><h3>{c.modelTitle}</h3><p>{c.modelBody}</p></article></section>
       <section className={styles.section} id="pricing"><div className={styles.sectionHead}><p>{c.planKicker}</p><h2>{c.planTitle}</h2></div><div className={launchStyles.planGrid}><article className={launchStyles.planCard}><span className={launchStyles.planBadge}>FREE</span><h3>{c.freeName}</h3><p>{c.freeDesc}</p><ul>{c.freeFeatures.map(x => <li key={x}><span>✓</span>{x}</li>)}</ul></article><article className={`${launchStyles.planCard} ${launchStyles.planCardPro}`}><span className={launchStyles.planBadge}>PRO</span><h3>{c.proName}</h3><p>{c.proDesc}</p><ul>{c.proFeatures.map(x => <li key={x}><span>✓</span>{x}</li>)}</ul></article></div><p className={launchStyles.planNote}>{c.planNote}</p><div className={styles.ctas} style={{justifyContent:"center"}}><a className={styles.primary} href={registerUrl}>{c.primary} ↗</a></div></section>

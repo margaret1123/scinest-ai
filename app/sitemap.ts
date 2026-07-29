@@ -3,12 +3,18 @@ import type { MetadataRoute } from "next";
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://scinest-ai.vercel.app";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const lastModified = new Date("2026-07-25T00:00:00.000Z");
-  const languages = {
+  const lastModified = new Date("2026-07-29T00:00:00.000Z");
+  const homeLanguages = {
     en: `${siteUrl}/`,
     "zh-CN": `${siteUrl}/zh`,
     "x-default": `${siteUrl}/`,
   };
+
+  const productPages = [
+    "ai-powerpoint-generator",
+    "scientific-figure-generator",
+    "ai-thesis-writing-assistant",
+  ];
 
   return [
     {
@@ -16,15 +22,38 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified,
       changeFrequency: "weekly",
       priority: 1,
-      alternates: { languages },
+      alternates: { languages: homeLanguages },
     },
     {
       url: `${siteUrl}/zh`,
       lastModified,
       changeFrequency: "weekly",
       priority: 0.9,
-      alternates: { languages },
+      alternates: { languages: homeLanguages },
     },
+    ...productPages.flatMap((slug) => {
+      const languages = {
+        en: `${siteUrl}/${slug}`,
+        "zh-CN": `${siteUrl}/zh/${slug}`,
+        "x-default": `${siteUrl}/${slug}`,
+      };
+      return [
+        {
+          url: `${siteUrl}/${slug}`,
+          lastModified,
+          changeFrequency: "weekly" as const,
+          priority: 0.9,
+          alternates: { languages },
+        },
+        {
+          url: `${siteUrl}/zh/${slug}`,
+          lastModified,
+          changeFrequency: "weekly" as const,
+          priority: 0.85,
+          alternates: { languages },
+        },
+      ];
+    }),
     {
       url: `${siteUrl}/privacy`,
       lastModified,

@@ -1,0 +1,148 @@
+#outputs article > div a[href="/ai-thesis-writing-assistant"],
+#outputs article > div a[href="/scientific-figure-generator"],
+#outputs article > div a[href="/ai-powerpoint-generator"] {
+  position: relative;
+  isolation: isolate;
+  min-height: 54px;
+  padding: 15px 24px;
+  border: 1px solid rgba(7, 117, 105, 0.42);
+  border-radius: 999px;
+  background:
+    radial-gradient(circle at 18% 0%, rgba(255, 255, 255, 0.9), transparent 42%),
+    linear-gradient(135deg, #e9fbf4 0%, #c9f4e6 54%, #a9ead7 100%);
+  color: #075c57;
+  font-weight: 850;
+  letter-spacing: -0.01em;
+  box-shadow:
+    0 16px 34px rgba(7, 117, 105, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    border-color 180ms ease,
+    filter 180ms ease;
+}
+
+#outputs article > div a[href="/ai-thesis-writing-assistant"]::before,
+#outputs article > div a[href="/scientific-figure-generator"]::before,
+#outputs article > div a[href="/ai-powerpoint-generator"]::before {
+  content: "";
+  width: 9px;
+  height: 9px;
+  margin-right: 12px;
+  border-radius: 999px;
+  background: #079987;
+  box-shadow: 0 0 0 6px rgba(7, 153, 135, 0.12);
+}
+
+#outputs article > div a[href="/ai-thesis-writing-assistant"]:hover,
+#outputs article > div a[href="/scientific-figure-generator"]:hover,
+#outputs article > div a[href="/ai-powerpoint-generator"]:hover {
+  transform: translateY(-3px);
+  border-color: rgba(7, 117, 105, 0.72);
+  filter: saturate(1.08);
+  box-shadow:
+    0 22px 44px rgba(7, 117, 105, 0.24),
+    inset 0 1px 0 rgba(255, 255, 255, 0.95);
+}
+
+#outputs article > div a[href="/ai-thesis-writing-assistant"]:focus-visible,
+#outputs article > div a[href="/scientific-figure-generator"]:focus-visible,
+#outputs article > div a[href="/ai-powerpoint-generator"]:focus-visible {
+  outline: 3px solid rgba(7, 153, 135, 0.32);
+  outline-offset: 4px;
+}
+
+#outputs figure > a[href="/ai-thesis-writing-assistant"],
+#outputs figure > a[href="/scientific-figure-generator"],
+#outputs figure > a[href="/ai-powerpoint-generator"] {
+  position: relative;
+  display: block;
+  border-radius: 28px;
+  outline: 1px solid transparent;
+  transition:
+    transform 220ms ease,
+    box-shadow 220ms ease,
+    outline-color 220ms ease;
+}
+
+#outputs figure > a[href="/ai-thesis-writing-assistant"]::after,
+#outputs figure > a[href="/scientific-figure-generator"]::after,
+#outputs figure > a[href="/ai-powerpoint-generator"]::after {
+  content: "View details →";
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  padding: 11px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.62);
+  border-radius: 999px;
+  background: rgba(7, 92, 87, 0.9);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 850;
+  letter-spacing: 0.01em;
+  box-shadow: 0 12px 30px rgba(6, 54, 55, 0.24);
+  backdrop-filter: blur(10px);
+  pointer-events: none;
+}
+
+html[lang="zh-CN"] #outputs figure > a[href="/ai-thesis-writing-assistant"]::after,
+html[lang="zh-CN"] #outputs figure > a[href="/scientific-figure-generator"]::after,
+html[lang="zh-CN"] #outputs figure > a[href="/ai-powerpoint-generator"]::after {
+  content: "查看详情 →";
+}
+
+#outputs figure > a[href="/ai-thesis-writing-assistant"]:hover,
+#outputs figure > a[href="/scientific-figure-generator"]:hover,
+#outputs figure > a[href="/ai-powerpoint-generator"]:hover {
+  transform: translateY(-5px);
+  outline-color: rgba(7, 153, 135, 0.5);
+  box-shadow: 0 30px 72px rgba(7, 94, 84, 0.2);
+}
+
+#outputs figure > a[href="/ai-thesis-writing-assistant"]:focus-visible,
+#outputs figure > a[href="/scientific-figure-generator"]:focus-visible,
+#outputs figure > a[href="/ai-powerpoint-generator"]:focus-visible {
+  outline: 3px solid rgba(7, 153, 135, 0.38);
+  outline-offset: 5px;
+}
+
+#outputs figure > a[href="/ai-thesis-writing-assistant"] img,
+#outputs figure > a[href="/scientific-figure-generator"] img,
+#outputs figure > a[href="/ai-powerpoint-generator"] img {
+  transition: filter 220ms ease, transform 220ms ease;
+}
+
+#outputs figure > a[href="/ai-thesis-writing-assistant"]:hover img,
+#outputs figure > a[href="/scientific-figure-generator"]:hover img,
+#outputs figure > a[href="/ai-powerpoint-generator"]:hover img {
+  filter: saturate(1.04) contrast(1.02);
+}
+
+@media (max-width: 640px) {
+  #outputs article > div a[href="/ai-thesis-writing-assistant"],
+  #outputs article > div a[href="/scientific-figure-generator"],
+  #outputs article > div a[href="/ai-powerpoint-generator"] {
+    width: 100%;
+    padding-inline: 20px;
+  }
+
+  #outputs figure > a[href="/ai-thesis-writing-assistant"]::after,
+  #outputs figure > a[href="/scientific-figure-generator"]::after,
+  #outputs figure > a[href="/ai-powerpoint-generator"]::after {
+    right: 12px;
+    bottom: 12px;
+    padding: 9px 13px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #outputs a[href="/ai-thesis-writing-assistant"],
+  #outputs a[href="/scientific-figure-generator"],
+  #outputs a[href="/ai-powerpoint-generator"],
+  #outputs a[href="/ai-thesis-writing-assistant"] img,
+  #outputs a[href="/scientific-figure-generator"] img,
+  #outputs a[href="/ai-powerpoint-generator"] img {
+    transition: none;
+  }
+}
