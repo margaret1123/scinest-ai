@@ -5,6 +5,7 @@ import path from "node:path";
 const root = process.cwd();
 const partDir = path.join(root, "scripts", "landing-assets");
 const outputDir = path.join(root, "public", "scinest");
+const partCharLength = 12_000;
 
 const assets = [
   {
@@ -45,14 +46,33 @@ function svgWrapper(imagePath, width, height) {
 await mkdir(outputDir, { recursive: true });
 
 for (const asset of assets) {
+  const expectedBase64Length = Math.ceil(asset.bytes / 3) * 4;
   const chunks = [];
+
   for (let index = 0; index < asset.partCount; index += 1) {
     const suffix = String(index).padStart(2, "0");
     const filename = path.join(partDir, `${asset.prefix}.${suffix}.b64part`);
-    chunks.push((await readFile(filename, "utf8")).trim());
+    const rawChunk = (await readFile(filename, "utf8")).replace(/\s+/g, "");
+    const consumed = index * partCharLength;
+    const expectedChunkLength = Math.min(partCharLength, expectedBase64Length - consumed);
+
+    if (rawChunk.length < expectedChunkLength) {
+      throw new Error(`${asset.name}: part ${suffix} is truncated (${rawChunk.length}/${expectedChunkLength} characters)`);
+    }
+
+    if (rawChunk.length > expectedChunkLength) {
+      console.log(`[landing-assets] trimming duplicate tail from ${asset.prefix}.${suffix}.b64part`);
+    }
+
+    chunks.push(rawChunk.slice(0, expectedChunkLength));
   }
 
-  const buffer = Buffer.from(chunks.join(""), "base64");
+  const encoded = chunks.join("");
+  if (encoded.length !== expectedBase64Length) {
+    throw new Error(`${asset.name}: expected ${expectedBase64Length} Base64 characters, received ${encoded.length}`);
+  }
+
+  const buffer = Buffer.from(encoded, "base64");
   assertWebP(buffer, asset);
 
   for (const output of asset.outputs) {
