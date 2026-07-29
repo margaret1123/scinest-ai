@@ -1,13 +1,10 @@
-/* Recovery for invalid SVG screenshot wrappers. Use existing binary product screenshots directly. */
+/* Recovery for invalid SVG screenshot wrappers and page-level proof corrections. */
 img[src="/scinest/writing-outline-detail-en.svg"],
-img[src="/scinest/writing-long-form-edit-en.svg"],
-img[src="/scinest/figures-ui-en.svg"],
-img[src="/scinest/ppt-outline-edit-en.svg"] {
+img[src="/scinest/figures-ui-en.svg"] {
   display: none !important;
 }
 
-figure:has(> img[src="/scinest/writing-outline-detail-en.svg"])::before,
-figure:has(> img[src="/scinest/writing-long-form-edit-en.svg"])::before {
+figure:has(> img[src="/scinest/writing-outline-detail-en.svg"])::before {
   content: "";
   display: block;
   width: 100%;
@@ -26,12 +23,53 @@ figure:has(> img[src="/scinest/writing-long-form-edit-en.svg"])::before {
   background: #fff url("/scinest/figures-ui-en.webp") center / contain no-repeat;
 }
 
-figure:has(> img[src="/scinest/ppt-outline-edit-en.svg"])::before {
-  content: "";
-  display: block;
+/* Writing: use the real 100k-character editor as the hero proof. */
+[class*="ai-thesis-writing-assistant_heroStage"] > img[src="/scinest/writing-ui-en.webp"] {
+  content: url("/scinest/writing-long-form-hero-en.svg");
   width: 100%;
-  aspect-ratio: 16 / 10;
-  background: #f7fbfa url("/scinest/ppt-ui-en.webp") center / contain no-repeat;
+  height: auto;
+  object-fit: contain;
+}
+
+[class*="ai-thesis-writing-assistant_heroStage"] > [class*="callout"] {
+  display: none !important;
+}
+
+/* The hero already proves long-form editing, so do not repeat the same screenshot below. */
+[class*="ai-thesis-writing-assistant_longForm"] figure {
+  display: none !important;
+}
+
+/* PowerPoint: replace the generic workspace with the real editable outline screenshot. */
+img[src="/scinest/ppt-outline-edit-en.svg"] {
+  content: url("/scinest/ppt-outline-edit-proof-en.svg");
+  display: block !important;
+  width: 100%;
+  height: auto;
+  max-height: none !important;
+  object-fit: contain;
+  background: #fff;
+}
+
+/* Product copy corrections requested for the PowerPoint page. */
+[class*="ai-powerpoint-generator_outlineSection"] [class*="sectionIntro"] h2,
+[class*="ai-powerpoint-generator_materialSection"] [class*="sectionIntro"] h2 {
+  font-size: 0 !important;
+  line-height: 0 !important;
+}
+
+[class*="ai-powerpoint-generator_outlineSection"] [class*="sectionIntro"] h2::after {
+  content: "Edit the AI-generated outline until it matches the presentation you want.";
+  display: block;
+  font-size: clamp(38px, 4.5vw, 60px);
+  line-height: 1.08;
+}
+
+[class*="ai-powerpoint-generator_materialSection"] [class*="sectionIntro"] h2::after {
+  content: "Generate every slide from selected references—not unsupported guesses.";
+  display: block;
+  font-size: clamp(38px, 4.5vw, 60px);
+  line-height: 1.08;
 }
 
 /* Remove the CSS placeholder and show the real PowerPoint workspace instead. */
@@ -66,5 +104,10 @@ a[class*="scientific-figure-generator_lightCta"]:hover {
 @media (max-width: 700px) {
   [class*="ai-powerpoint-generator_fileVisual"] {
     min-height: 280px !important;
+  }
+
+  [class*="ai-powerpoint-generator_outlineSection"] [class*="sectionIntro"] h2::after,
+  [class*="ai-powerpoint-generator_materialSection"] [class*="sectionIntro"] h2::after {
+    font-size: 38px;
   }
 }
