@@ -246,7 +246,7 @@ export default function AiPowerPointGeneratorPage() {
               <span style={proofPointStyle}><b style={proofNumberStyle}>02</b>Every generated slide title remains editable</span>
               <span style={proofPointStyle}><b style={proofNumberStyle}>03</b>Expand a slide to refine its actual content</span>
             </div>
-            <img src="/scinest/ppt-outline-edit-en.svg" alt="SciNest PowerPoint task settings with AI optimization and an editable generated slide outline" width="1200" height="760" style={proofImageStyle} loading="lazy" decoding="async" />
+            <img src="/scinest/ppt-outline-edit-proof-en.svg" alt="SciNest PowerPoint task settings with AI optimization and an editable generated slide outline" width="1200" height="760" style={proofImageStyle} loading="lazy" decoding="async" />
             <figcaption style={proofCaptionStyle}>The real task screen keeps presentation goals, audience, page count, template and every generated slide title editable before the deck is built.</figcaption>
           </figure>
         </section>
