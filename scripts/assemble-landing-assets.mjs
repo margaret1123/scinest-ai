@@ -38,6 +38,10 @@ function assertWebP(buffer, asset) {
   }
 }
 
+function svgWrapper(imagePath, width, height) {
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}"><image href="${imagePath}" width="${width}" height="${height}" preserveAspectRatio="xMidYMid meet"/></svg>`;
+}
+
 await mkdir(outputDir, { recursive: true });
 
 for (const asset of assets) {
@@ -56,3 +60,17 @@ for (const asset of assets) {
     console.log(`[landing-assets] wrote ${output} (${buffer.length} bytes)`);
   }
 }
+
+await writeFile(
+  path.join(outputDir, "ppt-outline-edit-proof-en.svg"),
+  svgWrapper("/scinest/ppt-outline-edit-proof-v3.webp", 900, 570),
+);
+await writeFile(
+  path.join(outputDir, "writing-long-form-hero-en.svg"),
+  svgWrapper("/scinest/writing-workspace-proof-v3.webp", 800, 507),
+);
+await writeFile(
+  path.join(outputDir, "writing-long-form-edit-en.svg"),
+  svgWrapper("/scinest/writing-long-form-proof-v3.webp", 800, 507),
+);
+console.log("[landing-assets] replaced legacy SVG wrappers with verified screenshot references");
