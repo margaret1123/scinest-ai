@@ -1,4 +1,4 @@
-/* Emergency recovery for invalid SVG screenshot wrappers. Use existing binary product screenshots directly. */
+/* Recovery for invalid SVG screenshot wrappers. Use existing binary product screenshots directly. */
 img[src="/scinest/writing-outline-detail-en.svg"],
 img[src="/scinest/writing-long-form-edit-en.svg"],
 img[src="/scinest/figures-ui-en.svg"],
@@ -34,8 +34,8 @@ figure:has(> img[src="/scinest/ppt-outline-edit-en.svg"])::before {
   background: #f7fbfa url("/scinest/ppt-ui-en.webp") center / contain no-repeat;
 }
 
-/* The original file-structure block was a CSS placeholder, not product proof. */
-.ai-powerpoint-generator_fileVisual__7vlZ6 {
+/* Remove the CSS placeholder and show the real PowerPoint workspace instead. */
+[class*="ai-powerpoint-generator_fileVisual"] {
   min-height: 420px !important;
   padding: 0 !important;
   overflow: hidden;
@@ -45,26 +45,26 @@ figure:has(> img[src="/scinest/ppt-outline-edit-en.svg"])::before {
   box-shadow: 0 24px 70px rgba(18, 72, 77, 0.12);
 }
 
-.ai-powerpoint-generator_fileVisual__7vlZ6 > * {
+[class*="ai-powerpoint-generator_fileVisual"] > * {
   display: none !important;
 }
 
-/* Ensure the final scientific-figure CTA remains readable on its dark section. */
-a.scientific-figure-generator_lightCta__kEL5A,
-.scientific-figure-generator_lightCta__kEL5A:visited {
+/* Keep the scientific-figure CTA readable on its dark section. */
+a[class*="scientific-figure-generator_lightCta"],
+a[class*="scientific-figure-generator_lightCta"]:visited {
   background: #ffffff !important;
   color: #075c57 !important;
   border: 1px solid rgba(255, 255, 255, 0.82) !important;
   box-shadow: 0 16px 36px rgba(0, 0, 0, 0.22);
 }
 
-a.scientific-figure-generator_lightCta__kEL5A:hover {
+a[class*="scientific-figure-generator_lightCta"]:hover {
   background: #dff7ef !important;
   color: #064c48 !important;
 }
 
 @media (max-width: 700px) {
-  .ai-powerpoint-generator_fileVisual__7vlZ6 {
+  [class*="ai-powerpoint-generator_fileVisual"] {
     min-height: 280px !important;
   }
 }
