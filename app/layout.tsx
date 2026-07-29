@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     template: "%s | SciNest",
   },
   description:
-    "SciNest is a pre-launch Windows research workspace for editable academic writing, scientific figures and thesis defense presentations. Register before August 1, 2026 for 30 days of Pro when downloads open.",
+    "SciNest is a Windows desktop research workspace for editable academic writing, scientific figures and thesis defense presentations. Free to download. Bring your own AI key. Register before August 1, 2026 for 30 days of Pro.",
   keywords: [
     "AI thesis writing assistant",
     "thesis revision assistant",
@@ -33,15 +33,15 @@ export const metadata: Metadata = {
     type: "website",
     url: "/",
     siteName: "SciNest",
-    title: "SciNest Free opens August 1 · 30 days of Pro for early registrations",
-    description: "Generate without SciNest limits. Upgrade for multiple projects, watermark-free figures, layer editing and editable PowerPoint export.",
+    title: "SciNest Free — Download Now · 30 days of Pro for early registrations",
+    description: "Free download. Unlimited SciNest generations with your own AI key. Upgrade for multiple projects, watermark-free figures, layer editing and editable PowerPoint export.",
     locale: "en_US",
     alternateLocale: ["zh_CN"],
   },
   twitter: {
     card: "summary_large_image",
-    title: "SciNest Free opens August 1",
-    description: "Register before launch and unlock 30 days of Pro. No card and no automatic charge.",
+    title: "SciNest Free — Download Now",
+    description: "Free download. Register now and unlock 30 days of Pro. No card and no automatic charge.",
   },
   verification: {
     google: "7mLz2N52DJFJlAp8T_pJAJIqmuC9E92pVTkNJnG3eMM",
@@ -72,7 +72,7 @@ const structuredData = [
     alternateName: "科研小棉袄",
     applicationCategory: "ProductivityApplication",
     operatingSystem: "Windows",
-    releaseNotes: "Pre-launch registration is open. Windows downloads are scheduled to open on August 1, 2026.",
+    releaseNotes: "SciNest Free is now available for Windows. Download and start with unlimited generations using your own AI key.",
     description:
       "A Windows desktop research productivity application that connects academic writing, scientific figures and thesis defense presentations inside one project.",
     featureList: [

@@ -104,7 +104,7 @@ export function RegisterForm() {
         </p>
 
         <p style={{ marginTop: 22, textAlign: "center", color: "#607477", fontSize: 13 }}>
-          SciNest Free opens August 1, 2026.
+          <a href="https://github.com/margaret1123/scinest-ai/releases/latest" style={{color: "#0D9488"}}>Download SciNest Free</a> · Available now for Windows
         </p>
       </section>
     </main>
