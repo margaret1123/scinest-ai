@@ -1,4 +1,6 @@
-/* Recovery for invalid SVG screenshot wrappers and page-level proof corrections. */
+/* Targeted recovery for legacy screenshot wrappers.
+   Product landing pages own their image paths: do not replace <img> sources with CSS
+   and do not hide proof figures that are present in the page markup. */
 img[src="/scinest/writing-outline-detail-en.svg"],
 img[src="/scinest/figures-ui-en.svg"] {
   display: none !important;
@@ -21,34 +23,6 @@ figure:has(> img[src="/scinest/writing-outline-detail-en.svg"])::before {
   aspect-ratio: 2 / 1;
   border-radius: 18px;
   background: #fff url("/scinest/figures-ui-en.webp") center / contain no-repeat;
-}
-
-/* Writing: use the real 100k-character editor as the hero proof. */
-[class*="ai-thesis-writing-assistant_heroStage"] > img[src="/scinest/writing-ui-en.webp"] {
-  content: url("/scinest/writing-long-form-hero-en.svg");
-  width: 100%;
-  height: auto;
-  object-fit: contain;
-}
-
-[class*="ai-thesis-writing-assistant_heroStage"] > [class*="callout"] {
-  display: none !important;
-}
-
-/* The hero already proves long-form editing, so do not repeat the same screenshot below. */
-[class*="ai-thesis-writing-assistant_longForm"] figure {
-  display: none !important;
-}
-
-/* PowerPoint: replace the generic workspace with the real editable outline screenshot. */
-img[src="/scinest/ppt-outline-edit-en.svg"] {
-  content: url("/scinest/ppt-outline-edit-proof-en.svg");
-  display: block !important;
-  width: 100%;
-  height: auto;
-  max-height: none !important;
-  object-fit: contain;
-  background: #fff;
 }
 
 /* Product copy corrections requested for the PowerPoint page. */
