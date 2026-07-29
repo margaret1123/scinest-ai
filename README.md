@@ -1,7 +1,3 @@
-<p align="center">
-  <img src="public/scinest/hero-en.webp" alt="SciNest Hero" width="100%" />
-</p>
-
 <h1 align="center">SciNest（科研小棉袄）</h1>
 
 <p align="center">
@@ -30,7 +26,7 @@ SciNest is a desktop workbench for students, researchers, and knowledge workers.
 
 No prompt engineering needed. The app is the prompt.
 
-<img src="public/scinest/real-ui-en.webp" alt="SciNest Workspace" width="100%" />
+<img src="public/scinest/hero-en.webp" alt="SciNest Workspace" width="100%" />
 
 ---
 
