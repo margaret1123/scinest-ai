@@ -144,7 +144,7 @@ export default function AiThesisWritingAssistantPage() {
               {['Editable outline', 'Selected materials', 'Reference-aware', 'Long-form generation', 'Section revision'].map(item => <span key={item}>✓ {item}</span>)}
             </div>
             <div className={styles.ctas}><a className={styles.primary} href={registerUrl}>Generate my long-form draft ↗</a><a className={styles.secondary} href="#proof">See the writing workflow</a></div>
-            <p className={styles.note}>Windows desktop · Bring your own AI key · Project files stay local by default</p>
+            <p className={styles.note}>Windows desktop · Use your own AI key (no markup, no usage caps) · Files stay local</p>
           </div>
 
           <div className={styles.heroStage} id="proof">

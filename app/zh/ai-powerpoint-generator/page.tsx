@@ -23,7 +23,11 @@ const faq = [
 ];
 
 export default function Page() {
-  const structuredData = { "@context": "https://schema.org", "@type": "WebPage", name: "AI PPT 生成器", url: `${siteUrl}/zh/ai-powerpoint-generator`, inLanguage: "zh-CN", description: metadata.description };
+  const structuredData = [
+    { "@context": "https://schema.org", "@type": "WebPage", name: "AI PPT 生成器", url: `${siteUrl}/zh/ai-powerpoint-generator`, inLanguage: "zh-CN", description: metadata.description, isPartOf: { "@type": "WebSite", name: "SciNest", url: siteUrl } },
+    { "@context": "https://schema.org", "@type": "SoftwareApplication", name: "SciNest", alternateName: "科研小棉袄", applicationCategory: "ProductivityApplication", operatingSystem: "Windows", url: `${siteUrl}/zh/ai-powerpoint-generator`, featureList: ["标准 PPTX 导出","材料约束生成","可编辑幻灯片大纲","图文视觉规划","生成后继续修改","WYSIWYG 预览"], audience: { "@type": "Audience", audienceType: "研究生、本科毕业生和早期研究人员" }, author: { "@type": "Organization", name: "Jiaempower Pathways Limited" } },
+    { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: faq.map(([q, a]) => ({ "@type": "Question", name: q, acceptedAnswer: { "@type": "Answer", text: a } })) },
+  ];
   const breadcrumbData = { "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [{ "@type": "ListItem", position: 1, name: "SciNest", item: `${siteUrl}/zh` }, { "@type": "ListItem", position: 2, name: "AI PPT 生成器", item: `${siteUrl}/zh/ai-powerpoint-generator` }] };
   return <div className={styles.page}>
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />

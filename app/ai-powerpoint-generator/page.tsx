@@ -195,7 +195,7 @@ export default function AiPowerPointGeneratorPage() {
               <a className={styles.primary} href={registerUrl}>Generate my real PowerPoint ↗</a>
               <a className={styles.secondary} href="#proof">See the editable result</a>
             </div>
-            <p className={styles.note}>Windows desktop · Bring your own AI key · Project files stay local by default</p>
+            <p className={styles.note}>Windows desktop · Use your own AI key (no markup, no usage caps) · Files stay local</p>
           </div>
 
           <div className={styles.heroStage} id="proof">
@@ -340,7 +340,7 @@ export default function AiPowerPointGeneratorPage() {
           <p>STOP GENERATING CONTENT THAT STILL NEEDS TO BECOME A PRESENTATION</p>
           <h2>Upload the material.<br />Get a real, visual, editable PowerPoint.</h2>
           <a href={registerUrl}>Generate my real PowerPoint ↗</a>
-          <span>Use your own AI key · Local project files by default · Real PPTX export</span>
+          <span>Use your own AI key (no markup, no caps) · Local files · Real PPTX export</span>
         </section>
       </main>
 

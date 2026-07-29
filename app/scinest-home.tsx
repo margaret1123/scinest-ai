@@ -19,9 +19,9 @@ const content = {
     offerBody: "No credit card. No automatic charge. Pro access starts when downloads open, then returns to the Free plan unless you choose to upgrade.",
     primary: "Claim 30 days of Pro",
     secondary: "See Free vs Pro",
-    note: "Downloads are not open yet · Registration is open · Your AI provider charges remain separate",
+    note: "Downloads not open yet · Registration is open · You pay AI providers directly — no markup",
     stats: [
-      ["Unlimited generation", "Free and Pro both use your own AI key, so SciNest does not meter generations"],
+      ["Unlimited generation", "BYOK means no AI markup and no usage limits — you pay your chosen provider directly at cost"],
       ["Scientific figures", "Generate research visuals; Pro unlocks layer editing and watermark-free export"],
       ["Defense slides", "Build the presentation in both plans; Pro exports an editable PowerPoint"],
       ["One connected project", "Keep writing, figures, slides and source context together"],

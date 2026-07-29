@@ -44,7 +44,7 @@ Typical tasks include:
 General AI tools usually return one answer or output at a time. SciNest keeps source materials, writing, figures, slides and project decisions connected so work can continue across deliverables without repeatedly rebuilding the same research context.
 
 ## Free and Pro plans
-Both plans use the user's own AI API key and SciNest does not limit generation counts.
+Both plans are BYOK (bring your own AI key). SciNest does not provide, resell or bundle AI keys. The user connects their own key from any supported provider (OpenAI, Anthropic, DeepSeek, Groq and others). SciNest never limits generation counts, never marks up AI usage, and never charges per generation. The user pays their chosen AI provider directly at cost, and SciNest Free provides one active project without charging for the app itself.
 
 SciNest Free:
 - One active project.

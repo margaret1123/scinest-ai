@@ -26,7 +26,16 @@
 - AI provider usage charges are separate and are paid to the model provider selected by the user.
 
 ## Free and Pro plans
-Both plans use the user's own AI API key. SciNest does not limit generation counts.
+
+SciNest is a BYOK (bring your own key) product. This is a deliberate design choice, not a missing feature:
+
+- **No AI markup.** SciNest never resells AI usage at a premium. The user pays their chosen AI provider directly at cost.
+- **No generation caps.** SciNest does not limit how many generations the user runs. The user's only limit is their own API budget with their chosen provider.
+- **No vendor lock-in.** The user can switch between OpenAI, Anthropic, DeepSeek, Groq or any supported provider at any time — no migration, no penalty.
+- **Latest models, day one.** When a provider releases a new model, the user can use it immediately without waiting for SciNest to add support.
+- **Your key, your billing.** SciNest has no visibility into the user's API usage, billing or account details. The relationship is between the user and the AI provider.
+
+Competitor products (Jenni AI, Paperpal) bundle AI costs into a fixed monthly subscription. The user overpays during light-use months and hits throttling during heavy-use months — without knowing the actual AI cost breakdown. SciNest separates the app (flat Free/Pro) from the AI engine (the user's own key) so the user pays only for what they use, at cost.
 
 **SciNest Free:**
 - One active project.
@@ -41,6 +50,8 @@ Both plans use the user's own AI API key. SciNest does not limit generation coun
 - Scientific figure layer, label and element editing.
 - Editable PowerPoint (.pptx) export.
 - Unlimited SciNest generations.
+
+AI provider usage charges are separate and are paid to the model provider selected by the user.
 
 ## Product 1: AI Thesis Writing Assistant
 

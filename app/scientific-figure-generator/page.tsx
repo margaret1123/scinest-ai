@@ -128,7 +128,7 @@ export default function ScientificFigureGeneratorPage() {
               <a className={styles.primary} href={registerUrl}>Generate an editable figure ↗</a>
               <a className={styles.secondary} href="#layers">See how the layers work</a>
             </div>
-            <p className={styles.note}>Windows desktop · Bring your own AI key · Project files stay local by default</p>
+            <p className={styles.note}>Windows desktop · Use your own AI key (no markup, no usage caps) · Files stay local</p>
           </div>
 
           <div className={`${styles.editorStage} scientific-hero-proof`}>
