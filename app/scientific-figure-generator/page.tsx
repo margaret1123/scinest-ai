@@ -4,10 +4,6 @@ import styles from "./scientific-figure-generator.module.css";
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://scinest-ai.vercel.app";
 const registerUrl = "/login?redirect=/dashboard&intent=early-bird";
 
-const proofFigureStyle = { margin: 0, overflow: "hidden" } as const;
-const proofImageStyle = { display: "block", width: "100%", height: "auto", borderRadius: 18 } as const;
-const proofCaptionStyle = { padding: "16px 4px 2px", color: "#607471", fontSize: 13, lineHeight: 1.65 } as const;
-
 export const metadata: Metadata = {
   title: "AI Scientific Figure Generator With Editable Layers | SciNest",
   description:
@@ -127,9 +123,9 @@ export default function ScientificFigureGeneratorPage() {
             <p className={styles.note}>Windows desktop · Bring your own AI key · Project files stay local by default</p>
           </div>
 
-          <div className={styles.editorStage}>
+          <div className={`${styles.editorStage} scientific-hero-proof`}>
             <div className={styles.stageBar}><span>SCINEST FIGURE WORKSPACE</span><b>Layers · Text · AI selection</b></div>
-            <img src="/scinest/figures-ui-en.svg" alt="SciNest scientific figure editor with editable layers and text" width="1280" height="720" />
+            <img className="scientific-hero-image" src="/scinest/figures-ui-en.svg" alt="SciNest scientific figure editor with editable layers and text" width="1280" height="720" />
             <div className={`${styles.callout} ${styles.calloutLayers}`}><b>01</b><span>Drag separate layers</span></div>
             <div className={`${styles.callout} ${styles.calloutText}`}><b>02</b><span>Edit text directly</span></div>
             <div className={`${styles.callout} ${styles.calloutAi}`}><b>03</b><span>Regenerate selected area</span></div>
@@ -166,9 +162,13 @@ export default function ScientificFigureGeneratorPage() {
               <li>Continue refining the figure instead of starting again.</li>
             </ul>
           </div>
-          <figure className={styles.layerPanel} style={proofFigureStyle}>
-            <img src="/scinest/figure-layer-edit-en.svg" alt="SciNest scientific figure editor with one DNA element selected and a layer-specific AI edit panel" width="1200" height="760" style={proofImageStyle} />
-            <figcaption style={proofCaptionStyle}>Select one element, describe the correction and keep the surrounding figure intact.</figcaption>
+          <figure className="scientific-proof">
+            <div className="scientific-proof__toolbar">
+              <span className="scientific-proof__point"><b className="scientific-proof__number">01</b>The DNA element is selected independently</span>
+              <span className="scientific-proof__point"><b className="scientific-proof__number">02</b>The Layer Edit panel targets that element only</span>
+            </div>
+            <img className="scientific-proof__image" src="/scinest/figure-layer-edit-en.svg" alt="SciNest scientific figure editor with one DNA element selected and a layer-specific AI edit panel" width="1200" height="760" loading="lazy" decoding="async" />
+            <figcaption className="scientific-proof__caption">This real editor view proves element selection and layer-specific AI correction without redrawing the surrounding composition.</figcaption>
           </figure>
         </section>
 
@@ -176,12 +176,12 @@ export default function ScientificFigureGeneratorPage() {
           <div className={styles.sectionIntro}>
             <p className={styles.kicker}>AI WHERE YOU NEED IT</p>
             <h2>Regenerate the weak area—not the entire figure.</h2>
-            <p>Box-select the part that needs work, describe the correction and preserve the regions already approved.</p>
+            <p>The page explains the current selection workflow without presenting a simulated before-and-after image as product proof. A real paired screenshot will replace this explanation when the same region is captured before and after regeneration.</p>
           </div>
-          <div className={styles.aiGrid}>
-            <article className={styles.figureCard}><small>BEFORE · SELECTED REGION</small><div className={styles.figurePreview}><i className={styles.blob} /><i className={styles.cell} /><i className={styles.signal} /><span className={styles.selectionBox} /></div><p>Only the selected cell illustration needs to change.</p></article>
-            <div className={styles.aiArrow}><small>AI REGENERATES</small><span>→</span><small>SELECTION ONLY</small></div>
-            <article className={styles.figureCard}><small>AFTER · REST PRESERVED</small><div className={styles.figurePreview}><i className={styles.blob} /><i className={styles.cell} /><i className={styles.signal} /></div><p>The edited region changes while the confirmed composition stays in place.</p></article>
+          <div className="scientific-selection-flow">
+            <article><b>01</b><h3>Select the weak region</h3><p>Choose the specific element or bounded area that needs correction inside the figure workspace.</p></article>
+            <article><b>02</b><h3>Describe the change</h3><p>Give the selected layer or region a focused correction instruction instead of restarting the whole figure.</p></article>
+            <article><b>03</b><h3>Preserve confirmed work</h3><p>Keep the surrounding composition and approved scientific relationships unchanged while revising the selected part.</p></article>
           </div>
         </section>
 
@@ -201,9 +201,13 @@ export default function ScientificFigureGeneratorPage() {
                 <li>Keep scientific names readable and under your control.</li>
               </ul>
             </article>
-            <figure className={styles.goodText} style={proofFigureStyle}>
-              <img src="/scinest/figure-text-edit-en.svg" alt="SciNest scientific figure editor with the Fasciola spp. eggs label selected as an editable text object" width="1200" height="760" style={proofImageStyle} />
-              <figcaption style={proofCaptionStyle}>The label remains a separate text object while the scientific visual stays unchanged.</figcaption>
+            <figure className="scientific-proof scientific-proof--compact">
+              <div className="scientific-proof__toolbar">
+                <span className="scientific-proof__point"><b className="scientific-proof__number">01</b>The label remains a separate text object</span>
+                <span className="scientific-proof__point"><b className="scientific-proof__number">02</b>Text mode edits the wording without redrawing the visual</span>
+              </div>
+              <img className="scientific-proof__image" src="/scinest/figure-text-edit-en.svg" alt="SciNest scientific figure editor with the Fasciola spp. eggs label selected as an editable text object" width="1200" height="760" loading="lazy" decoding="async" />
+              <figcaption className="scientific-proof__caption">The real editor keeps the scientific label selectable and editable while the surrounding visual remains unchanged.</figcaption>
             </figure>
           </div>
         </section>
