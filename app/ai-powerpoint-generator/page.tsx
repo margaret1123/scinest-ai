@@ -5,7 +5,7 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://scinest-ai.vercel.a
 const registerUrl = "/login?redirect=/dashboard&intent=early-bird";
 
 const proofFigureStyle = {
-  maxWidth: 1180,
+  maxWidth: 980,
   margin: "0 auto",
   overflow: "hidden",
   border: "1px solid rgba(7, 95, 85, 0.16)",
@@ -13,7 +13,14 @@ const proofFigureStyle = {
   background: "#fff",
   boxShadow: "0 24px 70px rgba(18, 72, 77, 0.12)",
 } as const;
-const proofImageStyle = { display: "block", width: "100%", height: "auto" } as const;
+const proofImageStyle = {
+  display: "block",
+  width: "100%",
+  height: "auto",
+  maxHeight: 640,
+  objectFit: "contain",
+  background: "#f7fbfa",
+} as const;
 const proofCaptionStyle = {
   margin: 0,
   padding: "15px 20px 18px",
@@ -21,6 +28,36 @@ const proofCaptionStyle = {
   fontSize: 13,
   lineHeight: 1.65,
   borderTop: "1px solid rgba(7, 95, 85, 0.12)",
+} as const;
+const proofToolbarStyle = {
+  display: "grid",
+  gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))",
+  gap: 1,
+  background: "rgba(7, 95, 85, 0.12)",
+  borderBottom: "1px solid rgba(7, 95, 85, 0.12)",
+} as const;
+const proofPointStyle = {
+  display: "flex",
+  alignItems: "center",
+  gap: 10,
+  minHeight: 54,
+  padding: "12px 16px",
+  background: "#f5fbf9",
+  color: "#0c6d63",
+  fontSize: 12,
+  fontWeight: 800,
+  lineHeight: 1.45,
+} as const;
+const proofNumberStyle = {
+  display: "grid",
+  width: 25,
+  height: 25,
+  flex: "0 0 25px",
+  placeItems: "center",
+  borderRadius: 999,
+  background: "#079987",
+  color: "#fff",
+  fontSize: 10,
 } as const;
 
 export const metadata: Metadata = {
@@ -204,7 +241,12 @@ export default function AiPowerPointGeneratorPage() {
             <p>Set the purpose, audience, slide count and template, then edit the generated structure before full generation.</p>
           </div>
           <figure style={proofFigureStyle}>
-            <img src="/scinest/ppt-outline-edit-en.svg" alt="SciNest PowerPoint task settings with AI optimization and an editable generated slide outline" width="1200" height="760" style={proofImageStyle} />
+            <div style={proofToolbarStyle}>
+              <span style={proofPointStyle}><b style={proofNumberStyle}>01</b>Purpose, audience and page count stay visible</span>
+              <span style={proofPointStyle}><b style={proofNumberStyle}>02</b>Every generated slide title remains editable</span>
+              <span style={proofPointStyle}><b style={proofNumberStyle}>03</b>Expand a slide to refine its actual content</span>
+            </div>
+            <img src="/scinest/ppt-outline-edit-en.svg" alt="SciNest PowerPoint task settings with AI optimization and an editable generated slide outline" width="1200" height="760" style={proofImageStyle} loading="lazy" decoding="async" />
             <figcaption style={proofCaptionStyle}>The real task screen keeps presentation goals, audience, page count, template and every generated slide title editable before the deck is built.</figcaption>
           </figure>
         </section>
@@ -216,7 +258,12 @@ export default function AiPowerPointGeneratorPage() {
             <p>Choose the materials that belong to this presentation instead of letting an agent treat every upload as equally relevant.</p>
           </div>
           <figure style={proofFigureStyle}>
-            <img src="/scinest/ppt-source-bound-en.svg" alt="SciNest PowerPoint editor showing selected source papers beside a generated research slide" width="1200" height="760" style={proofImageStyle} />
+            <div style={proofToolbarStyle}>
+              <span style={proofPointStyle}><b style={proofNumberStyle}>01</b>Selected papers remain inside the same workspace</span>
+              <span style={proofPointStyle}><b style={proofNumberStyle}>02</b>The generated slide stays visible beside the sources</span>
+              <span style={proofPointStyle}><b style={proofNumberStyle}>03</b>Visual evidence is reused instead of recreated</span>
+            </div>
+            <img src="/scinest/ppt-source-bound-en.svg" alt="SciNest PowerPoint editor showing selected source papers beside a generated research slide" width="1200" height="760" style={proofImageStyle} loading="lazy" decoding="async" />
             <figcaption style={proofCaptionStyle}>Selected project papers remain in the same workspace as the generated slide, its visual and its evidence context.</figcaption>
           </figure>
         </section>
@@ -241,8 +288,12 @@ export default function AiPowerPointGeneratorPage() {
             <p>The real editor exposes slide thumbnails, text controls and selection handles so supported objects can be moved, resized and revised directly.</p>
             <div className={styles.checks}><span>✓ Select objects</span><span>✓ Move and resize</span><span>✓ Edit text</span><span>✓ Review the full deck</span></div>
           </div>
-          <figure style={{ ...proofFigureStyle, margin: 0 }}>
-            <img src="/scinest/ppt-element-edit-en.svg" alt="SciNest PowerPoint editor with a slide title selected using real resize and rotation handles" width="1200" height="760" style={proofImageStyle} />
+          <figure style={{ ...proofFigureStyle, margin: 0, maxWidth: 760 }}>
+            <div style={proofToolbarStyle}>
+              <span style={proofPointStyle}><b style={proofNumberStyle}>01</b>The selected object has its own handles</span>
+              <span style={proofPointStyle}><b style={proofNumberStyle}>02</b>Move, resize or rewrite only that element</span>
+            </div>
+            <img src="/scinest/ppt-element-edit-en.svg" alt="SciNest PowerPoint editor with a slide title selected using real resize and rotation handles" width="1200" height="760" style={proofImageStyle} loading="lazy" decoding="async" />
             <figcaption style={proofCaptionStyle}>The selected title remains an independent slide object with visible handles for direct editing and positioning.</figcaption>
           </figure>
         </section>
