@@ -19,6 +19,12 @@
 ## Primary pages
 - / : English product and pre-launch page
 - /zh : Chinese product and pre-launch page
+- /ai-thesis-writing-assistant : English AI thesis writing assistant page
+- /zh/ai-thesis-writing-assistant : Chinese AI thesis writing assistant page
+- /ai-powerpoint-generator : English AI PowerPoint generator page
+- /zh/ai-powerpoint-generator : Chinese AI PowerPoint generator page
+- /scientific-figure-generator : English scientific figure generator page
+- /zh/scientific-figure-generator : Chinese scientific figure generator page
 - /privacy : Privacy policy
 - /terms : Terms of service
 - /refund-policy : Refund policy
