@@ -1,0 +1,70 @@
+/* Emergency recovery for invalid SVG screenshot wrappers. Use existing binary product screenshots directly. */
+img[src="/scinest/writing-outline-detail-en.svg"],
+img[src="/scinest/writing-long-form-edit-en.svg"],
+img[src="/scinest/figures-ui-en.svg"],
+img[src="/scinest/ppt-outline-edit-en.svg"] {
+  display: none !important;
+}
+
+figure:has(> img[src="/scinest/writing-outline-detail-en.svg"])::before,
+figure:has(> img[src="/scinest/writing-long-form-edit-en.svg"])::before {
+  content: "";
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  border-radius: 18px;
+  border: 1px solid rgba(7, 95, 85, 0.12);
+  background: #fff url("/scinest/writing-ui-en.webp") center / contain no-repeat;
+}
+
+.scientific-hero-proof:has(> img[src="/scinest/figures-ui-en.svg"])::before {
+  content: "";
+  display: block;
+  width: 100%;
+  aspect-ratio: 2 / 1;
+  border-radius: 18px;
+  background: #fff url("/scinest/figures-ui-en.webp") center / contain no-repeat;
+}
+
+figure:has(> img[src="/scinest/ppt-outline-edit-en.svg"])::before {
+  content: "";
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  background: #f7fbfa url("/scinest/ppt-ui-en.webp") center / contain no-repeat;
+}
+
+/* The original file-structure block was a CSS placeholder, not product proof. */
+.ai-powerpoint-generator_fileVisual__7vlZ6 {
+  min-height: 420px !important;
+  padding: 0 !important;
+  overflow: hidden;
+  border: 1px solid rgba(7, 95, 85, 0.16) !important;
+  border-radius: 24px !important;
+  background: #f7fbfa url("/scinest/ppt-ui-en.webp") center / contain no-repeat !important;
+  box-shadow: 0 24px 70px rgba(18, 72, 77, 0.12);
+}
+
+.ai-powerpoint-generator_fileVisual__7vlZ6 > * {
+  display: none !important;
+}
+
+/* Ensure the final scientific-figure CTA remains readable on its dark section. */
+a.scientific-figure-generator_lightCta__kEL5A,
+.scientific-figure-generator_lightCta__kEL5A:visited {
+  background: #ffffff !important;
+  color: #075c57 !important;
+  border: 1px solid rgba(255, 255, 255, 0.82) !important;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.22);
+}
+
+a.scientific-figure-generator_lightCta__kEL5A:hover {
+  background: #dff7ef !important;
+  color: #064c48 !important;
+}
+
+@media (max-width: 700px) {
+  .ai-powerpoint-generator_fileVisual__7vlZ6 {
+    min-height: 280px !important;
+  }
+}
