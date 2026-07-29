@@ -1,6 +1,10 @@
 <h1 align="center">SciNest（科研小棉袄）</h1>
 
 <p align="center">
+  <a href="README_zh.md">中文</a> | <b>English</b>
+</p>
+
+<p align="center">
   <strong>BYOK AI Research Workbench — Writing, Figures, PPT, and References</strong>
 </p>
 
