@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { GoogleAnalytics } from "./google-analytics";
 import "./globals.css";
 import "./scinest-assets.css";
 import "./home-product-entries.css";
@@ -97,7 +98,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <head>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
       </head>
-      <body>{children}</body>
+      <body>{children}<GoogleAnalytics /></body>
     </html>
   );
 }
