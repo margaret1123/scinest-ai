@@ -74,11 +74,11 @@ AI 生成基础图像 + 可编辑矢量叠加层（标签、箭头、图注）�
 ### 1. 下载
 从 [GitHub Releases](https://github.com/margaret1123/scinest-ai/releases/latest) 获取最新版本。
 
-| 平台 | 安装包 |
-|------|--------|
-| Windows | `SciNest Setup x.x.x.exe` |
-| macOS | `SciNest-x.x.x.dmg` |
-| Linux | `SciNest-x.x.x.AppImage` |
+| 平台 | 下载 |
+|------|------|
+| Windows | [SciNest-win-x64.exe](https://github.com/margaret1123/scinest-ai/releases/latest/download/SciNest-win-x64.exe) |
+| macOS | [SciNest-mac-arm64.dmg](https://github.com/margaret1123/scinest-ai/releases/latest/download/SciNest-mac-arm64.dmg) |
+| Linux | [SciNest-linux-x64.AppImage](https://github.com/margaret1123/scinest-ai/releases/latest/download/SciNest-linux-x64.AppImage) |
 
 ### 2. 配置 API Key
 SciNest 支持 12+ 模型厂商。输入你自己的 OpenAI / Claude / DeepSeek / Gemini 或兼容 API Key 即可使用。

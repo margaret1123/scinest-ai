@@ -74,11 +74,11 @@ Citation-aware outputs with source tracking, reference library, and export to st
 ### 1. Download
 Get the latest version from [scinest.ai/download](https://scinest.ai/download) or [GitHub Releases](https://github.com/margaret1123/scinest-ai/releases/latest).
 
-| Platform | Package |
-|----------|---------|
-| Windows | `SciNest Setup x.x.x.exe` |
-| macOS | `SciNest-x.x.x.dmg` |
-| Linux | `SciNest-x.x.x.AppImage` |
+| Platform | Download |
+|----------|----------|
+| Windows | [SciNest-win-x64.exe](https://github.com/margaret1123/scinest-ai/releases/latest/download/SciNest-win-x64.exe) |
+| macOS | [SciNest-mac-arm64.dmg](https://github.com/margaret1123/scinest-ai/releases/latest/download/SciNest-mac-arm64.dmg) |
+| Linux | [SciNest-linux-x64.AppImage](https://github.com/margaret1123/scinest-ai/releases/latest/download/SciNest-linux-x64.AppImage) |
 
 ### 2. Set up your API key
 SciNest works with 12+ model providers. Bring your own key from OpenAI, Anthropic, DeepSeek, Gemini, or any compatible provider.
