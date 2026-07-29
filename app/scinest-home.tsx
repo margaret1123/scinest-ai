@@ -90,7 +90,7 @@ const content = {
     strip: "SciNest Free 将于 2026 年 8 月 1 日开放下载",
     stripOffer: "上线前注册，免费获得30天 Pro。",
     eyebrow: "预开放 · WINDOWS 桌面端 · 使用自己的 AI KEY",
-    title: <>一个截止日期。<em>论文要改，科研图要补，答辩 PPT 还没做。</em></>,
+    title: <>材料多，任务重，时间紧，<br /><em>真正可编辑的</em><br />万字长文、图片、PPT，SciNest 全线解决方案</>,
     intro: "把论文、文献、草稿、数据和导师意见放进同一个项目，继续完成文稿、科研图与答辩 PPT，不必每换一个工具就重新解释和返工。",
     offerTitle: "8月1日前注册，免费获得30天 SciNest Pro。",
     offerBody: "无需银行卡，不会自动扣费。下载开放后开始计算 Pro 权益，30天后自动回到 Free，是否升级由你决定。",
@@ -169,7 +169,7 @@ const productPages = {
 export function SciNestHome({ locale }: { locale: Locale }) {
   const c = content[locale];
   const other = locale === "zh" ? "/" : "/zh";
-  const image = (name: string) => `/scinest/${name}-${locale}.webp`;
+  const image = (name: string) => `/scinest/${name}-en.webp`;
   const registerUrl = "/login?redirect=/dashboard&intent=early-bird";
   const heroAlt = locale === "zh" ? "SciNest 论文修改、科研图与答辩PPT工作台" : "SciNest thesis revision, scientific figure and thesis defense presentation workspace";
   const writingAlt = locale === "zh" ? "SciNest 可编辑论文与研究文稿工作区" : "SciNest editable thesis and academic writing workspace";
