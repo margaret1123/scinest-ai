@@ -72,6 +72,14 @@ const structuredData = [
       acceptedAnswer: { "@type": "Answer", text: answer },
     })),
   },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "SciNest", item: `${siteUrl}/` },
+      { "@type": "ListItem", position: 2, name: "AI Thesis Writing Assistant", item: `${siteUrl}/ai-thesis-writing-assistant` },
+    ],
+  },
 ];
 
 const workflow = [

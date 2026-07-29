@@ -1,0 +1,219 @@
+# SciNest — Comprehensive Product Information for AI Agents
+> SciNest is a pre-launch Windows desktop research productivity application for postgraduate students, final-year students and early researchers. It turns existing academic materials into connected writing, scientific figures and presentations — without repeatedly rebuilding research context across deliverables.
+
+## Identity
+- **Product name**: SciNest (科研小棉袄 in Chinese)
+- **Canonical site**: https://scinest-ai.vercel.app/
+- **Default language**: English
+- **Operator**: Jiaempower Pathways Limited, New Zealand
+- **Category**: Research productivity software
+- **Platform**: Windows desktop application
+- **AI model**: User brings their own API key (no bundled model costs)
+
+## Current availability (as of July 2026)
+- Pre-launch registration is open.
+- Windows downloads are scheduled to open on August 1, 2026.
+- Public payment is not open during pre-launch.
+- Accounts registered before launch receive 30 days of SciNest Pro when downloads open.
+- No credit card is required for registration and there is no automatic charge.
+- After 30 days, early-bird accounts return to SciNest Free unless the user chooses to upgrade.
+
+## Data and AI-provider boundary
+- SciNest is designed as a local-first desktop workspace.
+- Project files and generated outputs are stored locally by default.
+- When an AI task is run, the content needed for that task is sent to the model provider selected and configured by the user.
+- SciNest does not claim that every part of AI processing remains on-device.
+- AI provider usage charges are separate and are paid to the model provider selected by the user.
+
+## Free and Pro plans
+Both plans use the user's own AI API key. SciNest does not limit generation counts.
+
+**SciNest Free:**
+- One active project.
+- Academic writing generation and revision.
+- Scientific figure export with a watermark.
+- Presentation export as PDF.
+- No scientific figure layer editing.
+
+**SciNest Pro:**
+- Multiple projects.
+- Watermark-free scientific figure export.
+- Scientific figure layer, label and element editing.
+- Editable PowerPoint (.pptx) export.
+- Unlimited SciNest generations.
+
+## Product 1: AI Thesis Writing Assistant
+
+### English page: /ai-thesis-writing-assistant
+### Chinese page: /zh/ai-thesis-writing-assistant
+
+**One-line description:** Build an editable outline, bind selected materials and references, then generate a coherent long-form academic draft in one run. Revise chapters without restarting the whole document.
+
+**Core workflow:**
+1. Select the real materials — Choose the papers, notes, existing draft, rubric and reference library that belong to this task.
+2. Build the outline — Define the chapters, section goals, order, scope and target length before the document expands.
+3. Bind evidence and references — Connect source context to the sections where it is needed instead of treating all uploaded files as one undifferentiated pile.
+4. Generate the long-form draft — Expand the approved structure into a connected academic document rather than prompting one paragraph at a time.
+5. Revise the right section — Edit a chapter, rewrite a passage or respond to feedback without discarding the confirmed structure.
+
+**Key capabilities:**
+- Editable academic outline with word targets per chapter
+- Selected-material binding (choose which papers/notes belong to the task)
+- Reference-aware writing context (citations stay connected to sections)
+- Long-form draft generation targeting 10,000+ words
+- Section-level revision without restarting the whole document
+- Smart Outline, complete document and selected-text AI Edit in one workspace
+
+**Problem it solves:** Generic chat tools lose structure as the conversation grows. Users end up copying fragments, rebuilding headings and repairing contradictions between sections. SciNest keeps the outline, materials, references and draft connected in one structured workflow.
+
+**FAQ (English):**
+- Can SciNest generate a long academic draft in one run? — Yes. The writing workflow produces a connected long-form draft from an approved outline rather than forcing one paragraph at a time.
+- Can I edit the outline before writing starts? — Yes. Review chapter structure, section order, scope and writing goals before expanding the document.
+- Does the draft use my uploaded materials? — You select the project materials and references that belong to the writing task. The draft is built from that selected context.
+- Are references included? — The workflow carries source and reference context into the writing process. Users must still verify every citation and institutional requirement.
+- Can I revise only one chapter later? — Yes. Continue editing and target specific chapters or passages instead of regenerating the entire draft.
+- Does SciNest guarantee academic acceptance or publication? — No. Users remain responsible for facts, references, originality, research quality and institutional AI-use rules.
+
+**FAQ (Chinese):**
+- 可以一次生成完整长文吗？ — 写作流程会从已确认的大纲出发，生成一份连贯的长文草稿，而不是要求用户逐段重复提示。
+- 生成前可以修改大纲吗？ — 可以。章节顺序、目标、范围和字数都可以在扩写前调整。
+- 会使用我上传的材料吗？ — 你可以选择本次任务要使用的论文、笔记、草稿、评分标准和参考文献。
+- 引用会自动正确吗？ — 系统会保留来源与章节之间的上下文，但用户仍必须核查每条引用、事实和学校要求。
+- 后续只改一章可以吗？ — 可以。生成后可针对具体章节或段落修改，不必推翻整篇文稿。
+
+## Product 2: AI PowerPoint Generator
+
+### English page: /ai-powerpoint-generator
+### Chinese page: /zh/ai-powerpoint-generator
+
+**One-line description:** Upload papers, documents, data and images. SciNest creates a real editable PowerPoint presentation — not an image-based PDF or HTML slideshow. Edit the outline, slides, text and visuals, then export a ready-to-use .pptx file.
+
+**Core workflow:**
+1. Add the real project — Bring in papers, reports, data, images, existing slides and presentation requirements.
+2. Set the purpose — Choose a defense, research talk, course report, conference presentation or another real use case.
+3. Review the outline — Adjust slide count, sequence, titles, emphasis, audience and speaking time before full generation.
+4. Generate the deck — Create slide content, visual placements, supporting figures and speaker notes from the selected materials.
+5. Edit what you see — Refine slide text, order, images and individual pages without restarting the whole presentation.
+6. Export the PPTX — Download a standard PowerPoint file that remains editable after it leaves SciNest.
+
+**Key capabilities:**
+- Real editable .pptx export (not flattened images, not HTML slideshows)
+- Source-bound presentation generation from selected project materials
+- Editable slide outline with purpose, audience and page count controls
+- Scientific figure and image reuse within presentations
+- WYSIWYG slide preview with element-level selection handles
+- Slide-level revision and speaker notes
+
+**What makes it different from other "AI PPT" tools:**
+- Not flattened page images — titles, text and supported elements remain structured for editing
+- Not HTML slideshows — avoids layout breakage when converted to PowerPoint
+- Not outline-only — from materials to page content, visuals and speaker notes
+- Source-bound — selected papers stay visible beside the slides they help create
+
+**FAQ (English):**
+- Does SciNest generate a real PowerPoint file? — Yes. The final output is a standard .pptx file that can be opened, presented and continued in Microsoft PowerPoint, WPS and compatible software.
+- Is every slide just one flattened image? — No. Titles, text, images and supported slide elements remain structured for editing.
+- Can I edit the outline before generating the full deck? — Yes. Review and adjust slide count, order, titles and emphasis before generating the presentation.
+- Will SciNest use everything I upload? — You choose which project materials belong to the current task.
+- Can I reuse my existing figures and images? — Yes. Existing project images and scientific figures can be reused in the presentation.
+- Can I keep editing after generation? — Yes. Continue refining the outline, slide order, titles, body copy, visuals and speaker notes before exporting.
+
+**FAQ (Chinese):**
+- 生成的是标准 PowerPoint 文件吗？ — 是。最终结果为标准 .pptx 文件，可在 Microsoft PowerPoint、WPS 等兼容软件中继续修改和演示。
+- 每一页会不会只是无法修改的图片？ — 不会。标题、正文、图片和支持的页面元素会尽量保留结构，而不是把整页压成一张图。
+- 生成前可以修改大纲吗？ — 可以。你可以先调整页数、顺序、标题、重点、受众和演讲时长，再生成完整演示文稿。
+- 会自动使用所有上传文件吗？ — 不会。你可以选择本次任务使用哪些项目材料，避免无关文件干扰内容。
+- 生成后还能修改吗？ — 可以继续修改大纲、页面顺序、标题、正文、图片和讲稿，再导出最终 PPTX。
+
+## Product 3: Scientific Figure Generator
+
+### English page: /scientific-figure-generator
+### Chinese page: /zh/scientific-figure-generator
+
+**One-line description:** Generate scientific figures with separate editable layers. Drag elements, rewrite text without garbled labels, regenerate only the selected area, and keep the rest of the figure unchanged.
+
+**Core workflow:**
+1. Add the research material — Bring in the paper, methods, notes, reference images and figure requirements.
+2. Generate the first figure — SciNest creates the visual structure and separates supported elements into editable layers.
+3. Drag and reorganise — Move objects, change layer order and repair the visual hierarchy without redrawing everything.
+4. Edit labels directly — Rewrite titles, labels and annotations as normal text without asking an image model to redraw letters.
+5. Regenerate only the weak part — Select a region, regenerate it with AI and preserve the parts already approved.
+
+**Key capabilities:**
+- Layer-based scientific figure editing (drag and reorder elements)
+- Editable text labels (not painted into the image)
+- Selected-area AI regeneration (one weak region does not force a full redraw)
+- Project material binding (paper, methods, data, reference images)
+- Scientific figure reuse in presentations
+- Supported figure types: mechanism diagrams, technical roadmaps, experimental flowcharts, conceptual frameworks, graphical abstracts
+
+**Problem it solves:** Most AI image workflows treat every correction as a reason to redraw the whole image. A typo in one label, a wrong arrow direction, or one weak visual region forces a complete regeneration — losing the parts that were already approved.
+
+**FAQ (English):**
+- Are the generated figures flattened images? — No. Supported figure elements are kept as separate editable layers so you can move, reorder and revise them.
+- Can I change labels after generation? — Yes. Labels are editable text objects rather than text painted permanently into the image.
+- Why does this avoid garbled text? — SciNest separates text from AI-generated visual content. Labels are rendered as editable text.
+- Can I regenerate only one part of the figure? — Yes. Select the area or element that needs work and regenerate that part without discarding confirmed sections.
+- Can I drag and rearrange elements? — Yes. Supported layers can be selected, moved and reordered inside the figure workspace.
+- Can I reuse the figure in a presentation? — Yes. Figures remain project assets and can be reused in supported presentation workflows.
+
+**FAQ (Chinese):**
+- 科研图生成后还能修改吗？ — 可以继续调整标签、关系、结构和支持的图层内容，而不是每次都重新生成整张图。
+- 可以做哪些图？ — 适用于机制图、技术路线图、实验流程图、概念框架、图形摘要等科研表达任务。
+- 文字会不会直接画死在图片里？ — SciNest 的方向是把文字与标注作为可编辑内容处理，减少模型拼写错误导致的整图返工。
+- 可以只改一个区域吗？ — 支持的工作流会尽量针对选定区域或图层修改，保留已经确认的部分。
+- 能在 PPT 中复用吗？ — 同一项目里的科研图可以继续用于演示文稿，减少重复上传和重新解释。
+
+## What SciNest is for
+SciNest is designed for users who already have papers, references, notes, a partial draft, data, supervisor feedback or submission requirements, but still need to complete academic deliverables before a deadline.
+
+Typical tasks include:
+1. Thesis and dissertation revision.
+2. Literature review and research proposal workflows.
+3. Revision from supervisor feedback.
+4. Scientific figures, mechanism diagrams and research roadmaps.
+5. Paper-to-PowerPoint conversion.
+6. Thesis defense and academic presentations.
+
+## Product philosophy
+General AI tools usually return one answer or output at a time. SciNest keeps source materials, writing, figures, slides and project decisions connected so work can continue across deliverables without repeatedly rebuilding the same research context.
+
+## Intended users
+Primary users are postgraduate students, final-year students and early researchers who already have academic materials but need to finish writing, figures or presentations under time pressure.
+
+## Use cases
+Thesis defense, dissertation defense, research presentation, paper to PowerPoint, literature review, research proposal, conference talk, course report, technical roadmap.
+
+## Important limits and disclaimers
+- SciNest is not a thesis-submission, ghostwriting or academic-misconduct service.
+- SciNest does not guarantee grades, graduation, thesis approval, publication, journal acceptance or research outcomes.
+- SciNest does not guarantee that generated content is factually correct, complete, original or compliant with a specific institution's AI policy.
+- Users must review generated work and follow applicable institutional, professional and legal requirements.
+
+## All site URLs
+### English
+- / : English product and pre-launch homepage
+- /en : English product and pre-launch homepage (alternate)
+- /ai-thesis-writing-assistant : AI Thesis Writing Assistant product page
+- /ai-powerpoint-generator : AI PowerPoint Generator product page
+- /scientific-figure-generator : Scientific Figure Generator product page
+- /login : Sign-in page
+- /privacy : Privacy policy
+- /terms : Terms of service
+- /refund-policy : Refund policy
+
+### Chinese (Simplified)
+- /zh : Chinese product and pre-launch homepage
+- /zh/ai-thesis-writing-assistant : Chinese AI Thesis Writing Assistant product page
+- /zh/ai-powerpoint-generator : Chinese AI PowerPoint Generator product page
+- /zh/scientific-figure-generator : Chinese Scientific Figure Generator product page
+
+### Sitemaps
+- /sitemap.xml : Standard XML sitemap (Next.js dynamic, auto-generated with hreflang alternates)
+- /sitemap-llm.xml : LLM-focused sitemap with all product pages and hreflang annotations
+
+### AI crawler resources
+- /llms.txt : Condensed site overview for LLM agents
+- /llms-full.txt : This file — comprehensive product information for AI agents
+- /.well-known/ai.txt : AI crawler permissions (allows GPTBot, ChatGPT-User, Claude-User, PerplexityBot, Google-Extended)
+- /robots.txt : Standard robots exclusion with AI crawler rules

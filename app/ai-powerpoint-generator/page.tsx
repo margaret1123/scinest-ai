@@ -125,6 +125,14 @@ const structuredData = [
       acceptedAnswer: { "@type": "Answer", text: answer },
     })),
   },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "SciNest", item: `${siteUrl}/` },
+      { "@type": "ListItem", position: 2, name: "AI PowerPoint Generator", item: `${siteUrl}/ai-powerpoint-generator` },
+    ],
+  },
 ];
 
 const falseOutputs = [

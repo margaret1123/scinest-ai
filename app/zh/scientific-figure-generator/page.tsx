@@ -24,8 +24,10 @@ const faq = [
 
 export default function Page() {
   const structuredData = { "@context": "https://schema.org", "@type": "WebPage", name: "AI 科研图生成器", url: `${siteUrl}/zh/scientific-figure-generator`, inLanguage: "zh-CN", description: metadata.description };
+  const breadcrumbData = { "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [{ "@type": "ListItem", position: 1, name: "SciNest", item: `${siteUrl}/zh` }, { "@type": "ListItem", position: 2, name: "AI 科研图生成器", item: `${siteUrl}/zh/scientific-figure-generator` }] };
   return <div className={styles.page}>
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbData) }} />
     <header className={styles.header}><a className={styles.brand} href="/zh"><span>S</span>SciNest 科研小棉袄</a><nav className={styles.nav}><a href="#difference">为什么可编辑</a><a href="#workflow">生成流程</a><a href="#faq">常见问题</a></nav><a className={styles.cta} href={registerUrl}>领取 30 天 Pro</a></header>
     <main>
       <section className={styles.hero}><div><p className={styles.eyebrow}>研究逻辑先于装饰</p><h1>把研究内容变成一张<em>还能继续修改的科研图。</em></h1><p className={styles.lead}>先理解实体、过程、阶段和关系，再生成机制图、路线图、实验流程图或图形摘要。标签和结构发生变化时，不必推翻整张图。</p><div className={styles.points}>{["可编辑标签","关系可调整","局部修改","多种图型","可复用到 PPT"].map(x=><span key={x}>✓ {x}</span>)}</div><div className={styles.actions}><a className={styles.cta} href={registerUrl}>生成我的科研图 ↗</a><a className={styles.secondary} href="#workflow">查看流程</a></div></div><figure className={styles.proof}><img src="/scinest/figures-ui-en.webp" alt="SciNest 科研图生成与编辑工作区" width="1280" height="800" /></figure></section>
