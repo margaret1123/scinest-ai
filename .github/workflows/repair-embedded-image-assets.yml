@@ -1,0 +1,170 @@
+name: Repair embedded landing images
+
+on:
+  push:
+    branches:
+      - feat/real-editable-powerpoint-landing
+    paths:
+      - .github/workflows/repair-embedded-image-assets.yml
+
+permissions:
+  contents: write
+
+jobs:
+  repair:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out branch
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Extract real WebP files and remove SVG wrappers
+        shell: bash
+        run: |
+          node <<'NODE'
+          const fs = require('fs');
+          const path = require('path');
+
+          const jobs = [
+            {
+              output: 'public/scinest/ppt-outline-edit-en.webp',
+              candidates: [
+                'public/scinest/ppt-outline-edit-proof-en.svg',
+                'public/scinest/ppt-outline-edit-en.svg',
+              ],
+            },
+            {
+              output: 'public/scinest/ppt-source-bound-en.webp',
+              candidates: ['public/scinest/ppt-source-bound-en.svg'],
+            },
+            {
+              output: 'public/scinest/ppt-element-edit-en.webp',
+              candidates: ['public/scinest/ppt-element-edit-en.svg'],
+            },
+            {
+              output: 'public/scinest/figure-layer-edit-en.webp',
+              candidates: ['public/scinest/figure-layer-edit-en.svg'],
+            },
+            {
+              output: 'public/scinest/figure-text-edit-en.webp',
+              candidates: ['public/scinest/figure-text-edit-en.svg'],
+            },
+            {
+              output: 'public/scinest/writing-outline-overview-en.webp',
+              candidates: ['public/scinest/writing-outline-overview-en.svg'],
+            },
+            {
+              output: 'public/scinest/writing-outline-detail-en.webp',
+              candidates: [
+                'public/scinest/writing-outline-detail-proof-en.svg',
+                'public/scinest/writing-outline-detail-en.svg',
+              ],
+            },
+            {
+              output: 'public/scinest/writing-long-form-edit-en.webp',
+              candidates: [
+                'public/scinest/writing-long-form-hero-en.svg',
+                'public/scinest/writing-long-form-edit-en.svg',
+                'public/scinest/writing-long-form-edit-fallback-en.svg',
+              ],
+            },
+          ];
+
+          function extractWebP(candidates) {
+            for (const candidate of candidates) {
+              if (!fs.existsSync(candidate)) continue;
+              const svg = fs.readFileSync(candidate, 'utf8');
+              const match = svg.match(/data:image\/webp;base64,([^"']+)/);
+              if (!match) continue;
+
+              const buffer = Buffer.from(match[1], 'base64');
+              const riff = buffer.subarray(0, 4).toString('ascii');
+              const webp = buffer.subarray(8, 12).toString('ascii');
+              const declaredLength = buffer.length >= 8 ? buffer.readUInt32LE(4) + 8 : 0;
+
+              if (riff !== 'RIFF' || webp !== 'WEBP') {
+                throw new Error(`${candidate} does not contain a valid WebP RIFF header`);
+              }
+              if (declaredLength !== buffer.length) {
+                throw new Error(`${candidate} WebP is truncated: declared ${declaredLength} bytes, decoded ${buffer.length}`);
+              }
+              return { candidate, buffer };
+            }
+            throw new Error(`No embedded WebP found in: ${candidates.join(', ')}`);
+          }
+
+          for (const job of jobs) {
+            const { candidate, buffer } = extractWebP(job.candidates);
+            fs.mkdirSync(path.dirname(job.output), { recursive: true });
+            fs.writeFileSync(job.output, buffer);
+            console.log(`Extracted ${candidate} -> ${job.output} (${buffer.length} bytes)`);
+          }
+
+          const replacements = {
+            'app/ai-powerpoint-generator/page.tsx': [
+              ['ppt-outline-edit-en.svg', 'ppt-outline-edit-en.webp'],
+              ['ppt-source-bound-en.svg', 'ppt-source-bound-en.webp'],
+              ['ppt-element-edit-en.svg', 'ppt-element-edit-en.webp'],
+            ],
+            'app/scientific-figure-generator/page.tsx': [
+              ['figure-layer-edit-en.svg', 'figure-layer-edit-en.webp'],
+              ['figure-text-edit-en.svg', 'figure-text-edit-en.webp'],
+            ],
+            'app/ai-thesis-writing-assistant/page.tsx': [
+              ['writing-outline-overview-en.svg', 'writing-outline-overview-en.webp'],
+              ['writing-outline-detail-en.svg', 'writing-outline-detail-en.webp'],
+              ['writing-long-form-edit-en.svg', 'writing-long-form-edit-en.webp'],
+            ],
+          };
+
+          for (const [file, pairs] of Object.entries(replacements)) {
+            let content = fs.readFileSync(file, 'utf8');
+            for (const [before, after] of pairs) {
+              if (!content.includes(before)) {
+                throw new Error(`${file} no longer contains expected reference ${before}`);
+              }
+              content = content.split(before).join(after);
+            }
+            fs.writeFileSync(file, content);
+          }
+
+          const obsolete = [
+            'public/scinest/figure-layer-edit-en.svg',
+            'public/scinest/figure-text-edit-en.svg',
+            'public/scinest/ppt-element-edit-en.svg',
+            'public/scinest/ppt-outline-edit-en.svg',
+            'public/scinest/ppt-outline-edit-proof-en.svg',
+            'public/scinest/ppt-source-bound-en.svg',
+            'public/scinest/writing-long-form-edit-en.svg',
+            'public/scinest/writing-long-form-edit-fallback-en.svg',
+            'public/scinest/writing-long-form-hero-en.svg',
+            'public/scinest/writing-outline-detail-en.svg',
+            'public/scinest/writing-outline-detail-proof-en.svg',
+            'public/scinest/writing-outline-overview-en.svg',
+          ];
+
+          for (const file of obsolete) {
+            if (fs.existsSync(file)) fs.unlinkSync(file);
+          }
+
+          const activePages = Object.keys(replacements).map(file => fs.readFileSync(file, 'utf8')).join('\n');
+          const remaining = obsolete
+            .map(file => path.basename(file))
+            .filter(name => activePages.includes(name));
+          if (remaining.length) {
+            throw new Error(`Active page references remain for obsolete SVG files: ${remaining.join(', ')}`);
+          }
+
+          fs.unlinkSync('.github/workflows/repair-embedded-image-assets.yml');
+          NODE
+
+      - name: Commit repaired assets
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git diff --cached --check
+          git commit -m "fix: use real WebP assets on product landing pages"
+          git push origin HEAD:feat/real-editable-powerpoint-landing
