@@ -55,6 +55,8 @@ export function DashboardContent({ email, hasFoundingEdition, earlyBirdEligible,
       setBuying(false);
     }
   };
+
+  const formatAmount = (order: Order) => {
     const currency = order.currency?.toUpperCase() || "CNY";
     return new Intl.NumberFormat("zh-CN", { style: "currency", currency }).format(order.amount / 100);
   };
