@@ -19,12 +19,6 @@
 ## Primary pages
 - / : English product and pre-launch page
 - /zh : Chinese product and pre-launch page
-- /ai-thesis-writing-assistant : English AI thesis writing assistant page
-- /zh/ai-thesis-writing-assistant : Chinese AI thesis writing assistant page
-- /ai-powerpoint-generator : English AI PowerPoint generator page
-- /zh/ai-powerpoint-generator : Chinese AI PowerPoint generator page
-- /scientific-figure-generator : English scientific figure generator page
-- /zh/scientific-figure-generator : Chinese scientific figure generator page
 - /privacy : Privacy policy
 - /terms : Terms of service
 - /refund-policy : Refund policy
@@ -44,7 +38,7 @@ Typical tasks include:
 General AI tools usually return one answer or output at a time. SciNest keeps source materials, writing, figures, slides and project decisions connected so work can continue across deliverables without repeatedly rebuilding the same research context.
 
 ## Free and Pro plans
-Both plans are BYOK (bring your own AI key). SciNest does not provide, resell or bundle AI keys. The user connects their own key from any supported provider (OpenAI, Anthropic, DeepSeek, Groq and others). SciNest never limits generation counts, never marks up AI usage, and never charges per generation. The user pays their chosen AI provider directly at cost, and SciNest Free provides one active project without charging for the app itself.
+Both plans use the user's own AI API key and SciNest does not limit generation counts.
 
 SciNest Free:
 - One active project.

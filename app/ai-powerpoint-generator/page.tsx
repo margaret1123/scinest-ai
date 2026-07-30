@@ -125,14 +125,6 @@ const structuredData = [
       acceptedAnswer: { "@type": "Answer", text: answer },
     })),
   },
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      { "@type": "ListItem", position: 1, name: "SciNest", item: `${siteUrl}/` },
-      { "@type": "ListItem", position: 2, name: "AI PowerPoint Generator", item: `${siteUrl}/ai-powerpoint-generator` },
-    ],
-  },
 ];
 
 const falseOutputs = [
@@ -195,7 +187,7 @@ export default function AiPowerPointGeneratorPage() {
               <a className={styles.primary} href={registerUrl}>Generate my real PowerPoint ↗</a>
               <a className={styles.secondary} href="#proof">See the editable result</a>
             </div>
-            <p className={styles.note}>Windows desktop · Use your own AI key (no markup, no usage caps) · Files stay local</p>
+            <p className={styles.note}>Windows desktop · Bring your own AI key · Project files stay local by default</p>
           </div>
 
           <div className={styles.heroStage} id="proof">
@@ -254,7 +246,7 @@ export default function AiPowerPointGeneratorPage() {
               <span style={proofPointStyle}><b style={proofNumberStyle}>02</b>Every generated slide title remains editable</span>
               <span style={proofPointStyle}><b style={proofNumberStyle}>03</b>Expand a slide to refine its actual content</span>
             </div>
-            <img src="/scinest/ppt-outline-edit-proof-v3.webp" alt="SciNest PowerPoint task settings with AI optimization and an editable generated slide outline" width="900" height="570" style={proofImageStyle} loading="lazy" decoding="async" />
+            <img src="/scinest/ppt-outline-edit-proof-en.svg" alt="SciNest PowerPoint task settings with AI optimization and an editable generated slide outline" width="1200" height="760" style={proofImageStyle} loading="lazy" decoding="async" />
             <figcaption style={proofCaptionStyle}>The real task screen keeps presentation goals, audience, page count, template and every generated slide title editable before the deck is built.</figcaption>
           </figure>
         </section>
@@ -340,7 +332,7 @@ export default function AiPowerPointGeneratorPage() {
           <p>STOP GENERATING CONTENT THAT STILL NEEDS TO BECOME A PRESENTATION</p>
           <h2>Upload the material.<br />Get a real, visual, editable PowerPoint.</h2>
           <a href={registerUrl}>Generate my real PowerPoint ↗</a>
-          <span>Use your own AI key (no markup, no caps) · Local files · Real PPTX export</span>
+          <span>Use your own AI key · Local project files by default · Real PPTX export</span>
         </section>
       </main>
 

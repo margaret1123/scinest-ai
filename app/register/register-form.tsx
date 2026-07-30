@@ -104,8 +104,7 @@ export function RegisterForm() {
         </p>
 
         <p style={{ marginTop: 22, textAlign: "center", color: "#607477", fontSize: 13 }}>
-          <a href="https://github.com/margaret1123/scinest-ai/releases/latest/download/SciNest-win-x64.exe" style={{color: "#0D9488"}}>Download SciNest Free for Windows</a> · <a href="https://github.com/margaret1123/scinest-ai/releases/latest/download/SciNest-mac-arm64.dmg" style={{color: "#0D9488"}}>macOS</a> · <a href="https://github.com/margaret1123/scinest-ai/releases/latest/download/SciNest-linux-x86_64.AppImage" style={{color: "#0D9488"}}>Linux</a><br />
-          <small style={{color: "#94A3A8"}}>Windows may show a SmartScreen warning — click "More info" → "Run anyway"</small>
+          SciNest Free opens August 1, 2026.
         </p>
       </section>
     </main>

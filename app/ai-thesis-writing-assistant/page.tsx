@@ -4,8 +4,7 @@ import styles from "./ai-thesis-writing-assistant.module.css";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://scinest-ai.vercel.app";
 const registerUrl = "/login?redirect=/dashboard&intent=early-bird";
-const writingHeroImage = "/scinest/writing-workspace-proof-v3.webp";
-const writingLongFormImage = "/scinest/writing-long-form-proof-v3.webp";
+const writingProofImage = "/scinest/writing-long-form-hero-en.svg";
 
 export const metadata: Metadata = {
   title: "AI Thesis Writing Assistant With References and Long-Form Drafts | SciNest",
@@ -18,13 +17,13 @@ export const metadata: Metadata = {
     title: "AI Thesis Writing Assistant With References | SciNest",
     description:
       "From selected sources and an editable outline to a coherent 10,000-word academic draft with references and section-level revision.",
-    images: [{ url: writingHeroImage, width: 1280, height: 800, alt: "SciNest source-bound academic writing workspace" }],
+    images: [{ url: writingProofImage, width: 1280, height: 800, alt: "SciNest source-bound academic writing workspace" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Generate a long academic draft from an editable outline and selected references",
     description: "Outline first. Source-bound writing. References included. Long-form generation in one run.",
-    images: [writingHeroImage],
+    images: [writingProofImage],
   },
 };
 
@@ -71,14 +70,6 @@ const structuredData = [
       name: question,
       acceptedAnswer: { "@type": "Answer", text: answer },
     })),
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      { "@type": "ListItem", position: 1, name: "SciNest", item: `${siteUrl}/` },
-      { "@type": "ListItem", position: 2, name: "AI Thesis Writing Assistant", item: `${siteUrl}/ai-thesis-writing-assistant` },
-    ],
   },
 ];
 
@@ -144,12 +135,12 @@ export default function AiThesisWritingAssistantPage() {
               {['Editable outline', 'Selected materials', 'Reference-aware', 'Long-form generation', 'Section revision'].map(item => <span key={item}>✓ {item}</span>)}
             </div>
             <div className={styles.ctas}><a className={styles.primary} href={registerUrl}>Generate my long-form draft ↗</a><a className={styles.secondary} href="#proof">See the writing workflow</a></div>
-            <p className={styles.note}>Windows desktop · Use your own AI key (no markup, no usage caps) · Files stay local</p>
+            <p className={styles.note}>Windows desktop · Bring your own AI key · Project files stay local by default</p>
           </div>
 
           <div className={styles.heroStage} id="proof">
             <div className={styles.stageTop}><span>SCINEST WRITING WORKSPACE</span><b>Outline → Draft → References</b></div>
-            <img src={writingHeroImage} alt="SciNest academic writing workspace with outline, materials and editable long-form draft" width="1280" height="800" />
+            <img src={writingProofImage} alt="SciNest academic writing workspace with outline, materials and editable long-form draft" width="1280" height="800" />
             <div className={`${styles.callout} ${styles.calloutOutline}`}><b>01</b><span>Outline stays editable</span></div>
             <div className={`${styles.callout} ${styles.calloutSources}`}><b>02</b><span>Materials stay connected</span></div>
             <div className={`${styles.callout} ${styles.calloutDraft}`}><b>03</b><span>Long-form draft in one run</span></div>
@@ -206,7 +197,7 @@ export default function AiThesisWritingAssistantPage() {
           </div>
           <div className={styles.metricRow}><div><strong>10,000+</strong><span>word long-form target</span></div><div><strong>1</strong><span>approved outline</span></div><div><strong>Selected</strong><span>materials and references</span></div><div><strong>Editable</strong><span>chapters and passages</span></div></div>
           <figure style={proofFigureStyle}>
-            <img src={writingLongFormImage} alt="SciNest long-form academic document editor with Smart Outline, character count and selected passage AI Edit" width="1200" height="760" style={proofImageStyle} />
+            <img src={writingProofImage} alt="SciNest long-form academic document editor with Smart Outline, character count and selected passage AI Edit" width="1200" height="760" style={proofImageStyle} />
             <figcaption style={proofCaptionStyle}>A 100,000-character document remains inside a structured editor, with navigation by heading and targeted AI revision for the selected passage.</figcaption>
           </figure>
         </section>
