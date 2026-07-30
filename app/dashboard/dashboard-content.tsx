@@ -1,6 +1,7 @@
 "use client";
 
 import { useRouter } from "next/navigation";
+import { useState } from "react";
 import { createClient } from "@/lib/supabase-client";
 
 interface Order {
@@ -29,7 +30,31 @@ export function DashboardContent({ email, hasFoundingEdition, earlyBirdEligible,
     router.refresh();
   };
 
-  const formatAmount = (order: Order) => {
+  const [buying, setBuying] = useState(false);
+  const [buyError, setBuyError] = useState<string | null>(null);
+
+  const handlePurchase = async (market: "cny" | "usd") => {
+    if (buying) return;
+    setBuying(true);
+    setBuyError(null);
+    try {
+      const res = await fetch("/api/stripe/checkout", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ market }),
+      });
+      const data = await res.json();
+      if (!res.ok || !data.url) {
+        setBuyError(data.error || "Checkout unavailable");
+        setBuying(false);
+        return;
+      }
+      window.location.href = data.url;
+    } catch {
+      setBuyError("Network error. Please try again.");
+      setBuying(false);
+    }
+  };
     const currency = order.currency?.toUpperCase() || "CNY";
     return new Intl.NumberFormat("zh-CN", { style: "currency", currency }).format(order.amount / 100);
   };
@@ -69,8 +94,36 @@ export function DashboardContent({ email, hasFoundingEdition, earlyBirdEligible,
             <p style={{ color: earlyBirdEligible ? "#72e3d4" : "#087c75", fontWeight: 700, marginTop: 0 }}>{earlyBirdEligible ? "EARLY BIRD PRO" : "SCINEST FREE"}</p>
             <h2>{earlyBirdEligible ? "30天 Pro 资格已锁定" : "账户已注册"}</h2>
             <p style={{ color: earlyBirdEligible ? "#c2dad7" : "#607477", lineHeight: 1.7 }}>
-              {earlyBirdEligible ? "你已获得30天 SciNest Pro。无需银行卡，不会自动扣费；到期后自动回到 Free。" : "你当前使用 SciNest Free。公开付款目前未开放。"}
+              {earlyBirdEligible
+                ? "你已获得30天 SciNest Pro。无需银行卡，不会自动扣费；到期后自动回到 Free。"
+                : "你当前使用 SciNest Free。升级到 Pro 解锁无水印导出、图层编辑和可编辑 PPTX。"}
             </p>
+            {!earlyBirdEligible && (
+              <div style={{ marginTop: 16 }}>
+                <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
+                  <button
+                    onClick={() => handlePurchase("cny")}
+                    disabled={buying}
+                    style={{ padding: "12px 24px", borderRadius: 12, background: "#0D9488", color: "#fff", border: "none", fontWeight: 700, fontSize: 15, cursor: buying ? "wait" : "pointer" }}
+                  >
+                    {buying ? "处理中…" : "立即升级 Pro · ¥88"}
+                  </button>
+                  <button
+                    onClick={() => handlePurchase("usd")}
+                    disabled={buying}
+                    style={{ padding: "12px 24px", borderRadius: 12, background: "#f1f8f7", color: "#0D9488", border: "1px solid #0D9488", fontWeight: 600, fontSize: 14, cursor: buying ? "wait" : "pointer" }}
+                  >
+                    {buying ? "Processing…" : "Upgrade · $12"}
+                  </button>
+                </div>
+                {buyError && (
+                  <p style={{ color: "#dc2626", fontSize: 13, marginTop: 8 }}>{buyError}</p>
+                )}
+                <p style={{ color: "#94A3A8", fontSize: 12, marginTop: 8, marginBottom: 0 }}>
+                  365 天 Pro 授权 · 无水印导出 · 图层编辑 · 可编辑 PPTX · 无限项目
+                </p>
+              </div>
+            )}
           </section>
         )}
 
