@@ -28,6 +28,19 @@ yarn-error.log*
 # vercel
 .vercel
 
+# video production
+video-production/sora-output/
+video-production/output/
+video-production/assets/bgm.*
+video-production/assets/voiceover.*
+video-production/scripts/*.env
+video-production/.env
+*.mp4
+*.mp3
+*.srt
+!public/**/*.mp4
+!public/**/*.mp3
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts
