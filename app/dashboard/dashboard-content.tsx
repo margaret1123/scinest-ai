@@ -18,15 +18,68 @@ interface DashboardContentProps {
   earlyBirdEligible: boolean;
   license: string;
   orders: Order[];
+  locale: "zh" | "en";
 }
 
-export function DashboardContent({ email, hasFoundingEdition, earlyBirdEligible, license, orders }: DashboardContentProps) {
+const t = {
+  zh: {
+    title: "账户与下载",
+    download: "下载 SciNest",
+    smartScreen: "Windows 可能提示 SmartScreen 警告，点击「更多信息」→「仍要运行」。macOS 首次打开需右键选择「打开」。",
+    foundingBadge: "FOUNDING EDITION",
+    foundingTitle: "Pro 授权已激活",
+    foundingBody: "你拥有 SciNest Founding Edition 授权。全部功能已解锁，包括无水印导出、图层编辑和可编辑 PPT 导出。",
+    proBadge: "PRO UNLOCKED",
+    proTitle: "Pro 已解锁",
+    proBody: "Pro 功能已就绪。无水印导出、图层编辑、可编辑 PPTX — 全部可用。",
+    freeBadge: "SCINEST FREE",
+    freeTitle: "SciNest Free",
+    freeBody: "你当前使用 SciNest Free。升级到 Pro 解锁无水印导出、图层编辑和可编辑 PPTX。",
+    buyCny: "升级 Pro · ¥299",
+    buyUsd: "Upgrade · $49",
+    buying: "处理中…",
+    buyingEn: "Processing…",
+    priceNote: "365 天 Pro 授权 · 无水印导出 · 图层编辑 · 可编辑 PPTX · 无限项目",
+    foundingOrder: "已有 Founding Edition 订单",
+    foundingOrderNote: "现有付费订单与授权记录保留。",
+    ordersTitle: "订单记录",
+    logout: "退出",
+    signIn: "登录",
+  },
+  en: {
+    title: "Account & Download",
+    download: "Download SciNest",
+    smartScreen: "Windows may show a SmartScreen warning — click 'More info' then 'Run anyway'. On macOS, right-click and select 'Open' for first launch.",
+    foundingBadge: "FOUNDING EDITION",
+    foundingTitle: "Pro License Active",
+    foundingBody: "You have a SciNest Founding Edition license. All features unlocked — watermark-free export, layer editing, and editable PPTX.",
+    proBadge: "PRO UNLOCKED",
+    proTitle: "Pro Unlocked",
+    proBody: "All Pro features ready — watermark-free export, layer editing, editable PPTX.",
+    freeBadge: "SCINEST FREE",
+    freeTitle: "SciNest Free",
+    freeBody: "You're on SciNest Free. Upgrade to Pro for watermark-free export, layer editing, and editable PPTX.",
+    buyCny: "Upgrade Pro · ¥299",
+    buyUsd: "Upgrade · $49",
+    buying: "Processing…",
+    buyingEn: "Processing…",
+    priceNote: "365-day Pro license · Watermark-free · Layer editing · Editable PPTX · Unlimited projects",
+    foundingOrder: "Founding Edition Order",
+    foundingOrderNote: "Existing order and license records are preserved.",
+    ordersTitle: "Order History",
+    logout: "Sign out",
+    signIn: "Sign in",
+  },
+} as const;
+
+export function DashboardContent({ email, hasFoundingEdition, earlyBirdEligible, license, orders, locale }: DashboardContentProps) {
   const router = useRouter();
+  const c = t[locale];
 
   const handleLogout = async () => {
     const supabase = createClient();
     await supabase.auth.signOut();
-    router.push("/");
+    router.push(`/${locale === "zh" ? "zh" : ""}`);
     router.refresh();
   };
 
@@ -58,7 +111,10 @@ export function DashboardContent({ email, hasFoundingEdition, earlyBirdEligible,
 
   const formatAmount = (order: Order) => {
     const currency = order.currency?.toUpperCase() || "CNY";
-    return new Intl.NumberFormat("zh-CN", { style: "currency", currency }).format(order.amount / 100);
+    return new Intl.NumberFormat(locale === "zh" ? "zh-CN" : "en-US", {
+      style: "currency",
+      currency,
+    }).format(order.amount / 100);
   };
 
   const isPro = license === "pro_founding" || license === "early_bird_pro";
@@ -66,42 +122,44 @@ export function DashboardContent({ email, hasFoundingEdition, earlyBirdEligible,
   return (
     <div style={{ minHeight: "100vh", background: "#f7fbfb", color: "#102326" }}>
       <header style={{ borderBottom: "1px solid #dcebea", background: "#fff", padding: "16px 24px", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-        <a href="/" style={{ display: "flex", alignItems: "center", gap: 10, color: "inherit", textDecoration: "none" }}>
+        <a href={`/${locale === "zh" ? "zh" : ""}`} style={{ display: "flex", alignItems: "center", gap: 10, color: "inherit", textDecoration: "none" }}>
           <span style={{ width: 38, height: 38, borderRadius: 12, background: "#087c75", color: "#fff", display: "grid", placeItems: "center", fontWeight: 800 }}>S</span>
-          <strong>SciNest · 科研小棉袄</strong>
+          <strong>SciNest{locale === "zh" ? " · 科研小棉袄" : ""}</strong>
         </a>
-        <div style={{ display: "flex", gap: 16, alignItems: "center" }}><span style={{ color: "#607477", fontSize: 14 }}>{email}</span><button onClick={handleLogout} style={{ border: "1px solid #b9d8d5", borderRadius: 999, background: "#fff", padding: "8px 16px", cursor: "pointer" }}>退出</button></div>
+        <div style={{ display: "flex", gap: 16, alignItems: "center" }}>
+          <a href={locale === "zh" ? "/" : "/zh"} style={{ color: "#607477", fontSize: 13, textDecoration: "none" }}>{locale === "zh" ? "EN" : "中文"}</a>
+          <span style={{ color: "#607477", fontSize: 14 }}>{email}</span>
+          <button onClick={handleLogout} style={{ border: "1px solid #b9d8d5", borderRadius: 999, background: "#fff", padding: "8px 16px", cursor: "pointer" }}>{c.logout}</button>
+        </div>
       </header>
 
       <main style={{ maxWidth: 860, margin: "0 auto", padding: "48px 24px" }}>
-        <h1 style={{ marginBottom: 8 }}>账户与下载</h1>
+        <h1 style={{ marginBottom: 8 }}>{c.title}</h1>
 
         {/* ── Download section ── */}
         <section style={{ marginTop: 24, padding: 24, borderRadius: 20, background: "#fff", border: "1px solid #dcebea" }}>
-          <h2 style={{ marginTop: 0 }}>下载 SciNest</h2>
+          <h2 style={{ marginTop: 0 }}>{c.download}</h2>
           <div style={{ display: "flex", gap: 12, flexWrap: "wrap", marginBottom: 12 }}>
             <a href="https://github.com/margaret1123/scinest-ai/releases/latest/download/SciNest-win-x64.exe" style={{ padding: "10px 18px", borderRadius: 10, background: "#0D9488", color: "#fff", textDecoration: "none", fontWeight: 700 }}>Windows</a>
             <a href="https://github.com/margaret1123/scinest-ai/releases/latest/download/SciNest-mac-arm64.dmg" style={{ padding: "10px 18px", borderRadius: 10, background: "#f1f8f7", color: "#0D9488", textDecoration: "none" }}>macOS</a>
             <a href="https://github.com/margaret1123/scinest-ai/releases/latest/download/SciNest-linux-x86_64.AppImage" style={{ padding: "10px 18px", borderRadius: 10, background: "#f1f8f7", color: "#0D9488", textDecoration: "none" }}>Linux</a>
           </div>
-          <p style={{ color: "#94A3A8", fontSize: 13, margin: 0 }}>Windows 可能提示 SmartScreen 警告，点击「更多信息」→「仍要运行」。macOS 首次打开需右键选择「打开」。</p>
+          <p style={{ color: "#94A3A8", fontSize: 13, margin: 0 }}>{c.smartScreen}</p>
         </section>
 
         {/* ── License status ── */}
         {license === "pro_founding" ? (
           <section style={{ marginTop: 32, padding: 32, borderRadius: 24, background: "#0c2d32", color: "#fff", border: "1px solid #1a4a52" }}>
-            <p style={{ color: "#72e3d4", fontWeight: 700, marginTop: 0 }}>FOUNDING EDITION</p>
-            <h2>Pro 授权已激活</h2>
-            <p style={{ color: "#c2dad7", lineHeight: 1.7 }}>你拥有 SciNest Founding Edition 授权。全部功能已解锁，包括无水印导出、图层编辑和可编辑 PPT 导出。</p>
+            <p style={{ color: "#72e3d4", fontWeight: 700, marginTop: 0 }}>{c.foundingBadge}</p>
+            <h2>{c.foundingTitle}</h2>
+            <p style={{ color: "#c2dad7", lineHeight: 1.7 }}>{c.foundingBody}</p>
           </section>
         ) : (
           <section style={{ marginTop: 32, padding: 32, borderRadius: 24, background: isPro ? "#0c2d32" : "#fff", color: isPro ? "#fff" : "#102326", border: "1px solid #dcebea" }}>
-            <p style={{ color: isPro ? "#72e3d4" : "#087c75", fontWeight: 700, marginTop: 0 }}>{isPro ? "PRO UNLOCKED" : "SCINEST FREE"}</p>
-            <h2>{isPro ? "Pro 已解锁" : "SciNest Free"}</h2>
+            <p style={{ color: isPro ? "#72e3d4" : "#087c75", fontWeight: 700, marginTop: 0 }}>{isPro ? c.proBadge : c.freeBadge}</p>
+            <h2>{isPro ? c.proTitle : c.freeTitle}</h2>
             <p style={{ color: isPro ? "#c2dad7" : "#607477", lineHeight: 1.7 }}>
-              {isPro
-                ? "Pro 功能已就绪。无水印导出、图层编辑、可编辑 PPTX — 全部可用。"
-                : "你当前使用 SciNest Free。升级到 Pro 解锁无水印导出、图层编辑和可编辑 PPTX。"}
+              {isPro ? c.proBody : c.freeBody}
             </p>
             {!isPro && (
               <div style={{ marginTop: 16 }}>
@@ -111,21 +169,21 @@ export function DashboardContent({ email, hasFoundingEdition, earlyBirdEligible,
                     disabled={buying}
                     style={{ padding: "12px 24px", borderRadius: 12, background: "#0D9488", color: "#fff", border: "none", fontWeight: 700, fontSize: 15, cursor: buying ? "wait" : "pointer" }}
                   >
-                    {buying ? "处理中…" : "升级 Pro · ¥299"}
+                    {buying ? c.buying : c.buyCny}
                   </button>
                   <button
                     onClick={() => handlePurchase("usd")}
                     disabled={buying}
                     style={{ padding: "12px 24px", borderRadius: 12, background: "#f1f8f7", color: "#0D9488", border: "1px solid #0D9488", fontWeight: 600, fontSize: 14, cursor: buying ? "wait" : "pointer" }}
                   >
-                    {buying ? "Processing…" : "Upgrade · $49"}
+                    {buying ? c.buyingEn : c.buyUsd}
                   </button>
                 </div>
                 {buyError && (
                   <p style={{ color: "#dc2626", fontSize: 13, marginTop: 8 }}>{buyError}</p>
                 )}
                 <p style={{ color: "#94A3A8", fontSize: 12, marginTop: 8, marginBottom: 0 }}>
-                  365 天 Pro 授权 · 无水印导出 · 图层编辑 · 可编辑 PPTX · 无限项目
+                  {c.priceNote}
                 </p>
               </div>
             )}
@@ -134,15 +192,15 @@ export function DashboardContent({ email, hasFoundingEdition, earlyBirdEligible,
 
         {hasFoundingEdition && (
           <section style={{ marginTop: 24, padding: 24, borderRadius: 20, background: "#fff", border: "1px solid #dcebea" }}>
-            <strong>已有 Founding Edition 订单</strong>
-            <p style={{ color: "#607477", marginBottom: 0 }}>现有付费订单与授权记录保留。</p>
+            <strong>{c.foundingOrder}</strong>
+            <p style={{ color: "#607477", marginBottom: 0 }}>{c.foundingOrderNote}</p>
           </section>
         )}
 
         {orders.length > 0 && (
           <section style={{ marginTop: 24, padding: 32, borderRadius: 24, background: "#fff", border: "1px solid #dcebea" }}>
-            <h2 style={{ marginTop: 0 }}>订单记录</h2>
-            {orders.map((order) => <div key={order.id} style={{ display: "flex", justifyContent: "space-between", gap: 20, padding: "14px 0", borderBottom: "1px solid #edf4f3" }}><div><strong>{order.product_name}</strong><div style={{ color: "#607477", fontSize: 13 }}>{new Date(order.created_at).toLocaleDateString("zh-CN")}</div></div><strong style={{ color: "#087c75" }}>{formatAmount(order)}</strong></div>)}
+            <h2 style={{ marginTop: 0 }}>{c.ordersTitle}</h2>
+            {orders.map((order) => <div key={order.id} style={{ display: "flex", justifyContent: "space-between", gap: 20, padding: "14px 0", borderBottom: "1px solid #edf4f3" }}><div><strong>{order.product_name}</strong><div style={{ color: "#607477", fontSize: 13 }}>{new Date(order.created_at).toLocaleDateString(locale === "zh" ? "zh-CN" : "en-US")}</div></div><strong style={{ color: "#087c75" }}>{formatAmount(order)}</strong></div>)}
           </section>
         )}
       </main>
