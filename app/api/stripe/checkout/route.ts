@@ -17,7 +17,7 @@ export async function POST(req: NextRequest) {
   try {
     if (process.env.SCINEST_CHECKOUT_ENABLED !== "true") {
       return NextResponse.json(
-        { error: "付款功能正在完成交付验证，暂未开放。" },
+        { error: "付款功能暂未开放，请稍后再试。" },
         { status: 503 }
       );
     }

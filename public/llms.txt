@@ -1,5 +1,5 @@
 # SciNest · 科研小棉袄
-> A pre-launch Windows desktop research productivity application for students and early researchers who need to turn existing materials into connected academic writing, scientific figures and presentations.
+> A Windows desktop research productivity application for students and early researchers who need to turn existing materials into connected academic writing, scientific figures and presentations.
 
 ## Site information
 - Canonical site: https://scinest-ai.vercel.app/
@@ -9,16 +9,14 @@
 - Category: Research productivity software
 
 ## Current availability
-- Pre-launch registration is open.
-- Windows downloads are scheduled to open on August 1, 2026.
-- Public payment is not open during pre-launch.
-- Accounts registered before launch receive 30 days of SciNest Pro when downloads open.
+- SciNest Free is available for Windows, macOS and Linux.
+- New accounts start with Pro unlocked for 7 days.
 - No credit card is required and there is no automatic charge.
-- After 30 days, early-bird accounts return to SciNest Free unless the user chooses to upgrade.
+- Users keep all their project files and can upgrade to Pro anytime.
 
 ## Primary pages
-- / : English product and pre-launch page
-- /zh : Chinese product and pre-launch page
+- / : English product page
+- /zh : Chinese product page
 - /privacy : Privacy policy
 - /terms : Terms of service
 - /refund-policy : Refund policy

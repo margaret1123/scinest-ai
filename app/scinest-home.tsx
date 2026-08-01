@@ -1,7 +1,6 @@
 import styles from "./scinest-home.module.css";
 import launchStyles from "./prelaunch.module.css";
-import { LaunchCountdown } from "./launch-countdown";
-import type { Locale } from "./home-content";
+import { pricing, type Locale } from "./home-content";
 
 const content = {
   en: {
@@ -9,17 +8,15 @@ const content = {
     subBrand: "Academic work, finished",
     nav: ["Your situation", "How it works", "Editable outputs", "Free vs Pro", "FAQ"],
     login: "Sign in",
-    start: "Claim 30 days of Pro",
-    strip: "SciNest Free opens August 1, 2026",
-    stripOffer: "Register before launch and get 30 days of Pro free.",
-    eyebrow: "PRE-LAUNCH · WINDOWS DESKTOP · BRING YOUR OWN AI KEY",
+    start: "Get SciNest Free",
+    strip: "SciNest Free for Windows",
+    stripOffer: "Pro unlocked for new accounts",
+    eyebrow: "WINDOWS DESKTOP · BRING YOUR OWN AI KEY",
     title: <>One deadline. <em>A thesis to revise. Figures to finish. Slides to build.</em></>,
     intro: "Bring papers, notes, drafts, data and supervisor feedback into one project. SciNest helps turn the work you already have into academic writing, scientific figures and a defense-ready presentation.",
-    offerTitle: "Register before August 1. Unlock 30 days of SciNest Pro free.",
-    offerBody: "No credit card. No automatic charge. Pro access starts when downloads open, then returns to the Free plan unless you choose to upgrade.",
-    primary: "Claim 30 days of Pro",
+    primary: "Get SciNest Free",
     secondary: "See Free vs Pro",
-    note: "Downloads are not open yet · Registration is open · Your AI provider charges remain separate",
+    note: "Free download · Pro unlocked · Bring your own AI key",
     stats: [
       ["Unlimited generation", "Free and Pro both use your own AI key, so SciNest does not meter generations"],
       ["Scientific figures", "Generate research visuals; Pro unlocks layer editing and watermark-free export"],
@@ -67,36 +64,33 @@ const content = {
     freeFeatures: ["Unlimited SciNest generations", "1 active project", "Writing generation and revision", "Scientific figure export with watermark", "Presentation export as PDF", "No figure layer editing"],
     proName: "SciNest Pro",
     proDesc: "For continuous coursework, thesis work and multiple projects.",
-    proFeatures: ["Unlimited SciNest generations", "Multiple projects", "Watermark-free figure export", "Figure layer, label and element editing", "Editable PowerPoint export", "30 days free for pre-launch registrations"],
-    planNote: "AI provider usage charges are paid through your own API key. Downloads and public payment are not open during pre-launch.",
-    faqTitle: "Clear answers before launch",
+    proFeatures: ["Unlimited SciNest generations", "Multiple projects", "Watermark-free figure export", "Figure layer, label and element editing", "Editable PowerPoint export", "Pro unlocked from day one"],
+    planNote: "AI provider charges are paid through your own API key.",
+    faqTitle: "Quick answers",
     faq: [
-      ["When can I download SciNest?", "SciNest Free is scheduled to open for Windows downloads on August 1, 2026."],
-      ["What does the early-bird offer include?", "Accounts registered before launch receive 30 days of Pro access when downloads open. No credit card is required and there is no automatic charge."],
+      ["How do I get started?", "Download SciNest Free for Windows. Create an account, add your AI API key, and open your first project."],
+      ["What's in Pro?", "Multiple projects, watermark-free scientific figures, layer editing, and editable PowerPoint export."],
       ["Are generations limited?", "No. Free and Pro both allow unlimited SciNest generations. Your selected AI provider charges separately for actual API usage."],
-      ["What happens after the 30 days?", "The account returns to SciNest Free unless the user chooses to upgrade."],
       ["Does SciNest guarantee a grade, graduation or publication?", "No. Users remain responsible for checking facts, citations, originality and institutional AI-use rules."],
     ],
-    finalTitle: "Register now. Start with Free on August 1.",
-    finalBody: "Register before launch to unlock 30 days of Pro—without a card or automatic charge.",
-    finalCta: "Claim early-bird Pro",
+    finalTitle: "Your thesis won't write itself",
+    finalBody: "Download SciNest Free for Windows. Pro is already unlocked.",
+    finalCta: "Get SciNest Free",
   },
   zh: {
     lang: "zh-CN",
     subBrand: "科研小棉袄",
     nav: ["你的处境", "如何完成", "可编辑成果", "Free 与 Pro", "常见问题"],
     login: "登录",
-    start: "领取30天 Pro",
-    strip: "SciNest Free 将于 2026 年 8 月 1 日开放下载",
-    stripOffer: "上线前注册，免费获得30天 Pro。",
-    eyebrow: "预开放 · WINDOWS 桌面端 · 使用自己的 AI KEY",
+    start: "获取 SciNest Free",
+    strip: "SciNest Free · Windows 版",
+    stripOffer: "新账户即享 Pro",
+    eyebrow: "WINDOWS 桌面端 · 自选 AI 模型",
     title: <>材料多，任务重，时间紧，<br /><em>真正可编辑的</em><br />万字长文、图片、PPT，SciNest 全线解决方案</>,
     intro: "把论文、文献、草稿、数据和导师意见放进同一个项目，继续完成文稿、科研图与答辩 PPT，不必每换一个工具就重新解释和返工。",
-    offerTitle: "8月1日前注册，免费获得30天 SciNest Pro。",
-    offerBody: "无需银行卡，不会自动扣费。下载开放后开始计算 Pro 权益，30天后自动回到 Free，是否升级由你决定。",
-    primary: "领取30天 Pro",
+    primary: "获取 SciNest Free",
     secondary: "查看 Free 与 Pro",
-    note: "暂未开放下载 · 已开放注册 · 模型服务商 API 调用费另付",
+    note: "免费下载 · Pro 已解锁 · 自带 AI Key",
     stats: [
       ["生成不限次数", "Free 与 Pro 均使用你自己的 AI Key，SciNest 不限制生成次数"],
       ["科研图", "两种方案都能生成；Pro 解锁图层编辑和无水印导出"],
@@ -144,19 +138,18 @@ const content = {
     freeFeatures: ["SciNest 生成不限次数", "1个活跃项目", "文稿生成与修改", "科研图导出带水印", "PPT 导出为 PDF", "不支持科研图图层编辑"],
     proName: "SciNest Pro",
     proDesc: "适合持续课程、论文和多个项目。",
-    proFeatures: ["SciNest 生成不限次数", "多项目", "科研图无水印导出", "图层、标签和元素编辑", "导出可编辑 PowerPoint", "上线前注册送30天 Pro"],
-    planNote: "模型调用费通过用户自己的 API 支付。预开放期间暂不提供下载，也不开放公开付款。",
-    faqTitle: "上线前，把关键问题说清楚",
+    proFeatures: ["SciNest 生成不限次数", "多项目", "科研图无水印导出", "图层、标签和元素编辑", "导出可编辑 PowerPoint", "首日即享 Pro"],
+    planNote: "模型调用费通过你自己的 API Key 支付。",
+    faqTitle: "常见问题",
     faq: [
-      ["什么时候可以下载 SciNest？", "SciNest Free 计划于 2026 年 8 月 1 日开放 Windows 下载。"],
-      ["早鸟权益是什么？", "上线前完成注册的账户，在下载开放后获得30天 Pro。无需银行卡，不会自动扣费。"],
-      ["生成次数有限制吗？", "没有。Free 与 Pro 均不限 SciNest 生成次数，模型服务商按用户自己的 API 实际用量收费。"],
-      ["30天结束后会怎样？", "账户自动回到 SciNest Free，是否升级由用户决定。"],
+      ["如何开始？", "下载 SciNest Free Windows 版，创建账户，配置 AI API Key，打开第一个项目。"],
+      ["Pro 有什么？", "多项目、科研图无水印导出、图层编辑、可编辑 PowerPoint 导出。"],
+      ["生成次数有限制吗？", "没有。Free 与 Pro 均不限 SciNest 生成次数，模型服务商按你自己的 API 实际用量收费。"],
       ["SciNest 保证成绩、毕业或发表吗？", "不保证。用户仍需核查事实、引用、原创性，并遵守所在机构的 AI 使用规则。"],
     ],
-    finalTitle: "现在注册，8月1日从 Free 开始。",
-    finalBody: "上线前完成注册，免费解锁30天 Pro，无需银行卡，不会自动扣费。",
-    finalCta: "领取早鸟 Pro",
+    finalTitle: "论文不会自己写完",
+    finalBody: "下载 SciNest Free Windows 版，Pro 已就绪。",
+    finalCta: "获取 SciNest Free",
   },
 } as const;
 
@@ -188,7 +181,7 @@ export function SciNestHome({ locale }: { locale: Locale }) {
     </div></header>
     <main>
       <section className={styles.hero} id="top">
-        <div className={styles.heroCopy}><p className={styles.eyebrow}>{c.eyebrow}</p><h1>{c.title}</h1><p className={styles.lead}>{c.intro}</p><div className={launchStyles.heroOffer}><h2>{c.offerTitle}</h2><p>{c.offerBody}</p><LaunchCountdown locale={locale} /></div><div className={styles.ctas}><a className={styles.primary} href={registerUrl}>{c.primary} ↗</a><a className={styles.secondary} href="#pricing">{c.secondary}</a></div><p className={styles.note}>✓ {c.note}</p></div>
+        <div className={styles.heroCopy}><p className={styles.eyebrow}>{c.eyebrow}</p><h1>{c.title}</h1><p className={styles.lead}>{c.intro}</p><div className={styles.ctas}><a className={styles.primary} href={registerUrl}>{c.primary} ↗</a><a className={styles.secondary} href="#pricing">{c.secondary}</a></div><p className={styles.note}>✓ {c.note}</p></div>
         <div className={styles.heroVisual}><img src={image("hero")} alt={heroAlt} width="1280" height="800" /><span className={styles.floatTop}>01 · {c.flow[0][1]}</span><span className={styles.floatBottom}>05 · {c.flow[4][1]}</span></div>
       </section>
       <section className={styles.stats}>{c.stats.map(([v, l]) => <div key={v}><strong>{v}</strong><span>{l}</span></div>)}</section>
@@ -209,7 +202,7 @@ export function SciNestHome({ locale }: { locale: Locale }) {
         </article>
       </section>
       <section className={`${styles.section} ${styles.bento}`}><div className={styles.bentoIntro}><p className={styles.kicker}>{c.bentoKicker}</p><h2>{c.bentoTitle}</h2><p>{c.bentoBody}</p></div><article className={styles.bentoMain}><span>01</span><h3>{c.contextTitle}</h3><p>{c.contextBody}</p></article><article><span>02</span><h3>{c.editTitle}</h3><p>{c.editBody}</p></article><article><span>03</span><h3>{c.modelTitle}</h3><p>{c.modelBody}</p></article></section>
-      <section className={styles.section} id="pricing"><div className={styles.sectionHead}><p>{c.planKicker}</p><h2>{c.planTitle}</h2></div><div className={launchStyles.planGrid}><article className={launchStyles.planCard}><span className={launchStyles.planBadge}>FREE</span><h3>{c.freeName}</h3><p>{c.freeDesc}</p><ul>{c.freeFeatures.map(x => <li key={x}><span>✓</span>{x}</li>)}</ul></article><article className={`${launchStyles.planCard} ${launchStyles.planCardPro}`}><span className={launchStyles.planBadge}>PRO</span><h3>{c.proName}</h3><p>{c.proDesc}</p><ul>{c.proFeatures.map(x => <li key={x}><span>✓</span>{x}</li>)}</ul></article></div><p className={launchStyles.planNote}>{c.planNote}</p><div className={styles.ctas} style={{justifyContent:"center"}}><a className={styles.primary} href={registerUrl}>{c.primary} ↗</a></div></section>
+      <section className={styles.section} id="pricing"><div className={styles.sectionHead}><p>{c.planKicker}</p><h2>{c.planTitle}</h2></div><div className={launchStyles.planGrid}><article className={launchStyles.planCard}><span className={launchStyles.planBadge}>FREE</span><h3>{c.freeName}</h3><p>{c.freeDesc}</p><p style={{fontSize:28,fontWeight:900,color:"#087569",margin:"0 0 8px"}}>{locale === "zh" ? "免费" : "Free"}</p><ul>{c.freeFeatures.map(x => <li key={x}><span>✓</span>{x}</li>)}</ul></article><article className={`${launchStyles.planCard} ${launchStyles.planCardPro}`}><span className={launchStyles.planBadge}>PRO</span><h3>{c.proName}</h3><p>{c.proDesc}</p><p style={{fontSize:28,fontWeight:900,color:"#72e3d4",margin:"0 0 8px"}}>{pricing[locale].pro}</p><ul>{c.proFeatures.map(x => <li key={x}><span>✓</span>{x}</li>)}</ul></article></div><p className={launchStyles.planNote}>{c.planNote}</p><div className={styles.ctas} style={{justifyContent:"center"}}><a className={styles.primary} href={registerUrl}>{c.primary} ↗</a></div></section>
       <section className={`${styles.section} ${styles.faqSection}`} id="faq"><div className={styles.sectionHead}><h2>{c.faqTitle}</h2></div><div className={styles.faq}>{c.faq.map(([q, a]) => <details key={q}><summary>{q}<b>+</b></summary><p>{a}</p></details>)}</div></section>
       <section className={styles.final}><h2>{c.finalTitle}</h2><p>{c.finalBody}</p><a className={styles.lightButton} href={registerUrl}>{c.finalCta} ↗</a></section>
     </main>

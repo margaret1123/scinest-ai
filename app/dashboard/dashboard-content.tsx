@@ -61,6 +61,8 @@ export function DashboardContent({ email, hasFoundingEdition, earlyBirdEligible,
     return new Intl.NumberFormat("zh-CN", { style: "currency", currency }).format(order.amount / 100);
   };
 
+  const isPro = license === "pro_founding" || license === "early_bird_pro";
+
   return (
     <div style={{ minHeight: "100vh", background: "#f7fbfb", color: "#102326" }}>
       <header style={{ borderBottom: "1px solid #dcebea", background: "#fff", padding: "16px 24px", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
@@ -85,22 +87,23 @@ export function DashboardContent({ email, hasFoundingEdition, earlyBirdEligible,
           <p style={{ color: "#94A3A8", fontSize: 13, margin: 0 }}>Windows 可能提示 SmartScreen 警告，点击「更多信息」→「仍要运行」。macOS 首次打开需右键选择「打开」。</p>
         </section>
 
+        {/* ── License status ── */}
         {license === "pro_founding" ? (
           <section style={{ marginTop: 32, padding: 32, borderRadius: 24, background: "#0c2d32", color: "#fff", border: "1px solid #1a4a52" }}>
             <p style={{ color: "#72e3d4", fontWeight: 700, marginTop: 0 }}>FOUNDING EDITION</p>
-            <h2>永久 Pro 授权已激活</h2>
-            <p style={{ color: "#c2dad7", lineHeight: 1.7 }}>你拥有 SciNest Founding Edition 永久授权。全部功能已解锁，包括无水印导出、图层编辑和可编辑 PPT 导出。</p>
+            <h2>Pro 授权已激活</h2>
+            <p style={{ color: "#c2dad7", lineHeight: 1.7 }}>你拥有 SciNest Founding Edition 授权。全部功能已解锁，包括无水印导出、图层编辑和可编辑 PPT 导出。</p>
           </section>
         ) : (
-          <section style={{ marginTop: 32, padding: 32, borderRadius: 24, background: earlyBirdEligible ? "#0c2d32" : "#fff", color: earlyBirdEligible ? "#fff" : "#102326", border: "1px solid #dcebea" }}>
-            <p style={{ color: earlyBirdEligible ? "#72e3d4" : "#087c75", fontWeight: 700, marginTop: 0 }}>{earlyBirdEligible ? "EARLY BIRD PRO" : "SCINEST FREE"}</p>
-            <h2>{earlyBirdEligible ? "30天 Pro 资格已锁定" : "账户已注册"}</h2>
-            <p style={{ color: earlyBirdEligible ? "#c2dad7" : "#607477", lineHeight: 1.7 }}>
-              {earlyBirdEligible
-                ? "你已获得30天 SciNest Pro。无需银行卡，不会自动扣费；到期后自动回到 Free。"
+          <section style={{ marginTop: 32, padding: 32, borderRadius: 24, background: isPro ? "#0c2d32" : "#fff", color: isPro ? "#fff" : "#102326", border: "1px solid #dcebea" }}>
+            <p style={{ color: isPro ? "#72e3d4" : "#087c75", fontWeight: 700, marginTop: 0 }}>{isPro ? "PRO UNLOCKED" : "SCINEST FREE"}</p>
+            <h2>{isPro ? "Pro 已解锁" : "SciNest Free"}</h2>
+            <p style={{ color: isPro ? "#c2dad7" : "#607477", lineHeight: 1.7 }}>
+              {isPro
+                ? "Pro 功能已就绪。无水印导出、图层编辑、可编辑 PPTX — 全部可用。"
                 : "你当前使用 SciNest Free。升级到 Pro 解锁无水印导出、图层编辑和可编辑 PPTX。"}
             </p>
-            {!earlyBirdEligible && (
+            {!isPro && (
               <div style={{ marginTop: 16 }}>
                 <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
                   <button
@@ -108,14 +111,14 @@ export function DashboardContent({ email, hasFoundingEdition, earlyBirdEligible,
                     disabled={buying}
                     style={{ padding: "12px 24px", borderRadius: 12, background: "#0D9488", color: "#fff", border: "none", fontWeight: 700, fontSize: 15, cursor: buying ? "wait" : "pointer" }}
                   >
-                    {buying ? "处理中…" : "立即升级 Pro · ¥88"}
+                    {buying ? "处理中…" : "升级 Pro · ¥299"}
                   </button>
                   <button
                     onClick={() => handlePurchase("usd")}
                     disabled={buying}
                     style={{ padding: "12px 24px", borderRadius: 12, background: "#f1f8f7", color: "#0D9488", border: "1px solid #0D9488", fontWeight: 600, fontSize: 14, cursor: buying ? "wait" : "pointer" }}
                   >
-                    {buying ? "Processing…" : "Upgrade · $12"}
+                    {buying ? "Processing…" : "Upgrade · $49"}
                   </button>
                 </div>
                 {buyError && (
@@ -132,7 +135,7 @@ export function DashboardContent({ email, hasFoundingEdition, earlyBirdEligible,
         {hasFoundingEdition && (
           <section style={{ marginTop: 24, padding: 24, borderRadius: 20, background: "#fff", border: "1px solid #dcebea" }}>
             <strong>已有 Founding Edition 订单</strong>
-            <p style={{ color: "#607477", marginBottom: 0 }}>现有付费订单与授权记录保留，不受预开放页面调整影响。</p>
+            <p style={{ color: "#607477", marginBottom: 0 }}>现有付费订单与授权记录保留。</p>
           </section>
         )}
 

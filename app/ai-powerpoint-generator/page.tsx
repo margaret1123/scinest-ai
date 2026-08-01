@@ -170,7 +170,7 @@ export default function AiPowerPointGeneratorPage() {
         </nav>
         <div className={styles.headerActions}>
           <a href="/login">Sign in</a>
-          <a className={styles.smallCta} href={registerUrl}>Claim 30 days of Pro</a>
+          <a className={styles.smallCta} href={registerUrl}>Get SciNest Free</a>
         </div>
       </header>
 

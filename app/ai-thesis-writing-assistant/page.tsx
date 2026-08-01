@@ -122,7 +122,7 @@ export default function AiThesisWritingAssistantPage() {
           <a href="#long-form">Long-form</a>
           <a href="#faq">FAQ</a>
         </nav>
-        <div className={styles.headerActions}><a href="/login">Sign in</a><a className={styles.smallCta} href={registerUrl}>Claim 30 days of Pro</a></div>
+        <div className={styles.headerActions}><a href="/login">Sign in</a><a className={styles.smallCta} href={registerUrl}>Get SciNest Free</a></div>
       </header>
 
       <main>

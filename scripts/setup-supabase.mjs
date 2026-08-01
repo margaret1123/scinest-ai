@@ -17,27 +17,18 @@ async function main() {
 CREATE OR REPLACE FUNCTION auth.set_license_on_signup()
 RETURNS TRIGGER AS $$
 DECLARE
-  cutoff timestamptz := '2026-08-01T00:00:00+12:00'::timestamptz;
-  expiry  timestamptz := '2026-09-01T00:00:00Z'::timestamptz;
+  expiry timestamptz := NEW.created_at + INTERVAL '7 days';
 BEGIN
-  IF NEW.created_at < cutoff THEN
-    NEW.raw_app_meta_data = jsonb_set(
-      COALESCE(NEW.raw_app_meta_data, '{}'::jsonb),
-      '{license}',
-      '"early_bird_pro"'
-    );
-    NEW.raw_app_meta_data = jsonb_set(
-      NEW.raw_app_meta_data,
-      '{early_bird_expires_at}',
-      to_jsonb(expiry)
-    );
-  ELSE
-    NEW.raw_app_meta_data = jsonb_set(
-      COALESCE(NEW.raw_app_meta_data, '{}'::jsonb),
-      '{license}',
-      '"free"'
-    );
-  END IF;
+  NEW.raw_app_meta_data = jsonb_set(
+    COALESCE(NEW.raw_app_meta_data, '{}'::jsonb),
+    '{license}',
+    '"early_bird_pro"'
+  );
+  NEW.raw_app_meta_data = jsonb_set(
+    NEW.raw_app_meta_data,
+    '{early_bird_expires_at}',
+    to_jsonb(expiry)
+  );
   RETURN NEW;
 END;
 $$ LANGUAGE plpgsql SECURITY DEFINER;

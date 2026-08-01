@@ -88,13 +88,13 @@ export function LoginForm() {
         <div style={{ textAlign: "center", marginBottom: 28 }}>
           <div style={{ width: 54, height: 54, margin: "0 auto 14px", borderRadius: 16, background: "#087c75", color: "#fff", display: "grid", placeItems: "center", fontSize: 24, fontWeight: 800 }}>S</div>
           <h1 style={{ margin: 0, color: "#102326", fontSize: 26 }}>
-            {sent ? "Check your email" : earlyBird ? "Claim 30 days of SciNest Pro" : "Sign in to SciNest"}
+            {sent ? "Check your email" : earlyBird ? "Sign in to SciNest" : "Sign in to SciNest"}
           </h1>
           <p style={{ color: "#607477", lineHeight: 1.65 }}>
             {sent
               ? "Open the link we sent. If you requested a password reset, you will be able to set a new password."
               : earlyBird
-                ? "Register before August 1. No credit card, no automatic charge."
+                ? "New accounts start with Pro unlocked."
                 : "Sign in with your email and password."}
           </p>
         </div>
@@ -188,7 +188,7 @@ export function LoginForm() {
         )}
 
         <p style={{ marginTop: 22, textAlign: "center", color: "#607477", fontSize: 13 }}>
-          SciNest Free opens August 1, 2026. Downloads and public payment are not open yet.
+          SciNest Free for Windows. New accounts start with Pro unlocked.
         </p>
       </section>
     </main>

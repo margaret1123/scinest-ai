@@ -68,11 +68,11 @@ export function RegisterForm() {
         <div style={{ textAlign: "center", marginBottom: 28 }}>
           <div style={{ width: 54, height: 54, margin: "0 auto 14px", borderRadius: 16, background: "#087c75", color: "#fff", display: "grid", placeItems: "center", fontSize: 24, fontWeight: 800 }}>S</div>
           <h1 style={{ margin: 0, color: "#102326", fontSize: 26 }}>
-            {earlyBird ? "Claim 30 days of SciNest Pro" : "Create your SciNest account"}
+            {earlyBird ? "Create your SciNest account" : "Create your SciNest account"}
           </h1>
           <p style={{ color: "#607477", lineHeight: 1.65 }}>
             {earlyBird
-              ? "Register before August 1 to lock in 30 days of Pro free. No credit card required."
+              ? "Pro is unlocked for new accounts."
               : "One account for the web dashboard and the desktop app."}
           </p>
         </div>
@@ -94,7 +94,7 @@ export function RegisterForm() {
 
           <button type="submit" disabled={loading}
             style={{ width: "100%", border: 0, borderRadius: 999, background: "#087c75", color: "#fff", padding: 13, fontSize: 16, fontWeight: 700, cursor: loading ? "wait" : "pointer", marginTop: 8 }}>
-            {loading ? "Creating account…" : earlyBird ? "Claim early-bird Pro" : "Create account"}
+            {loading ? "Creating account…" : earlyBird ? "Create account" : "Create account"}
           </button>
         </form>
 

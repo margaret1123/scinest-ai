@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     template: "%s | SciNest",
   },
   description:
-    "SciNest is a Windows desktop research workspace for editable academic writing, scientific figures and thesis defense presentations. Free to download. Bring your own AI key. Register before August 1, 2026 for 30 days of Pro.",
+    "SciNest is a Windows research workspace for editable academic writing, scientific figures and defense presentations. Download SciNest Free — Pro unlocked for new accounts.",
   keywords: [
     "AI thesis writing assistant",
     "thesis revision assistant",
@@ -33,15 +33,15 @@ export const metadata: Metadata = {
     type: "website",
     url: "/",
     siteName: "SciNest",
-    title: "SciNest Free — Download Now · 30 days of Pro for early registrations",
-    description: "Free download. Unlimited SciNest generations with your own AI key. Upgrade for multiple projects, watermark-free figures, layer editing and editable PowerPoint export.",
+    title: "SciNest Free for Windows · Pro unlocked for new accounts",
+    description: "Generate without SciNest limits. Upgrade for multiple projects, watermark-free figures, layer editing and editable PowerPoint export.",
     locale: "en_US",
     alternateLocale: ["zh_CN"],
   },
   twitter: {
     card: "summary_large_image",
-    title: "SciNest Free — Download Now",
-    description: "Free download. Register now and unlock 30 days of Pro. No card and no automatic charge.",
+    title: "SciNest Free for Windows",
+    description: "Download SciNest Free. Pro is already unlocked for new accounts.",
   },
   verification: {
     google: "7mLz2N52DJFJlAp8T_pJAJIqmuC9E92pVTkNJnG3eMM",
@@ -72,7 +72,7 @@ const structuredData = [
     alternateName: "科研小棉袄",
     applicationCategory: "ProductivityApplication",
     operatingSystem: "Windows",
-    releaseNotes: "SciNest Free is now available for Windows. Download and start with unlimited generations using your own AI key.",
+    releaseNotes: "SciNest Free is available for Windows. New accounts start with Pro unlocked.",
     description:
       "A Windows desktop research productivity application that connects academic writing, scientific figures and thesis defense presentations inside one project.",
     featureList: [
