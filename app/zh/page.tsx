@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { cookies } from "next/headers";
 import { SciNestHome } from "../scinest-home";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://scinest-ai.vercel.app";
@@ -23,8 +22,6 @@ export const metadata: Metadata = {
   },
 };
 
-export default async function ChineseHomePage() {
-  const cookieStore = await cookies();
-  cookieStore.set("preferred_lang", "zh", { path: "/", maxAge: 60 * 60 * 24 * 365, sameSite: "lax" });
+export default function ChineseHomePage() {
   return <SciNestHome locale="zh" />;
 }
