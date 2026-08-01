@@ -45,6 +45,45 @@ const t = {
     ordersTitle: "订单记录",
     logout: "退出",
     signIn: "登录",
+    compareTitle: "Free 与 Pro",
+    compareFree: "Free",
+    comparePro: "Pro",
+    comparePriceFree: "免费",
+    comparePricePro: "¥299/年",
+    compareGroups: [
+      {
+        label: "SciNest 生成",
+        rows: [
+          ["不限次数生成", "✓", "✓"],
+          ["活跃项目数", "1 个", "无限制"],
+        ],
+      },
+      {
+        label: "学术写作",
+        rows: [
+          ["长文生成与修改", "✓", "✓"],
+          ["材料与引用绑定", "✓", "✓"],
+          ["章节定向修改", "✓", "✓"],
+        ],
+      },
+      {
+        label: "科研图",
+        rows: [
+          ["科研图生成", "✓", "✓"],
+          ["导出", "带水印", "无水印"],
+          ["图层/标签/元素编辑", "—", "✓"],
+          ["选中区域重新生成", "—", "✓"],
+        ],
+      },
+      {
+        label: "答辩 PPT",
+        rows: [
+          ["PPT 生成", "✓", "✓"],
+          ["导出 PDF", "✓", "✓"],
+          ["导出可编辑 PPTX", "—", "✓"],
+        ],
+      },
+    ] as { label: string; rows: [string, string, string][] }[],
   },
   en: {
     title: "Account & Download",
@@ -69,6 +108,45 @@ const t = {
     ordersTitle: "Order History",
     logout: "Sign out",
     signIn: "Sign in",
+    compareTitle: "Free vs Pro",
+    compareFree: "Free",
+    comparePro: "Pro",
+    comparePriceFree: "Free",
+    comparePricePro: "$49/year",
+    compareGroups: [
+      {
+        label: "SciNest Generations",
+        rows: [
+          ["Unlimited generations", "✓", "✓"],
+          ["Active projects", "1", "Unlimited"],
+        ],
+      },
+      {
+        label: "Academic Writing",
+        rows: [
+          ["Long-form generation & revision", "✓", "✓"],
+          ["Source & reference binding", "✓", "✓"],
+          ["Section-level editing", "✓", "✓"],
+        ],
+      },
+      {
+        label: "Scientific Figures",
+        rows: [
+          ["Figure generation", "✓", "✓"],
+          ["Export", "Watermarked", "Watermark-free"],
+          ["Layer, label & element editing", "—", "✓"],
+          ["Selected-area regeneration", "—", "✓"],
+        ],
+      },
+      {
+        label: "Defense Presentations",
+        rows: [
+          ["Presentation generation", "✓", "✓"],
+          ["Export as PDF", "✓", "✓"],
+          ["Export as editable PPTX", "—", "✓"],
+        ],
+      },
+    ] as { label: string; rows: [string, string, string][] }[],
   },
 } as const;
 
@@ -161,34 +239,63 @@ export function DashboardContent({ email, hasFoundingEdition, earlyBirdEligible,
             <p style={{ color: isPro ? "#c2dad7" : "#607477", lineHeight: 1.7 }}>
               {isPro ? c.proBody : c.freeBody}
             </p>
-            {!isPro && (
-              <div style={{ marginTop: 16 }}>
-                <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
-                  <button
-                    onClick={() => handlePurchase("cny")}
-                    disabled={buying}
-                    style={{ padding: "12px 24px", borderRadius: 12, background: "#0D9488", color: "#fff", border: "none", fontWeight: 700, fontSize: 15, cursor: buying ? "wait" : "pointer" }}
-                  >
-                    {buying ? c.buying : c.buyCny}
-                  </button>
-                  <button
-                    onClick={() => handlePurchase("usd")}
-                    disabled={buying}
-                    style={{ padding: "12px 24px", borderRadius: 12, background: "#f1f8f7", color: "#0D9488", border: "1px solid #0D9488", fontWeight: 600, fontSize: 14, cursor: buying ? "wait" : "pointer" }}
-                  >
-                    {buying ? c.buyingEn : c.buyUsd}
-                  </button>
-                </div>
-                {buyError && (
-                  <p style={{ color: "#dc2626", fontSize: 13, marginTop: 8 }}>{buyError}</p>
-                )}
-                <p style={{ color: "#94A3A8", fontSize: 12, marginTop: 8, marginBottom: 0 }}>
-                  {c.priceNote}
-                </p>
-              </div>
-            )}
           </section>
         )}
+
+        {/* ── Free vs Pro comparison ── */}
+        <section style={{ marginTop: 32, padding: 28, borderRadius: 20, background: "#fff", border: "1px solid #dcebea" }}>
+          <h2 style={{ margin: "0 0 20px", fontSize: 20 }}>{c.compareTitle}</h2>
+
+          {/* Column headers */}
+          <div style={{ display: "grid", gridTemplateColumns: "2fr 1fr 1fr", gap: 0, marginBottom: 0 }}>
+            <div />
+            <div style={{ textAlign: "center", padding: "12px 8px", background: "#f1f8f7", borderRadius: "10px 0 0 0", fontWeight: 800, color: "#087569", fontSize: 15 }}>{c.compareFree}</div>
+            <div style={{ textAlign: "center", padding: "12px 8px", background: "#0c2d32", borderRadius: "0 10px 0 0", fontWeight: 800, color: "#72e3d4", fontSize: 15 }}>{c.comparePro}</div>
+          </div>
+          {/* Price row */}
+          <div style={{ display: "grid", gridTemplateColumns: "2fr 1fr 1fr", gap: 0, borderBottom: "1px solid #edf4f3" }}>
+            <div />
+            <div style={{ textAlign: "center", padding: "8px", background: "#f1f8f7", color: "#087569", fontWeight: 700, fontSize: 18 }}>{c.comparePriceFree}</div>
+            <div style={{ textAlign: "center", padding: "8px", background: "#0c2d32", color: "#fff", fontWeight: 700, fontSize: 18 }}>{c.comparePricePro}</div>
+          </div>
+
+          {c.compareGroups.map((group) => (
+            <div key={group.label}>
+              <div style={{ padding: "14px 0 6px", fontSize: 12, fontWeight: 800, color: "#94A3A8", textTransform: "uppercase", letterSpacing: "0.08em" }}>{group.label}</div>
+              {group.rows.map(([feature, free, pro]) => (
+                <div key={feature} style={{ display: "grid", gridTemplateColumns: "2fr 1fr 1fr", gap: 0, borderBottom: "1px solid #f5f8f7", alignItems: "center" }}>
+                  <div style={{ padding: "10px 8px 10px 0", fontSize: 14, color: "#314554" }}>{feature}</div>
+                  <div style={{ textAlign: "center", padding: "10px 4px", fontSize: 13, color: free === "✓" ? "#087569" : free === "—" ? "#d0d5d9" : "#607477", fontWeight: free === "✓" ? 700 : 400 }}>{free}</div>
+                  <div style={{ textAlign: "center", padding: "10px 4px", fontSize: 13, color: pro === "✓" ? "#087569" : pro === "—" ? "#d0d5d9" : "#087569", fontWeight: pro === "✓" ? 700 : 400, background: "#fafdfc" }}>{pro}</div>
+                </div>
+              ))}
+            </div>
+          ))}
+
+          {/* Purchase CTA for Free users */}
+          {!isPro && (
+            <div style={{ marginTop: 24, textAlign: "center" }}>
+              <div style={{ display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap" }}>
+                <button
+                  onClick={() => handlePurchase("cny")}
+                  disabled={buying}
+                  style={{ padding: "12px 28px", borderRadius: 12, background: "#0D9488", color: "#fff", border: "none", fontWeight: 700, fontSize: 15, cursor: buying ? "wait" : "pointer" }}
+                >
+                  {buying ? c.buying : c.buyCny}
+                </button>
+                <button
+                  onClick={() => handlePurchase("usd")}
+                  disabled={buying}
+                  style={{ padding: "12px 28px", borderRadius: 12, background: "#f1f8f7", color: "#0D9488", border: "1px solid #0D9488", fontWeight: 600, fontSize: 14, cursor: buying ? "wait" : "pointer" }}
+                >
+                  {buying ? c.buyingEn : c.buyUsd}
+                </button>
+              </div>
+              {buyError && <p style={{ color: "#dc2626", fontSize: 13, marginTop: 8 }}>{buyError}</p>}
+              <p style={{ color: "#94A3A8", fontSize: 12, marginTop: 8, marginBottom: 0 }}>{c.priceNote}</p>
+            </div>
+          )}
+        </section>
 
         {hasFoundingEdition && (
           <section style={{ marginTop: 24, padding: 24, borderRadius: 20, background: "#fff", border: "1px solid #dcebea" }}>
