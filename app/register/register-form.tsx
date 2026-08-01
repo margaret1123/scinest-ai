@@ -32,7 +32,7 @@ export function RegisterForm() {
     const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://scinest-ai.vercel.app";
     const supabase = createClient();
 
-    const { error: signUpError } = await supabase.auth.signUp({
+    const { data: signUpData, error: signUpError } = await supabase.auth.signUp({
       email,
       password,
       options: {
@@ -56,6 +56,16 @@ export function RegisterForm() {
       setLoading(false);
       setTimeout(() => router.push("/login"), 1500);
       return;
+    }
+
+    // Set 7-day Pro license for new accounts
+    const userId = signUpData.user?.id;
+    if (userId) {
+      fetch("/api/auth/set-license", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ userId }),
+      }).catch(() => {}); // fire-and-forget, non-blocking
     }
 
     router.push("/dashboard");
