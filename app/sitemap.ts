@@ -55,6 +55,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       ];
     }),
     {
+      url: `${siteUrl}/ai-editable-images`,
+      lastModified,
+      changeFrequency: "weekly" as const,
+      priority: 0.9,
+    },
+    {
+      url: `${siteUrl}/ai-editable-powerpoint`,
+      lastModified,
+      changeFrequency: "weekly" as const,
+      priority: 0.9,
+    },
+    {
       url: `${siteUrl}/ai-long-form-writer`,
       lastModified,
       changeFrequency: "weekly" as const,
