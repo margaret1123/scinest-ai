@@ -34,6 +34,6 @@ export default function Page() {
       <section className={`${styles.section} ${styles.dark}`}><div><p className={styles.kicker}>适用图型</p><h2>同一套材料，生成不同用途的科研表达。</h2><div className={styles.grid}><article className={styles.card}><h3>机制与通路图</h3><p>展示实体之间的激活、抑制、转化和因果关系。</p></article><article className={styles.card}><h3>技术路线与实验流程</h3><p>展示研究阶段、分组、时间线、方法和里程碑。</p></article><article className={styles.card}><h3>图形摘要与概念框架</h3><p>把论文核心发现或理论关系压缩成一张全景图。</p></article></div></div></section>
       <section className={styles.section} id="faq"><div><p className={styles.kicker}>常见问题</p><h2>关于可编辑科研图的实际边界。</h2><div className={styles.faq}>{faq.map(([q,a])=><details key={q}><summary>{q}</summary><p>{a}</p></details>)}</div></div></section>
       <section className={styles.final}><h2>不要把无法纠错的漂亮图片当成科研图成品。</h2><p>用自己的研究材料生成，再继续修改和复用。</p><a className={styles.cta} href={registerUrl}>获取 SciNest Free ↗</a></section>
-    </main><footer className={styles.footer}><strong>SciNest · 科研小棉袄</strong><span>由 Jiaempower Pathways Limited 运营</span><a href="/zh">返回中文首页</a></footer>
+    </main><footer className={styles.footer}><strong>SciNest · 科研小棉袄</strong><span>由 Jiaempower Pathways Limited 运营</span><nav style={{display:"flex",gap:18,flexWrap:"wrap",marginTop:10}}><a href="/zh">中文首页</a><a href="/zh/ai-powerpoint-generator">AI PPT 生成器</a><a href="/zh/ai-thesis-writing-assistant">AI 论文写作助手</a></nav></footer>
   </div>;
 }

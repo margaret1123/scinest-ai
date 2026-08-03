@@ -33,6 +33,6 @@ export default function Page() {
       <section className={styles.section} id="workflow"><div><p className={styles.kicker}>从材料到可编辑 PPTX</p><h2>先确认故事，再生成页面。</h2><div className={styles.steps}>{[["01","选择材料","导入论文、数据、图片和现有演示文稿。"],["02","编辑大纲","调整页数、顺序、标题、重点和演讲时长。"],["03","生成与导出","生成页面、视觉元素和讲稿，继续修改后导出 PPTX。"]].map(([n,t,b])=><article key={n}><b>{n}</b><h3>{t}</h3><p>{b}</p></article>)}</div><figure className={styles.proof} style={{marginTop:36}}><img src="/scinest/ppt-ui-en.webp" alt="SciNest PPT 大纲与页面编辑界面" width="1280" height="800" /></figure></div></section>
       <section className={styles.section} id="faq"><div><p className={styles.kicker}>常见问题</p><h2>关于可编辑 PPT 的实际边界。</h2><div className={styles.faq}>{faq.map(([q,a])=><details key={q}><summary>{q}</summary><p>{a}</p></details>)}</div></div></section>
       <section className={styles.final}><h2>不要在 AI 生成结束后重新做一遍 PPT。</h2><p>先用自己的材料验证大纲和页面，再决定是否继续使用。</p><a className={styles.cta} href={registerUrl}>获取 SciNest Free ↗</a></section>
-    </main><footer className={styles.footer}><strong>SciNest · 科研小棉袄</strong><span>由 Jiaempower Pathways Limited 运营</span><a href="/zh">返回中文首页</a></footer>
+    </main><footer className={styles.footer}><strong>SciNest · 科研小棉袄</strong><span>由 Jiaempower Pathways Limited 运营</span><nav style={{display:"flex",gap:18,flexWrap:"wrap",marginTop:10}}><a href="/zh">中文首页</a><a href="/zh/ai-thesis-writing-assistant">AI 论文写作助手</a><a href="/zh/scientific-figure-generator">AI 科研图生成器</a></nav></footer>
   </div>;
 }

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import styles from "./scientific-figure-generator.module.css";
+import { ProductBreadcrumbs, RelatedProductPages } from "../product-page-navigation";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://scinest-ai.vercel.app";
 const registerUrl = "/login?redirect=/dashboard&intent=early-bird";
@@ -106,6 +107,8 @@ export default function ScientificFigureGeneratorPage() {
           <a className={styles.smallCta} href={registerUrl}>Get SciNest Free</a>
         </div>
       </header>
+
+      <ProductBreadcrumbs current="figures" />
 
       <main>
         <section className={styles.hero}>
@@ -245,6 +248,8 @@ export default function ScientificFigureGeneratorPage() {
           <a className={styles.lightCta} href={registerUrl}>Generate an editable scientific figure ↗</a>
         </section>
       </main>
+
+      <RelatedProductPages current="figures" />
 
       <footer className={styles.footer}><strong>SciNest · Academic work, finished</strong><span>Operated by Jiaempower Pathways Limited</span><a href="/">Back to SciNest</a></footer>
     </div>

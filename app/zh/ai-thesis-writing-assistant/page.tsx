@@ -35,6 +35,6 @@ export default function Page() {
       <section className={styles.section} id="long-form"><div><p className={styles.kicker}>一份连贯文稿</p><h2>生成完整草稿，再修改真正需要改的地方。</h2><p>完整文稿、章节导航和局部 AI 修改放在同一个写作工作区。导师意见只影响对应章节，不应触发整篇重写。</p><figure className={styles.proof} style={{marginTop:36}}><img src="/scinest/writing-ui-en.webp" alt="SciNest 长文编辑与局部修改界面" width="1280" height="800" /></figure></div></section>
       <section className={styles.section} id="faq"><div><p className={styles.kicker}>常见问题</p><h2>关于材料约束长文写作的实际边界。</h2><div className={styles.faq}>{faq.map(([q,a])=><details key={q}><summary>{q}</summary><p>{a}</p></details>)}</div></div></section>
       <section className={styles.final}><h2>不要再把一篇长文拼成几十段零散回答。</h2><p>先确认大纲和材料，再生成一份可以继续修改的连贯草稿。</p><a className={styles.cta} href={registerUrl}>获取 SciNest Free ↗</a></section>
-    </main><footer className={styles.footer}><strong>SciNest · 科研小棉袄</strong><span>由 Jiaempower Pathways Limited 运营</span><a href="/zh">返回中文首页</a></footer>
+    </main><footer className={styles.footer}><strong>SciNest · 科研小棉袄</strong><span>由 Jiaempower Pathways Limited 运营</span><nav style={{display:"flex",gap:18,flexWrap:"wrap",marginTop:10}}><a href="/zh">中文首页</a><a href="/zh/ai-powerpoint-generator">AI PPT 生成器</a><a href="/zh/scientific-figure-generator">AI 科研图生成器</a></nav></footer>
   </div>;
 }

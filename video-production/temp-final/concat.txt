@@ -1,0 +1,7 @@
+file 'G:/版本统一/scinest-ai_new/video-production/temp-final/seg-00.mp4'
+file 'G:/版本统一/scinest-ai_new/video-production/temp-final/seg-01.mp4'
+file 'G:/版本统一/scinest-ai_new/video-production/temp-final/seg-02.mp4'
+file 'G:/版本统一/scinest-ai_new/video-production/temp-final/seg-03.mp4'
+file 'G:/版本统一/scinest-ai_new/video-production/temp-final/seg-04.mp4'
+file 'G:/版本统一/scinest-ai_new/video-production/temp-final/seg-05.mp4'
+file 'G:/版本统一/scinest-ai_new/video-production/temp-final/seg-06.mp4'

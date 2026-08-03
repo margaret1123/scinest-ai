@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import type { CSSProperties } from "react";
 import styles from "./ai-thesis-writing-assistant.module.css";
+import { ProductBreadcrumbs, RelatedProductPages } from "../product-page-navigation";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://scinest-ai.vercel.app";
 const registerUrl = "/login?redirect=/dashboard&intent=early-bird";
@@ -125,6 +126,8 @@ export default function AiThesisWritingAssistantPage() {
         <div className={styles.headerActions}><a href="/login">Sign in</a><a className={styles.smallCta} href={registerUrl}>Get SciNest Free</a></div>
       </header>
 
+      <ProductBreadcrumbs current="writing" />
+
       <main>
         <section className={styles.hero}>
           <div className={styles.heroCopy}>
@@ -219,6 +222,8 @@ export default function AiThesisWritingAssistantPage() {
 
         <section className={styles.final}><h2>Stop assembling a long paper from disconnected AI fragments.</h2><p>Build the outline, bind the materials and references, then generate the connected draft in one workflow.</p><a className={styles.lightCta} href={registerUrl}>Generate my long-form draft ↗</a></section>
       </main>
+
+      <RelatedProductPages current="writing" />
 
       <footer className={styles.footer}><strong>SciNest · Academic work, finished</strong><span>Operated by Jiaempower Pathways Limited</span><a href="/">Back to SciNest</a></footer>
     </div>

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import styles from "./ai-powerpoint-generator.module.css";
+import { ProductBreadcrumbs, RelatedProductPages } from "../product-page-navigation";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://scinest-ai.vercel.app";
 const registerUrl = "/login?redirect=/dashboard&intent=early-bird";
@@ -174,6 +175,8 @@ export default function AiPowerPointGeneratorPage() {
         </div>
       </header>
 
+      <ProductBreadcrumbs current="powerpoint" />
+
       <main>
         <section className={styles.hero}>
           <div className={styles.heroCopy}>
@@ -335,6 +338,8 @@ export default function AiPowerPointGeneratorPage() {
           <span>Use your own AI key · Local project files by default · Real PPTX export</span>
         </section>
       </main>
+
+      <RelatedProductPages current="powerpoint" />
 
       <footer className={styles.footer}>
         <div><strong>SciNest</strong><span>Operated by Jiaempower Pathways Limited</span></div>
