@@ -178,6 +178,9 @@ export default function AiPowerPointGeneratorPage() {
       <ProductBreadcrumbs current="powerpoint" />
 
       <main>
+        <p style={{maxWidth:720, margin:"0 auto 60px", fontSize:17, lineHeight:1.7, color:"#42606c", textAlign:"center", padding:"0 28px"}}>
+          SciNest creates real editable PPTX presentations from your uploaded papers, data and materials. Unlike AI tools that export each slide as a flattened image or HTML slideshow, SciNest outputs a standard PowerPoint file with editable text boxes, replaceable images, rearrangeable slides and speaker notes. Edit the outline before generation, then revise individual slides after export — all from your own AI API key.
+        </p>
         <section className={styles.hero}>
           <div className={styles.heroCopy}>
             <p className={styles.eyebrow}>REAL POWERPOINT · NOT AN IMAGE OR HTML PREVIEW</p>

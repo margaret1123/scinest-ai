@@ -1,0 +1,50 @@
+# SciNest · 科研小棉袄
+> Windows 桌面端 AI 工作区——自带 ChatGPT、DeepSeek 或 Claude API Key，写完整论文、做可编辑 PPTX、生成可修改的图表。免费下载，新账户即享 Pro。
+
+## 网站信息
+- 官网: https://scinest.app/
+- 默认语言: English
+- 中文首页: https://scinest.app/zh
+- 运营方: Jiaempower Pathways Limited, New Zealand
+- 类别: AI 写作、演示与图表工具
+
+## AI 服务商兼容性
+SciNest 连接任何兼容 OpenAI 接口的 API：ChatGPT (OpenAI)、DeepSeek、Claude (Anthropic) 等。自带 API Key——没有 SciNest 订阅费，没有生成次数限制。AI 调用费用直接向服务商支付。
+
+## 中文落地页
+- /zh : 中文首页
+- /zh/ai-long-form-writer : 用 ChatGPT / DeepSeek / Claude 写出万字长文
+- /zh/ai-editable-powerpoint : 用 AI 生成真正可编辑的 PPTX
+- /zh/ai-editable-images : 用 AI 生成可编辑的图片——改文字、移元素、局部重绘
+
+## Free 与 Pro
+两个方案均使用用户自己的 AI API Key，SciNest 不限制生成次数。
+
+SciNest Free:
+- 一个活跃项目
+- 学术写作生成与修改
+- 图表导出带水印
+- PPT 导出为 PDF
+- 无图层编辑
+
+SciNest Pro:
+- 多个项目
+- 无水印图表导出
+- 图层、标签和元素编辑
+- 可编辑 PowerPoint 导出
+- 不限生成次数
+
+## 数据与 AI 边界
+- SciNest 设计为本地优先的桌面工作区
+- 项目文件和生成输出默认存储在本地
+- 运行 AI 任务时，所需内容发送给用户选择和配置的模型服务商
+- SciNest 不声称 AI 处理完全在设备上完成
+
+## 目标用户
+已有学术材料但需要在时间压力下完成文稿、图表或 PPT 的研究生、毕业生和早期研究人员。
+
+## 重要限制
+- SciNest 不是论文代写、代投或学术不端服务
+- SciNest 不保证成绩、毕业、论文通过、发表、期刊接收或研究结果
+- SciNest 不保证生成内容完全正确、完整、原创或符合特定机构的 AI 政策
+- 用户必须审查生成内容并遵守相关机构、专业和法律要求

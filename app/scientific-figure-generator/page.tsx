@@ -111,6 +111,9 @@ export default function ScientificFigureGeneratorPage() {
       <ProductBreadcrumbs current="figures" />
 
       <main>
+        <p style={{maxWidth:720, margin:"0 auto 60px", fontSize:17, lineHeight:1.7, color:"#42606c", textAlign:"center", padding:"0 28px"}}>
+          SciNest generates diagrams and images with editable layers — text labels, shapes, arrows and regions stay independently accessible after generation. Unlike pixel-based AI generators like DALL-E or Midjourney where every element is fused into one flat image, SciNest lets you change a label, move an element or revise a selected area without regenerating the entire visual. Export and reuse across projects.
+        </p>
         <section className={styles.hero}>
           <div className={styles.heroCopy}>
             <p className={styles.eyebrow}>AI-GENERATED · LAYERED · STILL EDITABLE</p>

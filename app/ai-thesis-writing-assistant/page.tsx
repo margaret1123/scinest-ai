@@ -129,6 +129,9 @@ export default function AiThesisWritingAssistantPage() {
       <ProductBreadcrumbs current="writing" />
 
       <main>
+        <p style={{maxWidth:720, margin:"0 auto 60px", fontSize:17, lineHeight:1.7, color:"#42606c", textAlign:"center", padding:"0 28px"}}>
+          SciNest is a Windows desktop workspace that connects to your own ChatGPT, DeepSeek or Claude API key to write complete long-form papers. Build an editable outline, upload your references and select source materials, then generate a full connected draft chapter by chapter. Revise individual chapters or paragraphs without regenerating the entire document. Free plan includes one active project with unlimited AI generations.
+        </p>
         <section className={styles.hero}>
           <div className={styles.heroCopy}>
             <p className={styles.eyebrow}>OUTLINE FIRST · MATERIALS BOUND · REFERENCES INCLUDED</p>
