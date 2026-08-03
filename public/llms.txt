@@ -2,9 +2,9 @@
 > A Windows desktop research productivity application for students and early researchers who need to turn existing materials into connected academic writing, scientific figures and presentations.
 
 ## Site information
-- Canonical site: https://scinest-ai.vercel.app/
+- Canonical site: https://scinest.app/
 - Default language: English
-- Chinese page: https://scinest-ai.vercel.app/zh
+- Chinese page: https://scinest.app/zh
 - Operator: Jiaempower Pathways Limited, New Zealand
 - Category: Research productivity software
 

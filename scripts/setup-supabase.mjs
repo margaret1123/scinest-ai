@@ -89,12 +89,12 @@ CREATE TRIGGER on_auth_user_created
         apikey: SERVICE_ROLE_KEY,
       },
       body: JSON.stringify({
-        site_url: "https://scinest-ai.vercel.app",
-        uri_allow_list: "https://scinest-ai.vercel.app,https://kmate-wab.vercel.app",
+        site_url: "https://scinest.app",
+        uri_allow_list: "https://scinest.app,https://kmate-wab.vercel.app",
       }),
     });
     if (settingsResp.ok) {
-      console.log("[setup-supabase] Site URL updated to https://scinest-ai.vercel.app");
+      console.log("[setup-supabase] Site URL updated to https://scinest.app");
     } else {
       const errText = await settingsResp.text();
       console.log(`[setup-supabase] Site URL update failed: ${settingsResp.status} — ${errText.substring(0, 200)}`);

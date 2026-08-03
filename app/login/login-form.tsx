@@ -19,7 +19,7 @@ export function LoginForm() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://scinest-ai.vercel.app";
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://scinest.app";
 
   // ── Password login ──────────────────────────────────────────
   const handlePasswordLogin = async (e: React.FormEvent) => {

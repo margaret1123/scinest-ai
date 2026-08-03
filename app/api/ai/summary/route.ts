@@ -7,7 +7,7 @@ export async function GET() {
         name: "SciNest",
         alternateName: "科研小棉袄",
         tagline: "Academic work, finished",
-        url: "https://scinest-ai.vercel.app",
+        url: "https://scinest.app",
         operator: "Jiaempower Pathways Limited",
         platform: "Windows desktop",
         languages: ["en", "zh-CN"],

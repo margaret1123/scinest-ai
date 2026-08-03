@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import styles from "./ai-powerpoint-generator.module.css";
 import { ProductBreadcrumbs, RelatedProductPages } from "../product-page-navigation";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://scinest-ai.vercel.app";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://scinest.app";
 const registerUrl = "/login?redirect=/dashboard&intent=early-bird";
 
 const proofFigureStyle = {

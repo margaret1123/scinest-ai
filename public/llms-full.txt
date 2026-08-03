@@ -3,7 +3,7 @@
 
 ## Identity
 - **Product name**: SciNest (科研小棉袄 in Chinese)
-- **Canonical site**: https://scinest-ai.vercel.app/
+- **Canonical site**: https://scinest.app/
 - **Default language**: English
 - **Operator**: Jiaempower Pathways Limited, New Zealand
 - **Category**: Research productivity software

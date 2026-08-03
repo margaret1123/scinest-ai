@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { SciNestHome } from "../scinest-home";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://scinest-ai.vercel.app";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://scinest.app";
 
 export const metadata: Metadata = {
   title: "论文修改、科研图与答辩PPT AI工具｜SciNest 科研小棉袄",

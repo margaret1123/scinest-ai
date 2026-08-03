@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 import { ProductBreadcrumbs, RelatedProductPages, createBreadcrumbData } from "../product-page-navigation";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://scinest-ai.vercel.app";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://scinest.app";
 
 export default function AiThesisWritingAssistantLayout({ children }: { children: ReactNode }) {
   const breadcrumbData = createBreadcrumbData(siteUrl, "writing");

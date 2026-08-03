@@ -1,5 +1,5 @@
 # SciNest AI Crawler Permissions
-# https://scinest-ai.vercel.app
+# https://scinest.app
 
 User-Agent: GPTBot
 Allow: /

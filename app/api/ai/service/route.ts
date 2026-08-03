@@ -8,7 +8,7 @@ export async function GET() {
         alternateName: "科研小棉袄",
         type: "SoftwareApplication",
         category: "ResearchProductivityApplication",
-        url: "https://scinest-ai.vercel.app",
+        url: "https://scinest.app",
         operator: "Jiaempower Pathways Limited",
         platform: "Windows desktop",
         primaryAudience: "Postgraduate students, final-year students and early researchers with existing materials and unfinished academic deliverables",

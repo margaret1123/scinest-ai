@@ -29,7 +29,7 @@ export function RegisterForm() {
     }
 
     setLoading(true);
-    const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://scinest-ai.vercel.app";
+    const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://scinest.app";
     const supabase = createClient();
 
     const { data: signUpData, error: signUpError } = await supabase.auth.signUp({

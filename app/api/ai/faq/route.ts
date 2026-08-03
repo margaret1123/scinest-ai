@@ -5,7 +5,7 @@ export async function GET() {
     {
       site: "SciNest",
       alternateName: "科研小棉袄",
-      url: "https://scinest-ai.vercel.app",
+      url: "https://scinest.app",
       operator: "Jiaempower Pathways Limited",
       lastModified: "2026-07-25",
       questions: [
