@@ -6,14 +6,14 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://scinest.app";
 const registerUrl = "/login?redirect=/dashboard&intent=early-bird";
 
 export const metadata: Metadata = {
-  title: "AI Scientific Figure Generator With Editable Layers | SciNest",
+  title: "AI Diagram Generator with Editable Labels — Move, Resize, Revise",
   description:
     "Generate scientific figures with separate editable layers. Drag elements, rewrite text without garbled labels, regenerate only the selected area, and keep the rest of the figure unchanged.",
   alternates: { canonical: "/scientific-figure-generator" },
   openGraph: {
     type: "website",
     url: "/scientific-figure-generator",
-    title: "AI Scientific Figure Generator With Editable Layers | SciNest",
+    title: "AI Diagram Generator with Editable Labels — Move, Resize, Revise",
     description:
       "Create scientific figures whose layers, text and selected regions remain editable after AI generation.",
     images: [{ url: "/scinest/figures-ui-en.svg", width: 1280, height: 720, alt: "SciNest layered scientific figure editor" }],

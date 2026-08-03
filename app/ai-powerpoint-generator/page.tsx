@@ -62,14 +62,14 @@ const proofNumberStyle = {
 } as const;
 
 export const metadata: Metadata = {
-  title: "AI PowerPoint Generator | Create Real Editable PPTX With Your Materials",
+  title: "Create Real Editable PPTX with AI — Not a Screenshot, Not HTML",
   description:
     "Upload papers, documents, data and images. SciNest creates a real editable PowerPoint presentation—not an image-based PDF or HTML slideshow. Edit the outline, slides, text and visuals, then export a ready-to-use PPTX.",
   alternates: { canonical: "/ai-powerpoint-generator" },
   openGraph: {
     type: "website",
     url: "/ai-powerpoint-generator",
-    title: "AI PowerPoint Generator for Real Editable PPTX | SciNest",
+    title: "Create Real Editable PPTX with AI",
     description:
       "Create a real editable PowerPoint from your own materials, with source-bound content, visuals, an editable outline and WYSIWYG preview.",
     images: [{ url: "/scinest/ppt-ui-en.webp", width: 1280, height: 800, alt: "SciNest editable PowerPoint workspace" }],

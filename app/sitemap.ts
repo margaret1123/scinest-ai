@@ -73,6 +73,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
+      url: `${siteUrl}/zh/ai-long-form-writer`,
+      lastModified,
+      changeFrequency: "weekly" as const,
+      priority: 0.85,
+    },
+    {
+      url: `${siteUrl}/zh/ai-editable-powerpoint`,
+      lastModified,
+      changeFrequency: "weekly" as const,
+      priority: 0.85,
+    },
+    {
+      url: `${siteUrl}/zh/ai-editable-images`,
+      lastModified,
+      changeFrequency: "weekly" as const,
+      priority: 0.85,
+    },
+    {
       url: `${siteUrl}/privacy`,
       lastModified,
       changeFrequency: "monthly",

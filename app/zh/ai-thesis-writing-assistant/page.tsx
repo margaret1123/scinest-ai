@@ -5,7 +5,7 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://scinest.app";
 const registerUrl = "/login?redirect=/dashboard&intent=early-bird";
 
 export const metadata: Metadata = {
-  title: "AI 论文写作助手｜大纲、材料、引用与长文写作",
+  title: "用 ChatGPT / DeepSeek 写完整论文｜大纲→长文→逐章修改",
   description: "先确认可编辑大纲，再绑定选定材料与参考文献，生成连贯长文，并对指定章节和段落继续修改。",
   alternates: {
     canonical: "/zh/ai-thesis-writing-assistant",

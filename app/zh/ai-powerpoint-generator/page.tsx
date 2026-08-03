@@ -5,7 +5,7 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://scinest.app";
 const registerUrl = "/login?redirect=/dashboard&intent=early-bird";
 
 export const metadata: Metadata = {
-  title: "AI PPT 生成器｜用真实资料生成可编辑 PowerPoint",
+  title: "用 ChatGPT / DeepSeek 生成可编辑 PPTX｜不是截图，不是 HTML",
   description: "上传论文、报告、数据和图片，生成可继续修改的标准 PPTX。先编辑大纲，再生成页面、图示和讲稿。",
   alternates: {
     canonical: "/zh/ai-powerpoint-generator",

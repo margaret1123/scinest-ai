@@ -8,14 +8,14 @@ const registerUrl = "/login?redirect=/dashboard&intent=early-bird";
 const writingProofImage = "/scinest/writing-long-form-hero-en.svg";
 
 export const metadata: Metadata = {
-  title: "AI Thesis Writing Assistant With References and Long-Form Drafts | SciNest",
+  title: "Write Complete Papers with ChatGPT, DeepSeek or Claude — AI Thesis Writer",
   description:
     "Build an editable outline, bind selected materials and references, then generate a coherent long-form academic draft in one run. Revise chapters without restarting the whole document.",
   alternates: { canonical: "/ai-thesis-writing-assistant" },
   openGraph: {
     type: "website",
     url: "/ai-thesis-writing-assistant",
-    title: "AI Thesis Writing Assistant With References | SciNest",
+    title: "Write Complete Papers with ChatGPT, DeepSeek or Claude",
     description:
       "From selected sources and an editable outline to a coherent 10,000-word academic draft with references and section-level revision.",
     images: [{ url: writingProofImage, width: 1280, height: 800, alt: "SciNest source-bound academic writing workspace" }],

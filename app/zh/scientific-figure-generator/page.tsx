@@ -5,7 +5,7 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://scinest.app";
 const registerUrl = "/login?redirect=/dashboard&intent=early-bird";
 
 export const metadata: Metadata = {
-  title: "AI 科研图生成器｜生成后仍可修改的科研图",
+  title: "用 AI 画可修改的图表｜改文字、移元素、局部重绘",
   description: "把方法、机制、研究关系和实验流程变成可继续修改的科研图。标签、箭头、结构和局部区域不必每次整图重做。",
   alternates: {
     canonical: "/zh/scientific-figure-generator",

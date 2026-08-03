@@ -5,40 +5,40 @@ import { pricing, type Locale } from "./home-content";
 const content = {
   en: {
     lang: "en",
-    subBrand: "Academic work, finished",
-    nav: ["Your situation", "How it works", "Editable outputs", "Free vs Pro", "FAQ"],
+    subBrand: "Beyond the chat window",
+    nav: ["How it works", "Editable outputs", "Free vs Pro", "FAQ"],
     login: "Sign in",
     start: "Get SciNest Free",
     strip: "SciNest Free for Windows",
     stripOffer: "Pro unlocked for new accounts",
-    eyebrow: "WINDOWS DESKTOP · BRING YOUR OWN AI KEY",
-    title: <>One deadline. <em>A thesis to revise. Figures to finish. Slides to build.</em></>,
-    intro: "Bring papers, notes, drafts, data and supervisor feedback into one project. SciNest helps turn the work you already have into academic writing, scientific figures and a defense-ready presentation.",
+    eyebrow: "WINDOWS DESKTOP · BRING YOUR OWN API KEY · CHATGPT, DEEPSEEK, CLAUDE",
+    title: <>One workspace. <em>Write the full paper. Build the deck. Create the diagrams.</em></>,
+    intro: "ChatGPT, DeepSeek and Claude can all write complete papers, build editable presentations and generate diagrams — when they have the right workspace. Bring your own API key. Stop fighting the chat window.",
     primary: "Get SciNest Free",
     secondary: "See Free vs Pro",
-    note: "Free download · Pro unlocked · Bring your own AI key",
+    note: "Free download · Pro unlocked · Use ChatGPT, DeepSeek or Claude API",
     stats: [
-      ["Unlimited generation", "Free and Pro both use your own AI key, so SciNest does not meter generations"],
-      ["Scientific figures", "Generate research visuals; Pro unlocks layer editing and watermark-free export"],
-      ["Defense slides", "Build the presentation in both plans; Pro exports an editable PowerPoint"],
-      ["One connected project", "Keep writing, figures, slides and source context together"],
+      ["Unlimited AI generations", "Free and Pro both use your own API key — SciNest never limits your output"],
+      ["Editable diagrams & images", "Generate diagrams with real text labels you can change; Pro unlocks layer editing and watermark-free export"],
+      ["Real PPTX presentations", "Not a screenshot. Not HTML. A standard .PPTX file you can open and keep editing"],
+      ["One connected project", "Keep writing, images, slides and source context together — no copy-paste between tools"],
     ],
-    painKicker: "THE LAST PART IS NEVER JUST ONE TASK",
-    painTitle: "The research may be there. The deliverables are still piling up.",
-    painBody: "Supervisor revisions, literature review, research figures and defense slides keep rebuilding the same research in different tools.",
-    oldTitle: "The usual deadline scramble",
-    old: ["Search through papers again", "Re-explain the research to another AI", "Recreate figures in another tool", "Copy everything into PowerPoint", "Repair inconsistencies before submission"],
-    newTitle: "One SciNest project",
-    newer: ["Bring in papers, drafts and feedback", "Keep source context connected", "Revise the writing", "Turn methods and findings into figures", "Build the defense deck"],
+    painKicker: "THE CHAT WINDOW IS THE BOTTLENECK",
+    painTitle: "The AI is capable. The interface holds it back.",
+    painBody: "ChatGPT, DeepSeek and Claude all have the intelligence to write long papers, build presentations and create diagrams. But the chat window was built for conversation — not for managing a 15,000-word document, an editable slide deck or a layered diagram.",
+    oldTitle: "The chat-window scramble",
+    old: ["Copy-paste between chat windows", "Lose context after a few exchanges", "Regenerate the entire output for one change", "Re-explain the same research to every new AI", "End up with disconnected fragments"],
+    newTitle: "One connected workspace",
+    newer: ["Bring in papers, drafts and feedback", "Build the outline — edit it before a word is written", "Generate the full draft, deck or diagram", "Revise the part that needs changing — not everything", "Export your work and keep editing"],
     flowKicker: "START WITH WHAT YOU ALREADY HAVE",
-    flowTitle: "From scattered materials to connected academic outputs",
-    flowBody: "Each output continues from the materials and decisions already inside the project.",
+    flowTitle: "From scattered materials to connected outputs",
+    flowBody: "Each output continues from the materials and decisions already inside the project. No re-explaining. No copy-paste between tools.",
     flow: [
-      ["01", "Bring in the existing work", "Add papers, references, notes, drafts, feedback, figures and submission requirements."],
-      ["02", "State what is unfinished", "Revise a chapter, build a review, create a figure or prepare the defense."],
-      ["03", "Build and revise the writing", "Develop the structure, then rewrite or reorganise the parts that still need work."],
-      ["04", "Explain the research visually", "Create mechanism diagrams, research roadmaps and graphical abstracts."],
-      ["05", "Build the defense deck", "Reuse the writing and figures to prepare slide content and speaker notes."],
+      ["01", "Bring in the existing work", "Add papers, references, notes, drafts, feedback, data and images — anything that belongs to the task."],
+      ["02", "Define the outline", "Set the structure before generating. Chapters for a paper. Slides for a deck. Panels for a diagram. Change it anytime."],
+      ["03", "Generate the complete output", "Choose your AI provider — ChatGPT, DeepSeek or Claude. The workspace generates a full connected draft, not a disconnected chat reply."],
+      ["04", "Edit what needs editing", "A supervisor comment on chapter 3? Fix just that section. A typo on one slide? Edit that slide. A label on a diagram? Change it."],
+      ["05", "Export and keep working", "Standard .PPTX, document or image export. The output is yours — open it, present it, submit it."],
     ],
     outputKicker: "NOT ANOTHER ANSWER TO COPY AND PASTE",
     outputTitle: "The result should reduce the work left—not create another editing job.",
@@ -57,6 +57,15 @@ const content = {
     editBody: "Both plans allow unlimited generation because model usage is paid through your own API key.",
     modelTitle: "Local project, your AI provider",
     modelBody: "Project files and outputs stay local by default. AI tasks are sent to the provider you configure.",
+    guideLinks: {
+      eyebrow: "HOW TO USE YOUR AI KEY",
+      title: "Write papers, build decks, create diagrams",
+      links: [
+        ["Write 10,000+ word papers", "How to use ChatGPT, DeepSeek or Claude API for complete long-form writing →", "/ai-long-form-writer"],
+        ["Create real editable PPTX", "Standard PowerPoint files — not screenshots, not HTML slideshows →", "/ai-editable-powerpoint"],
+        ["Generate editable diagrams", "Change text labels, move elements, revise selected areas →", "/ai-editable-images"],
+      ],
+    },
     planKicker: "FREE TO START · PRO WHEN YOU NEED TO FINISH",
     planTitle: "Generate freely. Upgrade for professional editing and final delivery.",
     freeName: "SciNest Free",
@@ -79,40 +88,40 @@ const content = {
   },
   zh: {
     lang: "zh-CN",
-    subBrand: "科研小棉袄",
-    nav: ["你的处境", "如何完成", "可编辑成果", "Free 与 Pro", "常见问题"],
+    subBrand: "不只是聊天窗口",
+    nav: ["如何使用", "可编辑成果", "Free 与 Pro", "常见问题"],
     login: "登录",
     start: "获取 SciNest Free",
     strip: "SciNest Free · Windows 版",
     stripOffer: "新账户即享 Pro",
-    eyebrow: "WINDOWS 桌面端 · 自选 AI 模型",
-    title: <>材料多，任务重，时间紧，<br /><em>真正可编辑的</em><br />万字长文、图片、PPT，SciNest 全线解决方案</>,
-    intro: "把论文、文献、草稿、数据和导师意见放进同一个项目，继续完成文稿、科研图与答辩 PPT，不必每换一个工具就重新解释和返工。",
+    eyebrow: "WINDOWS 桌面端 · 自带 API KEY · CHATGPT / DEEPSEEK / CLAUDE",
+    title: <>一个工作区。<em>写完整论文。做可编辑 PPT。画可修改的图。</em></>,
+    intro: "ChatGPT、DeepSeek、Claude 都能写完整论文、做可编辑 PPT、生成可修改的图表——只要给它们对的工具。自带 API Key，别再跟聊天窗口较劲。",
     primary: "获取 SciNest Free",
     secondary: "查看 Free 与 Pro",
-    note: "免费下载 · Pro 已解锁 · 自带 AI Key",
+    note: "免费下载 · Pro 已解锁 · 支持 ChatGPT / DeepSeek / Claude API",
     stats: [
-      ["生成不限次数", "Free 与 Pro 均使用你自己的 AI Key，SciNest 不限制生成次数"],
-      ["科研图", "两种方案都能生成；Pro 解锁图层编辑和无水印导出"],
-      ["答辩 PPT", "两种方案都能生成；Pro 可导出可编辑 PowerPoint"],
-      ["一个连续项目", "文稿、科研图、PPT 与材料上下文保持连接"],
+      ["AI 生成不限次数", "Free 与 Pro 均使用你自己的 API Key，SciNest 不限制生成次数"],
+      ["可编辑图片与图表", "生成带真实文字标签的图表，支持图层编辑和无水印导出"],
+      ["真正可编辑的 PPTX", "不是截图，不是 HTML。标准 PPTX 文件，打开就能继续改"],
+      ["一个连续项目", "文稿、图片、幻灯片和材料上下文保持连接，不用在工具间复制粘贴"],
     ],
-    painKicker: "最后阶段从来不只剩一件事",
-    painTitle: "研究内容可能已经有了，交付物却还在不断堆积",
-    painBody: "导师修改、综述、科研图和答辩 PPT，往往需要在不同工具里反复重建同一份研究。",
-    oldTitle: "常见的截止日期冲刺",
-    old: ["重新翻找论文和笔记", "向另一个 AI 重讲研究背景", "在单独工具里重做科研图", "复制到 PowerPoint 重新排版", "提交前修复前后不一致"],
-    newTitle: "一个 SciNest 项目",
-    newer: ["导入论文、草稿和导师意见", "让材料与判断保持连接", "继续修改文稿", "把方法和结果转成科研图", "生成答辩 PPT"],
+    painKicker: "聊天窗口是瓶颈",
+    painTitle: "AI 够聪明，对话界面拖了后腿",
+    painBody: "ChatGPT、DeepSeek、Claude 都有写长文、做 PPT、画图的能力。但聊天窗口是为对话设计的，不是为管理一万五千字的文档、可编辑的幻灯片或分层图表而建的。",
+    oldTitle: "聊天窗口的困境",
+    old: ["在多个对话窗口间复制粘贴", "几次对话后丢失上下文", "改一个字就得重新生成全部内容", "向每个新 AI 重新解释同一份研究", "最后得到一堆互不关联的碎片"],
+    newTitle: "一个连接的工作区",
+    newer: ["导入论文、草稿和导师意见", "先定大纲——在动笔前把结构调好", "生成完整文稿、幻灯片或图表", "只修改需要改的部分，不用推翻全部", "导出成果，继续编辑"],
     flowKicker: "从你已经完成的工作开始",
-    flowTitle: "把散乱材料变成互相连接的学术成果",
-    flowBody: "每一步都继承项目中已有的材料、判断和成果。",
+    flowTitle: "把散乱材料变成互相连接的成果",
+    flowBody: "每一步都继承项目中已有的材料和判断。不用重新解释，不用在工具间复制粘贴。",
     flow: [
-      ["01", "放入已有材料", "导入论文、文献、笔记、草稿、导师意见、图片和提交要求。"],
-      ["02", "说明还没完成什么", "修改章节、写综述、做科研图，或准备答辩。"],
-      ["03", "生成并修改文稿", "建立结构和章节目标，再改写或重排仍需处理的部分。"],
-      ["04", "把研究讲清楚", "生成机制图、技术路线、研究框架或图形摘要。"],
-      ["05", "完成答辩 PPT", "复用已有文稿和科研图，形成页面内容和讲稿。"],
+      ["01", "放入已有材料", "导入论文、文献、笔记、草稿、导师意见、数据和图片——任何跟任务相关的内容。"],
+      ["02", "定义结构", "生成前先定大纲。论文定章节。PPT 定页面。图表定板块。随时可以改。"],
+      ["03", "生成完整输出", "选择你的 AI —— ChatGPT、DeepSeek 或 Claude。工作区生成完整连贯的草稿，不是断开的聊天回复。"],
+      ["04", "只改需要改的部分", "导师对第三章有意见？只修那一段。某一页 PPT 有错字？只改那一页。图表标签要更新？直接改。"],
+      ["05", "导出继续编辑", "标准 PPTX、文档或图片导出。成果是你的——打开、展示、提交。"],
     ],
     outputKicker: "不是又一段需要复制粘贴的回答",
     outputTitle: "结果应该减少剩余工作，而不是制造新的返工",
@@ -131,6 +140,15 @@ const content = {
     editBody: "Free 与 Pro 都不限制 SciNest 内的生成次数，因为模型调用使用用户自己的 API。",
     modelTitle: "本地项目，自选模型",
     modelBody: "项目文件和成果默认保存在本地；AI 任务发送给你选择并配置的模型服务商。",
+    guideLinks: {
+      eyebrow: "如何用好你的 API KEY",
+      title: "写长文、做 PPT、画可编辑的图",
+      links: [
+        ["写出万字长文", "如何用 ChatGPT、DeepSeek 或 Claude API 完成完整长文写作 →", "/zh/ai-long-form-writer"],
+        ["生成可编辑 PPTX", "标准 PowerPoint 文件 — 不是截图，不是 HTML →", "/zh/ai-editable-powerpoint"],
+        ["画可修改的图表", "改文字标签、移动元素、只重绘选定区域 →", "/zh/ai-editable-images"],
+      ],
+    },
     planKicker: "FREE 免费开始 · PRO 完成专业交付",
     planTitle: "自由生成，需要专业编辑与最终交付时再升级。",
     freeName: "SciNest Free",
@@ -188,6 +206,20 @@ export function SciNestHome({ locale }: { locale: Locale }) {
       <section className={styles.videoSection}><p className={styles.videoKicker}>{locale === "zh" ? "30 秒了解 SciNest" : "See SciNest in 30 seconds"}</p><video src="/scinest-promo.mp4" poster={image("hero")} width={1280} height={800} autoPlay muted loop playsInline preload="metadata" controls aria-label="SciNest product demo video" /></section>
       <section className={`${styles.section} ${styles.darkCompare}`} id="why"><div className={styles.sectionHead}><p>{c.painKicker}</p><h2>{c.painTitle}</h2><span>{c.painBody}</span></div><div className={styles.compare}><article className={styles.old}><h3>{c.oldTitle}</h3><ol>{c.old.map((x, i) => <li key={x}><b>{String(i + 1).padStart(2, "0")}</b>{x}</li>)}</ol></article><div className={styles.bridge}>→</div><article className={styles.new}><h3>{c.newTitle}</h3><ol>{c.newer.map((x, i) => <li key={x}><b>{String(i + 1).padStart(2, "0")}</b>{x}</li>)}</ol></article></div></section>
       <section className={`${styles.section} ${styles.workflow}`} id="workflow"><div className={styles.sectionHead}><p>{c.flowKicker}</p><h2>{c.flowTitle}</h2><span>{c.flowBody}</span></div><div className={styles.flow}>{c.flow.map(([n, t, b]) => <article key={n}><b>{n}</b><h3>{t}</h3><p>{b}</p></article>)}</div></section>
+      {"guideLinks" in c && (
+        <section style={{maxWidth:1180, margin:"0 auto", padding:"60px 28px", textAlign:"center"}}>
+          <p style={{color:"#087f72", fontSize:13, fontWeight:850, letterSpacing:".12em", margin:0}}>{c.guideLinks.eyebrow}</p>
+          <h2 style={{fontSize:"clamp(26px,3.4vw,40px)", lineHeight:1.15, letterSpacing:"-.03em", margin:"16px 0 36px", fontFamily:"Georgia,Times New Roman,serif"}}>{c.guideLinks.title}</h2>
+          <div style={{display:"grid", gridTemplateColumns:"repeat(auto-fit,minmax(280px,1fr))", gap:16, maxWidth:900, margin:"0 auto"}}>
+            {c.guideLinks.links.map(([title, desc, href]) => (
+              <a key={href} href={href} style={{background:"#fff", border:"1px solid rgba(7,95,85,.14)", borderRadius:20, padding:"28px 24px", textDecoration:"none", color:"inherit", textAlign:"left", transition:"transform 180ms ease,box-shadow 180ms ease"}}>
+                <h3 style={{margin:"0 0 8px", fontSize:18, color:"#0a2030"}}>{title}</h3>
+                <p style={{margin:0, fontSize:14, color:"#5e6f7c", lineHeight:1.65}}>{desc}</p>
+              </a>
+            ))}
+          </div>
+        </section>
+      )}
       <section className={`${styles.section} ${styles.outputs}`} id="outputs"><div className={styles.sectionHead}><p>{c.outputKicker}</p><h2>{c.outputTitle}</h2><span>{c.outputBody}</span></div>
         <article className={styles.outputRow}>
           <div><small>{c.outputs[0][0]}</small><h3>{c.outputs[0][1]}</h3><p>{c.outputs[0][2]}</p><ul>{c.outputs[0][3].map(x => <li key={x}>✓ {x}</li>)}</ul><div className={styles.ctas}><a className={styles.secondary} href={productPages.writing}>{productLinkLabels.writing}</a></div></div>

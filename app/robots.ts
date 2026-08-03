@@ -35,6 +35,11 @@ export default function robots(): MetadataRoute.Robots {
         allow: "/",
         disallow: ["/login", "/dashboard"],
       },
+      {
+        userAgent: "OAI-SearchBot",
+        allow: "/",
+        disallow: ["/login", "/dashboard"],
+      },
     ],
     sitemap: [`${siteUrl}/sitemap.xml`, `${siteUrl}/sitemap-llm.xml`],
     host: siteUrl,
