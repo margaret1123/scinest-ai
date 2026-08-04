@@ -1,6 +1,7 @@
 import styles from "./scinest-home.module.css";
 import launchStyles from "./prelaunch.module.css";
 import { pricing, type Locale } from "./home-content";
+import { DownloadCTA } from "./download-cta";
 
 const content = {
   en: {
@@ -8,13 +9,13 @@ const content = {
     subBrand: "Beyond the chat window",
     nav: ["How it works", "Editable outputs", "Free vs Pro", "FAQ"],
     login: "Sign in",
-    start: "Get SciNest Free",
+    start: "Download SciNest Free",
     strip: "SciNest Free for Windows",
     stripOffer: "Pro unlocked for new accounts",
     eyebrow: "WINDOWS DESKTOP · BRING YOUR OWN API KEY · CHATGPT, DEEPSEEK, CLAUDE",
     title: <>One workspace. <em>Write the full paper. Build the deck. Create the diagrams.</em></>,
     intro: "ChatGPT, DeepSeek and Claude can all write complete papers, build editable presentations and generate diagrams — when they have the right workspace. Bring your own API key. Stop fighting the chat window.",
-    primary: "Get SciNest Free",
+    primary: "Download SciNest Free",
     secondary: "See Free vs Pro",
     note: "Free download · Pro unlocked · Use ChatGPT, DeepSeek or Claude API",
     stats: [
@@ -84,20 +85,20 @@ const content = {
     ],
     finalTitle: "Your thesis won't write itself",
     finalBody: "Download SciNest Free for Windows. Pro is already unlocked.",
-    finalCta: "Get SciNest Free",
+    finalCta: "Download SciNest Free",
   },
   zh: {
     lang: "zh-CN",
     subBrand: "不只是聊天窗口",
     nav: ["如何使用", "可编辑成果", "Free 与 Pro", "常见问题"],
     login: "登录",
-    start: "获取 SciNest Free",
+    start: "下载 SciNest Free",
     strip: "SciNest Free · Windows 版",
     stripOffer: "新账户即享 Pro",
     eyebrow: "WINDOWS 桌面端 · 自带 API KEY · CHATGPT / DEEPSEEK / CLAUDE",
     title: <>一个工作区。<em>写完整论文。做可编辑 PPT。画可修改的图。</em></>,
     intro: "ChatGPT、DeepSeek、Claude 都能写完整论文、做可编辑 PPT、生成可修改的图表——只要给它们对的工具。自带 API Key，别再跟聊天窗口较劲。",
-    primary: "获取 SciNest Free",
+    primary: "下载 SciNest Free",
     secondary: "查看 Free 与 Pro",
     note: "免费下载 · Pro 已解锁 · 支持 ChatGPT / DeepSeek / Claude API",
     stats: [
@@ -167,7 +168,7 @@ const content = {
     ],
     finalTitle: "论文不会自己写完",
     finalBody: "下载 SciNest Free Windows 版，Pro 已就绪。",
-    finalCta: "获取 SciNest Free",
+    finalCta: "下载 SciNest Free",
   },
 } as const;
 
@@ -181,7 +182,7 @@ export function SciNestHome({ locale }: { locale: Locale }) {
   const c = content[locale];
   const other = locale === "zh" ? "/" : "/zh";
   const image = (name: string) => `/scinest/${name}-en.webp`;
-  const registerUrl = "/login?redirect=/dashboard&intent=early-bird";
+  const downloadUrl = "https://github.com/margaret1123/scinest-ai/releases/latest/download/SciNest-win-x64.exe";
   const heroAlt = locale === "zh" ? "SciNest 论文修改、科研图与答辩PPT工作台" : "SciNest thesis revision, scientific figure and thesis defense presentation workspace";
   const writingAlt = locale === "zh" ? "SciNest 可编辑论文与研究文稿工作区" : "SciNest editable thesis and academic writing workspace";
   const figureAlt = locale === "zh" ? "SciNest 科研图编辑界面" : "SciNest scientific figure editor";
@@ -195,11 +196,11 @@ export function SciNestHome({ locale }: { locale: Locale }) {
     <header className={styles.header}><div className={styles.navbar}>
       <a className={styles.brand} href="#top"><span>S</span><strong>SciNest<small>{c.subBrand}</small></strong></a>
       <nav>{c.nav.map((item, i) => <a key={item} href={`#${["why", "workflow", "outputs", "pricing", "faq"][i]}`}>{item}</a>)}</nav>
-      <div className={styles.actions}><a href={other}>{locale === "zh" ? "EN" : "中文"}</a><a href="/login">{c.login}</a><a className={styles.smallPrimary} href={registerUrl}>{c.start}</a></div>
+      <div className={styles.actions}><a href={other}>{locale === "zh" ? "EN" : "中文"}</a><a href="/login">{c.login}</a><DownloadCTA className={styles.smallPrimary} href={downloadUrl} placement="nav">{c.start}</DownloadCTA></div>
     </div></header>
     <main>
       <section className={styles.hero} id="top">
-        <div className={styles.heroCopy}><p className={styles.eyebrow}>{c.eyebrow}</p><h1>{c.title}</h1><p className={styles.lead}>{c.intro}</p><div className={styles.ctas}><a className={styles.primary} href={registerUrl}>{c.primary} ↗</a><a className={styles.secondary} href="#pricing">{c.secondary}</a></div><p className={styles.note}>✓ {c.note}</p></div>
+        <div className={styles.heroCopy}><p className={styles.eyebrow}>{c.eyebrow}</p><h1>{c.title}</h1><p className={styles.lead}>{c.intro}</p><div className={styles.ctas}><DownloadCTA className={styles.primary} href={downloadUrl} placement="hero">{c.primary} ↗</DownloadCTA><a className={styles.secondary} href="#pricing">{c.secondary}</a></div><p className={styles.note}>✓ {c.note}</p></div>
         <div className={styles.heroVisual}><img src={image("hero")} alt={heroAlt} width="1280" height="800" /><span className={styles.floatTop}>01 · {c.flow[0][1]}</span><span className={styles.floatBottom}>05 · {c.flow[4][1]}</span></div>
       </section>
       <section className={styles.stats}>{c.stats.map(([v, l]) => <div key={v}><strong>{v}</strong><span>{l}</span></div>)}</section>
@@ -235,9 +236,9 @@ export function SciNestHome({ locale }: { locale: Locale }) {
         </article>
       </section>
       <section className={`${styles.section} ${styles.bento}`}><div className={styles.bentoIntro}><p className={styles.kicker}>{c.bentoKicker}</p><h2>{c.bentoTitle}</h2><p>{c.bentoBody}</p></div><article className={styles.bentoMain}><span>01</span><h3>{c.contextTitle}</h3><p>{c.contextBody}</p></article><article><span>02</span><h3>{c.editTitle}</h3><p>{c.editBody}</p></article><article><span>03</span><h3>{c.modelTitle}</h3><p>{c.modelBody}</p></article></section>
-      <section className={styles.section} id="pricing"><div className={styles.sectionHead}><p>{c.planKicker}</p><h2>{c.planTitle}</h2></div><div className={launchStyles.planGrid}><article className={launchStyles.planCard}><span className={launchStyles.planBadge}>FREE</span><h3>{c.freeName}</h3><p>{c.freeDesc}</p><p style={{fontSize:28,fontWeight:900,color:"#087569",margin:"0 0 8px"}}>{locale === "zh" ? "免费" : "Free"}</p><ul>{c.freeFeatures.map(x => <li key={x}><span>✓</span>{x}</li>)}</ul></article><article className={`${launchStyles.planCard} ${launchStyles.planCardPro}`}><span className={launchStyles.planBadge}>PRO</span><h3>{c.proName}</h3><p>{c.proDesc}</p><p style={{fontSize:28,fontWeight:900,color:"#72e3d4",margin:"0 0 8px"}}>{pricing[locale].pro}</p><ul>{c.proFeatures.map(x => <li key={x}><span>✓</span>{x}</li>)}</ul></article></div><p className={launchStyles.planNote}>{c.planNote}</p><div className={styles.ctas} style={{justifyContent:"center"}}><a className={styles.primary} href={registerUrl}>{c.primary} ↗</a></div></section>
+      <section className={styles.section} id="pricing"><div className={styles.sectionHead}><p>{c.planKicker}</p><h2>{c.planTitle}</h2></div><div className={launchStyles.planGrid}><article className={launchStyles.planCard}><span className={launchStyles.planBadge}>FREE</span><h3>{c.freeName}</h3><p>{c.freeDesc}</p><p style={{fontSize:28,fontWeight:900,color:"#087569",margin:"0 0 8px"}}>{locale === "zh" ? "免费" : "Free"}</p><ul>{c.freeFeatures.map(x => <li key={x}><span>✓</span>{x}</li>)}</ul></article><article className={`${launchStyles.planCard} ${launchStyles.planCardPro}`}><span className={launchStyles.planBadge}>PRO</span><h3>{c.proName}</h3><p>{c.proDesc}</p><p style={{fontSize:28,fontWeight:900,color:"#72e3d4",margin:"0 0 8px"}}>{pricing[locale].pro}</p><ul>{c.proFeatures.map(x => <li key={x}><span>✓</span>{x}</li>)}</ul></article></div><p className={launchStyles.planNote}>{c.planNote}</p><div className={styles.ctas} style={{justifyContent:"center"}}><DownloadCTA className={styles.primary} href={downloadUrl} placement="hero">{c.primary} ↗</DownloadCTA></div></section>
       <section className={`${styles.section} ${styles.faqSection}`} id="faq"><div className={styles.sectionHead}><h2>{c.faqTitle}</h2></div><div className={styles.faq}>{c.faq.map(([q, a]) => <details key={q}><summary>{q}<b>+</b></summary><p>{a}</p></details>)}</div></section>
-      <section className={styles.final}><h2>{c.finalTitle}</h2><p>{c.finalBody}</p><a className={styles.lightButton} href={registerUrl}>{c.finalCta} ↗</a></section>
+      <section className={styles.final}><h2>{c.finalTitle}</h2><p>{c.finalBody}</p><DownloadCTA className={styles.lightButton} href={downloadUrl} placement="final">{c.finalCta} ↗</DownloadCTA></section>
     </main>
     <footer><div><strong>SciNest · {locale === "zh" ? "科研小棉袄" : "Academic work, finished"}</strong><span>{locale === "zh" ? "由 Jiaempower Pathways Limited 运营" : "Operated by Jiaempower Pathways Limited"}</span></div><nav><a href="/privacy">{locale === "zh" ? "隐私政策" : "Privacy"}</a><a href="/terms">{locale === "zh" ? "服务条款" : "Terms"}</a><a href="/refund-policy">{locale === "zh" ? "退款政策" : "Refund policy"}</a></nav><small>© {new Date().getFullYear()} Jiaempower Pathways Limited</small></footer>
   </div>;

@@ -9,6 +9,27 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://scinest.app";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/logo.png",
+  },
+  openGraph: {
+    type: "website",
+    url: "/",
+    siteName: "SciNest",
+    title: "Write complete papers, build editable PPTX, create diagrams — with your own AI key",
+    description: "Bring your own ChatGPT, DeepSeek or Claude API key. One workspace for writing, presentations and diagrams.",
+    images: [{ url: "/logo.png", width: 512, height: 512 }],
+    locale: "en_US",
+    alternateLocale: ["zh_CN"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Write complete papers, build editable PPTX, create diagrams",
+    description: "Bring your own ChatGPT, DeepSeek or Claude API key. Free download, Pro unlocked.",
+    images: ["/logo.png"],
+  },
   title: {
     default: "Use ChatGPT, DeepSeek or Claude to Write Complete Papers, Build Decks & Create Editable Diagrams | SciNest",
     template: "%s | SciNest",
@@ -30,20 +51,6 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/",
     languages: { en: "/", "zh-CN": "/zh", "x-default": "/" },
-  },
-  openGraph: {
-    type: "website",
-    url: "/",
-    siteName: "SciNest",
-    title: "Write complete papers, build editable PPTX, create diagrams — with your own AI key",
-    description: "Bring your own ChatGPT, DeepSeek or Claude API key. One workspace for writing, presentations and diagrams.",
-    locale: "en_US",
-    alternateLocale: ["zh_CN"],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Write complete papers, build editable PPTX, create diagrams",
-    description: "Bring your own ChatGPT, DeepSeek or Claude API key. Free download, Pro unlocked.",
   },
   verification: {
     google: "7mLz2N52DJFJlAp8T_pJAJIqmuC9E92pVTkNJnG3eMM",

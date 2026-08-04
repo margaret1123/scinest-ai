@@ -4,7 +4,7 @@ import styles from "./ai-thesis-writing-assistant.module.css";
 import { ProductBreadcrumbs, RelatedProductPages } from "../product-page-navigation";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://scinest.app";
-const registerUrl = "/login?redirect=/dashboard&intent=early-bird";
+const downloadUrl = "https://github.com/margaret1123/scinest-ai/releases/latest/download/SciNest-win-x64.exe";
 const writingProofImage = "/scinest/writing-long-form-hero-en.svg";
 
 export const metadata: Metadata = {
@@ -123,7 +123,7 @@ export default function AiThesisWritingAssistantPage() {
           <a href="#long-form">Long-form</a>
           <a href="#faq">FAQ</a>
         </nav>
-        <div className={styles.headerActions}><a href="/login">Sign in</a><a className={styles.smallCta} href={registerUrl}>Get SciNest Free</a></div>
+        <div className={styles.headerActions}><a href="/login">Sign in</a><a className={styles.smallCta} href={downloadUrl}>Get SciNest Free</a></div>
       </header>
 
       <ProductBreadcrumbs current="writing" />
@@ -140,7 +140,7 @@ export default function AiThesisWritingAssistantPage() {
             <div className={styles.heroPoints}>
               {['Editable outline', 'Selected materials', 'Reference-aware', 'Long-form generation', 'Section revision'].map(item => <span key={item}>✓ {item}</span>)}
             </div>
-            <div className={styles.ctas}><a className={styles.primary} href={registerUrl}>Generate my long-form draft ↗</a><a className={styles.secondary} href="#proof">See the writing workflow</a></div>
+            <div className={styles.ctas}><a className={styles.primary} href={downloadUrl}>Generate my long-form draft ↗</a><a className={styles.secondary} href="#proof">See the writing workflow</a></div>
             <p className={styles.note}>Windows desktop · Bring your own AI key · Project files stay local by default</p>
           </div>
 
@@ -223,7 +223,7 @@ export default function AiThesisWritingAssistantPage() {
           <div className={styles.faq}>{faq.map(([question, answer]) => <details key={question}><summary>{question}<span>+</span></summary><p>{answer}</p></details>)}</div>
         </section>
 
-        <section className={styles.final}><h2>Stop assembling a long paper from disconnected AI fragments.</h2><p>Build the outline, bind the materials and references, then generate the connected draft in one workflow.</p><a className={styles.lightCta} href={registerUrl}>Generate my long-form draft ↗</a></section>
+        <section className={styles.final}><h2>Stop assembling a long paper from disconnected AI fragments.</h2><p>Build the outline, bind the materials and references, then generate the connected draft in one workflow.</p><a className={styles.lightCta} href={downloadUrl}>Generate my long-form draft ↗</a></section>
       </main>
 
       <RelatedProductPages current="writing" />

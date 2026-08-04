@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://scinest.app";
-const registerUrl = "/login?redirect=/dashboard&intent=early-bird";
+const downloadUrl = "https://github.com/margaret1123/scinest-ai/releases/latest/download/SciNest-win-x64.exe";
 
 export const metadata: Metadata = {
   title: "Create a Real, Editable PowerPoint with AI",
@@ -126,7 +126,7 @@ export default function AiEditablePowerpointPage() {
 
       <header style={{ maxWidth: 1160, margin: "0 auto", padding: "24px 28px", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
         <a href="/" style={{ color: "#087f72", fontWeight: 800, fontSize: 20, textDecoration: "none", letterSpacing: "-.02em" }}>SciNest</a>
-        <a href={registerUrl} style={{ background: "#087f72", color: "#fff", padding: "10px 22px", borderRadius: 12, fontWeight: 700, fontSize: 14, textDecoration: "none" }}>Get SciNest Free</a>
+        <a href={downloadUrl} style={{ background: "#087f72", color: "#fff", padding: "10px 22px", borderRadius: 12, fontWeight: 700, fontSize: 14, textDecoration: "none" }}>Get SciNest Free</a>
       </header>
 
       <main>
@@ -141,7 +141,7 @@ export default function AiEditablePowerpointPage() {
             Edit the outline before generation. Revise individual slides after. Open it in PowerPoint and keep working.
           </p>
           <div style={{ display: "flex", gap: 14, justifyContent: "center", flexWrap: "wrap" }}>
-            <a href={registerUrl} style={{ background: "#087f72", color: "#fff", padding: "15px 34px", borderRadius: 14, fontWeight: 750, fontSize: 16, textDecoration: "none", display: "inline-block" }}>Create an editable PowerPoint ↗</a>
+            <a href={downloadUrl} style={{ background: "#087f72", color: "#fff", padding: "15px 34px", borderRadius: 14, fontWeight: 750, fontSize: 16, textDecoration: "none", display: "inline-block" }}>Create an editable PowerPoint ↗</a>
             <a href="#how-it-works" style={{ color: "#087f72", padding: "15px 28px", borderRadius: 14, fontWeight: 650, fontSize: 16, textDecoration: "none", border: "2px solid rgba(7,153,135,.2)", display: "inline-block" }}>See how it works</a>
           </div>
           <p style={{ color: "#8599a3", fontSize: 13, marginTop: 18 }}>Windows desktop · Standard PPTX export · Use your own AI key</p>
@@ -270,7 +270,7 @@ export default function AiEditablePowerpointPage() {
             Upload your materials. Edit the outline. Generate the deck. Open the PPTX and keep editing.
             Every slide element stays independent — just like a presentation you built yourself.
           </p>
-          <a href={registerUrl} style={{ background: "#fff", color: "#087f72", padding: "16px 38px", borderRadius: 14, fontWeight: 750, fontSize: 17, textDecoration: "none", display: "inline-block" }}>Create an editable PowerPoint ↗</a>
+          <a href={downloadUrl} style={{ background: "#fff", color: "#087f72", padding: "16px 38px", borderRadius: 14, fontWeight: 750, fontSize: 17, textDecoration: "none", display: "inline-block" }}>Create an editable PowerPoint ↗</a>
           <p style={{ marginTop: 20, fontSize: 13, opacity: .5 }}>Free download · Windows · Standard PPTX export</p>
         </section>
       </main>

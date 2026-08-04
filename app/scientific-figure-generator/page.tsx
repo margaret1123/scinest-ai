@@ -3,7 +3,7 @@ import styles from "./scientific-figure-generator.module.css";
 import { ProductBreadcrumbs, RelatedProductPages } from "../product-page-navigation";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://scinest.app";
-const registerUrl = "/login?redirect=/dashboard&intent=early-bird";
+const downloadUrl = "https://github.com/margaret1123/scinest-ai/releases/latest/download/SciNest-win-x64.exe";
 
 export const metadata: Metadata = {
   title: "AI Diagram Generator with Editable Labels — Move, Resize, Revise",
@@ -104,7 +104,7 @@ export default function ScientificFigureGeneratorPage() {
         </nav>
         <div className={styles.headerActions}>
           <a href="/login">Sign in</a>
-          <a className={styles.smallCta} href={registerUrl}>Get SciNest Free</a>
+          <a className={styles.smallCta} href={downloadUrl}>Get SciNest Free</a>
         </div>
       </header>
 
@@ -123,7 +123,7 @@ export default function ScientificFigureGeneratorPage() {
               {['Layer drag and reorder', 'Selected-area AI regeneration', 'Editable text', 'No image-model text garbling'].map(item => <span key={item}>✓ {item}</span>)}
             </div>
             <div className={styles.ctas}>
-              <a className={styles.primary} href={registerUrl}>Generate an editable figure ↗</a>
+              <a className={styles.primary} href={downloadUrl}>Generate an editable figure ↗</a>
               <a className={styles.secondary} href="#layers">See how the layers work</a>
             </div>
             <p className={styles.note}>Windows desktop · Bring your own AI key · Project files stay local by default</p>
@@ -248,7 +248,7 @@ export default function ScientificFigureGeneratorPage() {
         <section className={styles.final}>
           <h2>Do not regenerate the whole figure because one label or one region is wrong.</h2>
           <p>Generate a layered scientific figure, move the elements, edit the text and use AI only on the part that needs changing.</p>
-          <a className={styles.lightCta} href={registerUrl}>Generate an editable scientific figure ↗</a>
+          <a className={styles.lightCta} href={downloadUrl}>Generate an editable scientific figure ↗</a>
         </section>
       </main>
 

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://scinest.app";
-const registerUrl = "/login?redirect=/dashboard&intent=early-bird";
+const downloadUrl = "https://github.com/margaret1123/scinest-ai/releases/latest/download/SciNest-win-x64.exe";
 
 export const metadata: Metadata = {
   title: "How to Write a 10,000+ Word Paper with ChatGPT, DeepSeek or Claude",
@@ -120,7 +120,7 @@ export default function AiLongFormWriterPage() {
       {/* Header */}
       <header style={{ maxWidth: 1160, margin: "0 auto", padding: "24px 28px", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
         <a href="/" style={{ color: "#087f72", fontWeight: 800, fontSize: 20, textDecoration: "none", letterSpacing: "-.02em" }}>SciNest</a>
-        <a href={registerUrl} style={{ background: "#087f72", color: "#fff", padding: "10px 22px", borderRadius: 12, fontWeight: 700, fontSize: 14, textDecoration: "none" }}>Get SciNest Free</a>
+        <a href={downloadUrl} style={{ background: "#087f72", color: "#fff", padding: "10px 22px", borderRadius: 12, fontWeight: 700, fontSize: 14, textDecoration: "none" }}>Get SciNest Free</a>
       </header>
 
       <main>
@@ -135,7 +135,7 @@ export default function AiLongFormWriterPage() {
             Not with the chat window — with your own API key, a proper outline, and a writing workspace that keeps every chapter connected.
           </p>
           <div style={{ display: "flex", gap: 14, justifyContent: "center", flexWrap: "wrap" }}>
-            <a href={registerUrl} style={{ background: "#087f72", color: "#fff", padding: "15px 34px", borderRadius: 14, fontWeight: 750, fontSize: 16, textDecoration: "none", display: "inline-block" }}>Write a complete long paper ↗</a>
+            <a href={downloadUrl} style={{ background: "#087f72", color: "#fff", padding: "15px 34px", borderRadius: 14, fontWeight: 750, fontSize: 16, textDecoration: "none", display: "inline-block" }}>Write a complete long paper ↗</a>
             <a href="#how-it-works" style={{ color: "#087f72", padding: "15px 28px", borderRadius: 14, fontWeight: 650, fontSize: 16, textDecoration: "none", border: "2px solid rgba(7,153,135,.2)", display: "inline-block" }}>See how it works</a>
           </div>
           <p style={{ color: "#8599a3", fontSize: 13, marginTop: 18 }}>Free download · Bring your own API key · No generation cap</p>
@@ -295,7 +295,7 @@ export default function AiLongFormWriterPage() {
             Bring your own API key. Build the outline. Generate the full draft. Edit what needs editing.
             ChatGPT, DeepSeek and Claude all work — when they have the right workspace.
           </p>
-          <a href={registerUrl} style={{ background: "#fff", color: "#087f72", padding: "16px 38px", borderRadius: 14, fontWeight: 750, fontSize: 17, textDecoration: "none", display: "inline-block" }}>Write a complete paper ↗</a>
+          <a href={downloadUrl} style={{ background: "#fff", color: "#087f72", padding: "16px 38px", borderRadius: 14, fontWeight: 750, fontSize: 17, textDecoration: "none", display: "inline-block" }}>Write a complete paper ↗</a>
           <p style={{ marginTop: 20, fontSize: 13, opacity: .5 }}>Free download · Windows · Bring your own API key</p>
         </section>
       </main>

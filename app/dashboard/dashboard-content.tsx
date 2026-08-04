@@ -1,8 +1,9 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { createClient } from "@/lib/supabase-client";
+import { trackEvent } from "@/lib/gtag";
 
 interface Order {
   id: string;
@@ -16,9 +17,12 @@ interface DashboardContentProps {
   email: string;
   hasFoundingEdition: boolean;
   earlyBirdEligible: boolean;
+  earlyBirdExpired: boolean;
   license: string;
   orders: Order[];
   locale: "zh" | "en";
+  stripeSuccess?: boolean;
+  stripeSessionId?: string;
 }
 
 const t = {
@@ -150,9 +154,17 @@ const t = {
   },
 } as const;
 
-export function DashboardContent({ email, hasFoundingEdition, earlyBirdEligible, license, orders, locale }: DashboardContentProps) {
+export function DashboardContent({ email, hasFoundingEdition, earlyBirdEligible, earlyBirdExpired, license, orders, locale, stripeSuccess, stripeSessionId }: DashboardContentProps) {
   const router = useRouter();
+  const trackedPurchase = useRef(false);
   const c = t[locale];
+
+  useEffect(() => {
+    if (stripeSuccess && !trackedPurchase.current) {
+      trackedPurchase.current = true;
+      trackEvent("purchase", stripeSessionId ? { session_id: stripeSessionId } : undefined);
+    }
+  }, [stripeSuccess, stripeSessionId]);
 
   const handleLogout = async () => {
     const supabase = createClient();
@@ -168,6 +180,7 @@ export function DashboardContent({ email, hasFoundingEdition, earlyBirdEligible,
     if (buying) return;
     setBuying(true);
     setBuyError(null);
+    trackEvent("begin_checkout", { market });
     try {
       const res = await fetch("/api/stripe/checkout", {
         method: "POST",
@@ -195,7 +208,7 @@ export function DashboardContent({ email, hasFoundingEdition, earlyBirdEligible,
     }).format(order.amount / 100);
   };
 
-  const isPro = license === "pro_founding" || license === "early_bird_pro";
+  const isPro = license === "pro_founding" || (license === "early_bird_pro" && !earlyBirdExpired);
 
   return (
     <div style={{ minHeight: "100vh", background: "#f7fbfb", color: "#102326" }}>
@@ -218,9 +231,9 @@ export function DashboardContent({ email, hasFoundingEdition, earlyBirdEligible,
         <section style={{ marginTop: 24, padding: 24, borderRadius: 20, background: "#fff", border: "1px solid #dcebea" }}>
           <h2 style={{ marginTop: 0 }}>{c.download}</h2>
           <div style={{ display: "flex", gap: 12, flexWrap: "wrap", marginBottom: 12 }}>
-            <a href="https://github.com/margaret1123/scinest-ai/releases/latest/download/SciNest-win-x64.exe" style={{ padding: "10px 18px", borderRadius: 10, background: "#0D9488", color: "#fff", textDecoration: "none", fontWeight: 700 }}>Windows</a>
-            <a href="https://github.com/margaret1123/scinest-ai/releases/latest/download/SciNest-mac-arm64.dmg" style={{ padding: "10px 18px", borderRadius: 10, background: "#f1f8f7", color: "#0D9488", textDecoration: "none" }}>macOS</a>
-            <a href="https://github.com/margaret1123/scinest-ai/releases/latest/download/SciNest-linux-x86_64.AppImage" style={{ padding: "10px 18px", borderRadius: 10, background: "#f1f8f7", color: "#0D9488", textDecoration: "none" }}>Linux</a>
+            <a href="https://github.com/margaret1123/scinest-ai/releases/latest/download/SciNest-win-x64.exe" onClick={() => trackEvent("download_click", { placement: "dashboard", os: "windows" })} style={{ padding: "10px 18px", borderRadius: 10, background: "#0D9488", color: "#fff", textDecoration: "none", fontWeight: 700 }}>Windows</a>
+            <a href="https://github.com/margaret1123/scinest-ai/releases/latest/download/SciNest-mac-arm64.dmg" onClick={() => trackEvent("download_click", { placement: "dashboard", os: "mac" })} style={{ padding: "10px 18px", borderRadius: 10, background: "#f1f8f7", color: "#0D9488", textDecoration: "none" }}>macOS</a>
+            <a href="https://github.com/margaret1123/scinest-ai/releases/latest/download/SciNest-linux-x86_64.AppImage" onClick={() => trackEvent("download_click", { placement: "dashboard", os: "linux" })} style={{ padding: "10px 18px", borderRadius: 10, background: "#f1f8f7", color: "#0D9488", textDecoration: "none" }}>Linux</a>
           </div>
           <p style={{ color: "#94A3A8", fontSize: 13, margin: 0 }}>{c.smartScreen}</p>
         </section>

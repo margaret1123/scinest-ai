@@ -3,7 +3,7 @@ import styles from "./ai-powerpoint-generator.module.css";
 import { ProductBreadcrumbs, RelatedProductPages } from "../product-page-navigation";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://scinest.app";
-const registerUrl = "/login?redirect=/dashboard&intent=early-bird";
+const downloadUrl = "https://github.com/margaret1123/scinest-ai/releases/latest/download/SciNest-win-x64.exe";
 
 const proofFigureStyle = {
   maxWidth: 980,
@@ -171,7 +171,7 @@ export default function AiPowerPointGeneratorPage() {
         </nav>
         <div className={styles.headerActions}>
           <a href="/login">Sign in</a>
-          <a className={styles.smallCta} href={registerUrl}>Get SciNest Free</a>
+          <a className={styles.smallCta} href={downloadUrl}>Get SciNest Free</a>
         </div>
       </header>
 
@@ -190,7 +190,7 @@ export default function AiPowerPointGeneratorPage() {
               {['Real PPTX', 'Source-bound', 'Visuals included', 'Editable outline', 'WYSIWYG'].map(item => <span key={item}>✓ {item}</span>)}
             </div>
             <div className={styles.ctas}>
-              <a className={styles.primary} href={registerUrl}>Generate my real PowerPoint ↗</a>
+              <a className={styles.primary} href={downloadUrl}>Generate my real PowerPoint ↗</a>
               <a className={styles.secondary} href="#proof">See the editable result</a>
             </div>
             <p className={styles.note}>Windows desktop · Bring your own AI key · Project files stay local by default</p>
@@ -337,7 +337,7 @@ export default function AiPowerPointGeneratorPage() {
         <section className={styles.finalCta}>
           <p>STOP GENERATING CONTENT THAT STILL NEEDS TO BECOME A PRESENTATION</p>
           <h2>Upload the material.<br />Get a real, visual, editable PowerPoint.</h2>
-          <a href={registerUrl}>Generate my real PowerPoint ↗</a>
+          <a href={downloadUrl}>Generate my real PowerPoint ↗</a>
           <span>Use your own AI key · Local project files by default · Real PPTX export</span>
         </section>
       </main>

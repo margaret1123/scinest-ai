@@ -15,13 +15,6 @@ function isMarket(value: unknown): value is Market {
 
 export async function POST(req: NextRequest) {
   try {
-    if (process.env.SCINEST_CHECKOUT_ENABLED !== "true") {
-      return NextResponse.json(
-        { error: "付款功能暂未开放，请稍后再试。" },
-        { status: 503 }
-      );
-    }
-
     const body = await req.json();
     const market: Market = body.market === undefined ? "cny" : body.market;
 
