@@ -18,7 +18,7 @@ const content = {
     primary: "Download SciNest Free",
     secondary: "See Free vs Pro",
     note: "Free download · Pro unlocked · Use ChatGPT, DeepSeek or Claude API",
-    installNote: "Solo-developed app — Windows may show a SmartScreen warning. Click More info → Run anyway.",
+    installNote: ".zip file — extract and run SciNest.exe. If you downloaded the .exe version, click More info → Run anyway to install safely.",
     stats: [
       ["Unlimited AI generations", "Free and Pro both use your own API key — SciNest never limits your output"],
       ["Editable diagrams & images", "Generate diagrams with real text labels you can change; Pro unlocks layer editing and watermark-free export"],
@@ -102,7 +102,7 @@ const content = {
     primary: "下载 SciNest Free",
     secondary: "查看 Free 与 Pro",
     note: "免费下载 · Pro 已解锁 · 支持 ChatGPT / DeepSeek / Claude API",
-    installNote: "个人独立开发 · Windows 可能提示 SmartScreen 警告，点击「更多信息」→「仍要运行」即可安装",
+    installNote: ".zip 压缩包 — 解压后直接运行 SciNest.exe。如果下载的是 .exe 安装版，点击「更多信息」→「仍要运行」即可放心安装。",
     stats: [
       ["AI 生成不限次数", "Free 与 Pro 均使用你自己的 API Key，SciNest 不限制生成次数"],
       ["可编辑图片与图表", "生成带真实文字标签的图表，支持图层编辑和无水印导出"],
