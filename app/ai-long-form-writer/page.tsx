@@ -4,16 +4,16 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://scinest.app";
 const downloadUrl = "https://github.com/margaret1123/scinest-ai/releases/latest/download/SciNest-win-x64.zip";
 
 export const metadata: Metadata = {
-  title: "How to Write a 10,000+ Word Paper with ChatGPT, DeepSeek or Claude",
+  title: "How to Draft a 10,000+ Word Paper with ChatGPT, DeepSeek or Claude | SciNest",
   description:
-    "Any AI can write a complete long-form paper — not just a chat reply. Bring your own ChatGPT, DeepSeek or Claude API key, build an editable outline, and generate a full thesis, dissertation or essay chapter by chapter.",
+    "Connect your own AI API key. Build an editable outline, bind your sources, and draft a complete long-form paper — chapter by chapter, with persistent context. Not a chat reply.",
   alternates: { canonical: "/ai-long-form-writer" },
   openGraph: {
     type: "website",
     url: "/ai-long-form-writer",
-    title: "Write 10,000+ Word Papers with ChatGPT, DeepSeek or Claude | SciNest",
+    title: "Draft 10,000+ Word Papers with Your Own AI Key | SciNest",
     description:
-      "Bring your own API key. Build the outline first, bind your sources, then generate a complete long-form draft — not a shallow chat answer.",
+      "Bring your own API key. Build the outline first, bind your sources, then draft a complete long-form paper — yours to edit, verify and submit.",
   },
   twitter: {
     card: "summary_large_image",
@@ -128,14 +128,14 @@ export default function AiLongFormWriterPage() {
         <section style={{ maxWidth: 860, margin: "0 auto", padding: "60px 28px 40px", textAlign: "center" }}>
           <p style={{ color: "#087f72", fontSize: 13, fontWeight: 850, letterSpacing: ".12em", margin: 0 }}>LONG-FORM AI WRITING</p>
           <h1 style={{ fontSize: "clamp(32px,4.8vw,56px)", lineHeight: 1.08, letterSpacing: "-.035em", margin: "18px 0 22px", fontFamily: "Georgia,Times New Roman,serif" }}>
-            Write a Complete 10,000+ Word Paper<br />with <em>Any</em> AI Model
+            Draft a Complete 10,000+ Word Paper<br />with <em>Your Own</em> AI Key
           </h1>
           <p style={{ fontSize: 18, lineHeight: 1.7, color: "#526974", maxWidth: 680, margin: "0 auto 32px" }}>
-            ChatGPT, DeepSeek and Claude can all produce full thesis drafts, dissertations and long essays.
+            ChatGPT, DeepSeek and Claude can all help you draft full thesis chapters, dissertations and long essays.
             Not with the chat window — with your own API key, a proper outline, and a writing workspace that keeps every chapter connected.
           </p>
           <div style={{ display: "flex", gap: 14, justifyContent: "center", flexWrap: "wrap" }}>
-            <a href={downloadUrl} style={{ background: "#087f72", color: "#fff", padding: "15px 34px", borderRadius: 14, fontWeight: 750, fontSize: 16, textDecoration: "none", display: "inline-block" }}>Write a complete long paper ↗</a>
+            <a href={downloadUrl} style={{ background: "#087f72", color: "#fff", padding: "15px 34px", borderRadius: 14, fontWeight: 750, fontSize: 16, textDecoration: "none", display: "inline-block" }}>Start drafting your paper ↗</a>
             <a href="#how-it-works" style={{ color: "#087f72", padding: "15px 28px", borderRadius: 14, fontWeight: 650, fontSize: 16, textDecoration: "none", border: "2px solid rgba(7,153,135,.2)", display: "inline-block" }}>See how it works</a>
           </div>
           <p style={{ color: "#8599a3", fontSize: 13, marginTop: 18 }}>Free download · Bring your own API key · No generation cap</p>
@@ -171,7 +171,7 @@ export default function AiLongFormWriterPage() {
           <div style={{ maxWidth: 800, margin: "0 auto", textAlign: "center" }}>
             <p style={{ color: "#087f72", fontSize: 13, fontWeight: 850, letterSpacing: ".12em", margin: 0 }}>THE FIX</p>
             <h2 style={{ fontSize: "clamp(28px,3.6vw,44px)", lineHeight: 1.12, letterSpacing: "-.03em", margin: "18px 0 22px", fontFamily: "Georgia,Times New Roman,serif" }}>
-              Same API. Same model. A workspace that writes the full paper — not just the next reply.
+              Same API. Same model. A workspace where you draft the full paper — not just the next reply.
             </h2>
             <p style={{ fontSize: 17, color: "#42606c", lineHeight: 1.7, maxWidth: 640, margin: "0 auto 40px" }}>
               SciNest connects to your own API key — OpenAI, DeepSeek, Anthropic or any compatible provider.
@@ -295,7 +295,7 @@ export default function AiLongFormWriterPage() {
             Bring your own API key. Build the outline. Generate the full draft. Edit what needs editing.
             ChatGPT, DeepSeek and Claude all work — when they have the right workspace.
           </p>
-          <a href={downloadUrl} style={{ background: "#fff", color: "#087f72", padding: "16px 38px", borderRadius: 14, fontWeight: 750, fontSize: 17, textDecoration: "none", display: "inline-block" }}>Write a complete paper ↗</a>
+          <a href={downloadUrl} style={{ background: "#fff", color: "#087f72", padding: "16px 38px", borderRadius: 14, fontWeight: 750, fontSize: 17, textDecoration: "none", display: "inline-block" }}>Start drafting ↗</a>
           <p style={{ marginTop: 20, fontSize: 13, opacity: .5 }}>Free download · Windows · Bring your own API key</p>
         </section>
       </main>

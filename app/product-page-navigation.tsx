@@ -4,7 +4,7 @@ export type ProductPageKey = "writing" | "figures" | "powerpoint";
 
 const productPages = {
   writing: {
-    label: "AI Thesis Writing Assistant",
+    label: "Academic Writing Workspace",
     href: "/ai-thesis-writing-assistant",
     title: "Build the academic draft",
     description: "Create an editable outline, bind selected materials and references, and generate a connected long-form draft.",

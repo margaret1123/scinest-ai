@@ -1,5 +1,5 @@
 # SciNest · 科研小棉袄
-> A Windows desktop AI workspace for students — write complete papers, build real editable PPTX, and generate editable diagrams with your own ChatGPT, DeepSeek or Claude API key. Free download, Pro unlocked for new accounts.
+> A Windows desktop AI research workspace — draft papers, build real editable PPTX, and generate editable diagrams with your own ChatGPT, DeepSeek or Claude API key. Free download, Pro unlocked for new accounts.
 
 ## Site information
 - Canonical site: https://scinest.app/
@@ -12,7 +12,7 @@
 SciNest connects to any OpenAI-compatible API: ChatGPT (OpenAI), DeepSeek, Claude (Anthropic) and others. You bring your own API key — there is no SciNest subscription and no generation limit. You pay the AI provider directly for actual usage.
 
 ## SEO landing pages
-- /ai-long-form-writer : How to write 10,000+ word papers with ChatGPT, DeepSeek or Claude
+- /ai-long-form-writer : How to draft 10,000+ word papers with your own ChatGPT, DeepSeek or Claude API key
 - /ai-editable-powerpoint : Create real editable PPTX with AI — not a screenshot
 - /ai-editable-images : Generate editable diagrams with AI — change labels, move elements
 

@@ -13,8 +13,8 @@ const content = {
     strip: "SciNest Free for Windows",
     stripOffer: "Pro unlocked for new accounts",
     eyebrow: "WINDOWS DESKTOP · BRING YOUR OWN API KEY · CHATGPT, DEEPSEEK, CLAUDE",
-    title: <>One workspace. <em>Write the full paper. Build the deck. Create the diagrams.</em></>,
-    intro: "ChatGPT, DeepSeek and Claude can all write complete papers, build editable presentations and generate diagrams — when they have the right workspace. Bring your own API key. Stop fighting the chat window.",
+    title: <>One workspace. <em>Draft, revise, and finish the full paper. Build the deck. Create the diagrams.</em></>,
+    intro: "ChatGPT, DeepSeek and Claude can all help you draft and revise long-form academic work, build editable presentations and generate diagrams — when they have the right workspace. Bring your own API key. Stop fighting the chat window.",
     primary: "Download SciNest Free",
     secondary: "See Free vs Pro",
     note: "Free download · Pro unlocked · Use ChatGPT, DeepSeek or Claude API",
@@ -61,9 +61,9 @@ const content = {
     modelBody: "Project files and outputs stay local by default. AI tasks are sent to the provider you configure.",
     guideLinks: {
       eyebrow: "HOW TO USE YOUR AI KEY",
-      title: "Write papers, build decks, create diagrams",
+      title: "Draft papers, build decks, create diagrams",
       links: [
-        ["Write 10,000+ word papers", "How to use ChatGPT, DeepSeek or Claude API for complete long-form writing →", "/ai-long-form-writer"],
+        ["Draft 10,000+ word papers", "How to use ChatGPT, DeepSeek or Claude API for complete long-form writing →", "/ai-long-form-writer"],
         ["Create real editable PPTX", "Standard PowerPoint files — not screenshots, not HTML slideshows →", "/ai-editable-powerpoint"],
         ["Generate editable diagrams", "Change text labels, move elements, revise selected areas →", "/ai-editable-images"],
       ],
@@ -83,7 +83,12 @@ const content = {
       ["What's in Pro?", "Multiple projects, watermark-free scientific figures, layer editing, and editable PowerPoint export."],
       ["Are generations limited?", "No. Free and Pro both allow unlimited SciNest generations. Your selected AI provider charges separately for actual API usage."],
       ["Does SciNest guarantee a grade, graduation or publication?", "No. Users remain responsible for checking facts, citations, originality and institutional AI-use rules."],
+      ["Is SciNest an essay-writing service?", "No. SciNest is a desktop workspace that connects to your own AI API key. It helps you organize materials, build outlines, draft and revise your own work — you stay in control of every word. A ghostwriting service would not ask you to bring your own API key. Users are responsible for ensuring their work complies with their institution's academic integrity and AI-use policies."],
     ],
+    academicIntegrity: {
+      title: "Academic Integrity",
+      body: "SciNest is a research productivity workspace — not an essay-writing or ghostwriting service. You bring your own AI API key, your own research materials, and your own expertise. SciNest provides the workspace to organize, outline, draft and revise — but you stay in control of every word. Users are responsible for fact-checking, verifying citations, ensuring originality, and complying with their institution's academic integrity and AI-use policies.",
+    },
     finalTitle: "Your thesis won't write itself",
     finalBody: "Download SciNest Free for Windows. Pro is already unlocked.",
     finalCta: "Download SciNest Free",
@@ -97,8 +102,8 @@ const content = {
     strip: "SciNest Free · Windows 版",
     stripOffer: "新账户即享 Pro",
     eyebrow: "WINDOWS 桌面端 · 自带 API KEY · CHATGPT / DEEPSEEK / CLAUDE",
-    title: <>一个工作区。<em>写完整论文。做可编辑 PPT。画可修改的图。</em></>,
-    intro: "ChatGPT、DeepSeek、Claude 都能写完整论文、做可编辑 PPT、生成可修改的图表——只要给它们对的工具。自带 API Key，别再跟聊天窗口较劲。",
+    title: <>一个工作区。<em>起草、修改、完成你自己的论文。做可编辑 PPT。画可修改的图。</em></>,
+    intro: "ChatGPT、DeepSeek、Claude 都能帮你起草和修改长文学术内容、做可编辑 PPT、生成可修改的图表——只要给它们对的工具。自带 API Key，别再跟聊天窗口较劲。",
     primary: "下载 SciNest Free",
     secondary: "查看 Free 与 Pro",
     note: "免费下载 · Pro 已解锁 · 支持 ChatGPT / DeepSeek / Claude API",
@@ -145,9 +150,9 @@ const content = {
     modelBody: "项目文件和成果默认保存在本地；AI 任务发送给你选择并配置的模型服务商。",
     guideLinks: {
       eyebrow: "如何用好你的 API KEY",
-      title: "写长文、做 PPT、画可编辑的图",
+      title: "起草长文、做 PPT、画可编辑的图",
       links: [
-        ["写出万字长文", "如何用 ChatGPT、DeepSeek 或 Claude API 完成完整长文写作 →", "/zh/ai-long-form-writer"],
+        ["起草万字长文", "如何用 ChatGPT、DeepSeek 或 Claude API 完成完整长文写作 →", "/zh/ai-long-form-writer"],
         ["生成可编辑 PPTX", "标准 PowerPoint 文件 — 不是截图，不是 HTML →", "/zh/ai-editable-powerpoint"],
         ["画可修改的图表", "改文字标签、移动元素、只重绘选定区域 →", "/zh/ai-editable-images"],
       ],
@@ -167,7 +172,12 @@ const content = {
       ["Pro 有什么？", "多项目、科研图无水印导出、图层编辑、可编辑 PowerPoint 导出。"],
       ["生成次数有限制吗？", "没有。Free 与 Pro 均不限 SciNest 生成次数，模型服务商按你自己的 API 实际用量收费。"],
       ["SciNest 保证成绩、毕业或发表吗？", "不保证。用户仍需核查事实、引用、原创性，并遵守所在机构的 AI 使用规则。"],
+      ["SciNest 是论文代写服务吗？", "不是。SciNest 是桌面工作区，连接你自己的 AI API Key。它帮助你组织材料、构建大纲、起草和修改你自己的作品——每一个字都由你掌控。代写服务不会让你自带 API Key。用户有责任确保自己的作品符合所在机构的学术诚信和 AI 使用规范。"],
     ],
+    academicIntegrity: {
+      title: "学术诚信声明",
+      body: "SciNest 是科研生产力工作区，不是论文代写或学术不端服务平台。用户使用自己的 API Key、自己的研究材料、自己的专业知识。SciNest 提供的是组织、大纲、起草和修改的工作区——每一个字都由用户主导。用户有责任核查事实、引用和原创性，并遵守所在机构的学术诚信与 AI 使用规范。",
+    },
     finalTitle: "论文不会自己写完",
     finalBody: "下载 SciNest Free Windows 版，Pro 已就绪。",
     finalCta: "下载 SciNest Free",
@@ -240,6 +250,14 @@ export function SciNestHome({ locale }: { locale: Locale }) {
       <section className={`${styles.section} ${styles.bento}`}><div className={styles.bentoIntro}><p className={styles.kicker}>{c.bentoKicker}</p><h2>{c.bentoTitle}</h2><p>{c.bentoBody}</p></div><article className={styles.bentoMain}><span>01</span><h3>{c.contextTitle}</h3><p>{c.contextBody}</p></article><article><span>02</span><h3>{c.editTitle}</h3><p>{c.editBody}</p></article><article><span>03</span><h3>{c.modelTitle}</h3><p>{c.modelBody}</p></article></section>
       <section className={styles.section} id="pricing"><div className={styles.sectionHead}><p>{c.planKicker}</p><h2>{c.planTitle}</h2></div><div className={launchStyles.planGrid}><article className={launchStyles.planCard}><span className={launchStyles.planBadge}>FREE</span><h3>{c.freeName}</h3><p>{c.freeDesc}</p><p style={{fontSize:28,fontWeight:900,color:"#087569",margin:"0 0 8px"}}>{locale === "zh" ? "免费" : "Free"}</p><ul>{c.freeFeatures.map(x => <li key={x}><span>✓</span>{x}</li>)}</ul></article><article className={`${launchStyles.planCard} ${launchStyles.planCardPro}`}><span className={launchStyles.planBadge}>PRO</span><h3>{c.proName}</h3><p>{c.proDesc}</p><p style={{fontSize:28,fontWeight:900,color:"#72e3d4",margin:"0 0 8px"}}>{pricing[locale].pro}</p><ul>{c.proFeatures.map(x => <li key={x}><span>✓</span>{x}</li>)}</ul></article></div><p className={launchStyles.planNote}>{c.planNote}</p><div className={styles.ctas} style={{justifyContent:"center"}}><DownloadCTA className={styles.primary} href={downloadUrl} placement="hero">{c.primary} ↗</DownloadCTA></div></section>
       <section className={`${styles.section} ${styles.faqSection}`} id="faq"><div className={styles.sectionHead}><h2>{c.faqTitle}</h2></div><div className={styles.faq}>{c.faq.map(([q, a]) => <details key={q}><summary>{q}<b>+</b></summary><p>{a}</p></details>)}</div></section>
+      {"academicIntegrity" in c && (
+        <section className={styles.section} style={{maxWidth:860, margin:"0 auto", padding:"48px 28px", textAlign:"center"}}>
+          <div className={styles.sectionHead}>
+            <h2>{c.academicIntegrity.title}</h2>
+            <p style={{maxWidth:720, margin:"16px auto 0", fontSize:15, lineHeight:1.75, color:"#5e6f7c"}}>{c.academicIntegrity.body}</p>
+          </div>
+        </section>
+      )}
       <section className={styles.final}><h2>{c.finalTitle}</h2><p>{c.finalBody}</p><DownloadCTA className={styles.lightButton} href={downloadUrl} placement="final">{c.finalCta} ↗</DownloadCTA></section>
     </main>
     <footer><div><strong>SciNest · {locale === "zh" ? "科研小棉袄" : "Academic work, finished"}</strong><span>{locale === "zh" ? "由 Jiaempower Pathways Limited 运营" : "Operated by Jiaempower Pathways Limited"}</span></div><nav><a href="/privacy">{locale === "zh" ? "隐私政策" : "Privacy"}</a><a href="/terms">{locale === "zh" ? "服务条款" : "Terms"}</a><a href="/refund-policy">{locale === "zh" ? "退款政策" : "Refund policy"}</a><a href="https://github.com/margaret1123/scinest-ai/issues/new/choose" target="_blank" rel="noopener noreferrer">{locale === "zh" ? "反馈" : "Feedback"}</a></nav><small>© {new Date().getFullYear()} Jiaempower Pathways Limited</small></footer>

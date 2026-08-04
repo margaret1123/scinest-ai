@@ -8,14 +8,14 @@ const downloadUrl = "https://github.com/margaret1123/scinest-ai/releases/latest/
 const writingProofImage = "/scinest/writing-long-form-hero-en.svg";
 
 export const metadata: Metadata = {
-  title: "Write Complete Papers with ChatGPT, DeepSeek or Claude — AI Thesis Writer",
+  title: "Academic Writing Workspace — Draft & Revise Long-Form Papers with Your AI Key | SciNest",
   description:
     "Build an editable outline, bind selected materials and references, then generate a coherent long-form academic draft in one run. Revise chapters without restarting the whole document.",
   alternates: { canonical: "/ai-thesis-writing-assistant" },
   openGraph: {
     type: "website",
     url: "/ai-thesis-writing-assistant",
-    title: "Write Complete Papers with ChatGPT, DeepSeek or Claude",
+    title: "Academic Writing Workspace — Draft & Revise Long-Form Papers with Your AI Key",
     description:
       "From selected sources and an editable outline to a coherent 10,000-word academic draft with references and section-level revision.",
     images: [{ url: writingProofImage, width: 1280, height: 800, alt: "SciNest source-bound academic writing workspace" }],
@@ -135,7 +135,7 @@ export default function AiThesisWritingAssistantPage() {
         <section className={styles.hero}>
           <div className={styles.heroCopy}>
             <p className={styles.eyebrow}>OUTLINE FIRST · MATERIALS BOUND · REFERENCES INCLUDED</p>
-            <h1>From an editable outline to a <em>10,000-word academic draft.</em></h1>
+            <h1>From your outline and sources to a <em>connected 10,000-word academic draft.</em></h1>
             <p className={styles.lead}>Select the materials that matter, shape the outline, connect the references and generate a coherent long-form document in one run—without prompting one chapter at a time.</p>
             <div className={styles.heroPoints}>
               {['Editable outline', 'Selected materials', 'Reference-aware', 'Long-form generation', 'Section revision'].map(item => <span key={item}>✓ {item}</span>)}
@@ -223,7 +223,7 @@ export default function AiThesisWritingAssistantPage() {
           <div className={styles.faq}>{faq.map(([question, answer]) => <details key={question}><summary>{question}<span>+</span></summary><p>{answer}</p></details>)}</div>
         </section>
 
-        <section className={styles.final}><h2>Stop assembling a long paper from disconnected AI fragments.</h2><p>Build the outline, bind the materials and references, then generate the connected draft in one workflow.</p><a className={styles.lightCta} href={downloadUrl}>Generate my long-form draft ↗</a></section>
+        <section className={styles.final}><h2>Stop assembling a long paper from disconnected AI fragments. Start from your outline, your sources, your key.</h2><p>Build the outline, bind the materials and references, then generate the connected draft in one workflow.</p><a className={styles.lightCta} href={downloadUrl}>Generate my long-form draft ↗</a></section>
       </main>
 
       <RelatedProductPages current="writing" />

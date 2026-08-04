@@ -1,5 +1,5 @@
 # SciNest · 科研小棉袄
-> Windows 桌面端 AI 工作区——自带 ChatGPT、DeepSeek 或 Claude API Key，写完整论文、做可编辑 PPTX、生成可修改的图表。免费下载，新账户即享 Pro。
+> Windows 桌面端 AI 学术工作区——自带 ChatGPT、DeepSeek 或 Claude API Key，起草论文、做可编辑 PPTX、生成可修改的图表。免费下载，新账户即享 Pro。
 
 ## 网站信息
 - 官网: https://scinest.app/
@@ -13,7 +13,7 @@ SciNest 连接任何兼容 OpenAI 接口的 API：ChatGPT (OpenAI)、DeepSeek、
 
 ## 中文落地页
 - /zh : 中文首页
-- /zh/ai-long-form-writer : 用 ChatGPT / DeepSeek / Claude 写出万字长文
+- /zh/ai-long-form-writer : 用 ChatGPT / DeepSeek / Claude 起草万字长文
 - /zh/ai-editable-powerpoint : 用 AI 生成真正可编辑的 PPTX
 - /zh/ai-editable-images : 用 AI 生成可编辑的图片——改文字、移元素、局部重绘
 
