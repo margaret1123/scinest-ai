@@ -116,11 +116,13 @@ OpenAI · Anthropic Claude · DeepSeek · Google Gemini · Moonshot (Kimi) · �
 | **活跃项目数** | 1 个 | 不限 |
 | **AI API Key** | 自己的 | 自己的 |
 
-### 早鸟权益
+### 新用户试用
 
-2026 年 8 月 1 日前注册，免费获得 **30 天 Pro**。无需银行卡，不会自动扣费。
+**新用户注册即享 7 天 Pro 免费试用。** 不扣费，不自动续期——完整功能，放心体验。
 
-[升级 Pro](https://scinest.ai) · [免费下载](https://github.com/margaret1123/scinest-ai/releases/latest)
+试用到期后，Free 版仍可**无限生成**论文、科研图、PPT。仅编辑和高级导出（DOCX、PPTX、SVG、去水印）需升级 Pro。
+
+[在 scinest.ai 注册](https://scinest.ai) · [下载](https://github.com/margaret1123/scinest-ai/releases/latest)
 
 ---
 

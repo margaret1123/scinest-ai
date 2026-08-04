@@ -116,11 +116,13 @@ The difference is in what you can do with the results.
 | **Active projects** | 1 | Unlimited |
 | **AI API keys** | Your own | Your own |
 
-### Early Bird
+### New User Trial
 
-Register before August 1, 2026 and get **30 days of Pro free**. No credit card required.
+**New users get 7 days of Pro free on registration.** No charges, no auto-renewal — just full access to try every feature.
 
-[Upgrade to Pro](https://scinest.ai) · [Download Free](https://github.com/margaret1123/scinest-ai/releases/latest)
+After the trial, Free tier still gives you **unlimited generation** for writing, figures, and PPT. Only editing and professional exports (DOCX, PPTX, SVG, watermark-free) require an upgrade.
+
+[Register on scinest.ai](https://scinest.ai) · [Download](https://github.com/margaret1123/scinest-ai/releases/latest)
 
 ---
 
