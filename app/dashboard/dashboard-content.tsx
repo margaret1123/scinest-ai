@@ -231,7 +231,7 @@ export function DashboardContent({ email, hasFoundingEdition, earlyBirdEligible,
         <section style={{ marginTop: 24, padding: 24, borderRadius: 20, background: "#fff", border: "1px solid #dcebea" }}>
           <h2 style={{ marginTop: 0 }}>{c.download}</h2>
           <div style={{ display: "flex", gap: 12, flexWrap: "wrap", marginBottom: 12 }}>
-            <a href="https://github.com/margaret1123/scinest-ai/releases/latest/download/SciNest-win-x64.exe" onClick={() => trackEvent("download_click", { placement: "dashboard", os: "windows" })} style={{ padding: "10px 18px", borderRadius: 10, background: "#0D9488", color: "#fff", textDecoration: "none", fontWeight: 700 }}>Windows</a>
+            <a href="https://github.com/margaret1123/scinest-ai/releases/latest/download/SciNest-win-x64.zip" onClick={() => trackEvent("download_click", { placement: "dashboard", os: "windows" })} style={{ padding: "10px 18px", borderRadius: 10, background: "#0D9488", color: "#fff", textDecoration: "none", fontWeight: 700 }}>Windows</a>
             <a href="https://github.com/margaret1123/scinest-ai/releases/latest/download/SciNest-mac-arm64.dmg" onClick={() => trackEvent("download_click", { placement: "dashboard", os: "mac" })} style={{ padding: "10px 18px", borderRadius: 10, background: "#f1f8f7", color: "#0D9488", textDecoration: "none" }}>macOS</a>
             <a href="https://github.com/margaret1123/scinest-ai/releases/latest/download/SciNest-linux-x86_64.AppImage" onClick={() => trackEvent("download_click", { placement: "dashboard", os: "linux" })} style={{ padding: "10px 18px", borderRadius: 10, background: "#f1f8f7", color: "#0D9488", textDecoration: "none" }}>Linux</a>
           </div>

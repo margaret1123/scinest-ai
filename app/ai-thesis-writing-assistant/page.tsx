@@ -4,7 +4,7 @@ import styles from "./ai-thesis-writing-assistant.module.css";
 import { ProductBreadcrumbs, RelatedProductPages } from "../product-page-navigation";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://scinest.app";
-const downloadUrl = "https://github.com/margaret1123/scinest-ai/releases/latest/download/SciNest-win-x64.exe";
+const downloadUrl = "https://github.com/margaret1123/scinest-ai/releases/latest/download/SciNest-win-x64.zip";
 const writingProofImage = "/scinest/writing-long-form-hero-en.svg";
 
 export const metadata: Metadata = {

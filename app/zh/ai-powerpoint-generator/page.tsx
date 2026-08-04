@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import styles from "../product-pages.module.css";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://scinest.app";
-const downloadUrl = "https://github.com/margaret1123/scinest-ai/releases/latest/download/SciNest-win-x64.exe";
+const downloadUrl = "https://github.com/margaret1123/scinest-ai/releases/latest/download/SciNest-win-x64.zip";
 
 export const metadata: Metadata = {
   title: "用 ChatGPT / DeepSeek 生成可编辑 PPTX｜不是截图，不是 HTML",
