@@ -19,6 +19,7 @@ function GoogleIcon() {
 export function RegisterForm() {
   const router = useRouter();
   const searchParams = useSearchParams();
+  const redirect = searchParams.get("redirect") || "/dashboard";
   const earlyBird = searchParams.get("intent") === "early-bird";
 
   const [email, setEmail] = useState("");
@@ -49,7 +50,7 @@ export function RegisterForm() {
       email,
       password,
       options: {
-        emailRedirectTo: `${siteUrl}/auth/callback?next=/dashboard`,
+        emailRedirectTo: `${siteUrl}/auth/callback?next=${encodeURIComponent(redirect)}`,
       },
     });
 
@@ -82,7 +83,7 @@ export function RegisterForm() {
     }
 
     trackEvent("sign_up", { method: "email" });
-    router.push("/dashboard");
+    router.push(redirect);
     router.refresh();
   };
 
@@ -98,7 +99,7 @@ export function RegisterForm() {
     const { error: oauthError } = await supabase.auth.signInWithOAuth({
       provider: "google",
       options: {
-        redirectTo: `${siteUrl}/auth/callback?next=/dashboard`,
+        redirectTo: `${siteUrl}/auth/callback?next=${encodeURIComponent(redirect)}`,
       },
     });
 

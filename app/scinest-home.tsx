@@ -196,7 +196,7 @@ export function SciNestHome({ locale }: { locale: Locale }) {
     <header className={styles.header}><div className={styles.navbar}>
       <a className={styles.brand} href="#top"><span>S</span><strong>SciNest<small>{c.subBrand}</small></strong></a>
       <nav>{c.nav.map((item, i) => <a key={item} href={`#${["why", "workflow", "outputs", "pricing", "faq"][i]}`}>{item}</a>)}</nav>
-      <div className={styles.actions}><a href={other}>{locale === "zh" ? "EN" : "中文"}</a><a href="/login">{c.login}</a><DownloadCTA className={styles.smallPrimary} href={downloadUrl} placement="nav">{c.start}</DownloadCTA></div>
+      <div className={styles.actions}><a href={other}>{locale === "zh" ? "EN" : "中文"}</a><a href="https://github.com/margaret1123/scinest-ai/issues/new/choose" target="_blank" rel="noopener noreferrer">{locale === "zh" ? "反馈" : "Feedback"}</a><a href="/login">{c.login}</a><DownloadCTA className={styles.smallPrimary} href={downloadUrl} placement="nav">{c.start}</DownloadCTA></div>
     </div></header>
     <main>
       <section className={styles.hero} id="top">
@@ -240,6 +240,6 @@ export function SciNestHome({ locale }: { locale: Locale }) {
       <section className={`${styles.section} ${styles.faqSection}`} id="faq"><div className={styles.sectionHead}><h2>{c.faqTitle}</h2></div><div className={styles.faq}>{c.faq.map(([q, a]) => <details key={q}><summary>{q}<b>+</b></summary><p>{a}</p></details>)}</div></section>
       <section className={styles.final}><h2>{c.finalTitle}</h2><p>{c.finalBody}</p><DownloadCTA className={styles.lightButton} href={downloadUrl} placement="final">{c.finalCta} ↗</DownloadCTA></section>
     </main>
-    <footer><div><strong>SciNest · {locale === "zh" ? "科研小棉袄" : "Academic work, finished"}</strong><span>{locale === "zh" ? "由 Jiaempower Pathways Limited 运营" : "Operated by Jiaempower Pathways Limited"}</span></div><nav><a href="/privacy">{locale === "zh" ? "隐私政策" : "Privacy"}</a><a href="/terms">{locale === "zh" ? "服务条款" : "Terms"}</a><a href="/refund-policy">{locale === "zh" ? "退款政策" : "Refund policy"}</a></nav><small>© {new Date().getFullYear()} Jiaempower Pathways Limited</small></footer>
+    <footer><div><strong>SciNest · {locale === "zh" ? "科研小棉袄" : "Academic work, finished"}</strong><span>{locale === "zh" ? "由 Jiaempower Pathways Limited 运营" : "Operated by Jiaempower Pathways Limited"}</span></div><nav><a href="/privacy">{locale === "zh" ? "隐私政策" : "Privacy"}</a><a href="/terms">{locale === "zh" ? "服务条款" : "Terms"}</a><a href="/refund-policy">{locale === "zh" ? "退款政策" : "Refund policy"}</a><a href="https://github.com/margaret1123/scinest-ai/issues/new/choose" target="_blank" rel="noopener noreferrer">{locale === "zh" ? "反馈" : "Feedback"}</a></nav><small>© {new Date().getFullYear()} Jiaempower Pathways Limited</small></footer>
   </div>;
 }
