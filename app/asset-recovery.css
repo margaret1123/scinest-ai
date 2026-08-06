@@ -1,30 +1,3 @@
-/* Targeted recovery for legacy screenshot wrappers.
-   Product landing pages own their image paths: do not replace <img> sources with CSS
-   and do not hide proof figures that are present in the page markup. */
-img[src="/scinest/writing-outline-detail-en.svg"],
-img[src="/scinest/figures-ui-en.svg"] {
-  display: none !important;
-}
-
-figure:has(> img[src="/scinest/writing-outline-detail-en.svg"])::before {
-  content: "";
-  display: block;
-  width: 100%;
-  aspect-ratio: 16 / 10;
-  border-radius: 18px;
-  border: 1px solid rgba(7, 95, 85, 0.12);
-  background: #fff url("/scinest/writing-ui-en.webp") center / contain no-repeat;
-}
-
-.scientific-hero-proof:has(> img[src="/scinest/figures-ui-en.svg"])::before {
-  content: "";
-  display: block;
-  width: 100%;
-  aspect-ratio: 2 / 1;
-  border-radius: 18px;
-  background: #fff url("/scinest/figures-ui-en.webp") center / contain no-repeat;
-}
-
 /* Product copy corrections requested for the PowerPoint page. */
 [class*="ai-powerpoint-generator_outlineSection"] [class*="sectionIntro"] h2,
 [class*="ai-powerpoint-generator_materialSection"] [class*="sectionIntro"] h2 {
