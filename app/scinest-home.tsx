@@ -185,14 +185,11 @@ const content = {
   },
 } as const;
 
-const productPages = {
-  writing: "/ai-thesis-writing-assistant",
-  figures: "/scientific-figure-generator",
-  powerpoint: "/ai-powerpoint-generator",
-} as const;
-
 export function SciNestHome({ locale }: { locale: Locale }) {
   const c = content[locale];
+  const productPages = locale === "zh"
+    ? { writing: "/zh/ai-thesis-writing-assistant", figures: "/zh/scientific-figure-generator", powerpoint: "/zh/ai-powerpoint-generator" }
+    : { writing: "/ai-thesis-writing-assistant", figures: "/scientific-figure-generator", powerpoint: "/ai-powerpoint-generator" };
   const image = (name: string) => `/scinest/${name}-en.webp`;
   const downloadUrl = "https://github.com/margaret1123/scinest-ai/releases/latest/download/SciNest-win-x64.zip";
   const heroAlt = locale === "zh" ? "SciNest 论文修改、科研图与答辩PPT工作台" : "SciNest thesis revision, scientific figure and thesis defense presentation workspace";
