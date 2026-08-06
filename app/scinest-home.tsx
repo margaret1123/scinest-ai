@@ -2,6 +2,7 @@ import styles from "./scinest-home.module.css";
 import launchStyles from "./prelaunch.module.css";
 import { pricing, type Locale } from "./home-content";
 import { DownloadCTA } from "./download-cta";
+import { LangSwitch } from "./lang-switch";
 
 const content = {
   en: {
@@ -192,7 +193,6 @@ const productPages = {
 
 export function SciNestHome({ locale }: { locale: Locale }) {
   const c = content[locale];
-  const other = locale === "zh" ? "/" : "/zh";
   const image = (name: string) => `/scinest/${name}-en.webp`;
   const downloadUrl = "https://github.com/margaret1123/scinest-ai/releases/latest/download/SciNest-win-x64.zip";
   const heroAlt = locale === "zh" ? "SciNest 论文修改、科研图与答辩PPT工作台" : "SciNest thesis revision, scientific figure and thesis defense presentation workspace";
@@ -208,7 +208,7 @@ export function SciNestHome({ locale }: { locale: Locale }) {
     <header className={styles.header}><div className={styles.navbar}>
       <a className={styles.brand} href="#top"><span>S</span><strong>SciNest<small>{c.subBrand}</small></strong></a>
       <nav>{c.nav.map((item, i) => <a key={item} href={`#${["why", "workflow", "outputs", "pricing", "faq"][i]}`}>{item}</a>)}</nav>
-      <div className={styles.actions}><a href={other}>{locale === "zh" ? "EN" : "中文"}</a><a href="https://github.com/margaret1123/scinest-ai/issues/new/choose" target="_blank" rel="noopener noreferrer">{locale === "zh" ? "反馈" : "Feedback"}</a><a href="/login">{c.login}</a><DownloadCTA className={styles.smallPrimary} href={downloadUrl} placement="nav">{c.start}</DownloadCTA></div>
+      <div className={styles.actions}><LangSwitch /><a href="https://github.com/margaret1123/scinest-ai/issues/new/choose" target="_blank" rel="noopener noreferrer">{locale === "zh" ? "反馈" : "Feedback"}</a><a href="/login">{c.login}</a><DownloadCTA className={styles.smallPrimary} href={downloadUrl} placement="nav">{c.start}</DownloadCTA></div>
     </div></header>
     <main>
       <section className={styles.hero} id="top">

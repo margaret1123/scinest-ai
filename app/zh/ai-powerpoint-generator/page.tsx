@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import styles from "../product-pages.module.css";
+import { LangSwitch } from "../../lang-switch";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://scinest.app";
 const downloadUrl = "https://github.com/margaret1123/scinest-ai/releases/latest/download/SciNest-win-x64.zip";
@@ -26,7 +27,7 @@ export default function Page() {
   const structuredData = { "@context": "https://schema.org", "@type": "WebPage", name: "AI PPT 生成器", url: `${siteUrl}/zh/ai-powerpoint-generator`, inLanguage: "zh-CN", description: metadata.description };
   return <div className={styles.page}>
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
-    <header className={styles.header}><a className={styles.brand} href="/zh"><span>S</span>SciNest 科研小棉袄</a><nav className={styles.nav}><a href="#difference">为什么不同</a><a href="#workflow">使用流程</a><a href="#faq">常见问题</a></nav><a className={styles.cta} href={downloadUrl}>获取 SciNest Free</a></header>
+    <header className={styles.header}><a className={styles.brand} href="/zh"><span>S</span>SciNest 科研小棉袄</a><nav className={styles.nav}><a href="#difference">为什么不同</a><a href="#workflow">使用流程</a><a href="#faq">常见问题</a></nav><LangSwitch /><a className={styles.cta} href={downloadUrl}>获取 SciNest Free</a></header>
     <main>
       <section className={styles.hero}><div><p className={styles.eyebrow}>真正的 POWERPOINT · 不是整页图片</p><h1>AI 生成一份<em>真正可编辑的 PPT。</em></h1><p className={styles.lead}>上传论文、报告、数据和图片。SciNest 根据你选定的材料生成大纲、页面内容、图示和讲稿，并导出标准 PPTX。</p><div className={styles.points}>{["标准 PPTX","材料约束","可编辑大纲","图文规划","生成后继续改"].map(x=><span key={x}>✓ {x}</span>)}</div><div className={styles.actions}><a className={styles.cta} href={downloadUrl}>生成我的 PPT ↗</a><a className={styles.secondary} href="#workflow">查看流程</a></div></div><figure className={styles.proof}><img src="/scinest/ppt-ui-en.webp" alt="SciNest 可编辑 PowerPoint 工作区" width="1280" height="800" /></figure></section>
       <section className={`${styles.section} ${styles.dark}`} id="difference"><div><p className={styles.kicker}>输出格式决定后续工作量</p><h2>很多“AI PPT”生成结束后，你还得从头重做。</h2><div className={styles.grid}><article className={styles.card}><h3>不是整页截图</h3><p>文字和支持的元素保留结构，改错字不需要重生成整页。</p></article><article className={styles.card}><h3>不是 HTML 幻灯片</h3><p>避免浏览器里正常、导入 PowerPoint 后版式错乱。</p></article><article className={styles.card}><h3>不是只有大纲</h3><p>从材料到页面内容、图示位置和讲稿形成完整交付。</p></article></div></div></section>

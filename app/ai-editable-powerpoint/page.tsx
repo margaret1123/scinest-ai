@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { LangSwitch } from "../lang-switch";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://scinest.app";
 const downloadUrl = "https://github.com/margaret1123/scinest-ai/releases/latest/download/SciNest-win-x64.zip";
@@ -7,7 +8,10 @@ export const metadata: Metadata = {
   title: "Create a Real, Editable PowerPoint with AI",
   description:
     "Generate a standard .PPTX file with structured slides, editable text, replaceable images and speaker notes. Not a screenshot. Not an HTML slideshow. A real PowerPoint you can open and keep editing.",
-  alternates: { canonical: "/ai-editable-powerpoint" },
+  alternates: {
+    canonical: "/ai-editable-powerpoint",
+    languages: { en: "/ai-editable-powerpoint", "zh-CN": "/zh/ai-editable-powerpoint", "x-default": "/ai-editable-powerpoint" },
+  },
   openGraph: {
     type: "website",
     url: "/ai-editable-powerpoint",
@@ -126,7 +130,10 @@ export default function AiEditablePowerpointPage() {
 
       <header style={{ maxWidth: 1160, margin: "0 auto", padding: "24px 28px", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
         <a href="/" style={{ color: "#087f72", fontWeight: 800, fontSize: 20, textDecoration: "none", letterSpacing: "-.02em" }}>SciNest</a>
-        <a href={downloadUrl} style={{ background: "#087f72", color: "#fff", padding: "10px 22px", borderRadius: 12, fontWeight: 700, fontSize: 14, textDecoration: "none" }}>Get SciNest Free</a>
+        <div style={{ display: "flex", alignItems: "center", gap: 18 }}>
+          <LangSwitch />
+          <a href={downloadUrl} style={{ background: "#087f72", color: "#fff", padding: "10px 22px", borderRadius: 12, fontWeight: 700, fontSize: 14, textDecoration: "none" }}>Get SciNest Free</a>
+        </div>
       </header>
 
       <main>

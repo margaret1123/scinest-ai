@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import styles from "./ai-powerpoint-generator.module.css";
 import { ProductBreadcrumbs, RelatedProductPages } from "../product-page-navigation";
+import { LangSwitch } from "../lang-switch";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://scinest.app";
 const downloadUrl = "https://github.com/margaret1123/scinest-ai/releases/latest/download/SciNest-win-x64.zip";
@@ -65,7 +66,10 @@ export const metadata: Metadata = {
   title: "Create Real Editable PPTX with AI — Not a Screenshot, Not HTML",
   description:
     "Upload papers, documents, data and images. SciNest creates a real editable PowerPoint presentation—not an image-based PDF or HTML slideshow. Edit the outline, slides, text and visuals, then export a ready-to-use PPTX.",
-  alternates: { canonical: "/ai-powerpoint-generator" },
+  alternates: {
+    canonical: "/ai-powerpoint-generator",
+    languages: { en: "/ai-powerpoint-generator", "zh-CN": "/zh/ai-powerpoint-generator", "x-default": "/ai-powerpoint-generator" },
+  },
   openGraph: {
     type: "website",
     url: "/ai-powerpoint-generator",
@@ -170,6 +174,7 @@ export default function AiPowerPointGeneratorPage() {
           <a href="#faq">FAQ</a>
         </nav>
         <div className={styles.headerActions}>
+          <LangSwitch />
           <a href="/login">Sign in</a>
           <a className={styles.smallCta} href={downloadUrl}>Get SciNest Free</a>
         </div>

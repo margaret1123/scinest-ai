@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { LangSwitch } from "../lang-switch";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://scinest.app";
 const downloadUrl = "https://github.com/margaret1123/scinest-ai/releases/latest/download/SciNest-win-x64.zip";
@@ -7,7 +8,10 @@ export const metadata: Metadata = {
   title: "How to Draft a 10,000+ Word Paper with ChatGPT, DeepSeek or Claude | SciNest",
   description:
     "Connect your own AI API key. Build an editable outline, bind your sources, and draft a complete long-form paper — chapter by chapter, with persistent context. Not a chat reply.",
-  alternates: { canonical: "/ai-long-form-writer" },
+  alternates: {
+    canonical: "/ai-long-form-writer",
+    languages: { en: "/ai-long-form-writer", "zh-CN": "/zh/ai-long-form-writer", "x-default": "/ai-long-form-writer" },
+  },
   openGraph: {
     type: "website",
     url: "/ai-long-form-writer",
@@ -120,7 +124,10 @@ export default function AiLongFormWriterPage() {
       {/* Header */}
       <header style={{ maxWidth: 1160, margin: "0 auto", padding: "24px 28px", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
         <a href="/" style={{ color: "#087f72", fontWeight: 800, fontSize: 20, textDecoration: "none", letterSpacing: "-.02em" }}>SciNest</a>
-        <a href={downloadUrl} style={{ background: "#087f72", color: "#fff", padding: "10px 22px", borderRadius: 12, fontWeight: 700, fontSize: 14, textDecoration: "none" }}>Get SciNest Free</a>
+        <div style={{ display: "flex", alignItems: "center", gap: 18 }}>
+          <LangSwitch />
+          <a href={downloadUrl} style={{ background: "#087f72", color: "#fff", padding: "10px 22px", borderRadius: 12, fontWeight: 700, fontSize: 14, textDecoration: "none" }}>Get SciNest Free</a>
+        </div>
       </header>
 
       <main>

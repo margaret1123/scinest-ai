@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import styles from "../product-pages.module.css";
+import { LangSwitch } from "../../lang-switch";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://scinest.app";
 const downloadUrl = "https://github.com/margaret1123/scinest-ai/releases/latest/download/SciNest-win-x64.zip";
@@ -26,7 +27,7 @@ export default function Page() {
   const structuredData = { "@context": "https://schema.org", "@type": "WebPage", name: "AI 科研图生成器", url: `${siteUrl}/zh/scientific-figure-generator`, inLanguage: "zh-CN", description: metadata.description };
   return <div className={styles.page}>
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
-    <header className={styles.header}><a className={styles.brand} href="/zh"><span>S</span>SciNest 科研小棉袄</a><nav className={styles.nav}><a href="#difference">为什么可编辑</a><a href="#workflow">生成流程</a><a href="#faq">常见问题</a></nav><a className={styles.cta} href={downloadUrl}>获取 SciNest Free</a></header>
+    <header className={styles.header}><a className={styles.brand} href="/zh"><span>S</span>SciNest 科研小棉袄</a><nav className={styles.nav}><a href="#difference">为什么可编辑</a><a href="#workflow">生成流程</a><a href="#faq">常见问题</a></nav><LangSwitch /><a className={styles.cta} href={downloadUrl}>获取 SciNest Free</a></header>
     <main>
       <section className={styles.hero}><div><p className={styles.eyebrow}>研究逻辑先于装饰</p><h1>把研究内容变成一张<em>还能继续修改的科研图。</em></h1><p className={styles.lead}>先理解实体、过程、阶段和关系，再生成机制图、路线图、实验流程图或图形摘要。标签和结构发生变化时，不必推翻整张图。</p><div className={styles.points}>{["可编辑标签","关系可调整","局部修改","多种图型","可复用到 PPT"].map(x=><span key={x}>✓ {x}</span>)}</div><div className={styles.actions}><a className={styles.cta} href={downloadUrl}>生成我的科研图 ↗</a><a className={styles.secondary} href="#workflow">查看流程</a></div></div><figure className={styles.proof}><img src="/scinest/figures-ui-en.webp" alt="SciNest 科研图生成与编辑工作区" width="1280" height="800" /></figure></section>
       <section className={`${styles.section} ${styles.dark}`} id="difference"><div><p className={styles.kicker}>漂亮但不能改，不等于可用</p><h2>一个标签错了，不该迫使你重画整张图。</h2><div className={styles.grid}><article className={styles.card}><h3>标签单独修改</h3><p>文字与标注尽量保持可编辑，减少拼写错误和术语变化带来的返工。</p></article><article className={styles.card}><h3>关系可以调整</h3><p>箭头方向、阶段顺序和模块关系可以继续修正。</p></article><article className={styles.card}><h3>保留已确认区域</h3><p>修改局部时，不应丢掉已经认可的其他部分。</p></article></div></div></section>

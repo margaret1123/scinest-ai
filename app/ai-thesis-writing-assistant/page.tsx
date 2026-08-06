@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import type { CSSProperties } from "react";
 import styles from "./ai-thesis-writing-assistant.module.css";
 import { ProductBreadcrumbs, RelatedProductPages } from "../product-page-navigation";
+import { LangSwitch } from "../lang-switch";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://scinest.app";
 const downloadUrl = "https://github.com/margaret1123/scinest-ai/releases/latest/download/SciNest-win-x64.zip";
@@ -11,7 +12,10 @@ export const metadata: Metadata = {
   title: "Academic Writing Workspace — Draft & Revise Long-Form Papers with Your AI Key | SciNest",
   description:
     "Build an editable outline, bind selected materials and references, then generate a coherent long-form academic draft in one run. Revise chapters without restarting the whole document.",
-  alternates: { canonical: "/ai-thesis-writing-assistant" },
+  alternates: {
+    canonical: "/ai-thesis-writing-assistant",
+    languages: { en: "/ai-thesis-writing-assistant", "zh-CN": "/zh/ai-thesis-writing-assistant", "x-default": "/ai-thesis-writing-assistant" },
+  },
   openGraph: {
     type: "website",
     url: "/ai-thesis-writing-assistant",
@@ -123,7 +127,7 @@ export default function AiThesisWritingAssistantPage() {
           <a href="#long-form">Long-form</a>
           <a href="#faq">FAQ</a>
         </nav>
-        <div className={styles.headerActions}><a href="/login">Sign in</a><a className={styles.smallCta} href={downloadUrl}>Get SciNest Free</a></div>
+        <div className={styles.headerActions}><LangSwitch /><a href="/login">Sign in</a><a className={styles.smallCta} href={downloadUrl}>Get SciNest Free</a></div>
       </header>
 
       <ProductBreadcrumbs current="writing" />
@@ -190,7 +194,7 @@ export default function AiThesisWritingAssistantPage() {
             <ul><li>Choose the papers included in the task.</li><li>Edit the chapter goal before generation.</li><li>Add or remove key points.</li><li>Review evidence and materials by section.</li></ul>
           </div>
           <figure style={{ ...proofFigureStyle, margin: 0 }}>
-            <img src="/scinest/writing-outline-detail-en.svg" alt="SciNest expanded writing chapter plan with editable chapter goal, key points and evidence and materials area" width="1200" height="760" style={proofImageStyle} />
+            <img src="/scinest/writing-outline-detail-proof-en.svg" alt="SciNest expanded writing chapter plan with editable chapter goal, key points and evidence and materials area" width="1200" height="760" style={proofImageStyle} />
             <figcaption style={proofCaptionStyle}>The expanded chapter plan is the real control surface for scope, points and section-level evidence—not a decorative table of contents.</figcaption>
           </figure>
         </section>

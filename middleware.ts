@@ -19,11 +19,17 @@ export function middleware(request: NextRequest) {
     }
   }
 
+  // Redirect legacy /en/* URLs to their canonical English paths
+  if (pathname === "/en" || pathname.startsWith("/en/")) {
+    const target = pathname === "/en" ? "/" : pathname.slice(3) || "/";
+    return NextResponse.redirect(new URL(target + url.search, url), 301);
+  }
+
   // Set language cookie for locale routes
   const response = NextResponse.next();
   if (pathname === "/zh" || pathname.startsWith("/zh/")) {
     response.cookies.set("preferred_lang", "zh", { path: "/", maxAge: 60 * 60 * 24 * 365, sameSite: "lax" });
-  } else if (pathname === "/") {
+  } else {
     response.cookies.set("preferred_lang", "en", { path: "/", maxAge: 60 * 60 * 24 * 365, sameSite: "lax" });
   }
 

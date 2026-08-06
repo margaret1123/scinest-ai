@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { LangSwitch } from "../lang-switch";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://scinest.app";
 const downloadUrl = "https://github.com/margaret1123/scinest-ai/releases/latest/download/SciNest-win-x64.zip";
@@ -7,7 +8,10 @@ export const metadata: Metadata = {
   title: "Create Editable Images with AI — Change Text, Resize Elements, Revise Locally",
   description:
     "Generate images where text labels, shapes and regions stay editable. Change a label without regenerating the whole image. Move elements. Resize objects. AI image generation with real post-generation editing.",
-  alternates: { canonical: "/ai-editable-images" },
+  alternates: {
+    canonical: "/ai-editable-images",
+    languages: { en: "/ai-editable-images", "zh-CN": "/zh/ai-editable-images", "x-default": "/ai-editable-images" },
+  },
   openGraph: {
     type: "website",
     url: "/ai-editable-images",
@@ -126,7 +130,10 @@ export default function AiEditableImagesPage() {
 
       <header style={{ maxWidth: 1160, margin: "0 auto", padding: "24px 28px", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
         <a href="/" style={{ color: "#087f72", fontWeight: 800, fontSize: 20, textDecoration: "none", letterSpacing: "-.02em" }}>SciNest</a>
-        <a href={downloadUrl} style={{ background: "#087f72", color: "#fff", padding: "10px 22px", borderRadius: 12, fontWeight: 700, fontSize: 14, textDecoration: "none" }}>Get SciNest Free</a>
+        <div style={{ display: "flex", alignItems: "center", gap: 18 }}>
+          <LangSwitch />
+          <a href={downloadUrl} style={{ background: "#087f72", color: "#fff", padding: "10px 22px", borderRadius: 12, fontWeight: 700, fontSize: 14, textDecoration: "none" }}>Get SciNest Free</a>
+        </div>
       </header>
 
       <main>

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import styles from "./scientific-figure-generator.module.css";
 import { ProductBreadcrumbs, RelatedProductPages } from "../product-page-navigation";
+import { LangSwitch } from "../lang-switch";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://scinest.app";
 const downloadUrl = "https://github.com/margaret1123/scinest-ai/releases/latest/download/SciNest-win-x64.zip";
@@ -9,7 +10,10 @@ export const metadata: Metadata = {
   title: "AI Diagram Generator with Editable Labels — Move, Resize, Revise",
   description:
     "Generate scientific figures with separate editable layers. Drag elements, rewrite text without garbled labels, regenerate only the selected area, and keep the rest of the figure unchanged.",
-  alternates: { canonical: "/scientific-figure-generator" },
+  alternates: {
+    canonical: "/scientific-figure-generator",
+    languages: { en: "/scientific-figure-generator", "zh-CN": "/zh/scientific-figure-generator", "x-default": "/scientific-figure-generator" },
+  },
   openGraph: {
     type: "website",
     url: "/scientific-figure-generator",
@@ -103,6 +107,7 @@ export default function ScientificFigureGeneratorPage() {
           <a href="#faq">FAQ</a>
         </nav>
         <div className={styles.headerActions}>
+          <LangSwitch />
           <a href="/login">Sign in</a>
           <a className={styles.smallCta} href={downloadUrl}>Get SciNest Free</a>
         </div>
