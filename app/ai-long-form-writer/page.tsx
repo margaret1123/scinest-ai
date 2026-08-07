@@ -147,7 +147,7 @@ export default function AiLongFormWriterPage() {
             <a href={downloadUrl} style={{ background: "#087f72", color: "#fff", padding: "15px 34px", borderRadius: 14, fontWeight: 750, fontSize: 16, textDecoration: "none", display: "inline-block" }}>Start drafting your paper ↗</a>
             <a href="#how-it-works" style={{ color: "#087f72", padding: "15px 28px", borderRadius: 14, fontWeight: 650, fontSize: 16, textDecoration: "none", border: "2px solid rgba(7,153,135,.2)", display: "inline-block" }}>See how it works</a>
           </div>
-          <p style={{ color: "#8599a3", fontSize: 13, marginTop: 18 }}>Free download · Bring your own API key · No generation cap</p>
+          <p style={{ color: "#8599a3", fontSize: 13, marginTop: 18 }}>Start free · Bring your own API key · No generation cap</p>
         </section>
 
         {/* The chat problem — brief, solution-focused */}
@@ -304,7 +304,7 @@ export default function AiLongFormWriterPage() {
             No complex prompts. No re-explaining. No copy-paste between windows. Start free.
           </p>
           <a href={downloadUrl} style={{ background: "#fff", color: "#087f72", padding: "16px 38px", borderRadius: 14, fontWeight: 750, fontSize: 17, textDecoration: "none", display: "inline-block" }}>Start drafting ↗</a>
-          <p style={{ marginTop: 20, fontSize: 13, opacity: .5 }}>Free download · Windows · Bring your own API key</p>
+          <p style={{ marginTop: 20, fontSize: 13, opacity: .5 }}>Start free · Windows · Bring your own API key</p>
         </section>
       </main>
 

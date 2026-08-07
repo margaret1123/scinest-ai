@@ -278,7 +278,7 @@ export default function AiEditablePowerpointPage() {
             Every slide element stays independent — just like a presentation you built yourself.
           </p>
           <a href={downloadUrl} style={{ background: "#fff", color: "#087f72", padding: "16px 38px", borderRadius: 14, fontWeight: 750, fontSize: 17, textDecoration: "none", display: "inline-block" }}>Create an editable PowerPoint ↗</a>
-          <p style={{ marginTop: 20, fontSize: 13, opacity: .5 }}>Free download · Windows · Standard PPTX export</p>
+          <p style={{ marginTop: 20, fontSize: 13, opacity: .5 }}>Start free · Windows · Standard PPTX export</p>
         </section>
       </main>
 
