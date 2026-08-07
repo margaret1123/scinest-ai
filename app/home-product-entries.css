@@ -1,9 +1,9 @@
-#outputs article > div a[href="/ai-thesis-writing-assistant"],
-#outputs article > div a[href="/scientific-figure-generator"],
-#outputs article > div a[href="/ai-powerpoint-generator"],
-#outputs article > div a[href="/zh/ai-thesis-writing-assistant"],
-#outputs article > div a[href="/zh/scientific-figure-generator"],
-#outputs article > div a[href="/zh/ai-powerpoint-generator"] {
+#outputs article > div a[href="/ai-long-form-writer"],
+#outputs article > div a[href="/ai-editable-images"],
+#outputs article > div a[href="/ai-editable-powerpoint"],
+#outputs article > div a[href="/zh/ai-long-form-writer"],
+#outputs article > div a[href="/zh/ai-editable-images"],
+#outputs article > div a[href="/zh/ai-editable-powerpoint"] {
   position: relative;
   isolation: isolate;
   min-height: 54px;
@@ -26,12 +26,12 @@
     filter 180ms ease;
 }
 
-#outputs article > div a[href="/ai-thesis-writing-assistant"]::before,
-#outputs article > div a[href="/scientific-figure-generator"]::before,
-#outputs article > div a[href="/ai-powerpoint-generator"]::before,
-#outputs article > div a[href="/zh/ai-thesis-writing-assistant"]::before,
-#outputs article > div a[href="/zh/scientific-figure-generator"]::before,
-#outputs article > div a[href="/zh/ai-powerpoint-generator"]::before {
+#outputs article > div a[href="/ai-long-form-writer"]::before,
+#outputs article > div a[href="/ai-editable-images"]::before,
+#outputs article > div a[href="/ai-editable-powerpoint"]::before,
+#outputs article > div a[href="/zh/ai-long-form-writer"]::before,
+#outputs article > div a[href="/zh/ai-editable-images"]::before,
+#outputs article > div a[href="/zh/ai-editable-powerpoint"]::before {
   content: "";
   width: 9px;
   height: 9px;
@@ -41,12 +41,12 @@
   box-shadow: 0 0 0 6px rgba(7, 153, 135, 0.12);
 }
 
-#outputs article > div a[href="/ai-thesis-writing-assistant"]:hover,
-#outputs article > div a[href="/scientific-figure-generator"]:hover,
-#outputs article > div a[href="/ai-powerpoint-generator"]:hover,
-#outputs article > div a[href="/zh/ai-thesis-writing-assistant"]:hover,
-#outputs article > div a[href="/zh/scientific-figure-generator"]:hover,
-#outputs article > div a[href="/zh/ai-powerpoint-generator"]:hover {
+#outputs article > div a[href="/ai-long-form-writer"]:hover,
+#outputs article > div a[href="/ai-editable-images"]:hover,
+#outputs article > div a[href="/ai-editable-powerpoint"]:hover,
+#outputs article > div a[href="/zh/ai-long-form-writer"]:hover,
+#outputs article > div a[href="/zh/ai-editable-images"]:hover,
+#outputs article > div a[href="/zh/ai-editable-powerpoint"]:hover {
   transform: translateY(-3px);
   border-color: rgba(7, 117, 105, 0.72);
   filter: saturate(1.08);
@@ -55,22 +55,22 @@
     inset 0 1px 0 rgba(255, 255, 255, 0.95);
 }
 
-#outputs article > div a[href="/ai-thesis-writing-assistant"]:focus-visible,
-#outputs article > div a[href="/scientific-figure-generator"]:focus-visible,
-#outputs article > div a[href="/ai-powerpoint-generator"]:focus-visible,
-#outputs article > div a[href="/zh/ai-thesis-writing-assistant"]:focus-visible,
-#outputs article > div a[href="/zh/scientific-figure-generator"]:focus-visible,
-#outputs article > div a[href="/zh/ai-powerpoint-generator"]:focus-visible {
+#outputs article > div a[href="/ai-long-form-writer"]:focus-visible,
+#outputs article > div a[href="/ai-editable-images"]:focus-visible,
+#outputs article > div a[href="/ai-editable-powerpoint"]:focus-visible,
+#outputs article > div a[href="/zh/ai-long-form-writer"]:focus-visible,
+#outputs article > div a[href="/zh/ai-editable-images"]:focus-visible,
+#outputs article > div a[href="/zh/ai-editable-powerpoint"]:focus-visible {
   outline: 3px solid rgba(7, 153, 135, 0.32);
   outline-offset: 4px;
 }
 
-#outputs figure > a[href="/ai-thesis-writing-assistant"],
-#outputs figure > a[href="/scientific-figure-generator"],
-#outputs figure > a[href="/ai-powerpoint-generator"],
-#outputs figure > a[href="/zh/ai-thesis-writing-assistant"],
-#outputs figure > a[href="/zh/scientific-figure-generator"],
-#outputs figure > a[href="/zh/ai-powerpoint-generator"] {
+#outputs figure > a[href="/ai-long-form-writer"],
+#outputs figure > a[href="/ai-editable-images"],
+#outputs figure > a[href="/ai-editable-powerpoint"],
+#outputs figure > a[href="/zh/ai-long-form-writer"],
+#outputs figure > a[href="/zh/ai-editable-images"],
+#outputs figure > a[href="/zh/ai-editable-powerpoint"] {
   position: relative;
   display: block;
   border-radius: 28px;
@@ -81,12 +81,12 @@
     outline-color 220ms ease;
 }
 
-#outputs figure > a[href="/ai-thesis-writing-assistant"]::after,
-#outputs figure > a[href="/scientific-figure-generator"]::after,
-#outputs figure > a[href="/ai-powerpoint-generator"]::after,
-#outputs figure > a[href="/zh/ai-thesis-writing-assistant"]::after,
-#outputs figure > a[href="/zh/scientific-figure-generator"]::after,
-#outputs figure > a[href="/zh/ai-powerpoint-generator"]::after {
+#outputs figure > a[href="/ai-long-form-writer"]::after,
+#outputs figure > a[href="/ai-editable-images"]::after,
+#outputs figure > a[href="/ai-editable-powerpoint"]::after,
+#outputs figure > a[href="/zh/ai-long-form-writer"]::after,
+#outputs figure > a[href="/zh/ai-editable-images"]::after,
+#outputs figure > a[href="/zh/ai-editable-powerpoint"]::after {
   content: "View details →";
   position: absolute;
   right: 20px;
@@ -104,68 +104,68 @@
   pointer-events: none;
 }
 
-html[lang="zh-CN"] #outputs figure > a[href="/zh/ai-thesis-writing-assistant"]::after,
-html[lang="zh-CN"] #outputs figure > a[href="/zh/scientific-figure-generator"]::after,
-html[lang="zh-CN"] #outputs figure > a[href="/zh/ai-powerpoint-generator"]::after {
+html[lang="zh-CN"] #outputs figure > a[href="/zh/ai-long-form-writer"]::after,
+html[lang="zh-CN"] #outputs figure > a[href="/zh/ai-editable-images"]::after,
+html[lang="zh-CN"] #outputs figure > a[href="/zh/ai-editable-powerpoint"]::after {
   content: "查看详情 →";
 }
 
-#outputs figure > a[href="/ai-thesis-writing-assistant"]:hover,
-#outputs figure > a[href="/scientific-figure-generator"]:hover,
-#outputs figure > a[href="/ai-powerpoint-generator"]:hover,
-#outputs figure > a[href="/zh/ai-thesis-writing-assistant"]:hover,
-#outputs figure > a[href="/zh/scientific-figure-generator"]:hover,
-#outputs figure > a[href="/zh/ai-powerpoint-generator"]:hover {
+#outputs figure > a[href="/ai-long-form-writer"]:hover,
+#outputs figure > a[href="/ai-editable-images"]:hover,
+#outputs figure > a[href="/ai-editable-powerpoint"]:hover,
+#outputs figure > a[href="/zh/ai-long-form-writer"]:hover,
+#outputs figure > a[href="/zh/ai-editable-images"]:hover,
+#outputs figure > a[href="/zh/ai-editable-powerpoint"]:hover {
   transform: translateY(-5px);
   outline-color: rgba(7, 153, 135, 0.5);
   box-shadow: 0 30px 72px rgba(7, 94, 84, 0.2);
 }
 
-#outputs figure > a[href="/ai-thesis-writing-assistant"]:focus-visible,
-#outputs figure > a[href="/scientific-figure-generator"]:focus-visible,
-#outputs figure > a[href="/ai-powerpoint-generator"]:focus-visible,
-#outputs figure > a[href="/zh/ai-thesis-writing-assistant"]:focus-visible,
-#outputs figure > a[href="/zh/scientific-figure-generator"]:focus-visible,
-#outputs figure > a[href="/zh/ai-powerpoint-generator"]:focus-visible {
+#outputs figure > a[href="/ai-long-form-writer"]:focus-visible,
+#outputs figure > a[href="/ai-editable-images"]:focus-visible,
+#outputs figure > a[href="/ai-editable-powerpoint"]:focus-visible,
+#outputs figure > a[href="/zh/ai-long-form-writer"]:focus-visible,
+#outputs figure > a[href="/zh/ai-editable-images"]:focus-visible,
+#outputs figure > a[href="/zh/ai-editable-powerpoint"]:focus-visible {
   outline: 3px solid rgba(7, 153, 135, 0.38);
   outline-offset: 5px;
 }
 
-#outputs figure > a[href="/ai-thesis-writing-assistant"] img,
-#outputs figure > a[href="/scientific-figure-generator"] img,
-#outputs figure > a[href="/ai-powerpoint-generator"] img,
-#outputs figure > a[href="/zh/ai-thesis-writing-assistant"] img,
-#outputs figure > a[href="/zh/scientific-figure-generator"] img,
-#outputs figure > a[href="/zh/ai-powerpoint-generator"] img {
+#outputs figure > a[href="/ai-long-form-writer"] img,
+#outputs figure > a[href="/ai-editable-images"] img,
+#outputs figure > a[href="/ai-editable-powerpoint"] img,
+#outputs figure > a[href="/zh/ai-long-form-writer"] img,
+#outputs figure > a[href="/zh/ai-editable-images"] img,
+#outputs figure > a[href="/zh/ai-editable-powerpoint"] img {
   transition: filter 220ms ease, transform 220ms ease;
 }
 
-#outputs figure > a[href="/ai-thesis-writing-assistant"]:hover img,
-#outputs figure > a[href="/scientific-figure-generator"]:hover img,
-#outputs figure > a[href="/ai-powerpoint-generator"]:hover img,
-#outputs figure > a[href="/zh/ai-thesis-writing-assistant"]:hover img,
-#outputs figure > a[href="/zh/scientific-figure-generator"]:hover img,
-#outputs figure > a[href="/zh/ai-powerpoint-generator"]:hover img {
+#outputs figure > a[href="/ai-long-form-writer"]:hover img,
+#outputs figure > a[href="/ai-editable-images"]:hover img,
+#outputs figure > a[href="/ai-editable-powerpoint"]:hover img,
+#outputs figure > a[href="/zh/ai-long-form-writer"]:hover img,
+#outputs figure > a[href="/zh/ai-editable-images"]:hover img,
+#outputs figure > a[href="/zh/ai-editable-powerpoint"]:hover img {
   filter: saturate(1.04) contrast(1.02);
 }
 
 @media (max-width: 640px) {
-  #outputs article > div a[href="/ai-thesis-writing-assistant"],
-  #outputs article > div a[href="/scientific-figure-generator"],
-  #outputs article > div a[href="/ai-powerpoint-generator"],
-  #outputs article > div a[href="/zh/ai-thesis-writing-assistant"],
-  #outputs article > div a[href="/zh/scientific-figure-generator"],
-  #outputs article > div a[href="/zh/ai-powerpoint-generator"] {
+  #outputs article > div a[href="/ai-long-form-writer"],
+  #outputs article > div a[href="/ai-editable-images"],
+  #outputs article > div a[href="/ai-editable-powerpoint"],
+  #outputs article > div a[href="/zh/ai-long-form-writer"],
+  #outputs article > div a[href="/zh/ai-editable-images"],
+  #outputs article > div a[href="/zh/ai-editable-powerpoint"] {
     width: 100%;
     padding-inline: 20px;
   }
 
-  #outputs figure > a[href="/ai-thesis-writing-assistant"]::after,
-  #outputs figure > a[href="/scientific-figure-generator"]::after,
-  #outputs figure > a[href="/ai-powerpoint-generator"]::after,
-  #outputs figure > a[href="/zh/ai-thesis-writing-assistant"]::after,
-  #outputs figure > a[href="/zh/scientific-figure-generator"]::after,
-  #outputs figure > a[href="/zh/ai-powerpoint-generator"]::after {
+  #outputs figure > a[href="/ai-long-form-writer"]::after,
+  #outputs figure > a[href="/ai-editable-images"]::after,
+  #outputs figure > a[href="/ai-editable-powerpoint"]::after,
+  #outputs figure > a[href="/zh/ai-long-form-writer"]::after,
+  #outputs figure > a[href="/zh/ai-editable-images"]::after,
+  #outputs figure > a[href="/zh/ai-editable-powerpoint"]::after {
     right: 12px;
     bottom: 12px;
     padding: 9px 13px;
@@ -173,18 +173,18 @@ html[lang="zh-CN"] #outputs figure > a[href="/zh/ai-powerpoint-generator"]::afte
 }
 
 @media (prefers-reduced-motion: reduce) {
-  #outputs a[href="/ai-thesis-writing-assistant"],
-  #outputs a[href="/scientific-figure-generator"],
-  #outputs a[href="/ai-powerpoint-generator"],
-  #outputs a[href="/zh/ai-thesis-writing-assistant"],
-  #outputs a[href="/zh/scientific-figure-generator"],
-  #outputs a[href="/zh/ai-powerpoint-generator"],
-  #outputs a[href="/ai-thesis-writing-assistant"] img,
-  #outputs a[href="/scientific-figure-generator"] img,
-  #outputs a[href="/ai-powerpoint-generator"] img,
-  #outputs a[href="/zh/ai-thesis-writing-assistant"] img,
-  #outputs a[href="/zh/scientific-figure-generator"] img,
-  #outputs a[href="/zh/ai-powerpoint-generator"] img {
+  #outputs a[href="/ai-long-form-writer"],
+  #outputs a[href="/ai-editable-images"],
+  #outputs a[href="/ai-editable-powerpoint"],
+  #outputs a[href="/zh/ai-long-form-writer"],
+  #outputs a[href="/zh/ai-editable-images"],
+  #outputs a[href="/zh/ai-editable-powerpoint"],
+  #outputs a[href="/ai-long-form-writer"] img,
+  #outputs a[href="/ai-editable-images"] img,
+  #outputs a[href="/ai-editable-powerpoint"] img,
+  #outputs a[href="/zh/ai-long-form-writer"] img,
+  #outputs a[href="/zh/ai-editable-images"] img,
+  #outputs a[href="/zh/ai-editable-powerpoint"] img {
     transition: none;
   }
 }

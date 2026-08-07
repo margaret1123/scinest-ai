@@ -18,7 +18,7 @@ const content = {
     intro: "Upload once. No re-explaining. No re-uploading. Connect your own AI key — ChatGPT, DeepSeek, or Claude — and take every project from draft to done. Start free.",
     primary: "Download SciNest Free",
     secondary: "See Free vs Pro",
-    note: "Free download · Pro unlocked · Use ChatGPT, DeepSeek or Claude API",
+    note: "Start free · Use ChatGPT, DeepSeek or Claude API",
     installNote: ".zip file — extract and run SciNest.exe. If you downloaded the .exe version, click More info → Run anyway to install safely.",
     stats: [
       ["Unlimited AI generations", "Free and Pro both use your own API key — SciNest never limits your output"],
@@ -107,7 +107,7 @@ const content = {
     intro: "上传一次，无需反复解释，无需重复上传。连接你自己的 API Key——ChatGPT、DeepSeek、Claude 任选——论文、PPT、科研图一站打通。免费开始。",
     primary: "下载 SciNest Free",
     secondary: "查看 Free 与 Pro",
-    note: "免费下载 · Pro 已解锁 · 支持 ChatGPT / DeepSeek / Claude API",
+    note: "免费开始 · 支持 ChatGPT / DeepSeek / Claude API",
     installNote: ".zip 压缩包 — 解压后直接运行 SciNest.exe。如果下载的是 .exe 安装版，点击「更多信息」→「仍要运行」即可放心安装。",
     stats: [
       ["AI 生成不限次数", "Free 与 Pro 均使用你自己的 API Key，SciNest 不限制生成次数"],
@@ -188,8 +188,8 @@ const content = {
 export function SciNestHome({ locale }: { locale: Locale }) {
   const c = content[locale];
   const productPages = locale === "zh"
-    ? { writing: "/zh/ai-thesis-writing-assistant", figures: "/zh/scientific-figure-generator", powerpoint: "/zh/ai-powerpoint-generator" }
-    : { writing: "/ai-thesis-writing-assistant", figures: "/scientific-figure-generator", powerpoint: "/ai-powerpoint-generator" };
+    ? { writing: "/zh/ai-long-form-writer", figures: "/zh/ai-editable-images", powerpoint: "/zh/ai-editable-powerpoint" }
+    : { writing: "/ai-long-form-writer", figures: "/ai-editable-images", powerpoint: "/ai-editable-powerpoint" };
   const image = (name: string) => `/scinest/${name}-en.webp`;
   const downloadUrl = "https://github.com/margaret1123/scinest-ai/releases/latest/download/SciNest-win-x64.zip";
   const heroAlt = locale === "zh" ? "SciNest 论文修改、科研图与答辩PPT工作台" : "SciNest thesis revision, scientific figure and thesis defense presentation workspace";
