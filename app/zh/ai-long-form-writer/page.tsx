@@ -5,9 +5,9 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://scinest.app";
 const downloadUrl = "https://github.com/margaret1123/scinest-ai/releases/latest/download/SciNest-win-x64.zip";
 
 export const metadata: Metadata = {
-  title: "用 ChatGPT / DeepSeek / Claude 起草万字长文｜自带 API Key",
+  title: "用 ChatGPT / DeepSeek / Claude 起草万字长文｜自带 API Key，免费开始",
   description:
-    "自带 API Key，用 ChatGPT、DeepSeek 或 Claude 起草完整长文。先定大纲，再逐章生成，修哪章改哪章——不用推翻全文。免费下载，Pro 已解锁。",
+    "上传一次材料，连接你自己的 API Key，先定大纲再逐章生成完整长文。无需复杂指令，无需反复解释。免费开始。",
   alternates: {
     canonical: "/zh/ai-long-form-writer",
     languages: { en: "/ai-long-form-writer", "zh-CN": "/zh/ai-long-form-writer", "x-default": "/ai-long-form-writer" },
@@ -15,7 +15,8 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website", url: "/zh/ai-long-form-writer",
     title: "用 ChatGPT / DeepSeek / Claude 写出万字长文 | SciNest",
-    description: "自带 API Key。先定大纲，再逐章生成完整长文，修哪章改哪章——不用推翻全文。",
+    description: "上传一次材料，连接你自己的 API Key，先定大纲再逐章生成完整长文。免费开始。",
+    images: [{ url: "/scinest/writing-ui-en.webp", width: 1280, height: 800 }],
   },
 };
 

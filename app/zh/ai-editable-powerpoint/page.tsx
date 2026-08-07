@@ -5,9 +5,9 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://scinest.app";
 const downloadUrl = "https://github.com/margaret1123/scinest-ai/releases/latest/download/SciNest-win-x64.zip";
 
 export const metadata: Metadata = {
-  title: "用 AI 生成真正可编辑的 PPTX｜不是截图，不是 HTML",
+  title: "用 AI 生成真正可编辑的 PPTX｜标准 PPTX，免费开始 | SciNest",
   description:
-    "生成标准 .PPTX 文件，带可编辑文字、可替换图片和讲稿。不是整页截图，不是 HTML 幻灯片。打开就能继续改——在用 ChatGPT、DeepSeek 或 Claude 的同一个工作区里完成。",
+    "生成标准 .PPTX 文件，可编辑文字、可替换图片、可重排页面。上传材料，一站式打通。无需复杂指令。免费开始。",
   alternates: {
     canonical: "/zh/ai-editable-powerpoint",
     languages: { en: "/ai-editable-powerpoint", "zh-CN": "/zh/ai-editable-powerpoint", "x-default": "/ai-editable-powerpoint" },
@@ -15,7 +15,8 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website", url: "/zh/ai-editable-powerpoint",
     title: "用 AI 生成真正可编辑的 PPTX | SciNest",
-    description: "标准 PPTX 导出。可编辑文字。可替换图片。不是截图。",
+    description: "标准 PPTX 导出。可编辑文字。可替换图片。免费开始。",
+    images: [{ url: "/scinest/ppt-ui-en.webp", width: 1280, height: 800 }],
   },
 };
 

@@ -5,9 +5,9 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://scinest.app";
 const downloadUrl = "https://github.com/margaret1123/scinest-ai/releases/latest/download/SciNest-win-x64.zip";
 
 export const metadata: Metadata = {
-  title: "用 AI 生成可编辑的图片｜改文字、移元素、局部重绘",
+  title: "用 AI 生成可编辑的图片｜改文字、移元素、局部重绘，免费开始",
   description:
-    "生成带可编辑图层的图片——文字标签、形状、箭头和区域保持独立。改一个字不用重新生成整张图。移动元素，调整布局，AI 只重绘选中区域。像 DALL-E 和 Midjourney 一样用 AI 生成，但结果可以继续修改。",
+    "文字保持为文字，形状保持为独立对象。改标签无需重生成，移元素无需从头来。选中区域 AI 只改那一块。免费开始。",
   alternates: {
     canonical: "/zh/ai-editable-images",
     languages: { en: "/ai-editable-images", "zh-CN": "/zh/ai-editable-images", "x-default": "/ai-editable-images" },
@@ -15,7 +15,8 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website", url: "/zh/ai-editable-images",
     title: "用 AI 生成可编辑的图片 | SciNest",
-    description: "改文字。移元素。局部重绘。不用重新生成整张图。",
+    description: "文字保持为文字。改标签无需重生成。移元素无需从头来。免费开始。",
+    images: [{ url: "/scinest/figures-ui-en.webp", width: 1280, height: 720 }],
   },
 };
 
