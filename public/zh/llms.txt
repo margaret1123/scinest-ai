@@ -1,5 +1,5 @@
 # SciNest · 科研小棉袄
-> Windows 桌面端 AI 学术工作区——自带 ChatGPT、DeepSeek 或 Claude API Key，起草论文、做可编辑 PPTX、生成可修改的图表。免费下载，新账户即享 Pro。
+> Windows 桌面端 AI 学术工作区——用你喜欢的 ChatGPT、DeepSeek 或 Claude，起草论文、做可编辑 PPTX、生成可修改的图表。免费开始。
 
 ## 网站信息
 - 官网: https://scinest.app/

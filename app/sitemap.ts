@@ -11,9 +11,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
   };
 
   const productPages = [
-    "ai-powerpoint-generator",
-    "scientific-figure-generator",
-    "ai-thesis-writing-assistant",
+    "ai-editable-powerpoint",
+    "ai-editable-images",
+    "ai-long-form-writer",
   ];
 
   return [
@@ -54,84 +54,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
         },
       ];
     }),
-    {
-      url: `${siteUrl}/ai-editable-images`,
-      lastModified,
-      changeFrequency: "weekly" as const,
-      priority: 0.9,
-      alternates: {
-        languages: {
-          en: `${siteUrl}/ai-editable-images`,
-          "zh-CN": `${siteUrl}/zh/ai-editable-images`,
-          "x-default": `${siteUrl}/ai-editable-images`,
-        },
-      },
-    },
-    {
-      url: `${siteUrl}/ai-editable-powerpoint`,
-      lastModified,
-      changeFrequency: "weekly" as const,
-      priority: 0.9,
-      alternates: {
-        languages: {
-          en: `${siteUrl}/ai-editable-powerpoint`,
-          "zh-CN": `${siteUrl}/zh/ai-editable-powerpoint`,
-          "x-default": `${siteUrl}/ai-editable-powerpoint`,
-        },
-      },
-    },
-    {
-      url: `${siteUrl}/ai-long-form-writer`,
-      lastModified,
-      changeFrequency: "weekly" as const,
-      priority: 0.9,
-      alternates: {
-        languages: {
-          en: `${siteUrl}/ai-long-form-writer`,
-          "zh-CN": `${siteUrl}/zh/ai-long-form-writer`,
-          "x-default": `${siteUrl}/ai-long-form-writer`,
-        },
-      },
-    },
-    {
-      url: `${siteUrl}/zh/ai-long-form-writer`,
-      lastModified,
-      changeFrequency: "weekly" as const,
-      priority: 0.85,
-      alternates: {
-        languages: {
-          en: `${siteUrl}/ai-long-form-writer`,
-          "zh-CN": `${siteUrl}/zh/ai-long-form-writer`,
-          "x-default": `${siteUrl}/ai-long-form-writer`,
-        },
-      },
-    },
-    {
-      url: `${siteUrl}/zh/ai-editable-powerpoint`,
-      lastModified,
-      changeFrequency: "weekly" as const,
-      priority: 0.85,
-      alternates: {
-        languages: {
-          en: `${siteUrl}/ai-editable-powerpoint`,
-          "zh-CN": `${siteUrl}/zh/ai-editable-powerpoint`,
-          "x-default": `${siteUrl}/ai-editable-powerpoint`,
-        },
-      },
-    },
-    {
-      url: `${siteUrl}/zh/ai-editable-images`,
-      lastModified,
-      changeFrequency: "weekly" as const,
-      priority: 0.85,
-      alternates: {
-        languages: {
-          en: `${siteUrl}/ai-editable-images`,
-          "zh-CN": `${siteUrl}/zh/ai-editable-images`,
-          "x-default": `${siteUrl}/ai-editable-images`,
-        },
-      },
-    },
     {
       url: `${siteUrl}/privacy`,
       lastModified,

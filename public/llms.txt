@@ -1,5 +1,5 @@
 # SciNest · 科研小棉袄
-> A Windows desktop AI research workspace — draft papers, build real editable PPTX, and generate editable diagrams with your own ChatGPT, DeepSeek or Claude API key. Free download, Pro unlocked for new accounts.
+> A Windows desktop AI research workspace — draft papers, build real editable PPTX, and generate editable diagrams with ChatGPT, DeepSeek or Claude. Start free.
 
 ## Site information
 - Canonical site: https://scinest.app/
