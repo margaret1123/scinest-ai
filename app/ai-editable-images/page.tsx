@@ -139,7 +139,7 @@ export default function AiEditableImagesPage() {
       <main>
         {/* Hero */}
         <section style={{ maxWidth: 860, margin: "0 auto", padding: "60px 28px 40px", textAlign: "center" }}>
-          <p style={{ color: "#087f72", fontSize: 13, fontWeight: 850, letterSpacing: ".12em", margin: 0 }}>EDITABLE LAYERS · NOT A FLAT PIXEL IMAGE</p>
+          <p style={{ color: "#087f72", fontSize: 13, fontWeight: 850, letterSpacing: ".12em", margin: 0 }}>EDITABLE IMAGES · CHANGE WHAT YOU NEED, KEEP THE REST</p>
           <h1 style={{ fontSize: "clamp(32px,4.8vw,56px)", lineHeight: 1.08, letterSpacing: "-.035em", margin: "18px 0 22px", fontFamily: "Georgia,Times New Roman,serif" }}>
             Create Editable Images with AI
           </h1>
@@ -162,9 +162,9 @@ export default function AiEditableImagesPage() {
             AI image generation where text stays text.<br />Where every element can be revised.
           </h2>
           <p style={{ textAlign: "center", fontSize: 17, color: "#526974", lineHeight: 1.7, maxWidth: 640, margin: "0 auto 48px" }}>
-            Pixel-based AI generators fuse every element into one flat image. A typo in a label means regenerating the entire visual.
-            Editable generation keeps text as real text, shapes as separate objects, and regions independently accessible — so you revise what needs changing
-            and leave the rest alone.
+            Text stays as text. Shapes stay as separate objects.
+            Change a label without regenerating. Move an element without starting over.
+            Revise a selected area — the rest stays exactly as it is.
           </p>
 
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(220px,1fr))", gap: 16, maxWidth: 800, margin: "0 auto" }}>
@@ -277,7 +277,7 @@ export default function AiEditableImagesPage() {
             Change what needs changing — keep what already works.
           </p>
           <a href={downloadUrl} style={{ background: "#fff", color: "#087f72", padding: "16px 38px", borderRadius: 14, fontWeight: 750, fontSize: 17, textDecoration: "none", display: "inline-block" }}>Create an editable image ↗</a>
-          <p style={{ marginTop: 20, fontSize: 13, opacity: .5 }}>Free download · Windows · Editable layers</p>
+          <p style={{ marginTop: 20, fontSize: 13, opacity: .5 }}>Start free · Windows · Edit what needs editing, keep what works</p>
         </section>
       </main>
 

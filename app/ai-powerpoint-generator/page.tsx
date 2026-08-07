@@ -166,7 +166,7 @@ export default function AiPowerPointGeneratorPage() {
       ))}
 
       <header className={styles.header}>
-        <a className={styles.brand} href="/"><span>S</span><strong>SciNest<small>Academic work, finished</small></strong></a>
+        <a className={styles.brand} href="/"><span>S</span><strong>SciNest<small>Academic work, simplified.</small></strong></a>
         <nav aria-label="Page navigation">
           <a href="#difference">Why it is different</a>
           <a href="#materials">Your materials</a>
@@ -219,9 +219,9 @@ export default function AiPowerPointGeneratorPage() {
 
         <section className={`${styles.section} ${styles.darkSection}`} id="difference">
           <div className={styles.sectionIntro}>
-            <p className={styles.kicker}>THE OUTPUT PROBLEM</p>
-            <h2>Many “AI presentations” are not presentations when the work is finished.</h2>
-            <p>They look complete during generation, then hand the editing work back to you.</p>
+            <p className={styles.kicker}>NO FLATTENED SLIDES. NO HTML EXPORT.</p>
+            <h2>Every slide stays editable after generation — titles, text, images and order, all under your control.</h2>
+            <p>Generate a real PPTX from your materials. Edit anything after export.</p>
           </div>
           <div className={styles.falseGrid}>
             {falseOutputs.map(([title, body], index) => <article key={title}><span>0{index + 1}</span><h3>{title}</h3><p>{body}</p></article>)}
@@ -340,8 +340,8 @@ export default function AiPowerPointGeneratorPage() {
         </section>
 
         <section className={styles.finalCta}>
-          <p>STOP GENERATING CONTENT THAT STILL NEEDS TO BECOME A PRESENTATION</p>
-          <h2>Upload the material.<br />Get a real, visual, editable PowerPoint.</h2>
+          <p>ONE WORKFLOW. REAL PPTX. DONE.</p>
+          <h2>Upload your materials.<br />Edit the outline. Generate the deck. Open and keep working.</h2>
           <a href={downloadUrl}>Generate my real PowerPoint ↗</a>
           <span>Use your own AI key · Local project files by default · Real PPTX export</span>
         </section>

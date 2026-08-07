@@ -59,7 +59,7 @@ export default function Page() {
       </header>
       <main>
         <section style={{ maxWidth: 860, margin: "0 auto", padding: "60px 28px 40px", textAlign: "center" }}>
-          <p style={{ color: "#087f72", fontSize: 13, fontWeight: 850, letterSpacing: ".12em", margin: 0 }}>可编辑图层 · 不是一张死图</p>
+          <p style={{ color: "#087f72", fontSize: 13, fontWeight: 850, letterSpacing: ".12em", margin: 0 }}>可编辑图片 · 改你需要的，保留已经好的</p>
           <h1 style={{ fontSize: "clamp(32px,4.8vw,52px)", lineHeight: 1.1, letterSpacing: "-.035em", margin: "18px 0 22px", fontFamily: "Georgia,Times New Roman,serif" }}>用 AI 生成可编辑的图片</h1>
           <p style={{ fontSize: 18, lineHeight: 1.7, color: "#526974", maxWidth: 640, margin: "0 auto 32px" }}>生成带独立图层的图片——文字标签、形状和区域保持可编辑。改字不用重生成。移元素、调大小。AI 只重绘你选中的部分，其余保持不变。</p>
           <div style={{ display: "flex", gap: 14, justifyContent: "center", flexWrap: "wrap" }}>
@@ -72,7 +72,7 @@ export default function Page() {
         <section style={{ maxWidth: 800, margin: "0 auto", padding: "40px 28px" }}>
           <p style={{ color: "#087f72", fontSize: 13, fontWeight: 850, letterSpacing: ".12em", margin: 0, textAlign: "center" }}>超越像素</p>
           <h2 style={{ fontSize: "clamp(24px,3vw,36px)", textAlign: "center", lineHeight: 1.18, margin: "14px 0 16px", fontFamily: "Georgia,Times New Roman,serif" }}>文字保持为文字。每个元素都能独立修改。</h2>
-          <p style={{ textAlign: "center", fontSize: 16, color: "#526974", lineHeight: 1.7, maxWidth: 620, margin: "0 auto 32px" }}>像素型 AI 生成器把所有元素融成一张死图。标签错了一个字就得从头生成。可编辑生成把文字保持为真文字，形状保持为独立对象，区域可单独选中——只改需要改的，其余保持不变。</p>
+          <p style={{ textAlign: "center", fontSize: 16, color: "#526974", lineHeight: 1.7, maxWidth: 620, margin: "0 auto 32px" }}>文字保持为文字，形状保持为独立对象。改标签无需重生成，移元素无需从头来，选中区域 AI 只改那一块——其余原封不动。</p>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(210px,1fr))", gap: 14, maxWidth: 760, margin: "0 auto" }}>
             {[["可编辑文字标签","改标签、改错字、更新术语——不用重新生成整张图。"],["可移动元素","选中形状、箭头或文本框，移动、缩放。改布局不用从头来。"],["选择性 AI 重绘","选中一个区域，AI 只处理那一块。已确认的部分原封不动。"],["跨项目复用","导出到论文。PPT 需要同一张图时直接复用——不用重新上传。"]].map(([t,d]) => <div key={t} style={{ background: "#fff", border: "1px solid rgba(7,95,85,.12)", borderRadius: 18, padding: "24px 20px" }}><h3 style={{ margin: "0 0 8px", fontSize: 17 }}>{t}</h3><p style={{ margin: 0, color: "#5e6f7c", lineHeight: 1.6, fontSize: 14 }}>{d}</p></div>)}
           </div>
@@ -105,7 +105,7 @@ export default function Page() {
           <h2 style={{ fontSize: "clamp(26px,3.2vw,36px)", lineHeight: 1.12, margin: "0 0 12px", fontFamily: "Georgia,Times New Roman,serif" }}>生成。编辑。不用从头来。</h2>
           <p style={{ fontSize: 16, opacity: .78, maxWidth: 480, margin: "0 auto 28px", lineHeight: 1.65 }}>生成带可编辑文字、可移动元素和选择性 AI 重绘的图片。改需要改的——保留已经好的。</p>
           <a href={downloadUrl} style={{ background: "#fff", color: "#087f72", padding: "15px 34px", borderRadius: 14, fontWeight: 750, fontSize: 16, textDecoration: "none", display: "inline-block" }}>生成可编辑的图片 ↗</a>
-          <p style={{ marginTop: 18, fontSize: 12, opacity: .5 }}>免费下载 · Windows · 可编辑图层</p>
+          <p style={{ marginTop: 18, fontSize: 12, opacity: .5 }}>免费开始 · Windows · 只改需要改的，保留已经好的</p>
         </section>
       </main>
       <footer style={{ maxWidth: 1160, margin: "0 auto", padding: "28px", display: "flex", justifyContent: "space-between", flexWrap: "wrap", gap: 14, color: "#5e6f7c", fontSize: 13 }}>

@@ -150,9 +150,9 @@ export default function AiLongFormWriterPage() {
 
         {/* The chat problem — brief, solution-focused */}
         <section style={{ maxWidth: 800, margin: "0 auto", padding: "40px 28px" }}>
-          <p style={{ color: "#087f72", fontSize: 13, fontWeight: 850, letterSpacing: ".12em", margin: 0, textAlign: "center" }}>THE CHAT WINDOW IS THE BOTTLENECK</p>
+          <p style={{ color: "#087f72", fontSize: 13, fontWeight: 850, letterSpacing: ".12em", margin: 0, textAlign: "center" }}>NO COMPLEX PROMPTS. NO CONTEXT REBUILDING.</p>
           <h2 style={{ fontSize: "clamp(26px,3.4vw,40px)", textAlign: "center", lineHeight: 1.15, letterSpacing: "-.03em", margin: "16px 0 20px", fontFamily: "Georgia,Times New Roman,serif" }}>
-            The model is capable. The interface holds it back.
+            ChatGPT, DeepSeek and Claude can write 10,000-word papers — when they have the right workspace.
           </h2>
           <p style={{ textAlign: "center", fontSize: 17, color: "#526974", lineHeight: 1.7, maxWidth: 640, margin: "0 auto 48px" }}>
             ChatGPT, DeepSeek and Claude all have the intelligence to write long papers.
@@ -161,9 +161,9 @@ export default function AiLongFormWriterPage() {
 
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(240px,1fr))", gap: 20, maxWidth: 900, margin: "0 auto" }}>
             {[
-              { title: "ChatGPT", desc: "Cuts off mid-response. Loses context after a few exchanges. Hallucinates references.", color: "#10a37f" },
-              { title: "DeepSeek", desc: "Powerful model, but the chat UI has the same limits — short replies, no persistent outline, no chapter management.", color: "#4d6bfe" },
-              { title: "Claude", desc: "Great prose, but the chat window can't bind sources to chapters or track revisions across a long document.", color: "#d97706" },
+              { title: "ChatGPT", desc: "Works with your own API key. Full chapters, connected across the document.", color: "#10a37f" },
+              { title: "DeepSeek", desc: "Lowest API cost, strong reasoning. Same persistent outline and chapter management as every provider.", color: "#4d6bfe" },
+              { title: "Claude", desc: "Natural academic tone, large context window. Bind sources to chapters and track revisions across the full document.", color: "#d97706" },
             ].map((item) => (
               <div key={item.title} style={{ background: "#fff", border: "1px solid rgba(7,95,85,.14)", borderRadius: 20, padding: "28px 24px", borderTop: `4px solid ${item.color}` }}>
                 <h3 style={{ margin: "0 0 10px", fontSize: 20 }}>{item.title}</h3>
@@ -296,11 +296,10 @@ export default function AiLongFormWriterPage() {
         {/* CTA */}
         <section style={{ background: "linear-gradient(180deg,#0a2a30 0%,#0d2328 100%)", color: "#fff", textAlign: "center", padding: "72px 28px" }}>
           <h2 style={{ fontSize: "clamp(28px,3.6vw,42px)", lineHeight: 1.12, letterSpacing: "-.025em", margin: "0 0 14px", fontFamily: "Georgia,Times New Roman,serif" }}>
-            Stop fighting the chat window.
+            One workspace. Your outline. Your sources. Your draft.
           </h2>
           <p style={{ fontSize: 17, opacity: .78, maxWidth: 520, margin: "0 auto 32px", lineHeight: 1.65 }}>
-            Bring your own API key. Build the outline. Generate the full draft. Edit what needs editing.
-            ChatGPT, DeepSeek and Claude all work — when they have the right workspace.
+            No complex prompts. No re-explaining. No copy-paste between windows. Start free.
           </p>
           <a href={downloadUrl} style={{ background: "#fff", color: "#087f72", padding: "16px 38px", borderRadius: 14, fontWeight: 750, fontSize: 17, textDecoration: "none", display: "inline-block" }}>Start drafting ↗</a>
           <p style={{ marginTop: 20, fontSize: 13, opacity: .5 }}>Free download · Windows · Bring your own API key</p>

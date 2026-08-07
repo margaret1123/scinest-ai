@@ -120,7 +120,7 @@ export default function AiThesisWritingAssistantPage() {
       ))}
 
       <header className={styles.header}>
-        <a className={styles.brand} href="/"><span>S</span><strong>SciNest<small>Academic work, finished</small></strong></a>
+        <a className={styles.brand} href="/"><span>S</span><strong>SciNest<small>Academic work, simplified.</small></strong></a>
         <nav aria-label="Page navigation">
           <a href="#outline">Outline first</a>
           <a href="#references">References</a>
@@ -165,7 +165,7 @@ export default function AiThesisWritingAssistantPage() {
         </section>
 
         <section className={`${styles.section} ${styles.darkSection}`}>
-          <div className={styles.sectionIntro}><p className={styles.kicker}>THE PARAGRAPH-BY-PARAGRAPH TRAP</p><h2>A long paper should not require fifty separate prompts.</h2><p>Generic chat tools lose structure as the conversation grows. You end up copying fragments, rebuilding headings and repairing contradictions between sections.</p></div>
+          <div className={styles.sectionIntro}><p className={styles.kicker}>ONE OUTLINE. ONE DRAFT. NO RE-EXPLAINING.</p><h2>Build the outline, bind your sources, generate the full draft — in one connected workflow.</h2><p>No copying fragments between windows. No rebuilding headings. One project from outline to completed draft.</p></div>
           <div className={styles.problemGrid}>
             <article><span>01</span><h3>Prompt one chapter</h3><p>The model forgets decisions made in earlier sections.</p></article>
             <article><span>02</span><h3>Copy the answer</h3><p>References, terminology and argument structure begin to drift.</p></article>
@@ -227,12 +227,12 @@ export default function AiThesisWritingAssistantPage() {
           <div className={styles.faq}>{faq.map(([question, answer]) => <details key={question}><summary>{question}<span>+</span></summary><p>{answer}</p></details>)}</div>
         </section>
 
-        <section className={styles.final}><h2>Stop assembling a long paper from disconnected AI fragments. Start from your outline, your sources, your key.</h2><p>Build the outline, bind the materials and references, then generate the connected draft in one workflow.</p><a className={styles.lightCta} href={downloadUrl}>Generate my long-form draft ↗</a></section>
+        <section className={styles.final}><h2>Your outline. Your sources. One connected draft. Start free.</h2><p>No complex prompts. No re-explaining. Build the outline, bind the materials, generate the connected draft in one workflow.</p><a className={styles.lightCta} href={downloadUrl}>Generate my long-form draft ↗</a></section>
       </main>
 
       <RelatedProductPages current="writing" />
 
-      <footer className={styles.footer}><strong>SciNest · Academic work, finished</strong><span>Operated by Jiaempower Pathways Limited</span><a href="/">Back to SciNest</a></footer>
+      <footer className={styles.footer}><strong>SciNest · Academic work, simplified.</strong><span>Operated by Jiaempower Pathways Limited</span><a href="/">Back to SciNest</a></footer>
     </div>
   );
 }

@@ -139,7 +139,7 @@ export default function AiEditablePowerpointPage() {
       <main>
         {/* Hero */}
         <section style={{ maxWidth: 860, margin: "0 auto", padding: "60px 28px 40px", textAlign: "center" }}>
-          <p style={{ color: "#087f72", fontSize: 13, fontWeight: 850, letterSpacing: ".12em", margin: 0 }}>REAL PPTX · NOT A SCREENSHOT</p>
+          <p style={{ color: "#087f72", fontSize: 13, fontWeight: 850, letterSpacing: ".12em", margin: 0 }}>EDITABLE PPTX · OPEN AND KEEP WORKING</p>
           <h1 style={{ fontSize: "clamp(32px,4.8vw,56px)", lineHeight: 1.08, letterSpacing: "-.035em", margin: "18px 0 22px", fontFamily: "Georgia,Times New Roman,serif" }}>
             Create a Real, Editable PowerPoint<br />with AI
           </h1>
@@ -151,7 +151,7 @@ export default function AiEditablePowerpointPage() {
             <a href={downloadUrl} style={{ background: "#087f72", color: "#fff", padding: "15px 34px", borderRadius: 14, fontWeight: 750, fontSize: 16, textDecoration: "none", display: "inline-block" }}>Create an editable PowerPoint ↗</a>
             <a href="#how-it-works" style={{ color: "#087f72", padding: "15px 28px", borderRadius: 14, fontWeight: 650, fontSize: 16, textDecoration: "none", border: "2px solid rgba(7,153,135,.2)", display: "inline-block" }}>See how it works</a>
           </div>
-          <p style={{ color: "#8599a3", fontSize: 13, marginTop: 18 }}>Windows desktop · Standard PPTX export · Use your own AI key</p>
+          <p style={{ color: "#8599a3", fontSize: 13, marginTop: 18 }}>Start free · Standard PPTX export · Use your own AI key</p>
         </section>
 
         {/* What "real PPTX" means */}
@@ -161,10 +161,8 @@ export default function AiEditablePowerpointPage() {
             A slide you can open. Text you can select. Images you can replace.
           </h2>
           <p style={{ textAlign: "center", fontSize: 17, color: "#526974", lineHeight: 1.7, maxWidth: 640, margin: "0 auto 48px" }}>
-            Most AI presentation tools export slides as screenshots wrapped in a PPTX container.
-            They look correct in the preview — but when you need to fix a typo, change a date or swap an image,
-            you discover every slide is one locked picture. A real PPTX keeps every element independent and editable,
-            just like a slide you built yourself.
+            Titles are real text boxes. Images can be replaced. Slides can be reordered.
+            Open the PPTX and keep editing — every element stays independent, just like a slide you built yourself.
           </p>
 
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(220px,1fr))", gap: 16, maxWidth: 800, margin: "0 auto" }}>

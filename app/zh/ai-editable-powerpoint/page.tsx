@@ -60,20 +60,20 @@ export default function Page() {
       </header>
       <main>
         <section style={{ maxWidth: 860, margin: "0 auto", padding: "60px 28px 40px", textAlign: "center" }}>
-          <p style={{ color: "#087f72", fontSize: 13, fontWeight: 850, letterSpacing: ".12em", margin: 0 }}>真正的 PPTX · 不是截图</p>
+          <p style={{ color: "#087f72", fontSize: 13, fontWeight: 850, letterSpacing: ".12em", margin: 0 }}>可编辑 PPTX · 打开就能继续改</p>
           <h1 style={{ fontSize: "clamp(32px,4.8vw,52px)", lineHeight: 1.1, letterSpacing: "-.035em", margin: "18px 0 22px", fontFamily: "Georgia,Times New Roman,serif" }}>用 AI 生成真正可编辑的 PPTX</h1>
           <p style={{ fontSize: 18, lineHeight: 1.7, color: "#526974", maxWidth: 640, margin: "0 auto 32px" }}>标准 .PPTX 文件，带可编辑文字、可替换图片和讲稿。不是整页截图，不是 HTML 幻灯片。打开 PowerPoint 就能继续改。</p>
           <div style={{ display: "flex", gap: 14, justifyContent: "center", flexWrap: "wrap" }}>
             <a href={downloadUrl} style={{ background: "#087f72", color: "#fff", padding: "15px 34px", borderRadius: 14, fontWeight: 750, fontSize: 16, textDecoration: "none" }}>生成可编辑 PPTX ↗</a>
             <a href="#how" style={{ color: "#087f72", padding: "15px 28px", borderRadius: 14, fontWeight: 650, fontSize: 16, textDecoration: "none", border: "2px solid rgba(7,153,135,.2)" }}>查看流程</a>
           </div>
-          <p style={{ color: "#8599a3", fontSize: 13, marginTop: 18 }}>Windows 桌面端 · 标准 PPTX 导出 · 自带 AI Key</p>
+          <p style={{ color: "#8599a3", fontSize: 13, marginTop: 18 }}>免费开始 · 标准 PPTX 导出 · 自带 AI Key</p>
         </section>
 
         <section style={{ maxWidth: 800, margin: "0 auto", padding: "40px 28px" }}>
           <p style={{ color: "#087f72", fontSize: 13, fontWeight: 850, letterSpacing: ".12em", margin: 0, textAlign: "center" }}>什么是真正的"可编辑"</p>
           <h2 style={{ fontSize: "clamp(24px,3vw,36px)", textAlign: "center", lineHeight: 1.18, margin: "14px 0 16px", fontFamily: "Georgia,Times New Roman,serif" }}>能打开的幻灯片。能选中的文字。能替换的图片。</h2>
-          <p style={{ textAlign: "center", fontSize: 16, color: "#526974", lineHeight: 1.7, maxWidth: 620, margin: "0 auto 32px" }}>大多数 AI PPT 工具导出的是截图包在 PPTX 里的"假幻灯片"。预览时看起来正常，但当你需要改一个错字、换一个日期或调整一张图片时，你发现每一页都是一张锁死的图。</p>
+          <p style={{ textAlign: "center", fontSize: 16, color: "#526974", lineHeight: 1.7, maxWidth: 620, margin: "0 auto 32px" }}>标题是真实文本框，正文可编辑，图片可替换，页面可重排。打开 PPTX 继续改——每个元素独立可操作，和你亲手做的幻灯片一样。</p>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(210px,1fr))", gap: 14, maxWidth: 760, margin: "0 auto" }}>
             {[["可编辑文字","选中标题、要点或段落直接编辑。改错字不用重新生成整页。"],["可替换图片","换一张图、重定位、调大小——布局自动适配。"],["可重排页面","改页面顺序、插入新页、删掉不需要的。"],["可编辑讲稿","每页生成专属讲稿，随内容一起修改。"]].map(([t,d]) => <div key={t} style={{ background: "#fff", border: "1px solid rgba(7,95,85,.12)", borderRadius: 18, padding: "24px 20px" }}><h3 style={{ margin: "0 0 8px", fontSize: 17 }}>{t}</h3><p style={{ margin: 0, color: "#5e6f7c", lineHeight: 1.6, fontSize: 14 }}>{d}</p></div>)}
           </div>

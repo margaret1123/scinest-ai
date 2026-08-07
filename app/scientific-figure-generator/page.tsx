@@ -152,9 +152,9 @@ export default function ScientificFigureGeneratorPage() {
 
         <section className={`${styles.section} ${styles.dark}`}>
           <div className={styles.sectionIntro}>
-            <p className={styles.kicker}>THE FLATTENED-IMAGE PROBLEM</p>
-            <h2>A beautiful figure stops being useful the moment one small detail changes.</h2>
-            <p>Most AI image workflows treat every correction as a reason to redraw the whole image.</p>
+            <p className={styles.kicker}>EDIT TEXT. MOVE ELEMENTS. KEEP THE REST.</p>
+            <h2>Every label, shape and region stays independently editable after generation.</h2>
+            <p>Change one detail without redrawing everything. Keep the approved parts untouched.</p>
           </div>
           <div className={styles.problemGrid}>
             {problems.map(([title, body], index) => <article key={title}><span>0{index + 1}</span><h3>{title}</h3><p>{body}</p></article>)}
@@ -187,7 +187,7 @@ export default function ScientificFigureGeneratorPage() {
           <div className={styles.sectionIntro}>
             <p className={styles.kicker}>AI WHERE YOU NEED IT</p>
             <h2>Regenerate the weak area—not the entire figure.</h2>
-            <p>The page explains the current selection workflow without presenting a simulated before-and-after image as product proof. A real paired screenshot will replace this explanation when the same region is captured before and after regeneration.</p>
+            <p>Select the region. Describe the change. Keep the rest of the figure untouched.</p>
           </div>
           <div className="scientific-selection-flow">
             <article><b>01</b><h3>Select the weak region</h3><p>Choose the specific element or bounded area that needs correction inside the figure workspace.</p></article>
@@ -251,7 +251,7 @@ export default function ScientificFigureGeneratorPage() {
         </section>
 
         <section className={styles.final}>
-          <h2>Do not regenerate the whole figure because one label or one region is wrong.</h2>
+          <h2>One figure. Editable layers. No starting over.</h2>
           <p>Generate a layered scientific figure, move the elements, edit the text and use AI only on the part that needs changing.</p>
           <a className={styles.lightCta} href={downloadUrl}>Generate an editable scientific figure ↗</a>
         </section>
@@ -259,7 +259,7 @@ export default function ScientificFigureGeneratorPage() {
 
       <RelatedProductPages current="figures" />
 
-      <footer className={styles.footer}><strong>SciNest · Academic work, finished</strong><span>Operated by Jiaempower Pathways Limited</span><a href="/">Back to SciNest</a></footer>
+      <footer className={styles.footer}><strong>SciNest · Academic work, simplified.</strong><span>Operated by Jiaempower Pathways Limited</span><a href="/">Back to SciNest</a></footer>
     </div>
   );
 }

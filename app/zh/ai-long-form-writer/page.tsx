@@ -70,11 +70,11 @@ export default function Page() {
         </section>
 
         <section style={{ maxWidth: 800, margin: "0 auto", padding: "40px 28px" }}>
-          <p style={{ color: "#087f72", fontSize: 13, fontWeight: 850, letterSpacing: ".12em", margin: 0, textAlign: "center" }}>聊天窗口是瓶颈</p>
-          <h2 style={{ fontSize: "clamp(24px,3vw,36px)", textAlign: "center", lineHeight: 1.18, letterSpacing: "-.03em", margin: "14px 0 18px", fontFamily: "Georgia,Times New Roman,serif" }}>模型够聪明，界面拖了后腿</h2>
+          <p style={{ color: "#087f72", fontSize: 13, fontWeight: 850, letterSpacing: ".12em", margin: 0, textAlign: "center" }}>无需复杂指令，无需反复解释</p>
+          <h2 style={{ fontSize: "clamp(24px,3vw,36px)", textAlign: "center", lineHeight: 1.18, letterSpacing: "-.03em", margin: "14px 0 18px", fontFamily: "Georgia,Times New Roman,serif" }}>ChatGPT、DeepSeek、Claude 都能写万字长文——给它们一个对的工具。</h2>
           <p style={{ textAlign: "center", fontSize: 17, color: "#526974", lineHeight: 1.7, maxWidth: 620, margin: "0 auto 36px" }}>ChatGPT、DeepSeek、Claude 都有写长论文的智力。问题是聊天界面——它为对话设计，不是为管理一万五千字、带大纲和文献的完整文档而建。</p>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(220px,1fr))", gap: 16, maxWidth: 780, margin: "0 auto" }}>
-            {[{ title: "ChatGPT", desc: "输出截断，几轮对话后丢失上下文，编造参考文献", color: "#10a37f" }, { title: "DeepSeek", desc: "推理能力强，但聊天界面同样只能输出短回复，没有持久大纲和章节管理", color: "#4d6bfe" }, { title: "Claude", desc: "文笔自然，但聊天窗口不能把文献绑定到章节，不能追踪全篇修改", color: "#d97706" }].map(m => (
+            {[{ title: "ChatGPT", desc: "连接你自己的 API Key。完整章节，全文上下文保持连接。", color: "#10a37f" }, { title: "DeepSeek", desc: "API 成本最低，推理能力强。同样的持久大纲和章节管理。", color: "#4d6bfe" }, { title: "Claude", desc: "文笔自然，上下文窗口大。文献绑定到章节，全篇修改可追踪。", color: "#d97706" }].map(m => (
               <div key={m.title} style={{ background: "#fff", border: "1px solid rgba(7,95,85,.12)", borderRadius: 20, padding: "24px 20px", borderTop: `4px solid ${m.color}` }}>
                 <h3 style={{ margin: "0 0 8px", fontSize: 18 }}>{m.title}</h3>
                 <p style={{ margin: 0, color: "#5e6f7c", lineHeight: 1.65, fontSize: 14 }}>{m.desc}</p>
@@ -123,10 +123,10 @@ export default function Page() {
         </section>
 
         <section style={{ background: "linear-gradient(180deg,#0a2a30,#0d2328)", color: "#fff", textAlign: "center", padding: "60px 28px" }}>
-          <h2 style={{ fontSize: "clamp(26px,3.2vw,36px)", lineHeight: 1.12, margin: "0 0 12px", fontFamily: "Georgia,Times New Roman,serif" }}>别再跟聊天窗口较劲了。</h2>
-          <p style={{ fontSize: 16, opacity: .78, maxWidth: 480, margin: "0 auto 28px", lineHeight: 1.65 }}>自带 API Key。定大纲。生成全文。只改需要改的。ChatGPT、DeepSeek、Claude 都能写——给它们对的工具。</p>
+          <h2 style={{ fontSize: "clamp(26px,3.2vw,36px)", lineHeight: 1.12, margin: "0 0 12px", fontFamily: "Georgia,Times New Roman,serif" }}>一个工作区。你的大纲，你的材料，你的成稿。</h2>
+          <p style={{ fontSize: 16, opacity: .78, maxWidth: 480, margin: "0 auto 28px", lineHeight: 1.65 }}>无需复杂指令，无需反复解释，无需窗口间复制粘贴。免费开始。</p>
           <a href={downloadUrl} style={{ background: "#fff", color: "#087f72", padding: "15px 34px", borderRadius: 14, fontWeight: 750, fontSize: 16, textDecoration: "none", display: "inline-block" }}>开始起草长文 ↗</a>
-          <p style={{ marginTop: 18, fontSize: 12, opacity: .5 }}>免费下载 · Windows · 自带 API Key</p>
+          <p style={{ marginTop: 18, fontSize: 12, opacity: .5 }}>免费开始 · Windows · 自带 API Key</p>
         </section>
       </main>
       <footer style={{ maxWidth: 1160, margin: "0 auto", padding: "28px", display: "flex", justifyContent: "space-between", flexWrap: "wrap", gap: 14, color: "#5e6f7c", fontSize: 13 }}>
