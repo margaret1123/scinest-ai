@@ -7,7 +7,7 @@ const downloadUrl = "https://github.com/margaret1123/scinest-ai/releases/latest/
 export const metadata: Metadata = {
   title: "How to Draft a 10,000+ Word Paper with ChatGPT, DeepSeek or Claude | SciNest",
   description:
-    "Connect your own AI API key. Build an editable outline, bind your sources, and draft a complete long-form paper — chapter by chapter, with persistent context. Not a chat reply.",
+    "Upload once, connect your own AI key, and draft a complete long-form paper — outline, sources, chapters, all connected. No complex prompts. No re-explaining. Start free.",
   alternates: {
     canonical: "/ai-long-form-writer",
     languages: { en: "/ai-long-form-writer", "zh-CN": "/zh/ai-long-form-writer", "x-default": "/ai-long-form-writer" },
@@ -17,13 +17,15 @@ export const metadata: Metadata = {
     url: "/ai-long-form-writer",
     title: "Draft 10,000+ Word Papers with Your Own AI Key | SciNest",
     description:
-      "Bring your own API key. Build the outline first, bind your sources, then draft a complete long-form paper — yours to edit, verify and submit.",
+      "Upload once, connect your own AI key, and draft a complete long-form paper — from outline to finished draft. Start free.",
+    images: [{ url: "/scinest/writing-ui-en.webp", width: 1280, height: 800 }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Write complete long papers with any AI model",
     description:
-      "ChatGPT, DeepSeek and Claude all work — when you stop using the chat window.",
+      "Upload once. Connect your own AI key. Draft complete long-form papers from outline to finished draft.",
+    images: ["/scinest/writing-ui-en.webp"],
   },
 };
 

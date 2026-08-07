@@ -7,7 +7,7 @@ const downloadUrl = "https://github.com/margaret1123/scinest-ai/releases/latest/
 export const metadata: Metadata = {
   title: "Create Editable Images with AI — Change Text, Resize Elements, Revise Locally",
   description:
-    "Generate images where text labels, shapes and regions stay editable. Change a label without regenerating the whole image. Move elements. Resize objects. AI image generation with real post-generation editing.",
+    "Generate images with editable text labels, movable shapes and selective AI revision. Change a label without regenerating. Move elements without starting over. Start free.",
   alternates: {
     canonical: "/ai-editable-images",
     languages: { en: "/ai-editable-images", "zh-CN": "/zh/ai-editable-images", "x-default": "/ai-editable-images" },
@@ -17,12 +17,14 @@ export const metadata: Metadata = {
     url: "/ai-editable-images",
     title: "Create Editable Images with AI | SciNest",
     description:
-      "Layer-based AI image generation. Edit text labels, resize elements, revise selected areas — without regenerating the entire image.",
+      "Layer-based AI image generation. Edit text labels, resize elements, revise selected areas — without regenerating the entire image. Start free.",
+    images: [{ url: "/scinest/figures-ui-en.webp", width: 1280, height: 720 }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Create editable images with AI",
     description: "Change a label. Move an element. Revise a region. Not regenerate everything.",
+    images: ["/scinest/figures-ui-en.webp"],
   },
 };
 

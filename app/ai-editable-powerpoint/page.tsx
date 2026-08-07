@@ -5,9 +5,9 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://scinest.app";
 const downloadUrl = "https://github.com/margaret1123/scinest-ai/releases/latest/download/SciNest-win-x64.zip";
 
 export const metadata: Metadata = {
-  title: "Create a Real, Editable PowerPoint with AI",
+  title: "Create a Real, Editable PowerPoint with AI — Standard PPTX, Start Free | SciNest",
   description:
-    "Generate a standard .PPTX file with structured slides, editable text, replaceable images and speaker notes. Not a screenshot. Not an HTML slideshow. A real PowerPoint you can open and keep editing.",
+    "Generate a standard .PPTX file with editable text, replaceable images and speaker notes. No complex prompts. No tool switching. Start free.",
   alternates: {
     canonical: "/ai-editable-powerpoint",
     languages: { en: "/ai-editable-powerpoint", "zh-CN": "/zh/ai-editable-powerpoint", "x-default": "/ai-editable-powerpoint" },
@@ -18,11 +18,13 @@ export const metadata: Metadata = {
     title: "Create a Real, Editable PowerPoint with AI | SciNest",
     description:
       "Standard PPTX output with editable text boxes, slide layouts, images and speaker notes. Edit the outline before generation. Revise individual slides after.",
+    images: [{ url: "/scinest/ppt-ui-en.webp", width: 1280, height: 800 }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Create a real, editable PowerPoint with AI",
     description: "Standard PPTX. Editable text. Replaceable images. Not a screenshot.",
+    images: ["/scinest/ppt-ui-en.webp"],
   },
 };
 
