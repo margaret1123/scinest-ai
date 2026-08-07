@@ -310,8 +310,8 @@ export default function AiLongFormWriterPage() {
         <strong style={{ color: "#0a2030" }}>SciNest</strong>
         <nav style={{ display: "flex", gap: 18, flexWrap: "wrap" }}>
           <a href="/" style={{ color: "#087f72", textDecoration: "none" }}>Home</a>
-          <a href="/ai-powerpoint-generator" style={{ color: "#087f72", textDecoration: "none" }}>AI PowerPoint Generator</a>
-          <a href="/scientific-figure-generator" style={{ color: "#087f72", textDecoration: "none" }}>AI Figure Generator</a>
+          <a href="/ai-editable-powerpoint" style={{ color: "#087f72", textDecoration: "none" }}>AI Editable PowerPoint</a>
+          <a href="/ai-editable-images" style={{ color: "#087f72", textDecoration: "none" }}>AI Editable Images</a>
           <a href="/privacy" style={{ color: "#087f72", textDecoration: "none" }}>Privacy</a>
           <a href="/terms" style={{ color: "#087f72", textDecoration: "none" }}>Terms</a>
         </nav>
