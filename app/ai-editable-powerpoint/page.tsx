@@ -153,7 +153,7 @@ export default function AiEditablePowerpointPage() {
             <a href={downloadUrl} style={{ background: "#087f72", color: "#fff", padding: "15px 34px", borderRadius: 14, fontWeight: 750, fontSize: 16, textDecoration: "none", display: "inline-block" }}>Create an editable PowerPoint ↗</a>
             <a href="#how-it-works" style={{ color: "#087f72", padding: "15px 28px", borderRadius: 14, fontWeight: 650, fontSize: 16, textDecoration: "none", border: "2px solid rgba(7,153,135,.2)", display: "inline-block" }}>See how it works</a>
           </div>
-          <p style={{ color: "#8599a3", fontSize: 13, marginTop: 18 }}>Start free · Standard PPTX export · Use your own AI key</p>
+          <p style={{ color: "#8599a3", fontSize: 13, marginTop: 18 }}>Start free · Standard PPTX export · Use the AI model you prefer</p>
         </section>
 
         {/* What "real PPTX" means */}

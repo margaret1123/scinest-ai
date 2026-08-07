@@ -68,7 +68,7 @@ export default function Page() {
             <a href={downloadUrl} style={{ background: "#087f72", color: "#fff", padding: "15px 34px", borderRadius: 14, fontWeight: 750, fontSize: 16, textDecoration: "none" }}>生成可编辑 PPTX ↗</a>
             <a href="#how" style={{ color: "#087f72", padding: "15px 28px", borderRadius: 14, fontWeight: 650, fontSize: 16, textDecoration: "none", border: "2px solid rgba(7,153,135,.2)" }}>查看流程</a>
           </div>
-          <p style={{ color: "#8599a3", fontSize: 13, marginTop: 18 }}>免费开始 · 标准 PPTX 导出 · 自带 AI Key</p>
+          <p style={{ color: "#8599a3", fontSize: 13, marginTop: 18 }}>免费开始 · 标准 PPTX 导出 · 自选模型</p>
         </section>
 
         <section style={{ maxWidth: 800, margin: "0 auto", padding: "40px 28px" }}>

@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     url: "/",
     siteName: "SciNest",
     title: "Papers, Presentations & Diagrams, All in One Place | SciNest",
-    description: "Upload once, connect your own AI key, and take papers, presentations and diagrams from draft to done. Start free.",
+    description: "Upload once, choose ChatGPT, DeepSeek or Claude, and take papers, presentations and diagrams from draft to done. Start free.",
     images: [{ url: "/logo.png", width: 512, height: 512 }],
     locale: "en_US",
     alternateLocale: ["zh_CN"],
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Papers, Presentations & Diagrams, All in One Place",
-    description: "Upload once, connect your own AI key — ChatGPT, DeepSeek, or Claude. Start free.",
+    description: "Upload once, choose ChatGPT, DeepSeek or Claude. Start free.",
     images: ["/logo.png"],
   },
   title: {
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     template: "%s | SciNest",
   },
   description:
-    "Upload once, connect your own AI key, and take papers, presentations and diagrams from draft to done — all in one platform. Start free.",
+    "Upload once, choose ChatGPT, DeepSeek or Claude, and take papers, presentations and diagrams from draft to done — all in one platform. Start free.",
   keywords: [
     "AI academic workspace",
     "academic writing tool",

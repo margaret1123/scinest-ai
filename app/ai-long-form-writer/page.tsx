@@ -7,7 +7,7 @@ const downloadUrl = "https://github.com/margaret1123/scinest-ai/releases/latest/
 export const metadata: Metadata = {
   title: "How to Draft a 10,000+ Word Paper with ChatGPT, DeepSeek or Claude | SciNest",
   description:
-    "Upload once, connect your own AI key, and draft a complete long-form paper — outline, sources, chapters, all connected. No complex prompts. No re-explaining. Start free.",
+    "Upload once, choose ChatGPT, DeepSeek or Claude, and draft a complete long-form paper — outline, sources, chapters, all connected. No complex prompts. No re-explaining. Start free.",
   alternates: {
     canonical: "/ai-long-form-writer",
     languages: { en: "/ai-long-form-writer", "zh-CN": "/zh/ai-long-form-writer", "x-default": "/ai-long-form-writer" },
@@ -17,14 +17,14 @@ export const metadata: Metadata = {
     url: "/ai-long-form-writer",
     title: "Draft 10,000+ Word Papers with Your Own AI Key | SciNest",
     description:
-      "Upload once, connect your own AI key, and draft a complete long-form paper — from outline to finished draft. Start free.",
+      "Upload once, choose ChatGPT, DeepSeek or Claude, and draft a complete long-form paper — from outline to finished draft. Start free.",
     images: [{ url: "/scinest/writing-ui-en.webp", width: 1280, height: 800 }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Write complete long papers with any AI model",
     description:
-      "Upload once. Connect your own AI key. Draft complete long-form papers from outline to finished draft.",
+      "Upload once. Choose ChatGPT, DeepSeek or Claude. Draft complete long-form papers from outline to finished draft.",
     images: ["/scinest/writing-ui-en.webp"],
   },
 };
@@ -141,13 +141,13 @@ export default function AiLongFormWriterPage() {
           </h1>
           <p style={{ fontSize: 18, lineHeight: 1.7, color: "#526974", maxWidth: 680, margin: "0 auto 32px" }}>
             ChatGPT, DeepSeek and Claude can all help you draft full thesis chapters, dissertations and long essays.
-            Not with the chat window — with your own API key, a proper outline, and a writing workspace that keeps every chapter connected.
+            Not with the chat window — with the AI model you prefer, a proper outline, and a writing workspace that keeps every chapter connected.
           </p>
           <div style={{ display: "flex", gap: 14, justifyContent: "center", flexWrap: "wrap" }}>
             <a href={downloadUrl} style={{ background: "#087f72", color: "#fff", padding: "15px 34px", borderRadius: 14, fontWeight: 750, fontSize: 16, textDecoration: "none", display: "inline-block" }}>Start drafting your paper ↗</a>
             <a href="#how-it-works" style={{ color: "#087f72", padding: "15px 28px", borderRadius: 14, fontWeight: 650, fontSize: 16, textDecoration: "none", border: "2px solid rgba(7,153,135,.2)", display: "inline-block" }}>See how it works</a>
           </div>
-          <p style={{ color: "#8599a3", fontSize: 13, marginTop: 18 }}>Start free · Bring your own API key · No generation cap</p>
+          <p style={{ color: "#8599a3", fontSize: 13, marginTop: 18 }}>Start free · Use the AI model you prefer · No generation cap</p>
         </section>
 
         {/* The chat problem — brief, solution-focused */}
@@ -163,7 +163,7 @@ export default function AiLongFormWriterPage() {
 
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(240px,1fr))", gap: 20, maxWidth: 900, margin: "0 auto" }}>
             {[
-              { title: "ChatGPT", desc: "Works with your own API key. Full chapters, connected across the document.", color: "#10a37f" },
+              { title: "ChatGPT", desc: "Use the model you prefer. Full chapters, connected across the document.", color: "#10a37f" },
               { title: "DeepSeek", desc: "Lowest API cost, strong reasoning. Same persistent outline and chapter management as every provider.", color: "#4d6bfe" },
               { title: "Claude", desc: "Natural academic tone, large context window. Bind sources to chapters and track revisions across the full document.", color: "#d97706" },
             ].map((item) => (
@@ -183,13 +183,13 @@ export default function AiLongFormWriterPage() {
               Same API. Same model. A workspace where you draft the full paper — not just the next reply.
             </h2>
             <p style={{ fontSize: 17, color: "#42606c", lineHeight: 1.7, maxWidth: 640, margin: "0 auto 40px" }}>
-              SciNest connects to your own API key — OpenAI, DeepSeek, Anthropic or any compatible provider.
+              SciNest connects to the AI model you prefer — ChatGPT, DeepSeek, Claude or any compatible provider.
               It builds an editable outline first, generates chapter by chapter with persistent context, and lets you revise any section without touching the rest of the document.
             </p>
 
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(220px,1fr))", gap: 16, maxWidth: 780, margin: "0 auto" }}>
               {[
-                ["Bring your own API key", "No subscription. No generation cap. Use ChatGPT, DeepSeek, Claude or any compatible API. You pay the provider directly."],
+                ["Choose your AI model", "No subscription. No generation cap. Use ChatGPT, DeepSeek, Claude or any compatible API. You pay the provider directly."],
                 ["Editable outline first", "Define chapters, sections and word targets before generating. Change the structure at any point — don't wait until 15,000 words are written to fix the organisation."],
                 ["Source-bound writing", "Upload papers, references and supervisor feedback. Bind them to specific chapters. The AI writes from your materials, not from its training data."],
                 ["Edit one chapter at a time", "Shorten chapter 3. Strengthen the evidence in chapter 5. Respond to feedback on one section — without regenerating the entire document."],
@@ -282,7 +282,7 @@ export default function AiLongFormWriterPage() {
           </h2>
           {[
             ["Can ChatGPT or DeepSeek actually write a 10,000-word paper?", "Yes — with the right workflow. The chat window limits output to a few hundred words at a time and loses context over long conversations. But when you use the same API through a purpose-built writing tool that manages outlines, chapters and source materials, ChatGPT, DeepSeek and Claude can all generate complete long-form drafts."],
-            ["Do I need a paid ChatGPT subscription?", "No. SciNest connects to your own API key. You pay the provider directly for actual usage. A full thesis draft typically costs a few dollars in API credits — far less than a monthly Pro subscription."],
+            ["Do I need a paid ChatGPT subscription?", "No. SciNest connects to the AI model you prefer. You pay the provider directly for actual usage. A full thesis draft typically costs a few dollars — far less than a monthly subscription."],
             ["Can I edit one chapter without touching the rest?", "Yes. Once the full draft is generated, target a specific chapter, section or paragraph for revision without regenerating the whole document."],
             ["Does this work with DeepSeek's free API?", "Yes. SciNest supports DeepSeek, OpenAI, Anthropic and any OpenAI-compatible endpoint. DeepSeek API pricing is significantly cheaper than most alternatives."],
             ["What kinds of documents can I write?", "Theses, dissertations, literature reviews, research proposals, long essays, reports — any structured long-form document with an outline and source materials."],
@@ -304,7 +304,7 @@ export default function AiLongFormWriterPage() {
             No complex prompts. No re-explaining. No copy-paste between windows. Start free.
           </p>
           <a href={downloadUrl} style={{ background: "#fff", color: "#087f72", padding: "16px 38px", borderRadius: 14, fontWeight: 750, fontSize: 17, textDecoration: "none", display: "inline-block" }}>Start drafting ↗</a>
-          <p style={{ marginTop: 20, fontSize: 13, opacity: .5 }}>Start free · Windows · Bring your own API key</p>
+          <p style={{ marginTop: 20, fontSize: 13, opacity: .5 }}>Start free · Windows · Use the AI model you prefer</p>
         </section>
       </main>
 
