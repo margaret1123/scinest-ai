@@ -4,22 +4,22 @@ export type ProductPageKey = "writing" | "figures" | "powerpoint";
 
 const productPages = {
   writing: {
-    label: "Academic Writing Workspace",
-    href: "/ai-thesis-writing-assistant",
-    title: "Build the academic draft",
+    label: "AI Long-Form Writer",
+    href: "/ai-long-form-writer",
+    title: "Draft the complete paper",
     description: "Create an editable outline, bind selected materials and references, and generate a connected long-form draft.",
   },
   figures: {
-    label: "Scientific Figure Generator",
-    href: "/scientific-figure-generator",
-    title: "Create an editable scientific figure",
-    description: "Turn the research into layered scientific visuals with editable text and selected-area revision.",
+    label: "AI Editable Images",
+    href: "/ai-editable-images",
+    title: "Create an editable diagram or figure",
+    description: "Turn the research into visual diagrams with editable text labels, movable elements and selected-area revision.",
   },
   powerpoint: {
-    label: "AI PowerPoint Generator",
-    href: "/ai-powerpoint-generator",
+    label: "AI Editable PowerPoint",
+    href: "/ai-editable-powerpoint",
     title: "Build the editable presentation",
-    description: "Reuse selected materials, writing and figures to create a structured presentation and export a real PPTX.",
+    description: "Reuse selected materials, writing and figures to create a structured presentation and export a real editable PPTX.",
   },
 } as const;
 
