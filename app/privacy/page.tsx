@@ -4,7 +4,7 @@ import { LegalPage } from "../legal-page";
 export const metadata: Metadata = {
   title: "Privacy Policy",
   description: "How SciNest and Jiaempower Pathways Limited collect, use, store and disclose personal information.",
-  alternates: { canonical: "/privacy" },
+  alternates: { canonical: "/privacy", languages: { "x-default": "/privacy" } },
 };
 
 export default function PrivacyPage() {

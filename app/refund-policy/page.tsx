@@ -4,7 +4,7 @@ import { LegalPage } from "../legal-page";
 export const metadata: Metadata = {
   title: "Refund Policy",
   description: "Refund and remedy information for SciNest software licences and trials.",
-  alternates: { canonical: "/refund-policy" },
+  alternates: { canonical: "/refund-policy", languages: { "x-default": "/refund-policy" } },
 };
 
 export default function RefundPolicyPage() {

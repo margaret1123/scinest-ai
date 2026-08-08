@@ -25,13 +25,17 @@ export function middleware(request: NextRequest) {
     return NextResponse.redirect(new URL(target + url.search, url), 301);
   }
 
+  // Determine locale and set html lang via request header
+  const isZh = pathname === "/zh" || pathname.startsWith("/zh/");
+  const requestHeaders = new Headers(request.headers);
+  requestHeaders.set("x-html-lang", isZh ? "zh-CN" : "en");
+
+  const response = NextResponse.next({
+    request: { headers: requestHeaders },
+  });
+
   // Set language cookie for locale routes
-  const response = NextResponse.next();
-  if (pathname === "/zh" || pathname.startsWith("/zh/")) {
-    response.cookies.set("preferred_lang", "zh", { path: "/", maxAge: 60 * 60 * 24 * 365, sameSite: "lax" });
-  } else {
-    response.cookies.set("preferred_lang", "en", { path: "/", maxAge: 60 * 60 * 24 * 365, sameSite: "lax" });
-  }
+  response.cookies.set("preferred_lang", isZh ? "zh" : "en", { path: "/", maxAge: 60 * 60 * 24 * 365, sameSite: "lax" });
 
   return response;
 }

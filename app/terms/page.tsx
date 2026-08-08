@@ -4,7 +4,7 @@ import { LegalPage } from "../legal-page";
 export const metadata: Metadata = {
   title: "Terms of Service",
   description: "Terms governing access to the SciNest website, trial, software licence and related services.",
-  alternates: { canonical: "/terms" },
+  alternates: { canonical: "/terms", languages: { "x-default": "/terms" } },
 };
 
 export default function TermsPage() {

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { headers } from "next/headers";
 import { GoogleAnalytics } from "./google-analytics";
 import "./globals.css";
 import "./scinest-assets.css";
@@ -100,9 +101,12 @@ const structuredData = [
   },
 ];
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default async function RootLayout({ children }: { children: React.ReactNode }) {
+  const h = await headers();
+  const htmlLang = h.get("x-html-lang") || "en";
+
   return (
-    <html lang="en">
+    <html lang={htmlLang}>
       <head>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
       </head>

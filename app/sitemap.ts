@@ -3,7 +3,7 @@ import type { MetadataRoute } from "next";
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://scinest.app";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const lastModified = new Date("2026-07-29T00:00:00.000Z");
+  const lastModified = new Date();
   const homeLanguages = {
     en: `${siteUrl}/`,
     "zh-CN": `${siteUrl}/zh`,
