@@ -108,6 +108,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   return (
     <html lang={htmlLang}>
       <head>
+        <meta name="baidu-site-verification" content="codeva-I9EWAxnaV0" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
       </head>
       <body>{children}<GoogleAnalytics /></body>
