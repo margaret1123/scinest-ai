@@ -83,13 +83,10 @@ const content = {
       ["How do I get started?", "Download SciNest Free for Windows. Create an account, add your AI API key, and open your first project."],
       ["What's in Pro?", "Multiple projects, watermark-free scientific figures, layer editing, and editable PowerPoint export."],
       ["Are generations limited?", "No. Free and Pro both allow unlimited SciNest generations. Your selected AI provider charges separately for actual API usage."],
-      ["Does SciNest guarantee a grade, graduation or publication?", "No. Users remain responsible for checking facts, citations, originality and institutional AI-use rules."],
-      ["Is SciNest an essay-writing service?", "No. SciNest is a desktop workspace that lets you choose and use the AI model you prefer. It helps you organize materials, build outlines, draft and revise your own work — you stay in control of every word. A ghostwriting service would never let you choose your own model provider. Users are responsible for ensuring their work complies with their institution's academic integrity and AI-use policies."],
+      ["How much does it cost to write a paper, build a deck, or create a figure?", "With DeepSeek: drafting a complete 10,000-word paper — from your uploaded sources to a finished draft — costs about ¥0.3 (roughly $0.04) in API fees. That's what you pay DeepSeek directly. SciNest Free takes zero cut — we built the workspace, you cover a few cents of API cost. No markup, no generation cap, no catch.\n\nWith ChatGPT for presentations and figures: a complete 10-slide defense deck with embedded figures costs less than $0.50 in combined API fees. The output is standard .pptx — it works everywhere, no broken layouts, no presentation-day surprises. Text labels are independent layers — edit wording, swap images, adjust positioning right in SciNest. No regeneration needed. No garbled AI text.\n\nYou choose the model. You pay the provider directly at cost. No middleman markup."],
+      ["Is my research data kept private?", "Yes. Your project files stay on your computer by default. When you run an AI task, only the content needed for that task is sent to the model provider you've chosen. We never store your papers or use your work to train AI."],
     ],
-    academicIntegrity: {
-      title: "Academic Integrity",
-      body: "SciNest is a research productivity workspace — not an essay-writing or ghostwriting service. You bring your own AI API key, your own research materials, and your own expertise. SciNest provides the workspace to organize, outline, draft and revise — but you stay in control of every word. Users are responsible for fact-checking, verifying citations, ensuring originality, and complying with their institution's academic integrity and AI-use policies.",
-    },
+    disclaimer: "AI can make mistakes. You are responsible for reviewing and verifying your work.",
     finalTitle: "Your research. One workspace. Quality output.",
     finalBody: "No complex prompts. No tool switching. No re-explaining. Start free.",
     finalCta: "Download SciNest Free",
@@ -172,13 +169,10 @@ const content = {
       ["如何开始？", "下载 SciNest Free Windows 版，创建账户，配置 AI API Key，打开第一个项目。"],
       ["Pro 有什么？", "多项目、科研图无水印导出、图层编辑、可编辑 PowerPoint 导出。"],
       ["生成次数有限制吗？", "没有。Free 与 Pro 均不限 SciNest 生成次数，模型服务商按你自己的 API 实际用量收费。"],
-      ["SciNest 保证成绩、毕业或发表吗？", "不保证。用户仍需核查事实、引用、原创性，并遵守所在机构的 AI 使用规则。"],
-      ["SciNest 是论文代写服务吗？", "不是。SciNest 是桌面工作区，让你使用自己选择的模型。它帮助你组织材料、构建大纲、起草和修改你自己的作品——每一个字都由你掌控。代写服务不会让你自己选择模型服务商。用户有责任确保自己的作品符合所在机构的学术诚信和 AI 使用规范。"],
+      ["写一篇论文、做一份PPT、画一张图，到底要花多少钱？", "用 DeepSeek：从上传材料到生成完整万字论文草稿，API 费用大约 ¥0.3。就是你直接付给 DeepSeek 的成本。SciNest 免费版不收一分钱——你自己出几毛钱 API 费，剩下的我们包了。不抽成、不限次数、不设门槛。\n\n用 ChatGPT 做 PPT 和配图：一份完整的 10 页答辩 PPT 带配图，API 费用加起来不到 $0.5。出来的就是标准 .pptx 格式，天然兼容，不会换个软件就排版乱掉、演示翻车。图文标签独立分层——改字、换图、调位置，SciNest 里直接编辑就行，不用推到重来，更不会有 AI 生图常见的一团乱码。\n\n你自选模型，直接向服务商按量付费。没有中间商赚差价。"],
+      ["我的研究数据安全吗？", "安全。项目文件默认保存在你的电脑上。运行 AI 任务时，只有当前任务需要的内容会发送给你选的模型服务商。我们不会存储你的论文，也不会用你的数据训练 AI。"],
     ],
-    academicIntegrity: {
-      title: "学术诚信声明",
-      body: "SciNest 是科研生产力工作区，不是论文代写或学术不端服务平台。用户使用自己的 API Key、自己的研究材料、自己的专业知识。SciNest 提供的是组织、大纲、起草和修改的工作区——每一个字都由用户主导。用户有责任核查事实、引用和原创性，并遵守所在机构的学术诚信与 AI 使用规范。",
-    },
+    disclaimer: "AI 会犯错。你对自己的作品负有审核和核查的责任。",
     finalTitle: "你的研究，一站式高质量完成",
     finalBody: "无需复杂指令，无需切换工具，无需反复解释。免费开始。",
     finalCta: "下载 SciNest Free",
@@ -247,13 +241,8 @@ export function SciNestHome({ locale }: { locale: Locale }) {
       <section className={`${styles.section} ${styles.bento}`}><div className={styles.bentoIntro}><p className={styles.kicker}>{c.bentoKicker}</p><h2>{c.bentoTitle}</h2><p>{c.bentoBody}</p></div><article className={styles.bentoMain}><span>01</span><h3>{c.contextTitle}</h3><p>{c.contextBody}</p></article><article><span>02</span><h3>{c.editTitle}</h3><p>{c.editBody}</p></article><article><span>03</span><h3>{c.modelTitle}</h3><p>{c.modelBody}</p></article></section>
       <section className={styles.section} id="pricing"><div className={styles.sectionHead}><p>{c.planKicker}</p><h2>{c.planTitle}</h2></div><div className={launchStyles.planGrid}><article className={launchStyles.planCard}><span className={launchStyles.planBadge}>FREE</span><h3>{c.freeName}</h3><p>{c.freeDesc}</p><p style={{fontSize:28,fontWeight:900,color:"#087569",margin:"0 0 8px"}}>{locale === "zh" ? "免费" : "Free"}</p><ul>{c.freeFeatures.map(x => <li key={x}><span>✓</span>{x}</li>)}</ul></article><article className={`${launchStyles.planCard} ${launchStyles.planCardPro}`}><span className={launchStyles.planBadge}>PRO</span><h3>{c.proName}</h3><p>{c.proDesc}</p><p style={{fontSize:28,fontWeight:900,color:"#72e3d4",margin:"0 0 8px"}}>{pricing[locale].pro}</p><ul>{c.proFeatures.map(x => <li key={x}><span>✓</span>{x}</li>)}</ul></article></div><p className={launchStyles.planNote}>{c.planNote}</p><div className={styles.ctas} style={{justifyContent:"center"}}><DownloadCTA className={styles.primary} href={downloadUrl} placement="hero">{c.primary} ↗</DownloadCTA></div></section>
       <section className={`${styles.section} ${styles.faqSection}`} id="faq"><div className={styles.sectionHead}><h2>{c.faqTitle}</h2></div><div className={styles.faq}>{c.faq.map(([q, a]) => <details key={q}><summary>{q}<b>+</b></summary><p>{a}</p></details>)}</div></section>
-      {"academicIntegrity" in c && (
-        <section className={styles.section} style={{maxWidth:860, margin:"0 auto", padding:"48px 28px", textAlign:"center"}}>
-          <div className={styles.sectionHead}>
-            <h2>{c.academicIntegrity.title}</h2>
-            <p style={{maxWidth:720, margin:"16px auto 0", fontSize:15, lineHeight:1.75, color:"#5e6f7c"}}>{c.academicIntegrity.body}</p>
-          </div>
-        </section>
+      {"disclaimer" in c && (
+        <p style={{textAlign:"center", fontSize:12, color:"#8599a3", padding:"32px 28px 0", margin:0}}>{c.disclaimer}</p>
       )}
       <section className={styles.final}><h2>{c.finalTitle}</h2><p>{c.finalBody}</p><DownloadCTA className={styles.lightButton} href={downloadUrl} placement="final">{c.finalCta} ↗</DownloadCTA></section>
     </main>
