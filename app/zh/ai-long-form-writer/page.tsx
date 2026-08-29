@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { LangSwitch } from "../../lang-switch";
+import { ProductBreadcrumbs, createBreadcrumbData } from "../../product-page-navigation";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://scinest.app";
 const downloadUrl = "https://github.com/margaret1123/scinest-ai/releases/latest/download/SciNest-win-x64.zip";
@@ -51,6 +52,7 @@ export default function Page() {
     <div style={{ fontFamily: '"Aptos","Segoe UI","PingFang SC","Microsoft YaHei",sans-serif', color: "#0a2030", background: "#f9fcfb" }}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(siteJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(createBreadcrumbData(siteUrl, "writing", "zh")) }} />
       <header style={{ maxWidth: 1160, margin: "0 auto", padding: "24px 28px", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
         <a href="/zh" style={{ color: "#087f72", fontWeight: 800, fontSize: 20, textDecoration: "none", letterSpacing: "-.02em" }}>SciNest 科研小棉袄</a>
         <div style={{ display: "flex", alignItems: "center", gap: 18 }}>
@@ -59,6 +61,7 @@ export default function Page() {
         </div>
       </header>
       <main>
+        <ProductBreadcrumbs current="writing" locale="zh" />
         <section style={{ maxWidth: 860, margin: "0 auto", padding: "60px 28px 40px", textAlign: "center" }}>
           <p style={{ color: "#087f72", fontSize: 13, fontWeight: 850, letterSpacing: ".12em", margin: 0 }}>AI 长文写作</p>
           <h1 style={{ fontSize: "clamp(32px,4.8vw,52px)", lineHeight: 1.1, letterSpacing: "-.035em", margin: "18px 0 22px", fontFamily: "Georgia,Times New Roman,serif" }}>用 ChatGPT / DeepSeek / Claude<br />起草万字长文</h1>
@@ -134,6 +137,9 @@ export default function Page() {
         <strong style={{ color: "#0a2030" }}>SciNest · 科研小棉袄</strong>
         <nav style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
           <a href="/zh" style={{ color: "#087f72", textDecoration: "none" }}>首页</a>
+          <a href="/zh/ai-paper-writer" style={{ color: "#087f72", textDecoration: "none" }}>AI 论文写作助手</a>
+          <a href="/zh/thesis-defense-presentation" style={{ color: "#087f72", textDecoration: "none" }}>答辩 PPT</a>
+          <a href="/zh/literature-review-assistant" style={{ color: "#087f72", textDecoration: "none" }}>文献综述助手</a>
           <a href="/zh/ai-editable-powerpoint" style={{ color: "#087f72", textDecoration: "none" }}>AI 可编辑 PPT</a>
           <a href="/zh/ai-editable-images" style={{ color: "#087f72", textDecoration: "none" }}>AI 可编辑图片</a>
         </nav>

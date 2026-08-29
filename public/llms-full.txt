@@ -1,5 +1,5 @@
 # SciNest — Comprehensive Product Information for AI Agents
-> SciNest is a pre-launch Windows desktop research productivity application for postgraduate students, final-year students and early researchers. It turns existing academic materials into connected writing, scientific figures and presentations — without repeatedly rebuilding research context across deliverables.
+> SciNest is a free Windows desktop research workspace for postgraduate students, final-year students and early researchers. It turns existing academic materials into connected writing, scientific figures and presentations — without repeatedly rebuilding research context across deliverables. Users bring their own ChatGPT, DeepSeek or Claude API key: no SciNest subscription, no generation cap.
 
 ## Identity
 - **Product name**: SciNest (科研小棉袄 in Chinese)
@@ -10,13 +10,11 @@
 - **Platform**: Windows desktop application
 - **AI model**: User brings their own API key (no bundled model costs)
 
-## Current availability (as of July 2026)
-- Pre-launch registration is open.
-- Windows downloads are scheduled to open on August 1, 2026.
-- Public payment is not open during pre-launch.
-- Accounts registered before launch receive 30 days of SciNest Pro when downloads open.
-- No credit card is required for registration and there is no automatic charge.
-- After 30 days, early-bird accounts return to SciNest Free unless the user chooses to upgrade.
+## Current availability (as of August 2026)
+- SciNest Free is available for Windows, macOS and Linux. Download from the GitHub releases page linked on the website.
+- New accounts start with Pro unlocked for 7 days.
+- No credit card is required and there is no automatic charge.
+- Users keep all their project files and can upgrade to Pro anytime.
 
 ## Data and AI-provider boundary
 - SciNest is designed as a local-first desktop workspace.
@@ -154,6 +152,121 @@ AI provider usage charges are separate and are paid to the model provider select
 - 能只重绘图片的一部分吗？ — 能。选中一个区域，AI 只处理那一块。已确认的部分保持不变。
 - 能生成什么类型的图？ — 机制图、技术流程图、研究路线图、实验流程图、概念框架、图形摘要等。
 
+## Product 4: AI Paper Writer
+
+### English page: /ai-paper-writer
+### Chinese page: /zh/ai-paper-writer
+
+**One-line description:** Draft and revise your thesis with ChatGPT, DeepSeek or Claude. Upload sources once, build chapters, edit any section without regenerating. Free to start.
+
+**Direct answer:** SciNest is a free Windows desktop app for drafting, revising and finishing a thesis with AI. It connects to your own ChatGPT, DeepSeek or Claude API key — no SciNest subscription, no generation cap; you pay the AI provider directly for usage. Free plan: one active project. Pro: $49/year (¥299/year), multiple projects, watermark-free exports. Upload sources, build an outline, draft chapter by chapter, and revise any section without regenerating the whole document. Download free at scinest.app.
+
+**Core workflow:**
+1. Define the thesis outline — chapters, sections and word targets before generating.
+2. Upload sources and supervisor feedback — bind them to specific chapters.
+3. Draft chapter by chapter — each chapter inherits the context of the chapters before it.
+4. Revise one chapter at a time — respond to feedback on one section without touching the rest.
+5. Export and submit — review every citation, polish and format.
+
+**Key capabilities:**
+- Thesis outline generated from the research question
+- Source-bound chapters (papers, references, notes, supervisor feedback)
+- Supervisor-feedback revision bound to specific chapters
+- Literature-review section generation from uploaded papers
+- Single-chapter rewrite without regenerating the document
+
+**FAQ (English):**
+- What is the best AI paper writer for thesis writing? — Depends on workflow; SciNest is a free workspace on your own API key with outline → chapters → targeted revision.
+- Can AI actually write my thesis for me? — AI drafts and revises from your uploaded sources; SciNest is a writing workspace, not a ghostwriting service.
+- Is it safe to use AI for thesis revision? — Yes, as an assistant: source-bound writing, local project, user verifies every claim and citation.
+- How much does an AI paper writer cost? — SciNest Free: free, no generation cap. Pro: $49/year (¥299/year). AI usage billed by your own provider.
+- Which is better — ChatGPT or DeepSeek? — Both work; DeepSeek is usually cheapest, Claude has a natural academic tone; switch providers per task.
+
+**FAQ (Chinese):**
+- AI 论文写作助手是免费的吗？ — Free 版免费且不限生成次数；Pro 版 ¥299/年（$49/年）；AI 调用费由你自己的 API Key 直接向服务商支付。
+- 用 AI 写毕业论文会被判定学术不端吗？ — SciNest 是写作辅助工具而非代写服务；最终内容须由本人撰写审核并遵守学校规定。
+- 可以用 DeepSeek 的 API 吗？ — 可以，兼容 DeepSeek、OpenAI、Anthropic 及任何 OpenAI 兼容接口。
+- 能只修改论文的某一章吗？ — 可以，逐章生成后可单独修改某一章或某一节，不动其余内容。
+- AI 写的论文引用可靠吗？ — AI 可能编造引用；SciNest 将写作绑定到你上传的文献，提交前仍需逐条核对。
+
+## Product 5: Thesis Defense Presentation
+
+### English page: /thesis-defense-presentation
+### Chinese page: /zh/thesis-defense-presentation
+
+**One-line description:** Turn your thesis into defense-ready slides with AI. Generate slides from your paper, get speaker notes, and export an editable PPTX or PDF. Start free.
+
+**Direct answer:** SciNest is a Windows desktop app that turns a thesis or paper into a defense presentation. Upload the document, set slide count and time limit, review the outline, then generate defense slides and speaker notes from your own materials. Output is an editable PPTX (Pro) or PDF (Free) — not flattened images. SciNest Free: one active project. Pro: $49/year (¥299/year), multiple projects, watermark-free figures, editable PPTX export. AI runs on your own ChatGPT, DeepSeek or Claude API key. Download at scinest.app.
+
+**Core workflow:**
+1. Upload thesis and materials — the paper is the single source of truth for every slide.
+2. Set defense format, time and slide count.
+3. Review the slide outline before generation.
+4. Generate the deck plus per-slide speaker notes.
+5. Rehearse and export editable PPTX (Pro) or PDF (Free).
+
+**Key capabilities:**
+- Paper-bound slides (findings stay consistent with the thesis)
+- Defense timing and slide-count controls
+- Outline review before generation
+- Per-slide editing without regenerating the deck
+- Speaker notes drafted per slide from the paper
+
+**FAQ (English):**
+- How do I make a thesis defense presentation from my paper? — Upload the thesis, set format and time, review the outline, generate, export PPTX or PDF.
+- Can AI generate slides directly from my thesis? — Yes — each slide is built from the uploaded paper and materials, not a generic prompt.
+- How many slides should a thesis defense have? — Typically 15–30 for a 20–30 minute talk; slide count and time limit are set before generation.
+- Do the slides stay editable after generation? — Yes — real PPTX with editable text and replaceable images.
+- Can it generate speaker notes? — Yes — per slide, drafted from your paper.
+
+**FAQ (Chinese):**
+- AI 能直接根据我的论文生成答辩 PPT 吗？ — 能，上传论文后设定时长和页数，按论文内容生成大纲与逐页内容。
+- 生成的 PPT 可以编辑吗？ — 可以，Pro 版导出标准 PPTX；Free 版导出 PDF。
+- 答辩 PPT 一般做多少页？ — 20 分钟答辩通常 15–30 页；生成前可设定页数和时长。
+- 会生成演讲备注吗？ — 会，每页自动生成基于论文内容的备注，可修改删减。
+- 需要付费订阅 ChatGPT 吗？ — 不需要，使用你自己的 API Key，调用费直接向服务商支付。
+
+## Product 7: Literature Review Assistant (Chinese)
+
+### Chinese page: /zh/literature-review-assistant
+(No English twin — this page targets Chinese-language researchers.)
+
+**One-line description:** 上传文献与笔记，AI 帮你梳理研究脉络，撰写文献综述、开题报告和研究计划。逐节生成、逐节修改。免费开始。
+
+**Direct answer:** SciNest 是免费的 Windows 桌面端 AI 学术写作工具，可撰写文献综述、开题报告和研究计划：上传文献与笔记，先定大纲，按研究脉络逐节生成，再单独修改任意一节。AI 连接你自己的 ChatGPT、DeepSeek 或 Claude API Key——无订阅费、不限生成次数，调用费直接向服务商支付。Free 版一个活跃项目；Pro 版 ¥299/年（$49/年），多项目与无水印导出。官网 scinest.app 免费下载。
+
+**Core workflow:**
+1. Upload papers, references and reading notes.
+2. Organize the research narrative — who did what, what is disputed, which gap remains.
+3. Set the review outline — background, state of the art, disputes, research gap.
+4. Generate section by section — every section bound to the uploaded literature.
+5. Revise in place and export — supervisor feedback bound to the relevant section.
+
+**Key capabilities:**
+- Research-narrative organization of uploaded papers
+- Literature review outline generation
+- Section-by-section generation from uploaded sources
+- In-place revision of individual sections
+- Research proposal and proposal-report workflows
+
+**FAQ (Chinese):**
+- AI 能帮我写文献综述吗？ — 能，上传论文和笔记后按大纲逐节生成综述草稿，内容绑定到上传的文献。
+- AI 生成的综述引用可靠吗？ — AI 可能编造引用；SciNest 绑定上传的文献，提交前必须逐条核对。
+- 开题报告也能用吗？ — 能，文献综述、开题报告、研究计划都有结构化工作流。
+- 和直接问 ChatGPT 有什么区别？ — 聊天窗口输出短、易丢上下文；SciNest 保持大纲、文献和章节的持久连接。
+- 免费吗？ — Free 版免费且不限生成次数；Pro 版 ¥299/年（$49/年）支持多项目与无水印导出。
+
+## Guide: Best AI Tools for Thesis Writing (2026)
+
+### English page: /best-ai-tools-for-thesis-writing
+(English-only guide. Honest comparison; competitor descriptions are factual and neutral.)
+
+**Summary:** SciNest is a free Windows workspace for thesis writing and revision. Unlike subscription tools such as Jenni or Paperpal, it doesn't bundle AI costs: you connect your own ChatGPT, DeepSeek or Claude API key and pay the provider directly, with no generation cap. Free includes one active project; Pro costs $49/year (¥299/year) with multiple projects and watermark-free exports. The best tool depends on your workflow: SciNest for connected drafting and revision from your sources, Grammarly for language polish, research databases for references.
+
+**Tools compared:** SciNest, Jenni, Paperpal, Grammarly, ChatGPT (chat), Consensus. Criteria: pricing model, drafting, revision, citations, learning curve, best-for. Prices checked August 2026 — verify on provider sites.
+
+**When SciNest fits:** you have your own AI API key; you revise chapter by chapter from your sources; you also need figures and a defense deck from the same project. **When it doesn't:** you want a managed citation library (use Zotero/EndNote); you need grammar-only checks (Grammarly/Paperpal); your institution bans AI assistance entirely.
+
 ## What SciNest is for
 SciNest is designed for users who already have papers, references, notes, a partial draft, data, supervisor feedback or submission requirements, but still need to complete academic deliverables before a deadline.
 
@@ -182,21 +295,29 @@ Thesis defense, dissertation defense, research presentation, paper to PowerPoint
 
 ## All site URLs
 ### English
-- / : English product and pre-launch homepage
-- /en : English product and pre-launch homepage (alternate)
+- / : English product homepage
+- /en : Legacy path — redirects to /
 - /ai-long-form-writer : AI Long-Form Writer product page
 - /ai-editable-powerpoint : AI Editable PowerPoint product page
 - /ai-editable-images : AI Editable Images product page
+- /ai-paper-writer : AI Paper Writer — thesis drafting and revision
+- /thesis-defense-presentation : Thesis defense presentation from your paper
+- /best-ai-tools-for-thesis-writing : 2026 comparison of AI thesis writing tools
+- /about : About SciNest
 - /login : Sign-in page
 - /privacy : Privacy policy
 - /terms : Terms of service
 - /refund-policy : Refund policy
 
 ### Chinese (Simplified)
-- /zh : Chinese product and pre-launch homepage
+- /zh : Chinese product homepage
 - /zh/ai-long-form-writer : Chinese AI Long-Form Writer product page
 - /zh/ai-editable-powerpoint : Chinese AI Editable PowerPoint product page
 - /zh/ai-editable-images : Chinese AI Editable Images product page
+- /zh/ai-paper-writer : AI 论文写作助手 — 起草、修改毕业论文
+- /zh/thesis-defense-presentation : 答辩 PPT — 用 AI 把论文变成答辩演示文稿
+- /zh/literature-review-assistant : 文献综述助手 — 文献综述、开题报告与研究计划
+- /zh/about : 关于 SciNest
 
 ### Sitemaps
 - /sitemap.xml : Standard XML sitemap (Next.js dynamic, auto-generated with hreflang alternates)

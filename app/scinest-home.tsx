@@ -15,7 +15,7 @@ const content = {
     stripOffer: "Pro unlocked for new accounts",
     eyebrow: "WINDOWS DESKTOP · BRING YOUR OWN API KEY · CHATGPT, DEEPSEEK, CLAUDE",
     title: "No complex prompts.\nNo tool switching.\nPapers, presentations, diagrams —\nall in one place.",
-    intro: "Upload once. No re-explaining. No re-uploading. Choose ChatGPT, DeepSeek or Claude — and take every project from draft to done. Start free.",
+    intro: "Upload once into your free AI academic writing workspace. Choose ChatGPT, DeepSeek or Claude — and take every project from draft to done. Start free.",
     primary: "Download SciNest Free",
     secondary: "See Free vs Pro",
     note: "Start free · ChatGPT, DeepSeek, Claude — use the model you prefer",
@@ -207,7 +207,7 @@ export function SciNestHome({ locale }: { locale: Locale }) {
         <div className={styles.heroVisual}><img src={image("hero")} alt={heroAlt} width="1280" height="800" /><span className={styles.floatTop}>01 · {c.flow[0][1]}</span><span className={styles.floatBottom}>05 · {c.flow[4][1]}</span></div>
       </section>
       <section className={styles.stats}>{c.stats.map(([v, l]) => <div key={v}><strong>{v}</strong><span>{l}</span></div>)}</section>
-      <section className={styles.videoSection}><p className={styles.videoKicker}>{locale === "zh" ? "30 秒了解 SciNest" : "See SciNest in 30 seconds"}</p><video src="/scinest-promo.mp4" poster={image("hero")} width={1280} height={800} autoPlay muted loop playsInline preload="metadata" controls aria-label="SciNest product demo video" /></section>
+      <section className={styles.videoSection}><p className={styles.videoKicker}>{locale === "zh" ? "30 秒了解 SciNest" : "See SciNest in 30 seconds"}</p><video src="/scinest-promo.mp4" poster={image("hero")} width={1280} height={800} autoPlay muted loop playsInline preload="none" controls aria-label="SciNest product demo video" /></section>
       <section className={`${styles.section} ${styles.darkCompare}`} id="why"><div className={styles.sectionHead}><p>{c.painKicker}</p><h2>{c.painTitle}</h2><span>{c.painBody}</span></div><div className={styles.compare}><article className={styles.old}><h3>{c.oldTitle}</h3><ol>{c.old.map((x, i) => <li key={x}><b>{String(i + 1).padStart(2, "0")}</b>{x}</li>)}</ol></article><div className={styles.bridge}>→</div><article className={styles.new}><h3>{c.newTitle}</h3><ol>{c.newer.map((x, i) => <li key={x}><b>{String(i + 1).padStart(2, "0")}</b>{x}</li>)}</ol></article></div></section>
       <section className={`${styles.section} ${styles.workflow}`} id="workflow"><div className={styles.sectionHead}><p>{c.flowKicker}</p><h2>{c.flowTitle}</h2><span>{c.flowBody}</span></div><div className={styles.flow}>{c.flow.map(([n, t, b]) => <article key={n}><b>{n}</b><h3>{t}</h3><p>{b}</p></article>)}</div></section>
       {"guideLinks" in c && (

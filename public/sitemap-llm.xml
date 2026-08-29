@@ -73,6 +73,77 @@
     <priority>0.85</priority>
   </url>
   <url>
+    <loc>https://scinest.app/ai-paper-writer</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://scinest.app/ai-paper-writer"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://scinest.app/zh/ai-paper-writer"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://scinest.app/ai-paper-writer"/>
+    <lastmod>2026-08-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://scinest.app/zh/ai-paper-writer</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://scinest.app/ai-paper-writer"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://scinest.app/zh/ai-paper-writer"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://scinest.app/ai-paper-writer"/>
+    <lastmod>2026-08-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://scinest.app/thesis-defense-presentation</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://scinest.app/thesis-defense-presentation"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://scinest.app/zh/thesis-defense-presentation"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://scinest.app/thesis-defense-presentation"/>
+    <lastmod>2026-08-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://scinest.app/zh/thesis-defense-presentation</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://scinest.app/thesis-defense-presentation"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://scinest.app/zh/thesis-defense-presentation"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://scinest.app/thesis-defense-presentation"/>
+    <lastmod>2026-08-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://scinest.app/best-ai-tools-for-thesis-writing</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://scinest.app/best-ai-tools-for-thesis-writing"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://scinest.app/best-ai-tools-for-thesis-writing"/>
+    <lastmod>2026-08-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://scinest.app/zh/literature-review-assistant</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://scinest.app/zh/literature-review-assistant"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://scinest.app/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://scinest.app/"/>
+    <lastmod>2026-08-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://scinest.app/about</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://scinest.app/about"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://scinest.app/zh/about"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://scinest.app/about"/>
+    <lastmod>2026-08-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://scinest.app/zh/about</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://scinest.app/about"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://scinest.app/zh/about"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://scinest.app/about"/>
+    <lastmod>2026-08-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
     <loc>https://scinest.app/privacy</loc>
     <lastmod>2026-07-29</lastmod>
     <changefreq>monthly</changefreq>

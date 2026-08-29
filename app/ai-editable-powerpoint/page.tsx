@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
 import { LangSwitch } from "../lang-switch";
+import { ProductBreadcrumbs, createBreadcrumbData } from "../product-page-navigation";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://scinest.app";
 const downloadUrl = "https://github.com/margaret1123/scinest-ai/releases/latest/download/SciNest-win-x64.zip";
 
 export const metadata: Metadata = {
-  title: "Create a Real, Editable PowerPoint with AI — Standard PPTX, Start Free | SciNest",
+  title: "Create an Editable PowerPoint with AI — Real PPTX",
   description:
-    "Generate a standard .PPTX file with editable text, replaceable images and speaker notes. No complex prompts. No tool switching. Start free.",
+    "Generate a standard .PPTX with editable text, replaceable images and speaker notes — not a screenshot. Free to start.",
   alternates: {
     canonical: "/ai-editable-powerpoint",
     languages: { en: "/ai-editable-powerpoint", "zh-CN": "/zh/ai-editable-powerpoint", "x-default": "/ai-editable-powerpoint" },
@@ -129,6 +130,7 @@ export default function AiEditablePowerpointPage() {
     <div style={{ fontFamily: '"Aptos","Segoe UI","PingFang SC","Microsoft YaHei",sans-serif', color: "#0a2030", background: "#f9fcfb" }}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(siteJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(createBreadcrumbData(siteUrl, "powerpoint")) }} />
 
       <header style={{ maxWidth: 1160, margin: "0 auto", padding: "24px 28px", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
         <a href="/" style={{ color: "#087f72", fontWeight: 800, fontSize: 20, textDecoration: "none", letterSpacing: "-.02em" }}>SciNest</a>
@@ -139,6 +141,7 @@ export default function AiEditablePowerpointPage() {
       </header>
 
       <main>
+        <ProductBreadcrumbs current="powerpoint" />
         {/* Hero */}
         <section style={{ maxWidth: 860, margin: "0 auto", padding: "60px 28px 40px", textAlign: "center" }}>
           <p style={{ color: "#087f72", fontSize: 13, fontWeight: 850, letterSpacing: ".12em", margin: 0 }}>EDITABLE PPTX · OPEN AND KEEP WORKING</p>
@@ -286,6 +289,9 @@ export default function AiEditablePowerpointPage() {
         <strong style={{ color: "#0a2030" }}>SciNest</strong>
         <nav style={{ display: "flex", gap: 18, flexWrap: "wrap" }}>
           <a href="/" style={{ color: "#087f72", textDecoration: "none" }}>Home</a>
+          <a href="/ai-paper-writer" style={{ color: "#087f72", textDecoration: "none" }}>AI Paper Writer</a>
+          <a href="/thesis-defense-presentation" style={{ color: "#087f72", textDecoration: "none" }}>Thesis Defense Presentation</a>
+          <a href="/best-ai-tools-for-thesis-writing" style={{ color: "#087f72", textDecoration: "none" }}>Best AI Tools</a>
           <a href="/ai-long-form-writer" style={{ color: "#087f72", textDecoration: "none" }}>AI Long-Form Writer</a>
           <a href="/ai-editable-images" style={{ color: "#087f72", textDecoration: "none" }}>AI Editable Images</a>
           <a href="/privacy" style={{ color: "#087f72", textDecoration: "none" }}>Privacy</a>

@@ -18,24 +18,24 @@ export const metadata: Metadata = {
     type: "website",
     url: "/",
     siteName: "SciNest",
-    title: "Papers, Presentations & Diagrams, All in One Place | SciNest",
-    description: "Upload once, choose ChatGPT, DeepSeek or Claude, and take papers, presentations and diagrams from draft to done. Start free.",
+    title: "AI Academic Writing Workspace: Papers, Slides & Diagrams | SciNest",
+    description: "Free Windows app. Use your own ChatGPT, DeepSeek or Claude API key — no subscription, no generation cap. Draft papers, decks and diagrams. Start free.",
     images: [{ url: "/logo.png", width: 512, height: 512 }],
     locale: "en_US",
     alternateLocale: ["zh_CN"],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Papers, Presentations & Diagrams, All in One Place",
-    description: "Upload once, choose ChatGPT, DeepSeek or Claude. Start free.",
+    title: "AI Academic Writing Workspace: Papers, Slides & Diagrams",
+    description: "Free Windows app. Bring your own ChatGPT, DeepSeek or Claude API key. Start free.",
     images: ["/logo.png"],
   },
   title: {
-    default: "SciNest — Papers, Presentations & Diagrams, All in One Place",
+    default: "SciNest — AI Academic Writing Workspace: Papers, Slides, Diagrams",
     template: "%s | SciNest",
   },
   description:
-    "Upload once, choose ChatGPT, DeepSeek or Claude, and take papers, presentations and diagrams from draft to done — all in one platform. Start free.",
+    "Free Windows app: use your own ChatGPT, DeepSeek or Claude API key — no subscription, no generation cap. Draft papers, decks and diagrams. Start free.",
   keywords: [
     "AI academic workspace",
     "academic writing tool",
@@ -54,6 +54,8 @@ export const metadata: Metadata = {
   },
   verification: {
     google: "7mLz2N52DJFJlAp8T_pJAJIqmuC9E92pVTkNJnG3eMM",
+    // Bing Webmaster: replace with your real msvalidate.01 token after verifying scinest.app
+    other: { "msvalidate.01": "REPLACE-WITH-YOUR-BING-WEBMASTER-TOKEN" },
   },
   robots: { index: true, follow: true },
 };
@@ -73,7 +75,18 @@ const structuredData = [
     name: "Jiaempower Pathways Limited",
     url: siteUrl,
     brand: { "@type": "Brand", name: "SciNest" },
+    sameAs: ["https://github.com/margaret1123/scinest-ai"],
   },
+  // TODO(E-E-A-T): 用户填入真实创始人信息后，取消注释并补全 Person schema（与 /about 页简介对应）
+  // {
+  //   "@context": "https://schema.org",
+  //   "@type": "Person",
+  //   name: "REPLACE-WITH-FOUNDER-NAME",
+  //   url: `${siteUrl}/about`,
+  //   worksFor: { "@type": "Organization", name: "Jiaempower Pathways Limited" },
+  //   jobTitle: "Founder",
+  //   sameAs: ["REPLACE-WITH-GITHUB-OR-LINKEDIN"],
+  // },
   {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
@@ -110,6 +123,12 @@ export default async function RootLayout({ children }: { children: React.ReactNo
       <head>
         <meta name="baidu-site-verification" content="codeva-I9EWAxnaV0" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
+        <script
+          dangerouslySetInnerHTML={{
+            __html:
+              "(function(){var bp=document.createElement('script');var curProtocol=window.location.protocol.split(':')[0];if(curProtocol==='https'){bp.src='https://zz.bdstatic.com/linksubmit/push.js';}else{bp.src='http://push.zhanzhang.baidu.com/push.js';}var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bp,s);})();",
+          }}
+        />
       </head>
       <body>{children}<GoogleAnalytics /></body>
     </html>

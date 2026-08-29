@@ -15,12 +15,18 @@ SciNest connects to any OpenAI-compatible API: ChatGPT (OpenAI), DeepSeek, Claud
 - /ai-long-form-writer : How to draft 10,000+ word papers with your own ChatGPT, DeepSeek or Claude API key
 - /ai-editable-powerpoint : Create real editable PPTX with AI — not a screenshot
 - /ai-editable-images : Generate editable diagrams with AI — change labels, move elements
+- /ai-paper-writer : AI paper writer for thesis drafting and revision — outline, sources, chapters, targeted edits
+- /thesis-defense-presentation : Turn your thesis into a defense presentation with speaker notes and editable PPTX export
+- /best-ai-tools-for-thesis-writing : 2026 comparison of AI thesis writing tools (SciNest, Jenni, Paperpal, Grammarly, ChatGPT, Consensus)
 
 ## Chinese pages
 - /zh : Chinese homepage
 - /zh/ai-long-form-writer : 用 ChatGPT / DeepSeek / Claude 写出万字长文
 - /zh/ai-editable-powerpoint : 用 AI 生成真正可编辑的 PPTX
 - /zh/ai-editable-images : 用 AI 生成可编辑的图片
+- /zh/ai-paper-writer : AI 论文写作助手 — 起草、修改毕业论文
+- /zh/thesis-defense-presentation : 答辩 PPT — 用 AI 把论文变成答辩演示文稿
+- /zh/literature-review-assistant : 文献综述助手 — 文献综述、开题报告与研究计划
 
 ## Current availability
 - SciNest Free is available for Windows, macOS and Linux.

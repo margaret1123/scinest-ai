@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
 import { LangSwitch } from "../lang-switch";
+import { ProductBreadcrumbs, createBreadcrumbData } from "../product-page-navigation";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://scinest.app";
 const downloadUrl = "https://github.com/margaret1123/scinest-ai/releases/latest/download/SciNest-win-x64.zip";
 
 export const metadata: Metadata = {
-  title: "Create Editable Images with AI — Change Text, Resize Elements, Revise Locally",
+  title: "Create Editable Images with AI — Revise, Don't Redo",
   description:
-    "Generate images with editable text labels, movable shapes and selective AI revision. Change a label without regenerating. Move elements without starting over. Start free.",
+    "Generate images with editable text and movable shapes. Change a label without regenerating — revise selected areas, not the whole image. Start free.",
   alternates: {
     canonical: "/ai-editable-images",
     languages: { en: "/ai-editable-images", "zh-CN": "/zh/ai-editable-images", "x-default": "/ai-editable-images" },
@@ -129,6 +130,7 @@ export default function AiEditableImagesPage() {
     <div style={{ fontFamily: '"Aptos","Segoe UI","PingFang SC","Microsoft YaHei",sans-serif', color: "#0a2030", background: "#f9fcfb" }}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(siteJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(createBreadcrumbData(siteUrl, "figures")) }} />
 
       <header style={{ maxWidth: 1160, margin: "0 auto", padding: "24px 28px", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
         <a href="/" style={{ color: "#087f72", fontWeight: 800, fontSize: 20, textDecoration: "none", letterSpacing: "-.02em" }}>SciNest</a>
@@ -139,6 +141,7 @@ export default function AiEditableImagesPage() {
       </header>
 
       <main>
+        <ProductBreadcrumbs current="figures" />
         {/* Hero */}
         <section style={{ maxWidth: 860, margin: "0 auto", padding: "60px 28px 40px", textAlign: "center" }}>
           <p style={{ color: "#087f72", fontSize: 13, fontWeight: 850, letterSpacing: ".12em", margin: 0 }}>EDITABLE IMAGES · CHANGE WHAT YOU NEED, KEEP THE REST</p>
@@ -287,6 +290,9 @@ export default function AiEditableImagesPage() {
         <strong style={{ color: "#0a2030" }}>SciNest</strong>
         <nav style={{ display: "flex", gap: 18, flexWrap: "wrap" }}>
           <a href="/" style={{ color: "#087f72", textDecoration: "none" }}>Home</a>
+          <a href="/ai-paper-writer" style={{ color: "#087f72", textDecoration: "none" }}>AI Paper Writer</a>
+          <a href="/thesis-defense-presentation" style={{ color: "#087f72", textDecoration: "none" }}>Thesis Defense Presentation</a>
+          <a href="/best-ai-tools-for-thesis-writing" style={{ color: "#087f72", textDecoration: "none" }}>Best AI Tools</a>
           <a href="/ai-long-form-writer" style={{ color: "#087f72", textDecoration: "none" }}>AI Long-Form Writer</a>
           <a href="/ai-editable-powerpoint" style={{ color: "#087f72", textDecoration: "none" }}>AI Editable PowerPoint</a>
           <a href="/privacy" style={{ color: "#087f72", textDecoration: "none" }}>Privacy</a>
