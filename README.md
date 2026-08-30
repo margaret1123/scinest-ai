@@ -9,8 +9,8 @@
 </p>
 
 <p align="center">
-  <a href="https://scinest.ai"><img src="https://img.shields.io/badge/Website-scinest.ai-0D9488?style=flat-square" alt="Website" /></a>
-  <a href="https://scinest.ai/download"><img src="https://img.shields.io/badge/Download-Free-0D9488?style=flat-square&logo=electron" alt="Download" /></a>
+  <a href="https://scinest.app"><img src="https://img.shields.io/badge/Website-scinest.app-0D9488?style=flat-square" alt="Website" /></a>
+  <a href="https://scinest.app"><img src="https://img.shields.io/badge/Download-Free-0D9488?style=flat-square&logo=electron" alt="Download" /></a>
   <img src="https://img.shields.io/badge/platform-Windows%20%7C%20macOS%20%7C%20Linux-lightgrey?style=flat-square" alt="Platforms" />
   <img src="https://img.shields.io/badge/license-Proprietary-red?style=flat-square" alt="License" />
 </p>
@@ -72,7 +72,7 @@ Citation-aware outputs with source tracking, reference library, and export to st
 ## Getting Started
 
 ### 1. Download
-Get the latest version from [scinest.ai/download](https://scinest.ai/download) or [GitHub Releases](https://github.com/margaret1123/scinest-ai/releases/latest).
+Get the latest version from [scinest.app](https://scinest.app) or [GitHub Releases](https://github.com/margaret1123/scinest-ai/releases/latest).
 
 | Platform | Download |
 |----------|----------|
@@ -122,7 +122,7 @@ The difference is in what you can do with the results.
 
 After the trial, Free tier still gives you **unlimited generation** for writing, figures, and PPT. Only editing and professional exports (DOCX, PPTX, SVG, watermark-free) require an upgrade.
 
-[Register on scinest.ai](https://scinest.ai) · [Download](https://github.com/margaret1123/scinest-ai/releases/latest)
+[Register on scinest.app](https://scinest.app/login) · [Download](https://github.com/margaret1123/scinest-ai/releases/latest)
 
 ---
 
@@ -134,6 +134,6 @@ React · Vite · Electron · FastAPI · TipTap · Excalidraw · Mermaid · PptxG
 
 ## Links
 
-- 🌐 [Website](https://scinest.ai)
-- 📖 [Documentation](https://scinest.ai/docs)
+- 🌐 [Website](https://scinest.app)
+- 📖 [Documentation](https://github.com/margaret1123/scinest-ai)
 - 💬 [Discord Community](https://discord.gg/scinest)

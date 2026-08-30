@@ -9,8 +9,8 @@
 </p>
 
 <p align="center">
-  <a href="https://scinest.ai"><img src="https://img.shields.io/badge/官网-scinest.ai-0D9488?style=flat-square" alt="官网" /></a>
-  <a href="https://scinest.ai/download"><img src="https://img.shields.io/badge/免费下载-0D9488?style=flat-square&logo=electron" alt="下载" /></a>
+  <a href="https://scinest.app"><img src="https://img.shields.io/badge/官网-scinest.app-0D9488?style=flat-square" alt="官网" /></a>
+  <a href="https://scinest.app"><img src="https://img.shields.io/badge/免费下载-0D9488?style=flat-square&logo=electron" alt="下载" /></a>
   <img src="https://img.shields.io/badge/平台-Windows%20%7C%20macOS%20%7C%20Linux-lightgrey?style=flat-square" alt="平台" />
   <img src="https://img.shields.io/badge/许可-私有-red?style=flat-square" alt="许可" />
 </p>
@@ -122,7 +122,7 @@ OpenAI · Anthropic Claude · DeepSeek · Google Gemini · Moonshot (Kimi) · �
 
 试用到期后，Free 版仍可**无限生成**论文、科研图、PPT。仅编辑和高级导出（DOCX、PPTX、SVG、去水印）需升级 Pro。
 
-[在 scinest.ai 注册](https://scinest.ai) · [下载](https://github.com/margaret1123/scinest-ai/releases/latest)
+[在 scinest.app 注册](https://scinest.app/login) · [下载](https://github.com/margaret1123/scinest-ai/releases/latest)
 
 ---
 
@@ -134,5 +134,5 @@ React · Vite · Electron · FastAPI · TipTap · Excalidraw · Mermaid · PptxG
 
 ## 链接
 
-- 🌐 [官网](https://scinest.ai)
-- 📖 [文档](https://scinest.ai/docs)
+- 🌐 [官网](https://scinest.app)
+- 📖 [文档](https://github.com/margaret1123/scinest-ai)

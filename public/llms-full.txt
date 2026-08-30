@@ -56,7 +56,7 @@ AI provider usage charges are separate and are paid to the model provider select
 ### English page: /ai-long-form-writer
 ### Chinese page: /zh/ai-long-form-writer
 
-**One-line description:** Upload once, choose ChatGPT, DeepSeek or Claude, and draft a complete long-form paper — outline, sources, chapters, all connected. No complex prompts. No re-explaining. Start free.
+**One-line description:** Upload once, choose ChatGPT, DeepSeek or Claude, and draft a complete long-form paper — outline, sources, chapters, all connected. Also research proposals and grant applications. No complex prompts. No re-explaining. Start free.
 
 **Core workflow:**
 1. Build the outline — Define chapters, sections, word count targets and writing goals before a single word is generated.
@@ -124,7 +124,7 @@ AI provider usage charges are separate and are paid to the model provider select
 ### English page: /ai-editable-images
 ### Chinese page: /zh/ai-editable-images
 
-**One-line description:** Generate images with editable text labels, movable shapes and selective AI revision. Change a label without regenerating. Move elements without starting over. Start free.
+**One-line description:** Generate images with editable text labels, movable shapes and selective AI revision. Change a label without regenerating. Move elements without starting over. Start free. Common use cases include technical roadmaps for grant proposals.
 
 **Core workflow:**
 1. Define the visual — Describe what needs to be shown — a mechanism, a process, a relationship, a timeline.
@@ -157,7 +157,7 @@ AI provider usage charges are separate and are paid to the model provider select
 ### English page: /ai-paper-writer
 ### Chinese page: /zh/ai-paper-writer
 
-**One-line description:** Draft and revise your thesis with ChatGPT, DeepSeek or Claude. Upload sources once, build chapters, edit any section without regenerating. Free to start.
+**One-line description:** Draft and revise your thesis, research proposal or grant application with ChatGPT, DeepSeek or Claude. Upload sources once, build chapters, edit any section without regenerating. Free to start.
 
 **Direct answer:** SciNest is a free Windows desktop app for drafting, revising and finishing a thesis with AI. It connects to your own ChatGPT, DeepSeek or Claude API key — no SciNest subscription, no generation cap; you pay the AI provider directly for usage. Free plan: one active project. Pro: $49/year (¥299/year), multiple projects, watermark-free exports. Upload sources, build an outline, draft chapter by chapter, and revise any section without regenerating the whole document. Download free at scinest.app.
 
@@ -231,7 +231,7 @@ AI provider usage charges are separate and are paid to the model provider select
 ### Chinese page: /zh/literature-review-assistant
 (No English twin — this page targets Chinese-language researchers.)
 
-**One-line description:** 上传文献与笔记，AI 帮你梳理研究脉络，撰写文献综述、开题报告和研究计划。逐节生成、逐节修改。免费开始。
+**One-line description:** 上传文献与笔记，AI 帮你梳理研究脉络，撰写文献综述、开题报告、课题申报书与研究计划（立项依据＝研究现状＋文献综述）。逐节生成、逐节修改。免费开始。
 
 **Direct answer:** SciNest 是免费的 Windows 桌面端 AI 学术写作工具，可撰写文献综述、开题报告和研究计划：上传文献与笔记，先定大纲，按研究脉络逐节生成，再单独修改任意一节。AI 连接你自己的 ChatGPT、DeepSeek 或 Claude API Key——无订阅费、不限生成次数，调用费直接向服务商支付。Free 版一个活跃项目；Pro 版 ¥299/年（$49/年），多项目与无水印导出。官网 scinest.app 免费下载。
 
@@ -272,9 +272,9 @@ SciNest is designed for users who already have papers, references, notes, a part
 
 Typical tasks include:
 1. Thesis and dissertation revision.
-2. Literature review and research proposal workflows.
+2. Literature review, research proposal and grant application workflows.
 3. Revision from supervisor feedback.
-4. Scientific figures, mechanism diagrams and research roadmaps.
+4. Scientific figures, mechanism diagrams, research roadmaps and technical roadmaps.
 5. Paper-to-PowerPoint conversion.
 6. Thesis defense and academic presentations.
 
@@ -285,7 +285,7 @@ General AI tools usually return one answer or output at a time. SciNest keeps so
 Primary users are postgraduate students, final-year students and early researchers who already have academic materials but need to finish writing, figures or presentations under time pressure.
 
 ## Use cases
-Thesis defense, dissertation defense, research presentation, paper to PowerPoint, literature review, research proposal, conference talk, course report, technical roadmap.
+Thesis defense, dissertation defense, research presentation, paper to PowerPoint, literature review, research proposal, grant application, conference talk, course report, technical roadmap.
 
 ## Important limits and disclaimers
 - SciNest is not a thesis-submission, ghostwriting or academic-misconduct service.

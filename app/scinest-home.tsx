@@ -20,6 +20,7 @@ const content = {
     secondary: "See Free vs Pro",
     note: "Start free · ChatGPT, DeepSeek, Claude — use the model you prefer",
     installNote: ".zip file — extract and run SciNest.exe. If you downloaded the .exe version, click More info → Run anyway to install safely.",
+    mobileNotice: "SciNest is a Windows desktop app — visit this page on a computer to download.",
     stats: [
       ["Unlimited AI generations", "Free and Pro both let you use the AI model you prefer — SciNest never limits your output"],
       ["Editable diagrams & images", "Generate diagrams with real text labels you can change; Pro unlocks layer editing and watermark-free export"],
@@ -106,6 +107,7 @@ const content = {
     secondary: "查看 Free 与 Pro",
     note: "免费开始 · ChatGPT、DeepSeek、Claude — 用你喜欢的模型",
     installNote: ".zip 压缩包 — 解压后直接运行 SciNest.exe。如果下载的是 .exe 安装版，点击「更多信息」→「仍要运行」即可放心安装。",
+    mobileNotice: "SciNest 是 Windows 桌面端软件——请在电脑上访问本页下载。",
     stats: [
       ["AI 生成不限次数", "Free 与 Pro 均可使用你喜欢的模型，SciNest 不限制生成次数"],
       ["可编辑图片与图表", "生成带真实文字标签的图表，支持图层编辑和无水印导出"],
@@ -133,7 +135,7 @@ const content = {
     outputTitle: "步步承上启下，无需推倒重来",
     outputBody: "SciNest 让文稿、科研图和 PPT 保持连接，使前一个成果成为下一个任务的输入。",
     outputs: [
-      ["01 · 论文与研究文稿", "修改论文时，不再丢掉背后的材料", "把草稿、文献和导师意见放在同一个项目中。", ["论文、综述、Proposal 与课程报告", "围绕导师意见定向修改", "文稿可继续检查和编辑"]],
+      ["01 · 论文与研究文稿", "修改论文时，不再丢掉背后的材料", "把草稿、文献和导师意见放在同一个项目中。", ["论文、综述、课题申报书与课程报告", "围绕导师意见定向修改", "文稿可继续检查和编辑"]],
       ["02 · 科研图", "让别人看懂研究，而不是得到一张锁死的图片", "把方法、机制和关系变成科研视觉表达。", ["技术路线、机制图与研究框架", "Pro 支持图层、标签和元素编辑", "在同一项目中重复使用"]],
       ["03 · 答辩与研究汇报", "把论文变成答辩逻辑，而不是套通用模板", "围绕研究贡献、证据、受众和时长组织汇报。", ["毕业答辩与学术汇报", "Free 导出 PDF", "Pro 导出可编辑 PowerPoint"]],
     ],
@@ -203,7 +205,7 @@ export function SciNestHome({ locale }: { locale: Locale }) {
     </div></header>
     <main>
       <section className={styles.hero} id="top">
-        <div className={styles.heroCopy}><p className={styles.eyebrow}>{c.eyebrow}</p><h1>{c.title}</h1><p className={styles.lead}>{c.intro}</p><div className={styles.ctas}><DownloadCTA className={styles.primary} href={downloadUrl} placement="hero">{c.primary} ↗</DownloadCTA><a className={styles.secondary} href="#pricing">{c.secondary}</a></div><p className={styles.note}>✓ {c.note}</p><p className={styles.note} style={{ fontSize: 12, opacity: 0.7 }}>💡 {c.installNote}</p></div>
+        <div className={styles.heroCopy}><p className="mobile-only" style={{ margin: "0 0 12px", fontSize: 13, fontWeight: 650, color: "#087f72" }}>📱 {c.mobileNotice}</p><p className={styles.eyebrow}>{c.eyebrow}</p><h1>{c.title}</h1><p className={styles.lead}>{c.intro}</p><div className={styles.ctas}><DownloadCTA className={styles.primary} href={downloadUrl} placement="hero">{c.primary} ↗</DownloadCTA><a className={styles.secondary} href="#pricing">{c.secondary}</a></div><p className={styles.note}>✓ {c.note}</p><p className={styles.note} style={{ fontSize: 12, opacity: 0.7 }}>💡 {c.installNote}</p></div>
         <div className={styles.heroVisual}><img src={image("hero")} alt={heroAlt} width="1280" height="800" /><span className={styles.floatTop}>01 · {c.flow[0][1]}</span><span className={styles.floatBottom}>05 · {c.flow[4][1]}</span></div>
       </section>
       <section className={styles.stats}>{c.stats.map(([v, l]) => <div key={v}><strong>{v}</strong><span>{l}</span></div>)}</section>

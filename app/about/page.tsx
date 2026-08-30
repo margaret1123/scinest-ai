@@ -85,8 +85,7 @@ export default function AboutPage() {
         <section style={{ maxWidth: 780, margin: "0 auto", padding: "24px 28px" }}>
           <h2 style={{ fontSize: 24, fontFamily: "Georgia,Times New Roman,serif", margin: "0 0 12px" }}>Who we are</h2>
           <p style={{ fontSize: 15, lineHeight: 1.75, color: "#42606c", margin: 0 }}>
-            SciNest is developed and operated by <strong>Jiaempower Pathways Limited</strong> (New Zealand). We are a small team of researchers and engineers who spent years writing theses, figures and defense decks the hard way — pasting fragments back and forth between chat windows and design tools, losing context at every step.
-            {/* TODO: 用户请在此填入真实创始人简介（姓名/背景/照片），用于 Person schema 与 E-E-A-T */}
+            SciNest is developed and operated by <strong>Jiaempower Pathways Limited</strong> (New Zealand). It began with a practicing psychological counselor: alongside clinical work they kept writing papers, proposals and reports the hard way — pasting fragments between chat windows and design tools, re-explaining the same research at every step. So they built the workspace they wanted: upload once, keep the context, finish the deliverable.
           </p>
         </section>
 
@@ -114,9 +113,8 @@ export default function AboutPage() {
           <p style={{ fontSize: 15, lineHeight: 1.75, color: "#42606c", margin: 0 }}>
             Feedback and bug reports:{" "}
             <a href="https://github.com/margaret1123/scinest-ai/issues/new/choose" target="_blank" rel="noopener noreferrer" style={{ color: "#087f72" }}>open a GitHub issue</a>.
-            {/* TODO: 用户请在此填入公开联系邮箱 */}
           </p>
-          <p style={{ fontSize: 13, color: "#8599a3", margin: "28px 0 0" }}>Last updated: 2026-08-29</p>
+          <p style={{ fontSize: 13, color: "#8599a3", margin: "28px 0 0" }}>Last updated: 2026-08-31</p>
         </section>
       </main>
 

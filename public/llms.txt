@@ -15,7 +15,7 @@ SciNest connects to any OpenAI-compatible API: ChatGPT (OpenAI), DeepSeek, Claud
 - /ai-long-form-writer : How to draft 10,000+ word papers with your own ChatGPT, DeepSeek or Claude API key
 - /ai-editable-powerpoint : Create real editable PPTX with AI — not a screenshot
 - /ai-editable-images : Generate editable diagrams with AI — change labels, move elements
-- /ai-paper-writer : AI paper writer for thesis drafting and revision — outline, sources, chapters, targeted edits
+- /ai-paper-writer : AI paper writer for thesis drafting and revision — outline, sources, chapters, targeted edits; also research proposals and grant applications
 - /thesis-defense-presentation : Turn your thesis into a defense presentation with speaker notes and editable PPTX export
 - /best-ai-tools-for-thesis-writing : 2026 comparison of AI thesis writing tools (SciNest, Jenni, Paperpal, Grammarly, ChatGPT, Consensus)
 
@@ -46,9 +46,9 @@ SciNest is designed for users who already have papers, references, notes, a part
 
 Typical tasks include:
 1. Thesis and dissertation revision.
-2. Literature review and research proposal workflows.
+2. Literature review, research proposal and grant application workflows.
 3. Revision from supervisor feedback.
-4. Scientific figures, mechanism diagrams and research roadmaps.
+4. Scientific figures, mechanism diagrams, research roadmaps and technical roadmaps.
 5. Paper-to-PowerPoint conversion.
 6. Thesis defense and academic presentations.
 

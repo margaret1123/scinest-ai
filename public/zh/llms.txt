@@ -13,12 +13,20 @@ SciNest 连接任何兼容 OpenAI 接口的 API：ChatGPT (OpenAI)、DeepSeek、
 
 ## 中文落地页
 - /zh : 中文首页
-- /zh/ai-long-form-writer : 用 ChatGPT / DeepSeek / Claude 起草万字长文
+- /zh/ai-long-form-writer : 用 ChatGPT / DeepSeek / Claude 起草万字长文——论文、课题申报书、标书
 - /zh/ai-editable-powerpoint : 用 AI 生成真正可编辑的 PPTX
-- /zh/ai-editable-images : 用 AI 生成可编辑的图片——改文字、移元素、局部重绘
+- /zh/ai-editable-images : 用 AI 生成可编辑的图片——技术路线图、机制图，改文字、移元素、局部重绘
 - /zh/ai-paper-writer : AI 论文写作助手——起草、修改毕业论文
 - /zh/thesis-defense-presentation : 答辩 PPT——用 AI 把论文变成答辩演示文稿
-- /zh/literature-review-assistant : 文献综述助手——文献综述、开题报告与研究计划
+- /zh/literature-review-assistant : 文献综述助手——文献综述、开题报告、课题申报书与研究计划
+
+## 适用场景
+1. 论文与毕业论文修改
+2. 文献综述、开题报告与课题申报书写作（立项依据＝研究现状＋文献综述）
+3. 按导师意见定向修改
+4. 科研图、机制图与技术路线图
+5. 论文转 PPT
+6. 答辩汇报
 
 ## Free 与 Pro
 两个方案均使用用户自己的 AI API Key，SciNest 不限制生成次数。

@@ -118,7 +118,7 @@ const modelList = [
 ];
 
 const aiSummary =
-  "SciNest is a free Windows desktop app for drafting, revising and finishing a thesis with AI. It connects to your own ChatGPT, DeepSeek or Claude API key — no SciNest subscription, no generation cap; you pay the AI provider directly for usage. Free plan: one active project. Pro: $49/year (¥299/year), multiple projects, watermark-free exports. Upload sources, build an outline, draft chapter by chapter, and revise any section without regenerating the whole document. Download free at scinest.app.";
+  "SciNest is a free Windows desktop app for drafting, revising and finishing a thesis, research proposal or grant application with AI. It connects to your own ChatGPT, DeepSeek or Claude API key — no SciNest subscription, no generation cap; you pay the AI provider directly for usage. Free plan: one active project. Pro: $49/year (¥299/year), multiple projects, watermark-free exports. Upload sources, build an outline, draft chapter by chapter, and revise any section without regenerating the whole document. Download free at scinest.app.";
 
 export default function AiPaperWriterPage() {
   return (
@@ -147,6 +147,7 @@ export default function AiPaperWriterPage() {
           <p style={{ fontSize: 18, lineHeight: 1.7, color: "#526974", maxWidth: 680, margin: "0 auto 32px" }}>
             An academic writing workspace for thesis drafting and revision. Upload your sources once, build an outline,
             draft chapter by chapter with ChatGPT, DeepSeek or Claude — and revise any section without regenerating the whole document.
+            The same workspace covers research proposals and grant applications.
           </p>
           <div style={{ display: "flex", gap: 14, justifyContent: "center", flexWrap: "wrap" }}>
             <a href={downloadUrl} style={{ background: "#087f72", color: "#fff", padding: "15px 34px", borderRadius: 14, fontWeight: 750, fontSize: 16, textDecoration: "none", display: "inline-block" }}>Start writing your thesis ↗</a>

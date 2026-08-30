@@ -8,7 +8,7 @@ const downloadUrl = "https://github.com/margaret1123/scinest-ai/releases/latest/
 export const metadata: Metadata = {
   title: "用 ChatGPT / DeepSeek / Claude 起草万字长文｜自选模型，免费开始",
   description:
-    "上传一次材料，连接你自己的 API Key，先定大纲再逐章生成完整长文。无需复杂指令，无需反复解释。免费开始。",
+    "上传一次材料，连接你自己的 API Key，先定大纲再逐章生成完整长文。毕业论文、课程论文、课题申报书都适用。免费开始。",
   alternates: {
     canonical: "/zh/ai-long-form-writer",
     languages: { en: "/ai-long-form-writer", "zh-CN": "/zh/ai-long-form-writer", "x-default": "/ai-long-form-writer" },
@@ -65,7 +65,7 @@ export default function Page() {
         <section style={{ maxWidth: 860, margin: "0 auto", padding: "60px 28px 40px", textAlign: "center" }}>
           <p style={{ color: "#087f72", fontSize: 13, fontWeight: 850, letterSpacing: ".12em", margin: 0 }}>AI 长文写作</p>
           <h1 style={{ fontSize: "clamp(32px,4.8vw,52px)", lineHeight: 1.1, letterSpacing: "-.035em", margin: "18px 0 22px", fontFamily: "Georgia,Times New Roman,serif" }}>用 ChatGPT / DeepSeek / Claude<br />起草万字长文</h1>
-          <p style={{ fontSize: 18, lineHeight: 1.7, color: "#526974", maxWidth: 640, margin: "0 auto 32px" }}>用你喜欢的模型。先定大纲，再用你自己的材料逐章起草完整长文。修哪章改哪章——不用推翻全文。同一个模型，换个工作方式。</p>
+          <p style={{ fontSize: 18, lineHeight: 1.7, color: "#526974", maxWidth: 640, margin: "0 auto 32px" }}>用你喜欢的模型。先定大纲，再用你自己的材料逐章起草完整长文。修哪章改哪章——不用推翻全文。同一个模型，换个工作方式。毕业论文、课程论文、课题申报书（标书）都适用。</p>
           <div style={{ display: "flex", gap: 14, justifyContent: "center", flexWrap: "wrap" }}>
             <a href={downloadUrl} style={{ background: "#087f72", color: "#fff", padding: "15px 34px", borderRadius: 14, fontWeight: 750, fontSize: 16, textDecoration: "none" }}>开始起草长文 ↗</a>
             <a href="#how" style={{ color: "#087f72", padding: "15px 28px", borderRadius: 14, fontWeight: 650, fontSize: 16, textDecoration: "none", border: "2px solid rgba(7,153,135,.2)" }}>查看流程</a>
@@ -93,7 +93,7 @@ export default function Page() {
             <h2 style={{ fontSize: "clamp(24px,3vw,36px)", lineHeight: 1.15, margin: "14px 0 18px", fontFamily: "Georgia,Times New Roman,serif" }}>同一个 API Key。换个工作方式。</h2>
             <p style={{ fontSize: 17, color: "#42606c", lineHeight: 1.7, maxWidth: 620, margin: "0 auto 32px" }}>SciNest 连接你自己的 OpenAI、DeepSeek 或 Anthropic API Key。先定可编辑大纲，再逐章生成，全文上下文保持连接。修哪章改哪章——不碰其余内容。</p>
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(210px,1fr))", gap: 14, maxWidth: 750, margin: "0 auto" }}>
-              {[["自选模型","没有 SciNest 订阅费。不限生成次数。用 ChatGPT、DeepSeek、Claude 任意兼容 API。"],["先定大纲","设定章节、小节和字数目标。结构不满意就改——别等一万五千字写完了再返工。"],["材料绑定写作","上传论文、文献和导师意见。绑定到具体章节。AI 按你的材料写，不瞎编。"],["逐章修改","缩短第三章。加强第五章的论证。回应某一节的导师意见——不动文档其余部分。"],["项目持久记忆","大纲、材料、生成章节、修改历史全部保持连接。不用重复上下文，不用在窗口间粘贴。"],["导出完整草稿","全文完成后导出。审查、核实、润色、排版、提交。成果是你的。"]].map(([t,d]) => (
+              {[["自选模型","没有 SciNest 订阅费。不限生成次数。用 ChatGPT、DeepSeek、Claude 任意兼容 API。"],["先定大纲","设定章节、小节和字数目标。结构不满意就改——别等一万五千字写完了再返工。"],["材料绑定写作","上传论文、文献和导师意见。绑定到具体章节。AI 按你的材料写，不瞎编。"],["课题申报书","立项依据、研究内容、研究方案、预期成果——大纲先行，逐节起草，逐节修改。"],["逐章修改","缩短第三章。加强第五章的论证。回应某一节的导师意见——不动文档其余部分。"],["项目持久记忆","大纲、材料、生成章节、修改历史全部保持连接。不用重复上下文，不用在窗口间粘贴。"],["导出完整草稿","全文完成后导出。审查、核实、润色、排版、提交。成果是你的。"]].map(([t,d]) => (
                 <div key={t} style={{ background: "rgba(255,255,255,.82)", borderRadius: 16, padding: "22px 18px", textAlign: "left", border: "1px solid rgba(7,95,85,.06)" }}>
                   <h3 style={{ margin: "0 0 6px", fontSize: 16 }}>{t}</h3>
                   <p style={{ margin: 0, fontSize: 13, color: "#5e6f7c", lineHeight: 1.6 }}>{d}</p>

@@ -6,17 +6,17 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://scinest.app";
 const downloadUrl = "https://github.com/margaret1123/scinest-ai/releases/latest/download/SciNest-win-x64.zip";
 
 export const metadata: Metadata = {
-  title: "文献综述助手｜AI 帮你写文献综述与开题报告",
+  title: "文献综述助手｜AI 帮你写文献综述、开题报告与课题申报书",
   description:
-    "上传文献与笔记，AI 帮你梳理研究脉络，撰写文献综述、开题报告和研究计划。逐节生成、逐节修改。免费开始。",
+    "上传文献与笔记，AI 帮你梳理研究脉络，撰写文献综述、开题报告、课题申报书与研究计划。逐节生成、逐节修改。免费开始。",
   alternates: {
     canonical: "/zh/literature-review-assistant",
     languages: { "zh-CN": "/zh/literature-review-assistant", en: "/", "x-default": "/" },
   },
   openGraph: {
     type: "website", url: "/zh/literature-review-assistant",
-    title: "文献综述助手｜AI 帮你写文献综述与开题报告 | SciNest",
-    description: "上传文献与笔记，AI 帮你梳理研究脉络，撰写文献综述、开题报告和研究计划。免费开始。",
+    title: "文献综述助手｜AI 帮你写文献综述、开题报告与课题申报书 | SciNest",
+    description: "上传文献与笔记，AI 帮你梳理研究脉络，撰写文献综述、开题报告、课题申报书与研究计划。免费开始。",
     images: [{ url: "/scinest/writing-ui-en.webp", width: 1280, height: 800 }],
   },
 };
@@ -27,6 +27,7 @@ const faqJsonLd = { "@context": "https://schema.org", "@type": "FAQPage", mainEn
   { "@type": "Question", name: "AI 能帮我写文献综述吗？", acceptedAnswer: { "@type": "Answer", text: "能。上传论文和笔记后，SciNest 帮你梳理研究脉络、归纳观点，按大纲逐节生成综述草稿。生成内容绑定到你上传的文献，而不是凭空编造。" } },
   { "@type": "Question", name: "AI 生成的综述引用可靠吗？", acceptedAnswer: { "@type": "Answer", text: "AI 可能编造看起来真实但实际不存在的引用。SciNest 将生成内容绑定到你上传的文献，提交前必须逐条核对。" } },
   { "@type": "Question", name: "开题报告也能用吗？", acceptedAnswer: { "@type": "Answer", text: "能。文献综述、开题报告、研究计划都有结构化工作流：定大纲、选材料、逐节生成、局部修改，同一个项目里材料与成稿保持连接。" } },
+  { "@type": "Question", name: "课题申报书也能写吗？", acceptedAnswer: { "@type": "Answer", text: "能。课题申报书的立项依据就是研究现状与文献综述——上传文献后直接梳理成立项依据，研究内容与研究计划逐节生成。国自然标书同样适用。" } },
   { "@type": "Question", name: "和直接问 ChatGPT 有什么区别？", acceptedAnswer: { "@type": "Answer", text: "聊天窗口输出短、易丢上下文；SciNest 保持大纲、文献和章节的持久连接，每节继承前面内容，可单独修改任意一节。" } },
   { "@type": "Question", name: "免费吗？", acceptedAnswer: { "@type": "Answer", text: "Free 版免费且不限生成次数（一个活跃项目）；Pro 版 ¥299/年（$49/年）支持多项目与无水印导出。AI 调用费由你自己的 API Key 直接向服务商支付。" } },
 ]};
@@ -48,7 +49,7 @@ const workflow = [
 ];
 
 const aiSummary =
-  "SciNest 是免费的 Windows 桌面端 AI 学术写作工具，可撰写文献综述、开题报告和研究计划：上传文献与笔记，先定大纲，按研究脉络逐节生成，再单独修改任意一节。AI 连接你自己的 ChatGPT、DeepSeek 或 Claude API Key——无订阅费、不限生成次数，调用费直接向服务商支付。Free 版一个活跃项目；Pro 版 ¥299/年（$49/年），多项目与无水印导出。官网 scinest.app 免费下载。";
+  "SciNest 是免费的 Windows 桌面端 AI 学术写作工具，可撰写文献综述、开题报告、课题申报书和研究计划：上传文献与笔记，先定大纲，按研究脉络逐节生成，再单独修改任意一节。课题申报书的立项依据就是研究现状加文献综述——同一份上传文献直接复用。AI 连接你自己的 ChatGPT、DeepSeek 或 Claude API Key——无订阅费、不限生成次数，调用费直接向服务商支付。Free 版一个活跃项目；Pro 版 ¥299/年（$49/年），多项目与无水印导出。官网 scinest.app 免费下载。";
 
 export default function Page() {
   return (
@@ -67,8 +68,8 @@ export default function Page() {
         <ProductBreadcrumbs current="litReview" locale="zh" />
         <section style={{ maxWidth: 860, margin: "0 auto", padding: "60px 28px 40px", textAlign: "center" }}>
           <p style={{ color: "#087f72", fontSize: 13, fontWeight: 850, letterSpacing: ".12em", margin: 0 }}>文献综述助手</p>
-          <h1 style={{ fontSize: "clamp(32px,4.8vw,52px)", lineHeight: 1.1, letterSpacing: "-.035em", margin: "18px 0 22px", fontFamily: "Georgia,Times New Roman,serif" }}>用 AI 写文献综述<br />和开题报告</h1>
-          <p style={{ fontSize: 18, lineHeight: 1.7, color: "#526974", maxWidth: 640, margin: "0 auto 32px" }}>上传文献与笔记，AI 帮你梳理研究脉络，先定大纲，再逐节生成综述草稿——每一节都来自你上传的材料。开题报告、研究计划同样适用。</p>
+          <h1 style={{ fontSize: "clamp(32px,4.8vw,52px)", lineHeight: 1.1, letterSpacing: "-.035em", margin: "18px 0 22px", fontFamily: "Georgia,Times New Roman,serif" }}>用 AI 写文献综述<br />开题报告与课题申报书</h1>
+          <p style={{ fontSize: 18, lineHeight: 1.7, color: "#526974", maxWidth: 640, margin: "0 auto 32px" }}>上传文献与笔记，AI 帮你梳理研究脉络，先定大纲，再逐节生成综述草稿——每一节都来自你上传的材料。开题报告、课题申报书和研究计划同样适用。</p>
           <div style={{ display: "flex", gap: 14, justifyContent: "center", flexWrap: "wrap" }}>
             <a href={downloadUrl} style={{ background: "#087f72", color: "#fff", padding: "15px 34px", borderRadius: 14, fontWeight: 750, fontSize: 16, textDecoration: "none" }}>开始写文献综述 ↗</a>
             <a href="#how" style={{ color: "#087f72", padding: "15px 28px", borderRadius: 14, fontWeight: 650, fontSize: 16, textDecoration: "none", border: "2px solid rgba(7,153,135,.2)" }}>查看流程</a>
@@ -98,9 +99,9 @@ export default function Page() {
           <div style={{ maxWidth: 780, margin: "0 auto", textAlign: "center" }}>
             <p style={{ color: "#087f72", fontSize: 13, fontWeight: 850, letterSpacing: ".12em", margin: 0 }}>综述工作流</p>
             <h2 style={{ fontSize: "clamp(24px,3vw,36px)", lineHeight: 1.15, margin: "14px 0 18px", fontFamily: "Georgia,Times New Roman,serif" }}>文献综述是梳理，不是堆砌。</h2>
-            <p style={{ fontSize: 17, color: "#42606c", lineHeight: 1.7, maxWidth: 620, margin: "0 auto 32px" }}>SciNest 把文献、笔记、大纲和成稿放在同一个项目里——研究脉络保持连接，逐节生成、逐节修改，开题报告和研究计划同一条工作流。</p>
+            <p style={{ fontSize: 17, color: "#42606c", lineHeight: 1.7, maxWidth: 620, margin: "0 auto 32px" }}>SciNest 把文献、笔记、大纲和成稿放在同一个项目里——研究脉络保持连接，逐节生成、逐节修改，开题报告、课题申报书和研究计划同一条工作流。</p>
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(210px,1fr))", gap: 14, maxWidth: 750, margin: "0 auto" }}>
-              {[["文献脉络梳理","按主题归纳你上传的文献：谁做了什么、结论如何、争议在哪。"],["综述大纲","背景、研究现状、争议、空白——先定大纲，再动笔。"],["逐节生成","每节内容来自你上传的文献，前后节保持连接。"],["局部修改","导师意见绑定到小节，只改那一处，不动其余内容。"],["开题报告工作流","文献综述、研究问题、方法、计划——结构化逐节完成。"],["研究计划工作流","从综述到计划无缝衔接，材料一次上传全项目复用。"]].map(([t,d]) => (
+              {[["文献脉络梳理","按主题归纳你上传的文献：谁做了什么、结论如何、争议在哪。"],["综述大纲","背景、研究现状、争议、空白——先定大纲，再动笔。"],["逐节生成","每节内容来自你上传的文献，前后节保持连接。"],["局部修改","导师意见绑定到小节，只改那一处，不动其余内容。"],["课题申报书工作流","立项依据＝研究现状＋文献综述。材料一次上传，申报书与计划书无缝衔接。"],["开题报告工作流","文献综述、研究问题、方法、计划——结构化逐节完成。"],["研究计划工作流","从综述到计划无缝衔接，材料一次上传全项目复用。"]].map(([t,d]) => (
                 <div key={t} style={{ background: "rgba(255,255,255,.82)", borderRadius: 16, padding: "22px 18px", textAlign: "left", border: "1px solid rgba(7,95,85,.06)" }}>
                   <h3 style={{ margin: "0 0 6px", fontSize: 16 }}>{t}</h3>
                   <p style={{ margin: 0, fontSize: 13, color: "#5e6f7c", lineHeight: 1.6 }}>{d}</p>
@@ -130,7 +131,7 @@ export default function Page() {
         <section style={{ maxWidth: 700, margin: "0 auto", padding: "50px 28px" }}>
           <p style={{ color: "#087f72", fontSize: 13, fontWeight: 850, letterSpacing: ".12em", margin: 0, textAlign: "center" }}>常见问题</p>
           <h2 style={{ textAlign: "center", fontSize: "clamp(22px,2.6vw,30px)", lineHeight: 1.18, margin: "12px 0 24px", fontFamily: "Georgia,Times New Roman,serif" }}>写文献综述，你最关心的</h2>
-          {[["AI 能帮我写文献综述吗？","能。上传论文和笔记后，SciNest 帮你梳理研究脉络、归纳观点，按大纲逐节生成综述草稿。生成内容绑定到你上传的文献。"],["AI 生成的综述引用可靠吗？","AI 可能编造看起来真实但实际不存在的引用。SciNest 将生成内容绑定到你上传的文献，提交前必须逐条核对。"],["开题报告也能用吗？","能。文献综述、开题报告、研究计划都有结构化工作流：定大纲、选材料、逐节生成、局部修改。"],["和直接问 ChatGPT 有什么区别？","聊天窗口输出短、易丢上下文；SciNest 保持大纲、文献和章节的持久连接，每节继承前面内容，可单独修改任意一节。"],["免费吗？","Free 版免费且不限生成次数（一个活跃项目）；Pro 版 ¥299/年支持多项目与无水印导出。"]].map(([q,a]) => <details key={q} style={{ borderBottom: "1px solid rgba(7,95,85,.1)", padding: "16px 0" }}><summary style={{ fontWeight: 650, fontSize: 15, cursor: "pointer", listStyle: "none" }}>{q}</summary><p style={{ margin: "10px 0 0", color: "#42606c", lineHeight: 1.75, fontSize: 14 }}>{a}</p></details>)}
+          {[["AI 能帮我写文献综述吗？","能。上传论文和笔记后，SciNest 帮你梳理研究脉络、归纳观点，按大纲逐节生成综述草稿。生成内容绑定到你上传的文献。"],["AI 生成的综述引用可靠吗？","AI 可能编造看起来真实但实际不存在的引用。SciNest 将生成内容绑定到你上传的文献，提交前必须逐条核对。"],["开题报告也能用吗？","能。文献综述、开题报告、研究计划都有结构化工作流：定大纲、选材料、逐节生成、局部修改。"],["课题申报书也能写吗？","能。课题申报书的立项依据就是研究现状与文献综述——上传文献后直接梳理成立项依据，研究内容与研究计划逐节生成。国自然标书同样适用。"],["和直接问 ChatGPT 有什么区别？","聊天窗口输出短、易丢上下文；SciNest 保持大纲、文献和章节的持久连接，每节继承前面内容，可单独修改任意一节。"],["免费吗？","Free 版免费且不限生成次数（一个活跃项目）；Pro 版 ¥299/年支持多项目与无水印导出。"]].map(([q,a]) => <details key={q} style={{ borderBottom: "1px solid rgba(7,95,85,.1)", padding: "16px 0" }}><summary style={{ fontWeight: 650, fontSize: 15, cursor: "pointer", listStyle: "none" }}>{q}</summary><p style={{ margin: "10px 0 0", color: "#42606c", lineHeight: 1.75, fontSize: 14 }}>{a}</p></details>)}
         </section>
 
         <section style={{ background: "linear-gradient(180deg,#0a2a30,#0d2328)", color: "#fff", textAlign: "center", padding: "60px 28px" }}>

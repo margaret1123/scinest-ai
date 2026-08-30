@@ -8,7 +8,7 @@ const downloadUrl = "https://github.com/margaret1123/scinest-ai/releases/latest/
 export const metadata: Metadata = {
   title: "用 AI 生成可编辑的图片｜改文字、移元素、局部重绘，免费开始",
   description:
-    "文字保持为文字，形状保持为独立对象。改标签无需重生成，移元素无需从头来。选中区域 AI 只改那一块。免费开始。",
+    "技术路线图、机制图、流程图：文字保持为文字，形状保持为独立对象。改标签无需重生成，移元素无需从头来。选中区域 AI 只改那一块。免费开始。",
   alternates: {
     canonical: "/zh/ai-editable-images",
     languages: { en: "/ai-editable-images", "zh-CN": "/zh/ai-editable-images", "x-default": "/ai-editable-images" },
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website", url: "/zh/ai-editable-images",
     title: "用 AI 生成可编辑的图片 | SciNest",
-    description: "文字保持为文字。改标签无需重生成。移元素无需从头来。免费开始。",
+    description: "技术路线图、机制图、流程图都能生成后逐项修改。文字保持为文字。改标签无需重生成。免费开始。",
     images: [{ url: "/scinest/figures-ui-en.webp", width: 1280, height: 720 }],
   },
 };
@@ -28,7 +28,7 @@ const faqJsonLd = { "@context": "https://schema.org", "@type": "FAQPage", mainEn
   { "@type": "Question", name: "和 DALL-E 或 Midjourney 有什么不同？", acceptedAnswer: { "@type": "Answer", text: "DALL-E、Midjourney 等工具输出一张像素融合的整图。每个元素——形状、文字、箭头、标签——被锁死在一个不可编辑的图层里。标签拼错了或者要换个配色，就必须从头重写提示词重新生成。SciNest 保持文字、形状和区域为独立可编辑图层，让你可以逐个元素修改。" } },
   { "@type": "Question", name: "能移动或调整单个元素的大小吗？", acceptedAnswer: { "@type": "Answer", text: "能。文字、形状、箭头和图片区域可以被选中、移动、缩放和重定位。调整布局不用重新生成。" } },
   { "@type": "Question", name: "能只重绘图片的一部分吗？", acceptedAnswer: { "@type": "Answer", text: "能。选中一个区域或元素，只对那部分重新运行 AI。其余部分——标签、布局、已确认区域——保持在原位不变。" } },
-  { "@type": "Question", name: "能生成什么类型的图？", acceptedAnswer: { "@type": "Answer", text: "机制图、技术流程图、研究路线图、实验流程图、概念框架、图形摘要、流程图、关系图、时间线——任何结合文字标签和形状的图表。" } },
+  { "@type": "Question", name: "能生成什么类型的图？", acceptedAnswer: { "@type": "Answer", text: "技术路线图、机制图、技术流程图、研究路线图、实验流程图、概念框架、图形摘要、流程图、关系图、时间线——任何结合文字标签和形状的图表。课题申报书里的技术路线图同样适用：生成后逐项修改，不用推倒重来。" } },
 ]};
 
 const comparison = [
@@ -40,11 +40,11 @@ const comparison = [
 ];
 
 const workflow = [
-  ["01", "定义视觉", "描述需要展示什么——机制、流程、关系、时间线。AI 从内容逻辑出发，不是从装饰出发。"],
+  ["01", "定义视觉", "描述需要展示什么——技术路线、机制、流程、关系、时间线。AI 从内容逻辑出发，不是从装饰出发。"],
   ["02", "规划结构", "选图型、面板、节点、关系、标签和重点。生成前先把布局调好。"],
   ["03", "生成图片", "创建带独立图层（文字、形状、连接线、区域）的结构化视觉。"],
   ["04", "编辑修改", "改标签。缩放形状。移动箭头。选中区域 AI 重绘——不碰已确认的部分。"],
-  ["05", "导出复用", "导出最终图片。用在论文、PPT 或文档里。后续改动不需要从零重建。"],
+  ["05", "导出复用", "导出最终图片。用在论文、PPT、课题申报书或文档里。后续改动不需要从零重建。"],
 ];
 
 export default function Page() {
@@ -65,7 +65,7 @@ export default function Page() {
         <section style={{ maxWidth: 860, margin: "0 auto", padding: "60px 28px 40px", textAlign: "center" }}>
           <p style={{ color: "#087f72", fontSize: 13, fontWeight: 850, letterSpacing: ".12em", margin: 0 }}>可编辑图片 · 改你需要的，保留已经好的</p>
           <h1 style={{ fontSize: "clamp(32px,4.8vw,52px)", lineHeight: 1.1, letterSpacing: "-.035em", margin: "18px 0 22px", fontFamily: "Georgia,Times New Roman,serif" }}>用 AI 生成可编辑的图片</h1>
-          <p style={{ fontSize: 18, lineHeight: 1.7, color: "#526974", maxWidth: 640, margin: "0 auto 32px" }}>生成带独立图层的图片——文字标签、形状和区域保持可编辑。改字不用重生成。移元素、调大小。AI 只重绘你选中的部分，其余保持不变。</p>
+          <p style={{ fontSize: 18, lineHeight: 1.7, color: "#526974", maxWidth: 640, margin: "0 auto 32px" }}>生成带独立图层的图片——文字标签、形状和区域保持可编辑。改字不用重生成。移元素、调大小。AI 只重绘你选中的部分，其余保持不变。技术路线图、机制图、流程图都适用。</p>
           <div style={{ display: "flex", gap: 14, justifyContent: "center", flexWrap: "wrap" }}>
             <a href={downloadUrl} style={{ background: "#087f72", color: "#fff", padding: "15px 34px", borderRadius: 14, fontWeight: 750, fontSize: 16, textDecoration: "none" }}>生成可编辑的图片 ↗</a>
             <a href="#how" style={{ color: "#087f72", padding: "15px 28px", borderRadius: 14, fontWeight: 650, fontSize: 16, textDecoration: "none", border: "2px solid rgba(7,153,135,.2)" }}>查看流程</a>
@@ -102,7 +102,7 @@ export default function Page() {
         <section style={{ maxWidth: 700, margin: "0 auto", padding: "50px 28px" }}>
           <p style={{ color: "#087f72", fontSize: 13, fontWeight: 850, letterSpacing: ".12em", margin: 0, textAlign: "center" }}>常见问题</p>
           <h2 style={{ textAlign: "center", fontSize: "clamp(22px,2.6vw,30px)", lineHeight: 1.18, margin: "12px 0 24px", fontFamily: "Georgia,Times New Roman,serif" }}>用 AI 生成可编辑图片，你最关心的</h2>
-          {[["生成后能改文字标签吗？","能。标签、标注和说明保持独立文字图层。改措辞、改错字、更新术语——不用重新生成整张图。这是和像素型生成器最根本的区别。"],["和 DALL-E 或 Midjourney 有什么不同？","像素型生成器把所有元素融成一张死图。文字永远被锁在像素里。标签错一个字就得从头写提示词重新生成。可编辑生成保持每个元素独立可改。"],["能移动或缩放单个元素吗？","能。文字、形状、箭头和图片区域可选中、移动、缩放、重定位。改布局不用重新生成。"],["能只重绘图片的一部分吗？","能。选中一个区域，AI 只处理那一块。已确认的部分保持不变。"],["能生成什么类型的图？","机制图、技术流程图、研究路线图、实验流程图、概念框架、图形摘要、流程图、关系图、时间线——任何结合文字和形状的图表。"]].map(([q,a]) => <details key={q} style={{ borderBottom: "1px solid rgba(7,95,85,.1)", padding: "16px 0" }}><summary style={{ fontWeight: 650, fontSize: 15, cursor: "pointer", listStyle: "none" }}>{q}</summary><p style={{ margin: "10px 0 0", color: "#42606c", lineHeight: 1.75, fontSize: 14 }}>{a}</p></details>)}
+          {[["生成后能改文字标签吗？","能。标签、标注和说明保持独立文字图层。改措辞、改错字、更新术语——不用重新生成整张图。这是和像素型生成器最根本的区别。"],["和 DALL-E 或 Midjourney 有什么不同？","像素型生成器把所有元素融成一张死图。文字永远被锁在像素里。标签错一个字就得从头写提示词重新生成。可编辑生成保持每个元素独立可改。"],["能移动或缩放单个元素吗？","能。文字、形状、箭头和图片区域可选中、移动、缩放、重定位。改布局不用重新生成。"],["能只重绘图片的一部分吗？","能。选中一个区域，AI 只处理那一块。已确认的部分保持不变。"],["能生成什么类型的图？","技术路线图、机制图、技术流程图、研究路线图、实验流程图、概念框架、图形摘要、流程图、关系图、时间线——任何结合文字和形状的图表。课题申报书里的技术路线图同样适用：生成后逐项修改，不用推倒重来。"]].map(([q,a]) => <details key={q} style={{ borderBottom: "1px solid rgba(7,95,85,.1)", padding: "16px 0" }}><summary style={{ fontWeight: 650, fontSize: 15, cursor: "pointer", listStyle: "none" }}>{q}</summary><p style={{ margin: "10px 0 0", color: "#42606c", lineHeight: 1.75, fontSize: 14 }}>{a}</p></details>)}
         </section>
 
         <section style={{ background: "linear-gradient(180deg,#0a2a30,#0d2328)", color: "#fff", textAlign: "center", padding: "60px 28px" }}>

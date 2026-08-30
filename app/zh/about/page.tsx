@@ -79,8 +79,7 @@ export default function Page() {
         <section style={{ maxWidth: 780, margin: "0 auto", padding: "24px 28px" }}>
           <h2 style={{ fontSize: 23, fontFamily: "Georgia,Times New Roman,serif", margin: "0 0 12px" }}>我们是谁</h2>
           <p style={{ fontSize: 15, lineHeight: 1.8, color: "#42606c", margin: 0 }}>
-            SciNest 由 <strong>Jiaempower Pathways Limited</strong>（新西兰）开发并运营。我们是一支由科研人员和工程师组成的小团队——当年也是把论文片段在聊天窗口和绘图软件之间来回搬运、不断丢失上下文，才决心做出 SciNest。
-            {/* TODO: 用户请在此填入真实创始人简介（姓名/背景/照片），用于 Person schema 与 E-E-A-T */}
+            SciNest 由 <strong>Jiaempower Pathways Limited</strong>（新西兰）开发并运营。故事始于一位执业心理咨询师：临床工作之余还要写论文、申报书和报告，厌倦了在聊天窗口和绘图软件之间来回搬运、反复解释同一份研究——于是自己动手做了想要的工具：上传一次，保持上下文，直到成稿。
           </p>
         </section>
 
@@ -108,9 +107,8 @@ export default function Page() {
           <p style={{ fontSize: 15, lineHeight: 1.8, color: "#42606c", margin: 0 }}>
             反馈与问题报告：{" "}
             <a href="https://github.com/margaret1123/scinest-ai/issues/new/choose" target="_blank" rel="noopener noreferrer" style={{ color: "#087f72" }}>在 GitHub 提交 Issue</a>。
-            {/* TODO: 用户请在此填入公开联系邮箱 */}
           </p>
-          <p style={{ fontSize: 13, color: "#8599a3", margin: "28px 0 0" }}>最近更新：2026-08-29</p>
+          <p style={{ fontSize: 13, color: "#8599a3", margin: "28px 0 0" }}>最近更新：2026-08-31</p>
         </section>
       </main>
 

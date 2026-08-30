@@ -75,9 +75,9 @@ const structuredData = [
     name: "Jiaempower Pathways Limited",
     url: siteUrl,
     brand: { "@type": "Brand", name: "SciNest" },
-    sameAs: ["https://github.com/margaret1123/scinest-ai"],
+    sameAs: ["https://github.com/margaret1123/scinest-ai", "https://github.com/margaret1123"],
   },
-  // TODO(E-E-A-T): 用户填入真实创始人信息后，取消注释并补全 Person schema（与 /about 页简介对应）
+  // TODO(E-E-A-T): About 页已按创始故事（心理咨询师自研）更新但未实名。若将来愿意公开姓名与邮箱，取消注释并补全 Person schema（与 /about 页简介对应）
   // {
   //   "@context": "https://schema.org",
   //   "@type": "Person",
