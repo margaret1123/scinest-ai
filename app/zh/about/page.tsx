@@ -79,7 +79,7 @@ export default function Page() {
         <section style={{ maxWidth: 780, margin: "0 auto", padding: "24px 28px" }}>
           <h2 style={{ fontSize: 23, fontFamily: "Georgia,Times New Roman,serif", margin: "0 0 12px" }}>我们是谁</h2>
           <p style={{ fontSize: 15, lineHeight: 1.8, color: "#42606c", margin: 0 }}>
-            SciNest 由 <strong>Jiaempower Pathways Limited</strong>（新西兰）开发并运营。故事始于一位执业心理咨询师：临床工作之余还要写论文、申报书和报告，厌倦了在聊天窗口和绘图软件之间来回搬运、反复解释同一份研究——于是自己动手做了想要的工具：上传一次，保持上下文，直到成稿。
+            SciNest 由 <strong>Margaret</strong> 个人开发（Jiaempower Pathways Limited，新西兰）。故事始于一位执业心理咨询师：临床工作之余还要写论文、申报书和报告，厌倦了在聊天窗口和绘图软件之间来回搬运、反复解释同一份研究——于是自己动手做了想要的工具：上传一次，保持上下文，直到成稿。
           </p>
         </section>
 
@@ -113,7 +113,7 @@ export default function Page() {
       </main>
 
       <footer style={{ maxWidth: 1160, margin: "0 auto", display: "flex", justifyContent: "space-between", alignItems: "center", gap: 16, flexWrap: "wrap", padding: "24px 28px 40px", borderTop: "1px solid rgba(7,95,85,.1)" }}>
-        <span style={{ fontSize: 14, color: "#8599a3" }}>SciNest · Jiaempower Pathways Limited</span>
+        <span style={{ fontSize: 14, color: "#8599a3" }}>SciNest — Crafted by Margaret, New Zealand</span>
         <nav style={{ display: "flex", gap: 18, flexWrap: "wrap" }}>
           <a href="/zh" style={{ fontSize: 14, color: "#42606c", textDecoration: "none" }}>首页</a>
           <a href="/privacy" style={{ fontSize: 14, color: "#42606c", textDecoration: "none" }}>隐私政策</a>

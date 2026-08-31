@@ -85,7 +85,7 @@ export default function AboutPage() {
         <section style={{ maxWidth: 780, margin: "0 auto", padding: "24px 28px" }}>
           <h2 style={{ fontSize: 24, fontFamily: "Georgia,Times New Roman,serif", margin: "0 0 12px" }}>Who we are</h2>
           <p style={{ fontSize: 15, lineHeight: 1.75, color: "#42606c", margin: 0 }}>
-            SciNest is developed and operated by <strong>Jiaempower Pathways Limited</strong> (New Zealand). It began with a practicing psychological counselor: alongside clinical work they kept writing papers, proposals and reports the hard way — pasting fragments between chat windows and design tools, re-explaining the same research at every step. So they built the workspace they wanted: upload once, keep the context, finish the deliverable.
+            SciNest is individually developed by <strong>Margaret</strong> (Jiaempower Pathways Limited, New Zealand). It began with a practicing psychological counselor: alongside clinical work they kept writing papers, proposals and reports the hard way — pasting fragments between chat windows and design tools, re-explaining the same research at every step. So they built the workspace they wanted: upload once, keep the context, finish the deliverable.
           </p>
         </section>
 
@@ -119,7 +119,7 @@ export default function AboutPage() {
       </main>
 
       <footer style={{ maxWidth: 1160, margin: "0 auto", display: "flex", justifyContent: "space-between", alignItems: "center", gap: 16, flexWrap: "wrap", padding: "24px 28px 40px", borderTop: "1px solid rgba(7,95,85,.1)" }}>
-        <span style={{ fontSize: 14, color: "#8599a3" }}>SciNest · Jiaempower Pathways Limited</span>
+        <span style={{ fontSize: 14, color: "#8599a3" }}>SciNest — Crafted by Margaret, New Zealand</span>
         <nav style={{ display: "flex", gap: 18, flexWrap: "wrap" }}>
           <a href="/" style={{ fontSize: 14, color: "#42606c", textDecoration: "none" }}>Home</a>
           <a href="/privacy" style={{ fontSize: 14, color: "#42606c", textDecoration: "none" }}>Privacy</a>

@@ -5,7 +5,7 @@
 - 官网: https://scinest.app/
 - 默认语言: English
 - 中文首页: https://scinest.app/zh
-- 运营方: Jiaempower Pathways Limited, New Zealand
+- 运营方: Margaret 个人开发 · Jiaempower Pathways Limited, New Zealand
 - 类别: AI 写作、演示与图表工具
 
 ## AI 服务商兼容性

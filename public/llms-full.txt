@@ -5,7 +5,7 @@
 - **Product name**: SciNest (科研小棉袄 in Chinese)
 - **Canonical site**: https://scinest.app/
 - **Default language**: English
-- **Operator**: Jiaempower Pathways Limited, New Zealand
+- **Operator**: Individually developed by Margaret · Jiaempower Pathways Limited, New Zealand
 - **Category**: Research productivity software
 - **Platform**: Windows desktop application
 - **AI model**: User brings their own API key (no bundled model costs)
