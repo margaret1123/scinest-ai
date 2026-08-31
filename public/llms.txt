@@ -9,7 +9,7 @@
 - Category: AI writing, presentation and diagram tool
 
 ## AI provider compatibility
-SciNest connects to any OpenAI-compatible API: ChatGPT (OpenAI), DeepSeek, Claude (Anthropic) and others. You bring your own API key — there is no SciNest subscription and no generation limit. You pay the AI provider directly for actual usage.
+SciNest connects to any OpenAI-compatible API: ChatGPT (OpenAI), DeepSeek, Claude (Anthropic) and others. You bring your own API key — there is no AI-usage subscription and no generation limit. You pay the AI provider directly for actual usage. Pro features are a flat ¥29/month or ¥299/year ($9/mo or $49/yr) subscription, cancel anytime.
 
 ## SEO landing pages
 - /ai-long-form-writer : How to draft 10,000+ word papers with your own ChatGPT, DeepSeek or Claude API key

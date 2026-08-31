@@ -121,7 +121,7 @@ const useCases = [
 ];
 
 const aiSummary =
-  "SciNest is a Windows desktop app that turns a thesis or paper into a defense presentation. Upload the document, set slide count and time limit, review the outline, then generate defense slides and speaker notes from your own materials. Output is an editable PPTX (Pro) or PDF (Free) — not flattened images. SciNest Free: one active project. Pro: $49/year (¥299/year), multiple projects, watermark-free figures, editable PPTX export. AI runs on your own ChatGPT, DeepSeek or Claude API key. Download at scinest.app.";
+  "SciNest is a Windows desktop app that turns a thesis or paper into a defense presentation. Upload the document, set slide count and time limit, review the outline, then generate defense slides and speaker notes from your own materials. Output is an editable PPTX (Pro) or PDF (Free) — not flattened images. SciNest Free: one active project. Pro: $9/month or $49/year (¥29/month or ¥299/year), multiple projects, watermark-free figures, editable PPTX export, cancel anytime. AI runs on your own ChatGPT, DeepSeek or Claude API key. Download at scinest.app.";
 
 export default function ThesisDefensePresentationPage() {
   return (

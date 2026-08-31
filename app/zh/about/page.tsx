@@ -6,7 +6,7 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://scinest.app";
 export const metadata: Metadata = {
   title: "关于 SciNest｜我们是谁",
   description:
-    "SciNest 是一款免费的 Windows 桌面端 AI 科研工作区：自带 ChatGPT、DeepSeek 或 Claude API Key，无订阅费，不限生成次数。",
+    "SciNest 是一款免费的 Windows 桌面端 AI 科研工作区：自带 ChatGPT、DeepSeek 或 Claude API Key，AI 使用无订阅费、不限生成次数。",
   alternates: {
     canonical: "/zh/about",
     languages: { "zh-CN": "/zh/about", en: "/about", "x-default": "/about" },
@@ -91,7 +91,7 @@ export default function Page() {
           </p>
           <ul style={{ fontSize: 15, lineHeight: 1.8, color: "#42606c", margin: "12px 0 0", paddingLeft: 22 }}>
             <li>连接你自己的 ChatGPT、DeepSeek 或 Claude API Key（兼容任何 OpenAI 接口）。</li>
-            <li>SciNest <strong>无订阅费、不限生成次数</strong>——Free 版含一个活跃项目；Pro 版（¥299/年，$49/年）解锁多项目与无水印导出。</li>
+            <li>SciNest <strong>AI 使用无订阅费、不限生成次数</strong>——Free 版含一个活跃项目；Pro 为小额订阅（¥29/月 或 ¥299/年，$9/月 或 $49/年），解锁多项目与无水印导出，可随时取消。</li>
             <li>AI 调用费直接向服务商支付。一次完整论文草稿通常只需几美元的 API 额度，远低于按月订阅。</li>
           </ul>
         </section>

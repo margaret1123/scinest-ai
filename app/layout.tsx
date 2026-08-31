@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     url: "/",
     siteName: "SciNest",
     title: "AI Academic Writing Workspace: Papers, Slides & Diagrams | SciNest",
-    description: "Free Windows app. Use your own ChatGPT, DeepSeek or Claude API key — no subscription, no generation cap. Draft papers, decks and diagrams. Start free.",
+    description: "Free Windows app. Use your own ChatGPT, DeepSeek or Claude API key — no AI-usage subscription, no generation cap. Pro features from $9/mo. Draft papers, decks and diagrams. Start free.",
     images: [{ url: "/logo.png", width: 512, height: 512 }],
     locale: "en_US",
     alternateLocale: ["zh_CN"],
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     template: "%s | SciNest",
   },
   description:
-    "Free Windows app: use your own ChatGPT, DeepSeek or Claude API key — no subscription, no generation cap. Draft papers, decks and diagrams. Start free.",
+    "Free Windows app: use your own ChatGPT, DeepSeek or Claude API key — no AI-usage subscription, no generation cap. Pro features from $9/mo. Draft papers, decks and diagrams. Start free.",
   keywords: [
     "AI academic workspace",
     "academic writing tool",

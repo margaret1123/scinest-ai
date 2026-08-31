@@ -6,7 +6,7 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://scinest.app";
 export const metadata: Metadata = {
   title: "About SciNest — Who We Are",
   description:
-    "SciNest is a free Windows AI research workspace built on one principle: you bring your own ChatGPT, DeepSeek or Claude API key — no subscription, no generation cap.",
+    "SciNest is a free Windows AI research workspace built on one principle: you bring your own ChatGPT, DeepSeek or Claude API key — no AI-usage subscription, no generation cap.",
   alternates: {
     canonical: "/about",
     languages: { en: "/about", "zh-CN": "/zh/about", "x-default": "/about" },
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "About SciNest",
-    description: "A free AI research workspace. Bring your own AI key — no subscription, no generation cap.",
+    description: "A free AI research workspace. Bring your own AI key — no AI-usage subscription, no generation cap.",
     images: ["/scinest/hero-en.webp"],
   },
 };
@@ -97,7 +97,7 @@ export default function AboutPage() {
           </p>
           <ul style={{ fontSize: 15, lineHeight: 1.8, color: "#42606c", margin: "12px 0 0", paddingLeft: 22 }}>
             <li>You connect your own ChatGPT, DeepSeek or Claude API key (or any OpenAI-compatible provider).</li>
-            <li>SciNest has <strong>no subscription and no generation cap</strong> — Free includes one active project; Pro ($49/year, ¥299/year) unlocks multiple projects and watermark-free exports.</li>
+            <li>SciNest has <strong>no AI-usage subscription and no generation cap</strong> — you pay your provider directly at cost. Free includes one active project; Pro is a flat ¥29/month or ¥299/year ($9/mo or $49/yr) subscription with multiple projects and watermark-free exports. Cancel anytime.</li>
             <li>You pay the model provider directly for actual usage. A full thesis draft typically costs a few dollars in API credits — not a monthly subscription.</li>
           </ul>
         </section>

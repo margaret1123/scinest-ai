@@ -48,7 +48,7 @@ const faqJsonLd = {
       name: "What is the best AI paper writer for thesis writing?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "The best choice depends on your workflow. SciNest is a free Windows workspace that uses your own ChatGPT, DeepSeek or Claude API key with an outline → chapters → targeted revision pipeline, so you pay only API usage instead of a subscription. It keeps your outline, sources and chapters connected in one project, which a chat window cannot do.",
+        text: "The best choice depends on your workflow. SciNest is a free Windows workspace that uses your own ChatGPT, DeepSeek or Claude API key with an outline → chapters → targeted revision pipeline, so you pay only API usage instead of an AI-usage subscription. It keeps your outline, sources and chapters connected in one project, which a chat window cannot do.",
       },
     },
     {
@@ -72,7 +72,7 @@ const faqJsonLd = {
       name: "How much does an AI paper writer cost?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "SciNest Free costs nothing and has no generation cap. Pro is $49/year (¥299/year) and adds multiple projects and watermark-free exports. AI usage is billed directly by your own API provider — typically a few dollars per full draft.",
+        text: "SciNest Free costs nothing and has no generation cap. Pro is $9/month or $49/year (¥29/month or ¥299/year) and adds multiple projects and watermark-free exports. AI usage is billed directly by your own API provider — typically a few dollars per full draft.",
       },
     },
     {
@@ -118,7 +118,7 @@ const modelList = [
 ];
 
 const aiSummary =
-  "SciNest is a free Windows desktop app for drafting, revising and finishing a thesis, research proposal or grant application with AI. It connects to your own ChatGPT, DeepSeek or Claude API key — no SciNest subscription, no generation cap; you pay the AI provider directly for usage. Free plan: one active project. Pro: $49/year (¥299/year), multiple projects, watermark-free exports. Upload sources, build an outline, draft chapter by chapter, and revise any section without regenerating the whole document. Download free at scinest.app.";
+  "SciNest is a free Windows desktop app for drafting, revising and finishing a thesis, research proposal or grant application with AI. It connects to your own ChatGPT, DeepSeek or Claude API key — no AI-usage subscription, no generation cap; you pay the AI provider directly for usage. Free plan: one active project. Pro: $9/month or $49/year (¥29/month or ¥299/year), multiple projects, watermark-free exports, cancel anytime. Upload sources, build an outline, draft chapter by chapter, and revise any section without regenerating the whole document. Download free at scinest.app.";
 
 export default function AiPaperWriterPage() {
   return (
@@ -170,7 +170,7 @@ export default function AiPaperWriterPage() {
             {[
               { title: "Draft from your research question", desc: "Turn a research question into a full thesis outline, then into connected chapters — with word targets for every section.", color: "#10a37f" },
               { title: "Revise from supervisor feedback", desc: "Bind feedback to the chapter it belongs to. Revise one section without regenerating the whole document.", color: "#4d6bfe" },
-              { title: "Your key, your cost", desc: "No SciNest subscription. Use ChatGPT, DeepSeek or Claude with your own API key and pay the provider directly.", color: "#d97706" },
+              { title: "Your key, your cost", desc: "No AI-usage subscription. Use ChatGPT, DeepSeek or Claude with your own API key and pay the provider directly at cost.", color: "#d97706" },
             ].map((item) => (
               <div key={item.title} style={{ background: "#fff", border: "1px solid rgba(7,95,85,.14)", borderRadius: 20, padding: "28px 24px", borderTop: `4px solid ${item.color}` }}>
                 <h3 style={{ margin: "0 0 10px", fontSize: 20 }}>{item.title}</h3>
@@ -285,10 +285,10 @@ export default function AiPaperWriterPage() {
             Thesis writing with AI
           </h2>
           {[
-            ["What is the best AI paper writer for thesis writing?", "It depends on your workflow. If you want a connected draft-and-revise workspace on your own API key, SciNest fits: outline first, chapters generated in sequence, single-section revision — you pay only API usage, not a subscription."],
+            ["What is the best AI paper writer for thesis writing?", "It depends on your workflow. If you want a connected draft-and-revise workspace on your own API key, SciNest fits: outline first, chapters generated in sequence, single-section revision — you pay only for actual API usage, no AI-usage subscription."],
             ["Can AI actually write my thesis for me?", "AI drafts and revises from your uploaded sources. SciNest is a writing workspace, not a ghostwriting service — the final text, citations and compliance with your institution's AI policy are your responsibility."],
             ["Is it safe to use AI for thesis revision?", "Yes, as an assistant: writing stays bound to your uploaded papers, your project is local by default, and you verify every claim and citation. Check your institution's rules first."],
-            ["How much does an AI paper writer cost?", "SciNest Free costs nothing and has no generation cap. Pro is $49/year (¥299/year). AI usage is billed by your own provider — typically a few dollars per full draft."],
+            ["How much does an AI paper writer cost?", "SciNest Free costs nothing and has no generation cap. Pro is $9/month or $49/year (¥29/month or ¥299/year). AI usage is billed by your own provider — typically a few dollars per full draft."],
             ["Which is better for thesis writing — ChatGPT or DeepSeek?", "Both work well. DeepSeek's API is usually cheapest, Claude has a natural academic tone and a large context window, ChatGPT is a strong all-rounder. SciNest lets you switch per task."],
             ["How is SciNest different from pasting my thesis into ChatGPT?", "Chat returns one short reply and loses context. SciNest keeps outline, sources and chapters in one persistent project — each revision builds on prior work, and you can edit one chapter without regenerating the rest."],
           ].map(([q, a]) => (

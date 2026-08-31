@@ -25,8 +25,8 @@ export default function PrivacyPage() {
           title: "Information we may collect",
           bullets: [
             "Account information such as your name, email address and authentication records.",
-            "Purchase and licence information. Payment card details are processed by the payment provider and are not intended to be stored by SciNest.",
-            "Trial, download, device and licence activation information needed to provide and protect the service.",
+            "Purchase and subscription information. Payment card details are processed by the payment provider and are not intended to be stored by SciNest.",
+            "Trial, download, device and subscription activation information needed to provide and protect the service.",
             "Messages, support requests and other information you choose to send us.",
             "Basic technical information such as browser, device, IP address, security logs and service error records where available.",
           ],
@@ -41,9 +41,9 @@ export default function PrivacyPage() {
         {
           title: "How we use information",
           bullets: [
-            "To create and manage accounts, trials, purchases and software licences.",
+            "To create and manage accounts, trials, purchases and subscriptions.",
             "To provide downloads, updates, support, security and service communications.",
-            "To prevent fraud, misuse and unauthorised licence activity.",
+            "To prevent fraud, misuse and unauthorised subscription or licence activity.",
             "To comply with legal, accounting and regulatory obligations.",
             "To improve the website and product using information that is reasonably necessary for that purpose.",
           ],

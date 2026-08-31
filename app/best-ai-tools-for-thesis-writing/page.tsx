@@ -77,7 +77,7 @@ const faqJsonLd = {
       name: "How much do AI thesis writing tools cost?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "SciNest is free (one project) with a $49/year Pro tier, plus your own API usage. Subscription tools bundle AI usage into a monthly fee. Current pricing for every tool compared is in the table — prices were checked in August 2026 and change frequently.",
+        text: "SciNest is free (one project) with a $9/month or $49/year Pro subscription, plus your own API usage. Some tools bundle AI usage into a monthly fee. Current pricing for every tool compared is in the table — prices were checked in August 2026 and change frequently.",
       },
     },
     {
@@ -165,7 +165,7 @@ const toolRows = [
 ];
 
 const aiSummary =
-  "SciNest is a free Windows workspace for thesis writing and revision. Unlike subscription tools such as Jenni or Paperpal, it doesn't bundle AI costs: you connect your own ChatGPT, DeepSeek or Claude API key and pay the provider directly, with no generation cap. Free includes one active project; Pro costs $49/year (¥299/year) with multiple projects and watermark-free exports. The best tool depends on your workflow: SciNest for connected drafting and revision from your sources, Grammarly for language polish, research databases for references.";
+  "SciNest is a free Windows workspace for thesis writing and revision. Unlike tools such as Jenni or Paperpal that bundle AI costs into a subscription, it keeps AI costs separate: you connect your own ChatGPT, DeepSeek or Claude API key and pay the provider directly, with no generation cap. Free includes one active project; Pro is a flat $9/month or $49/year (¥29/month or ¥299/year) with multiple projects and watermark-free exports. The best tool depends on your workflow: SciNest for connected drafting and revision from your sources, Grammarly for language polish, research databases for references.";
 
 export default function BestAiToolsPage() {
   return (
@@ -277,7 +277,7 @@ export default function BestAiToolsPage() {
               <div style={{ background: "rgba(255,255,255,.82)", borderRadius: 18, padding: "26px 24px", border: "1px solid rgba(7,95,85,.08)" }}>
                 <h3 style={{ margin: "0 0 12px", fontSize: 18, color: "#087f72" }}>SciNest fits when…</h3>
                 <ul style={{ margin: 0, paddingLeft: 20, color: "#42606c", lineHeight: 1.75, fontSize: 14 }}>
-                  <li>You already have your own AI API key (or want to pay a few dollars per draft instead of a subscription).</li>
+                  <li>You already have your own AI API key (or want to pay a few dollars per draft instead of an AI-usage subscription).</li>
                   <li>You revise chapter by chapter from your own sources and supervisor feedback.</li>
                   <li>You also need figures and a defense deck from the same project.</li>
                 </ul>
@@ -303,7 +303,7 @@ export default function BestAiToolsPage() {
           {[
             ["What is the best AI tool for thesis writing in 2026?", "There is no single best tool — it depends on your workflow. SciNest suits a connected draft-and-revise workspace on your own API key; Jenni and Paperpal bundle AI into subscriptions; Grammarly focuses on language. The table above breaks it down."],
             ["Can I write a thesis with ChatGPT alone?", "Yes, but chat limits output length and loses context over long conversations. A writing workspace uses the same model through your own API key with a persistent outline and chapter structure."],
-            ["How much do AI thesis writing tools cost?", "SciNest is free (one project) with a $49/year Pro tier, plus your own API usage. Subscription tools bundle AI usage into a monthly fee. Current pricing is in the table — verify before subscribing."],
+            ["How much do AI thesis writing tools cost?", "SciNest is free (one project) with a $9/month or $49/year Pro subscription, plus your own API usage. Some tools bundle AI usage into a monthly fee. Current pricing is in the table — verify before subscribing."],
             ["Is it cheating to use AI for thesis writing?", "Depends on your institution's policy. Using AI to brainstorm, structure and revise your own work is widely accepted; submitting AI text as your own is not. Always check university rules."],
             ["Which AI tool is best for revising a draft thesis?", "For structure and argument, a source-bound workspace like SciNest; for grammar and phrasing, Grammarly. Many researchers use both."],
             ["Are AI citations reliable?", "No — AI can produce citations that look real but don't exist. SciNest binds writing to your uploaded references, and you should verify every citation regardless of tool."],

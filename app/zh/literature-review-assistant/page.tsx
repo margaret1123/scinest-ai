@@ -29,7 +29,7 @@ const faqJsonLd = { "@context": "https://schema.org", "@type": "FAQPage", mainEn
   { "@type": "Question", name: "开题报告也能用吗？", acceptedAnswer: { "@type": "Answer", text: "能。文献综述、开题报告、研究计划都有结构化工作流：定大纲、选材料、逐节生成、局部修改，同一个项目里材料与成稿保持连接。" } },
   { "@type": "Question", name: "课题申报书也能写吗？", acceptedAnswer: { "@type": "Answer", text: "能。课题申报书的立项依据就是研究现状与文献综述——上传文献后直接梳理成立项依据，研究内容与研究计划逐节生成。国自然标书同样适用。" } },
   { "@type": "Question", name: "和直接问 ChatGPT 有什么区别？", acceptedAnswer: { "@type": "Answer", text: "聊天窗口输出短、易丢上下文；SciNest 保持大纲、文献和章节的持久连接，每节继承前面内容，可单独修改任意一节。" } },
-  { "@type": "Question", name: "免费吗？", acceptedAnswer: { "@type": "Answer", text: "Free 版免费且不限生成次数（一个活跃项目）；Pro 版 ¥299/年（$49/年）支持多项目与无水印导出。AI 调用费由你自己的 API Key 直接向服务商支付。" } },
+  { "@type": "Question", name: "免费吗？", acceptedAnswer: { "@type": "Answer", text: "Free 版免费且不限生成次数（一个活跃项目）；Pro 版为小额订阅（¥29/月 或 ¥299/年，$9/月 或 $49/年）支持多项目与无水印导出，可随时取消。AI 调用费由你自己的 API Key 直接向服务商支付。" } },
 ]};
 
 const chatLimits = [
@@ -49,7 +49,7 @@ const workflow = [
 ];
 
 const aiSummary =
-  "SciNest 是免费的 Windows 桌面端 AI 学术写作工具，可撰写文献综述、开题报告、课题申报书和研究计划：上传文献与笔记，先定大纲，按研究脉络逐节生成，再单独修改任意一节。课题申报书的立项依据就是研究现状加文献综述——同一份上传文献直接复用。AI 连接你自己的 ChatGPT、DeepSeek 或 Claude API Key——无订阅费、不限生成次数，调用费直接向服务商支付。Free 版一个活跃项目；Pro 版 ¥299/年（$49/年），多项目与无水印导出。官网 scinest.app 免费下载。";
+  "SciNest 是免费的 Windows 桌面端 AI 学术写作工具，可撰写文献综述、开题报告、课题申报书和研究计划：上传文献与笔记，先定大纲，按研究脉络逐节生成，再单独修改任意一节。课题申报书的立项依据就是研究现状加文献综述——同一份上传文献直接复用。AI 连接你自己的 ChatGPT、DeepSeek 或 Claude API Key——AI 使用无订阅费、不限生成次数，调用费直接向服务商支付。Free 版一个活跃项目；Pro 版为小额订阅（¥29/月 或 ¥299/年，$9/月 或 $49/年），多项目与无水印导出，可随时取消。官网 scinest.app 免费下载。";
 
 export default function Page() {
   return (
@@ -131,7 +131,7 @@ export default function Page() {
         <section style={{ maxWidth: 700, margin: "0 auto", padding: "50px 28px" }}>
           <p style={{ color: "#087f72", fontSize: 13, fontWeight: 850, letterSpacing: ".12em", margin: 0, textAlign: "center" }}>常见问题</p>
           <h2 style={{ textAlign: "center", fontSize: "clamp(22px,2.6vw,30px)", lineHeight: 1.18, margin: "12px 0 24px", fontFamily: "Georgia,Times New Roman,serif" }}>写文献综述，你最关心的</h2>
-          {[["AI 能帮我写文献综述吗？","能。上传论文和笔记后，SciNest 帮你梳理研究脉络、归纳观点，按大纲逐节生成综述草稿。生成内容绑定到你上传的文献。"],["AI 生成的综述引用可靠吗？","AI 可能编造看起来真实但实际不存在的引用。SciNest 将生成内容绑定到你上传的文献，提交前必须逐条核对。"],["开题报告也能用吗？","能。文献综述、开题报告、研究计划都有结构化工作流：定大纲、选材料、逐节生成、局部修改。"],["课题申报书也能写吗？","能。课题申报书的立项依据就是研究现状与文献综述——上传文献后直接梳理成立项依据，研究内容与研究计划逐节生成。国自然标书同样适用。"],["和直接问 ChatGPT 有什么区别？","聊天窗口输出短、易丢上下文；SciNest 保持大纲、文献和章节的持久连接，每节继承前面内容，可单独修改任意一节。"],["免费吗？","Free 版免费且不限生成次数（一个活跃项目）；Pro 版 ¥299/年支持多项目与无水印导出。"]].map(([q,a]) => <details key={q} style={{ borderBottom: "1px solid rgba(7,95,85,.1)", padding: "16px 0" }}><summary style={{ fontWeight: 650, fontSize: 15, cursor: "pointer", listStyle: "none" }}>{q}</summary><p style={{ margin: "10px 0 0", color: "#42606c", lineHeight: 1.75, fontSize: 14 }}>{a}</p></details>)}
+          {[["AI 能帮我写文献综述吗？","能。上传论文和笔记后，SciNest 帮你梳理研究脉络、归纳观点，按大纲逐节生成综述草稿。生成内容绑定到你上传的文献。"],["AI 生成的综述引用可靠吗？","AI 可能编造看起来真实但实际不存在的引用。SciNest 将生成内容绑定到你上传的文献，提交前必须逐条核对。"],["开题报告也能用吗？","能。文献综述、开题报告、研究计划都有结构化工作流：定大纲、选材料、逐节生成、局部修改。"],["课题申报书也能写吗？","能。课题申报书的立项依据就是研究现状与文献综述——上传文献后直接梳理成立项依据，研究内容与研究计划逐节生成。国自然标书同样适用。"],["和直接问 ChatGPT 有什么区别？","聊天窗口输出短、易丢上下文；SciNest 保持大纲、文献和章节的持久连接，每节继承前面内容，可单独修改任意一节。"],["免费吗？","Free 版免费且不限生成次数（一个活跃项目）；Pro 版 ¥29/月 或 ¥299/年支持多项目与无水印导出，可随时取消。"]].map(([q,a]) => <details key={q} style={{ borderBottom: "1px solid rgba(7,95,85,.1)", padding: "16px 0" }}><summary style={{ fontWeight: 650, fontSize: 15, cursor: "pointer", listStyle: "none" }}>{q}</summary><p style={{ margin: "10px 0 0", color: "#42606c", lineHeight: 1.75, fontSize: 14 }}>{a}</p></details>)}
         </section>
 
         <section style={{ background: "linear-gradient(180deg,#0a2a30,#0d2328)", color: "#fff", textAlign: "center", padding: "60px 28px" }}>

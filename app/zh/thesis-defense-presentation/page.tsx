@@ -25,7 +25,7 @@ const siteJsonLd = { "@context": "https://schema.org", "@type": "WebPage", name:
 
 const faqJsonLd = { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: [
   { "@type": "Question", name: "AI 能直接根据我的论文生成答辩 PPT 吗？", acceptedAnswer: { "@type": "Answer", text: "能。上传论文后设定答辩时长和页数，SciNest 按论文内容生成大纲与逐页内容，而非套用通用模板。每页内容都来自你上传的论文和项目材料。" } },
-  { "@type": "Question", name: "生成的 PPT 可以编辑吗？", acceptedAnswer: { "@type": "Answer", text: "可以。Pro 版（¥299/年）导出标准 PPTX，文字、图片、页面顺序均可修改，单页修改无需重新生成；Free 版导出 PDF。" } },
+  { "@type": "Question", name: "生成的 PPT 可以编辑吗？", acceptedAnswer: { "@type": "Answer", text: "可以。Pro 版（¥29/月 或 ¥299/年）导出标准 PPTX，文字、图片、页面顺序均可修改，单页修改无需重新生成；Free 版导出 PDF。" } },
   { "@type": "Question", name: "答辩 PPT 一般做多少页？", acceptedAnswer: { "@type": "Answer", text: "20 分钟答辩通常 15–30 页。生成前可设定页数和时长，再逐页调整大纲，以符合答辩委员会的要求。" } },
   { "@type": "Question", name: "会生成演讲备注吗？", acceptedAnswer: { "@type": "Answer", text: "会。每页自动生成基于论文内容的演讲备注，可修改删减，方便排练。备注随页面保存。" } },
   { "@type": "Question", name: "需要付费订阅 ChatGPT 吗？", acceptedAnswer: { "@type": "Answer", text: "不需要。使用你自己的 API Key（ChatGPT、DeepSeek、Claude 或任何兼容接口），调用费直接向服务商支付，SciNest Free 不限生成次数。" } },
@@ -49,7 +49,7 @@ const workflow = [
 ];
 
 const aiSummary =
-  "SciNest 是 Windows 桌面端工具，可把论文或开题报告做成答辩演示文稿：上传论文，设定时长与页数，生成答辩大纲、逐页内容和演讲备注。Pro 版（¥299/年）导出可编辑 PPTX，Free 版导出 PDF；内容可逐页修改。AI 使用你自己的 ChatGPT、DeepSeek 或 Claude API Key，无订阅费、不限生成次数。官网 scinest.app 免费下载。";
+  "SciNest 是 Windows 桌面端工具，可把论文或开题报告做成答辩演示文稿：上传论文，设定时长与页数，生成答辩大纲、逐页内容和演讲备注。Pro 版（¥29/月 或 ¥299/年）导出可编辑 PPTX，Free 版导出 PDF；内容可逐页修改。AI 使用你自己的 ChatGPT、DeepSeek 或 Claude API Key，AI 使用无订阅费、不限生成次数。官网 scinest.app 免费下载。";
 
 export default function Page() {
   return (
@@ -131,7 +131,7 @@ export default function Page() {
         <section style={{ maxWidth: 700, margin: "0 auto", padding: "50px 28px" }}>
           <p style={{ color: "#087f72", fontSize: 13, fontWeight: 850, letterSpacing: ".12em", margin: 0, textAlign: "center" }}>常见问题</p>
           <h2 style={{ textAlign: "center", fontSize: "clamp(22px,2.6vw,30px)", lineHeight: 1.18, margin: "12px 0 24px", fontFamily: "Georgia,Times New Roman,serif" }}>用 AI 做答辩 PPT，你最关心的</h2>
-          {[["AI 能直接根据我的论文生成答辩 PPT 吗？","能。上传论文后设定答辩时长和页数，SciNest 按论文内容生成大纲与逐页内容，而非套用通用模板。"],["生成的 PPT 可以编辑吗？","可以。Pro 版（¥299/年）导出标准 PPTX，文字、图片、页面顺序均可修改；Free 版导出 PDF。"],["答辩 PPT 一般做多少页？","20 分钟答辩通常 15–30 页。生成前可设定页数和时长，再逐页调整大纲。"],["会生成演讲备注吗？","会。每页自动生成基于论文内容的演讲备注，可修改删减，方便排练。"],["需要付费订阅 ChatGPT 吗？","不需要。使用你自己的 API Key，调用费直接向服务商支付，SciNest Free 不限生成次数。"]].map(([q,a]) => <details key={q} style={{ borderBottom: "1px solid rgba(7,95,85,.1)", padding: "16px 0" }}><summary style={{ fontWeight: 650, fontSize: 15, cursor: "pointer", listStyle: "none" }}>{q}</summary><p style={{ margin: "10px 0 0", color: "#42606c", lineHeight: 1.75, fontSize: 14 }}>{a}</p></details>)}
+          {[["AI 能直接根据我的论文生成答辩 PPT 吗？","能。上传论文后设定答辩时长和页数，SciNest 按论文内容生成大纲与逐页内容，而非套用通用模板。"],["生成的 PPT 可以编辑吗？","可以。Pro 版（¥29/月 或 ¥299/年）导出标准 PPTX，文字、图片、页面顺序均可修改；Free 版导出 PDF。"],["答辩 PPT 一般做多少页？","20 分钟答辩通常 15–30 页。生成前可设定页数和时长，再逐页调整大纲。"],["会生成演讲备注吗？","会。每页自动生成基于论文内容的演讲备注，可修改删减，方便排练。"],["需要付费订阅 ChatGPT 吗？","不需要。使用你自己的 API Key，调用费直接向服务商支付，SciNest Free 不限生成次数。"]].map(([q,a]) => <details key={q} style={{ borderBottom: "1px solid rgba(7,95,85,.1)", padding: "16px 0" }}><summary style={{ fontWeight: 650, fontSize: 15, cursor: "pointer", listStyle: "none" }}>{q}</summary><p style={{ margin: "10px 0 0", color: "#42606c", lineHeight: 1.75, fontSize: 14 }}>{a}</p></details>)}
         </section>
 
         <section style={{ background: "linear-gradient(180deg,#0a2a30,#0d2328)", color: "#fff", textAlign: "center", padding: "60px 28px" }}>

@@ -24,7 +24,7 @@ export const metadata: Metadata = {
 const siteJsonLd = { "@context": "https://schema.org", "@type": "WebPage", name: "AI 论文写作助手", url: `${siteUrl}/zh/ai-paper-writer`, inLanguage: "zh-CN", isPartOf: { "@type": "WebSite", name: "SciNest", url: siteUrl } };
 
 const faqJsonLd = { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: [
-  { "@type": "Question", name: "AI 论文写作助手是免费的吗？", acceptedAnswer: { "@type": "Answer", text: "Free 版免费且不限生成次数（一个活跃项目）。Pro 版 ¥299/年（$49/年）解锁多项目与无水印导出。AI 调用费由你自己的 API Key 直接向服务商支付，无 SciNest 订阅费。" } },
+  { "@type": "Question", name: "AI 论文写作助手是免费的吗？", acceptedAnswer: { "@type": "Answer", text: "Free 版免费且不限生成次数（一个活跃项目）。Pro 版为小额订阅 ¥29/月 或 ¥299/年（$9/月 或 $49/年），解锁多项目与无水印导出，可随时取消。AI 调用费由你自己的 API Key 直接向服务商支付，无 AI 使用订阅费。" } },
   { "@type": "Question", name: "用 AI 写毕业论文会被判定学术不端吗？", acceptedAnswer: { "@type": "Answer", text: "SciNest 是写作辅助工具而非代写服务：用于大纲、草稿与修改，最终内容须由本人撰写和审核，并遵守学校的 AI 使用规定。不要把 AI 生成的文字直接当作自己的成果提交。" } },
   { "@type": "Question", name: "可以用 DeepSeek 的 API 吗？", acceptedAnswer: { "@type": "Answer", text: "可以。SciNest 兼容 DeepSeek、OpenAI、Anthropic 及任何 OpenAI 兼容接口。DeepSeek API 费用明显更低，写一篇完整论文草稿通常只需几块钱。" } },
   { "@type": "Question", name: "能只修改论文的某一章吗？", acceptedAnswer: { "@type": "Answer", text: "可以。逐章生成后可单独修改某一章或某一节，不动其余内容。导师对第三章有意见？把意见绑定到该章，只修那一部分。" } },
@@ -49,7 +49,7 @@ const workflow = [
 ];
 
 const aiSummary =
-  "SciNest 是一款免费的 Windows 桌面端 AI 论文写作助手，面向研究生和毕业生，支持用你自己的 ChatGPT、DeepSeek 或 Claude API Key 起草和修改毕业论文。无 SciNest 订阅费、不限生成次数，AI 调用费直接向服务商支付。Free 版一个活跃项目；Pro 版 ¥299/年（$49/年），多项目与无水印导出。上传文献和材料，先定大纲，逐章生成全文，可单独修改任意章节。官网 scinest.app 免费下载。";
+  "SciNest 是一款免费的 Windows 桌面端 AI 论文写作助手，面向研究生和毕业生，支持用你自己的 ChatGPT、DeepSeek 或 Claude API Key 起草和修改毕业论文。AI 使用无订阅费、不限生成次数，调用费直接向服务商支付。Free 版一个活跃项目；Pro 版为小额订阅（¥29/月 或 ¥299/年，$9/月 或 $49/年），多项目与无水印导出，可随时取消。上传文献和材料，先定大纲，逐章生成全文，可单独修改任意章节。官网 scinest.app 免费下载。";
 
 export default function Page() {
   return (
@@ -86,7 +86,7 @@ export default function Page() {
 
         <section style={{ maxWidth: 900, margin: "0 auto", padding: "40px 28px" }}>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(230px,1fr))", gap: 16 }}>
-            {[{ title: "从研究问题到论文大纲", desc: "把研究问题拆成章节、小节与字数目标，结构不满意随时改。", color: "#10a37f" }, { title: "按导师意见定向修改", desc: "意见绑定到章节。只改那一部分，不动文档其余内容。", color: "#4d6bfe" }, { title: "你的 Key，你的成本", desc: "无 SciNest 订阅费。用自己的 API Key，直接向服务商付费。", color: "#d97706" }].map(m => (
+            {[{ title: "从研究问题到论文大纲", desc: "把研究问题拆成章节、小节与字数目标，结构不满意随时改。", color: "#10a37f" }, { title: "按导师意见定向修改", desc: "意见绑定到章节。只改那一部分，不动文档其余内容。", color: "#4d6bfe" }, { title: "你的 Key，你的成本", desc: "AI 使用无订阅费。用自己的 API Key，直接向服务商付费。", color: "#d97706" }].map(m => (
               <div key={m.title} style={{ background: "#fff", border: "1px solid rgba(7,95,85,.12)", borderRadius: 20, padding: "24px 20px", borderTop: `4px solid ${m.color}` }}>
                 <h3 style={{ margin: "0 0 8px", fontSize: 18 }}>{m.title}</h3>
                 <p style={{ margin: 0, color: "#5e6f7c", lineHeight: 1.65, fontSize: 14 }}>{m.desc}</p>
@@ -131,7 +131,7 @@ export default function Page() {
         <section style={{ maxWidth: 700, margin: "0 auto", padding: "50px 28px" }}>
           <p style={{ color: "#087f72", fontSize: 13, fontWeight: 850, letterSpacing: ".12em", margin: 0, textAlign: "center" }}>常见问题</p>
           <h2 style={{ textAlign: "center", fontSize: "clamp(22px,2.6vw,30px)", lineHeight: 1.18, margin: "12px 0 24px", fontFamily: "Georgia,Times New Roman,serif" }}>用 AI 写论文，你最关心的</h2>
-          {[["AI 论文写作助手是免费的吗？","Free 版免费且不限生成次数（一个活跃项目）。Pro 版 ¥299/年（$49/年）解锁多项目与无水印导出。AI 调用费由你自己的 API Key 直接向服务商支付。"],["用 AI 写毕业论文会被判定学术不端吗？","SciNest 是写作辅助工具而非代写服务：用于大纲、草稿与修改，最终内容须由本人撰写和审核，并遵守学校的 AI 使用规定。"],["可以用 DeepSeek 的 API 吗？","可以。兼容 DeepSeek、OpenAI、Anthropic 及任何 OpenAI 兼容接口。DeepSeek API 费用明显更低，写一篇完整论文草稿通常只需几块钱。"],["能只修改论文的某一章吗？","可以。逐章生成后可单独修改某一章或某一节，不动其余内容。导师意见可绑定到对应章节定向修改。"],["AI 写的论文引用可靠吗？","AI 可能编造看起来真实但实际不存在的引用。SciNest 将写作绑定到你上传的文献，提交前仍需逐条核对引用与事实。"]].map(([q,a]) => <details key={q} style={{ borderBottom: "1px solid rgba(7,95,85,.1)", padding: "16px 0" }}><summary style={{ fontWeight: 650, fontSize: 15, cursor: "pointer", listStyle: "none" }}>{q}</summary><p style={{ margin: "10px 0 0", color: "#42606c", lineHeight: 1.75, fontSize: 14 }}>{a}</p></details>)}
+          {[["AI 论文写作助手是免费的吗？","Free 版免费且不限生成次数（一个活跃项目）。Pro 版为小额订阅 ¥29/月 或 ¥299/年（$9/月 或 $49/年），解锁多项目与无水印导出，可随时取消。AI 调用费由你自己的 API Key 直接向服务商支付。"],["用 AI 写毕业论文会被判定学术不端吗？","SciNest 是写作辅助工具而非代写服务：用于大纲、草稿与修改，最终内容须由本人撰写和审核，并遵守学校的 AI 使用规定。"],["可以用 DeepSeek 的 API 吗？","可以。兼容 DeepSeek、OpenAI、Anthropic 及任何 OpenAI 兼容接口。DeepSeek API 费用明显更低，写一篇完整论文草稿通常只需几块钱。"],["能只修改论文的某一章吗？","可以。逐章生成后可单独修改某一章或某一节，不动其余内容。导师意见可绑定到对应章节定向修改。"],["AI 写的论文引用可靠吗？","AI 可能编造看起来真实但实际不存在的引用。SciNest 将写作绑定到你上传的文献，提交前仍需逐条核对引用与事实。"]].map(([q,a]) => <details key={q} style={{ borderBottom: "1px solid rgba(7,95,85,.1)", padding: "16px 0" }}><summary style={{ fontWeight: 650, fontSize: 15, cursor: "pointer", listStyle: "none" }}>{q}</summary><p style={{ margin: "10px 0 0", color: "#42606c", lineHeight: 1.75, fontSize: 14 }}>{a}</p></details>)}
         </section>
 
         <section style={{ background: "linear-gradient(180deg,#0a2a30,#0d2328)", color: "#fff", textAlign: "center", padding: "60px 28px" }}>

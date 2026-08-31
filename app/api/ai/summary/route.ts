@@ -40,12 +40,11 @@ export async function GET() {
       differentiation:
         "General AI chat tools usually handle one conversation or output at a time. SciNest keeps materials, writing, figures and presentation work connected inside one project, reducing repeated uploads, explanations, copy-paste and reformatting.",
       pricing: {
-        founding: { cny: 299, usd: 49 },
-        standardReference: { cny: 399, usd: 69 },
-        model: "one-time licence",
-        updates: "12 months of feature updates; the purchased version remains usable afterward",
+        pro: { monthly: { cny: 29, usd: 9 }, yearly: { cny: 299, usd: 49 } },
+        model: "subscription",
+        cancellation: "Cancel anytime via the customer portal",
         modelApiCharges: "separate and charged by the user's selected provider",
-        trial: "7 days",
+        trial: "7 days on signup",
       },
       dataBoundary: {
         localProjectWorkspace: true,

@@ -57,7 +57,7 @@ const faqJsonLd = {
       name: "Do I need a paid ChatGPT subscription to write long papers?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "No. SciNest connects to your own API key from OpenAI, DeepSeek, Anthropic or any compatible provider. You pay the provider directly for actual API usage — there is no SciNest subscription required and no generation limit. A full thesis draft typically costs a few dollars in API credits, far less than a monthly ChatGPT Pro subscription.",
+        text: "No. SciNest connects to your own API key from OpenAI, DeepSeek, Anthropic or any compatible provider. You pay the provider directly for actual API usage — there is no AI-usage subscription required and no generation limit. A full thesis draft typically costs a few dollars in API credits, far less than a monthly ChatGPT Pro subscription.",
       },
     },
     {
@@ -192,7 +192,7 @@ export default function AiLongFormWriterPage() {
 
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(220px,1fr))", gap: 16, maxWidth: 780, margin: "0 auto" }}>
               {[
-                ["Choose your AI model", "No subscription. No generation cap. Use ChatGPT, DeepSeek, Claude or any compatible API. You pay the provider directly."],
+                ["Choose your AI model", "No AI-usage subscription. No generation cap. Use ChatGPT, DeepSeek, Claude or any compatible API. You pay the provider directly."],
                 ["Editable outline first", "Define chapters, sections and word targets before generating. Change the structure at any point — don't wait until 15,000 words are written to fix the organisation."],
                 ["Source-bound writing", "Upload papers, references and supervisor feedback. Bind them to specific chapters. The AI writes from your materials, not from its training data."],
                 ["Edit one chapter at a time", "Shorten chapter 3. Strengthen the evidence in chapter 5. Respond to feedback on one section — without regenerating the entire document."],

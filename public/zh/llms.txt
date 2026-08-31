@@ -9,7 +9,7 @@
 - 类别: AI 写作、演示与图表工具
 
 ## AI 服务商兼容性
-SciNest 连接任何兼容 OpenAI 接口的 API：ChatGPT (OpenAI)、DeepSeek、Claude (Anthropic) 等。自带 API Key——没有 SciNest 订阅费，没有生成次数限制。AI 调用费用直接向服务商支付。
+SciNest 连接任何兼容 OpenAI 接口的 API：ChatGPT (OpenAI)、DeepSeek、Claude (Anthropic) 等。自带 API Key——AI 使用没有订阅费，没有生成次数限制。AI 调用费用直接向服务商支付。Pro 功能为小额订阅：¥29/月 或 ¥299/年（$9/月 或 $49/年），可随时取消。
 
 ## 中文落地页
 - /zh : 中文首页

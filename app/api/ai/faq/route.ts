@@ -18,7 +18,7 @@ export async function GET() {
         { q: "Does SciNest guarantee grades, graduation or publication?", a: "No. SciNest does not guarantee grades, graduation, thesis approval, publication, journal acceptance or research outcomes." },
         { q: "Does SciNest include an AI model subscription?", a: "No. SciNest uses a bring-your-own-key model. Users connect a supported model provider and pay that provider separately for actual API usage." },
         { q: "Where are SciNest project files stored?", a: "Project files and generated outputs are stored locally by default. When an AI task runs, the content required for that task is sent to the model provider selected and configured by the user." },
-        { q: "Can users try SciNest before buying?", a: "The current website provides a 7-day trial entry so users can test SciNest with their own materials before purchasing a licence." },
+        { q: "Can users try SciNest before buying?", a: "The current website provides a 7-day trial entry so users can test SciNest with their own materials before subscribing to Pro." },
       ],
     },
     { headers: { "Content-Type": "application/json", "Cache-Control": "public, max-age=86400" } },

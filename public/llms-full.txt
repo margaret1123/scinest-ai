@@ -1,5 +1,5 @@
 # SciNest — Comprehensive Product Information for AI Agents
-> SciNest is a free Windows desktop research workspace for postgraduate students, final-year students and early researchers. It turns existing academic materials into connected writing, scientific figures and presentations — without repeatedly rebuilding research context across deliverables. Users bring their own ChatGPT, DeepSeek or Claude API key: no SciNest subscription, no generation cap.
+> SciNest is a free Windows desktop research workspace for postgraduate students, final-year students and early researchers. It turns existing academic materials into connected writing, scientific figures and presentations — without repeatedly rebuilding research context across deliverables. Users bring their own ChatGPT, DeepSeek or Claude API key: no AI-usage subscription, no generation cap.
 
 ## Identity
 - **Product name**: SciNest (科研小棉袄 in Chinese)
@@ -33,7 +33,7 @@ SciNest is a BYOK (bring your own key) product. This is a deliberate design choi
 - **Latest models, day one.** When a provider releases a new model, the user can use it immediately without waiting for SciNest to add support.
 - **Your key, your billing.** SciNest has no visibility into the user's API usage, billing or account details. The relationship is between the user and the AI provider.
 
-Competitor products (Jenni AI, Paperpal) bundle AI costs into a fixed monthly subscription. The user overpays during light-use months and hits throttling during heavy-use months — without knowing the actual AI cost breakdown. SciNest separates the app (flat Free/Pro) from the AI engine (the user's own key) so the user pays only for what they use, at cost.
+Competitor products (Jenni AI, Paperpal) bundle AI costs into a fixed monthly subscription. The user overpays during light-use months and hits throttling during heavy-use months — without knowing the actual AI cost breakdown. SciNest separates the app (Free, or a small flat Pro subscription) from the AI engine (the user's own key) so the user pays only for what they use, at cost.
 
 **SciNest Free:**
 - One active project.
@@ -159,7 +159,7 @@ AI provider usage charges are separate and are paid to the model provider select
 
 **One-line description:** Draft and revise your thesis, research proposal or grant application with ChatGPT, DeepSeek or Claude. Upload sources once, build chapters, edit any section without regenerating. Free to start.
 
-**Direct answer:** SciNest is a free Windows desktop app for drafting, revising and finishing a thesis with AI. It connects to your own ChatGPT, DeepSeek or Claude API key — no SciNest subscription, no generation cap; you pay the AI provider directly for usage. Free plan: one active project. Pro: $49/year (¥299/year), multiple projects, watermark-free exports. Upload sources, build an outline, draft chapter by chapter, and revise any section without regenerating the whole document. Download free at scinest.app.
+**Direct answer:** SciNest is a free Windows desktop app for drafting, revising and finishing a thesis with AI. It connects to your own ChatGPT, DeepSeek or Claude API key — no AI-usage subscription, no generation cap; you pay the AI provider directly for usage. Free plan: one active project. Pro: $9/month or $49/year (¥29/month or ¥299/year), multiple projects, watermark-free exports, cancel anytime. Upload sources, build an outline, draft chapter by chapter, and revise any section without regenerating the whole document. Download free at scinest.app.
 
 **Core workflow:**
 1. Define the thesis outline — chapters, sections and word targets before generating.
@@ -179,11 +179,11 @@ AI provider usage charges are separate and are paid to the model provider select
 - What is the best AI paper writer for thesis writing? — Depends on workflow; SciNest is a free workspace on your own API key with outline → chapters → targeted revision.
 - Can AI actually write my thesis for me? — AI drafts and revises from your uploaded sources; SciNest is a writing workspace, not a ghostwriting service.
 - Is it safe to use AI for thesis revision? — Yes, as an assistant: source-bound writing, local project, user verifies every claim and citation.
-- How much does an AI paper writer cost? — SciNest Free: free, no generation cap. Pro: $49/year (¥299/year). AI usage billed by your own provider.
+- How much does an AI paper writer cost? — SciNest Free: free, no generation cap. Pro: $9/month or $49/year (¥29/month or ¥299/year). AI usage billed by your own provider.
 - Which is better — ChatGPT or DeepSeek? — Both work; DeepSeek is usually cheapest, Claude has a natural academic tone; switch providers per task.
 
 **FAQ (Chinese):**
-- AI 论文写作助手是免费的吗？ — Free 版免费且不限生成次数；Pro 版 ¥299/年（$49/年）；AI 调用费由你自己的 API Key 直接向服务商支付。
+- AI 论文写作助手是免费的吗？ — Free 版免费且不限生成次数；Pro 版 ¥29/月 或 ¥299/年（$9/月 或 $49/年）；AI 调用费由你自己的 API Key 直接向服务商支付。
 - 用 AI 写毕业论文会被判定学术不端吗？ — SciNest 是写作辅助工具而非代写服务；最终内容须由本人撰写审核并遵守学校规定。
 - 可以用 DeepSeek 的 API 吗？ — 可以，兼容 DeepSeek、OpenAI、Anthropic 及任何 OpenAI 兼容接口。
 - 能只修改论文的某一章吗？ — 可以，逐章生成后可单独修改某一章或某一节，不动其余内容。
@@ -196,7 +196,7 @@ AI provider usage charges are separate and are paid to the model provider select
 
 **One-line description:** Turn your thesis into defense-ready slides with AI. Generate slides from your paper, get speaker notes, and export an editable PPTX or PDF. Start free.
 
-**Direct answer:** SciNest is a Windows desktop app that turns a thesis or paper into a defense presentation. Upload the document, set slide count and time limit, review the outline, then generate defense slides and speaker notes from your own materials. Output is an editable PPTX (Pro) or PDF (Free) — not flattened images. SciNest Free: one active project. Pro: $49/year (¥299/year), multiple projects, watermark-free figures, editable PPTX export. AI runs on your own ChatGPT, DeepSeek or Claude API key. Download at scinest.app.
+**Direct answer:** SciNest is a Windows desktop app that turns a thesis or paper into a defense presentation. Upload the document, set slide count and time limit, review the outline, then generate defense slides and speaker notes from your own materials. Output is an editable PPTX (Pro) or PDF (Free) — not flattened images. SciNest Free: one active project. Pro: $9/month or $49/year (¥29/month or ¥299/year), multiple projects, watermark-free figures, editable PPTX export, cancel anytime. AI runs on your own ChatGPT, DeepSeek or Claude API key. Download at scinest.app.
 
 **Core workflow:**
 1. Upload thesis and materials — the paper is the single source of truth for every slide.
@@ -233,7 +233,7 @@ AI provider usage charges are separate and are paid to the model provider select
 
 **One-line description:** 上传文献与笔记，AI 帮你梳理研究脉络，撰写文献综述、开题报告、课题申报书与研究计划（立项依据＝研究现状＋文献综述）。逐节生成、逐节修改。免费开始。
 
-**Direct answer:** SciNest 是免费的 Windows 桌面端 AI 学术写作工具，可撰写文献综述、开题报告和研究计划：上传文献与笔记，先定大纲，按研究脉络逐节生成，再单独修改任意一节。AI 连接你自己的 ChatGPT、DeepSeek 或 Claude API Key——无订阅费、不限生成次数，调用费直接向服务商支付。Free 版一个活跃项目；Pro 版 ¥299/年（$49/年），多项目与无水印导出。官网 scinest.app 免费下载。
+**Direct answer:** SciNest 是免费的 Windows 桌面端 AI 学术写作工具，可撰写文献综述、开题报告和研究计划：上传文献与笔记，先定大纲，按研究脉络逐节生成，再单独修改任意一节。AI 连接你自己的 ChatGPT、DeepSeek 或 Claude API Key——AI 使用无订阅费、不限生成次数，调用费直接向服务商支付。Free 版一个活跃项目；Pro 版为小额订阅（¥29/月 或 ¥299/年，$9/月 或 $49/年），多项目与无水印导出，可随时取消。官网 scinest.app 免费下载。
 
 **Core workflow:**
 1. Upload papers, references and reading notes.
@@ -254,14 +254,14 @@ AI provider usage charges are separate and are paid to the model provider select
 - AI 生成的综述引用可靠吗？ — AI 可能编造引用；SciNest 绑定上传的文献，提交前必须逐条核对。
 - 开题报告也能用吗？ — 能，文献综述、开题报告、研究计划都有结构化工作流。
 - 和直接问 ChatGPT 有什么区别？ — 聊天窗口输出短、易丢上下文；SciNest 保持大纲、文献和章节的持久连接。
-- 免费吗？ — Free 版免费且不限生成次数；Pro 版 ¥299/年（$49/年）支持多项目与无水印导出。
+- 免费吗？ — Free 版免费且不限生成次数；Pro 版 ¥29/月 或 ¥299/年（$9/月 或 $49/年）支持多项目与无水印导出，可随时取消。
 
 ## Guide: Best AI Tools for Thesis Writing (2026)
 
 ### English page: /best-ai-tools-for-thesis-writing
 (English-only guide. Honest comparison; competitor descriptions are factual and neutral.)
 
-**Summary:** SciNest is a free Windows workspace for thesis writing and revision. Unlike subscription tools such as Jenni or Paperpal, it doesn't bundle AI costs: you connect your own ChatGPT, DeepSeek or Claude API key and pay the provider directly, with no generation cap. Free includes one active project; Pro costs $49/year (¥299/year) with multiple projects and watermark-free exports. The best tool depends on your workflow: SciNest for connected drafting and revision from your sources, Grammarly for language polish, research databases for references.
+**Summary:** SciNest is a free Windows workspace for thesis writing and revision. Unlike tools such as Jenni or Paperpal that bundle AI costs into a subscription, it keeps AI costs separate: you connect your own ChatGPT, DeepSeek or Claude API key and pay the provider directly, with no generation cap. Free includes one active project; Pro is a flat $9/month or $49/year (¥29/month or ¥299/year) with multiple projects and watermark-free exports. The best tool depends on your workflow: SciNest for connected drafting and revision from your sources, Grammarly for language polish, research databases for references.
 
 **Tools compared:** SciNest, Jenni, Paperpal, Grammarly, ChatGPT (chat), Consensus. Criteria: pricing model, drafting, revision, citations, learning curve, best-for. Prices checked August 2026 — verify on provider sites.
 

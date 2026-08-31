@@ -25,7 +25,7 @@ const siteJsonLd = { "@context": "https://schema.org", "@type": "WebPage", name:
 
 const faqJsonLd = { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: [
   { "@type": "Question", name: "ChatGPT 或 DeepSeek 真能写出一万字以上的论文吗？", acceptedAnswer: { "@type": "Answer", text: "能——用对的工具。聊天窗口每次只输出几百字，长对话还会丢失上下文。但用同一个 API，通过专为长文设计的工作区（大纲→章节→完整草稿→局部修改），ChatGPT、DeepSeek 和 Claude 都能生成连贯的万字长文。SciNest 连接你自己的 API Key，把写作拆成结构化流程。" } },
-  { "@type": "Question", name: "需要付费订阅 ChatGPT 吗？", acceptedAnswer: { "@type": "Answer", text: "不需要。SciNest 连接你自己的 OpenAI、DeepSeek 或 Anthropic API Key。你直接向服务商付费，没有 SciNest 订阅费，没有生成次数限制。一篇完整论文草稿通常只需几块钱的 API 费用，远低于月费订阅。" } },
+  { "@type": "Question", name: "需要付费订阅 ChatGPT 吗？", acceptedAnswer: { "@type": "Answer", text: "不需要。SciNest 连接你自己的 OpenAI、DeepSeek 或 Anthropic API Key。你直接向服务商付费，没有 AI 使用订阅费，没有生成次数限制。一篇完整论文草稿通常只需几块钱的 API 费用，远低于月费订阅。" } },
   { "@type": "Question", name: "和直接把论文粘贴到 ChatGPT 里有什么区别？", acceptedAnswer: { "@type": "Answer", text: "粘贴到 ChatGPT 只能得到一段 500-1500 字的回复，而且常常截断。多轮对话后上下文丢失，模型记不住你的大纲、文献和前面写过什么。写作工作区把大纲、选定材料、已生成章节和修改历史保持在同一个项目里，每一章都继承前面的上下文。" } },
   { "@type": "Question", name: "能只改一章，不动全文吗？", acceptedAnswer: { "@type": "Answer", text: "可以。全文草稿生成后，选中某章、某节或某段进行修改——缩短、加强论证、回应导师意见、重新组织——不动文档其余部分。这是聊天界面做不到的。" } },
   { "@type": "Question", name: "支持 DeepSeek 的免费 API 吗？", acceptedAnswer: { "@type": "Answer", text: "支持。SciNest 兼容 DeepSeek、OpenAI、Anthropic 和任何兼容 OpenAI 接口的 API 端点。DeepSeek API 价格显著低于大多数替代方案。" } },
@@ -93,7 +93,7 @@ export default function Page() {
             <h2 style={{ fontSize: "clamp(24px,3vw,36px)", lineHeight: 1.15, margin: "14px 0 18px", fontFamily: "Georgia,Times New Roman,serif" }}>同一个 API Key。换个工作方式。</h2>
             <p style={{ fontSize: 17, color: "#42606c", lineHeight: 1.7, maxWidth: 620, margin: "0 auto 32px" }}>SciNest 连接你自己的 OpenAI、DeepSeek 或 Anthropic API Key。先定可编辑大纲，再逐章生成，全文上下文保持连接。修哪章改哪章——不碰其余内容。</p>
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(210px,1fr))", gap: 14, maxWidth: 750, margin: "0 auto" }}>
-              {[["自选模型","没有 SciNest 订阅费。不限生成次数。用 ChatGPT、DeepSeek、Claude 任意兼容 API。"],["先定大纲","设定章节、小节和字数目标。结构不满意就改——别等一万五千字写完了再返工。"],["材料绑定写作","上传论文、文献和导师意见。绑定到具体章节。AI 按你的材料写，不瞎编。"],["课题申报书","立项依据、研究内容、研究方案、预期成果——大纲先行，逐节起草，逐节修改。"],["逐章修改","缩短第三章。加强第五章的论证。回应某一节的导师意见——不动文档其余部分。"],["项目持久记忆","大纲、材料、生成章节、修改历史全部保持连接。不用重复上下文，不用在窗口间粘贴。"],["导出完整草稿","全文完成后导出。审查、核实、润色、排版、提交。成果是你的。"]].map(([t,d]) => (
+              {[["自选模型","AI 使用无订阅费。不限生成次数。用 ChatGPT、DeepSeek、Claude 任意兼容 API。"],["先定大纲","设定章节、小节和字数目标。结构不满意就改——别等一万五千字写完了再返工。"],["材料绑定写作","上传论文、文献和导师意见。绑定到具体章节。AI 按你的材料写，不瞎编。"],["课题申报书","立项依据、研究内容、研究方案、预期成果——大纲先行，逐节起草，逐节修改。"],["逐章修改","缩短第三章。加强第五章的论证。回应某一节的导师意见——不动文档其余部分。"],["项目持久记忆","大纲、材料、生成章节、修改历史全部保持连接。不用重复上下文，不用在窗口间粘贴。"],["导出完整草稿","全文完成后导出。审查、核实、润色、排版、提交。成果是你的。"]].map(([t,d]) => (
                 <div key={t} style={{ background: "rgba(255,255,255,.82)", borderRadius: 16, padding: "22px 18px", textAlign: "left", border: "1px solid rgba(7,95,85,.06)" }}>
                   <h3 style={{ margin: "0 0 6px", fontSize: 16 }}>{t}</h3>
                   <p style={{ margin: 0, fontSize: 13, color: "#5e6f7c", lineHeight: 1.6 }}>{d}</p>

@@ -115,12 +115,13 @@ The difference is in what you can do with the results.
 | **PPT** export | PDF, watermarked, unlimited | PDF + editable PPTX, unlimited |
 | **Active projects** | 1 | Unlimited |
 | **AI API keys** | Your own | Your own |
+| **Price** | Free | $9/mo or $49/yr (¥29/mo or ¥299/yr) |
 
 ### New User Trial
 
 **New users get 7 days of Pro free on registration.** No charges, no auto-renewal — just full access to try every feature.
 
-After the trial, Free tier still gives you **unlimited generation** for writing, figures, and PPT. Only editing and professional exports (DOCX, PPTX, SVG, watermark-free) require an upgrade.
+After the trial, Free tier still gives you **unlimited generation** for writing, figures, and PPT. Only editing and professional exports (DOCX, PPTX, SVG, watermark-free) require an upgrade. Pro is available afterward as a monthly or yearly subscription — $9/mo or $49/yr (¥29/mo or ¥299/yr), cancel anytime.
 
 [Register on scinest.app](https://scinest.app/login) · [Download](https://github.com/margaret1123/scinest-ai/releases/latest)
 
