@@ -6,7 +6,7 @@ export async function GET() {
       site: "SciNest",
       alternateName: "科研小棉袄",
       url: "https://scinest.app",
-      operator: "Jiaempower Pathways Limited",
+      operator: "Margaret (New Zealand sole trader)",
       lastModified: "2026-07-25",
       questions: [
         { q: "What is SciNest?", a: "SciNest is a Windows desktop research productivity application that helps students and early researchers turn existing papers, references, drafts, data, supervisor feedback and project materials into editable academic writing, scientific figures and presentations." },

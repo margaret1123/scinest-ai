@@ -5,7 +5,7 @@
 - Canonical site: https://scinest.app/
 - Default language: English
 - Chinese page: https://scinest.app/zh
-- Operator: Individually developed by Margaret · Jiaempower Pathways Limited, New Zealand
+- Operator: Margaret — New Zealand sole trader, individually develops and operates SciNest
 - Category: AI writing, presentation and diagram tool
 
 ## AI provider compatibility

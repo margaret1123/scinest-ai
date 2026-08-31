@@ -47,8 +47,8 @@ const articleJsonLd = {
   datePublished: "2026-08-29",
   dateModified: "2026-08-29",
   inLanguage: "en",
-  author: { "@type": "Organization", name: "Jiaempower Pathways Limited", url: siteUrl },
-  publisher: { "@type": "Organization", name: "Jiaempower Pathways Limited", url: siteUrl },
+  author: { "@type": "Person", name: "Margaret", url: siteUrl },
+  publisher: { "@type": "Organization", name: "SciNest", url: siteUrl },
   mainEntityOfPage: `${siteUrl}/best-ai-tools-for-thesis-writing`,
 };
 

@@ -9,7 +9,7 @@ export async function GET() {
         type: "SoftwareApplication",
         category: "ResearchProductivityApplication",
         url: "https://scinest.app",
-        operator: "Jiaempower Pathways Limited",
+        operator: "Margaret (New Zealand sole trader)",
         platform: "Windows desktop",
         primaryAudience: "Postgraduate students, final-year students and early researchers with existing materials and unfinished academic deliverables",
         pricing: {

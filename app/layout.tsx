@@ -72,21 +72,21 @@ const structuredData = [
   {
     "@context": "https://schema.org",
     "@type": "Organization",
-    name: "Jiaempower Pathways Limited",
+    name: "SciNest",
     url: siteUrl,
     brand: { "@type": "Brand", name: "SciNest" },
     founder: { "@type": "Person", name: "Margaret" },
     sameAs: ["https://github.com/margaret1123/scinest-ai", "https://github.com/margaret1123"],
   },
-  // TODO(E-E-A-T): About 页已按创始故事（心理咨询师自研）更新但未实名。若将来愿意公开姓名与邮箱，取消注释并补全 Person schema（与 /about 页简介对应）
+  // Person schema 无需单独启用：Organization 的 founder 字段已声明 Margaret（运营主体为新西兰个体经营者，不公开注册名）。
   // {
   //   "@context": "https://schema.org",
   //   "@type": "Person",
-  //   name: "REPLACE-WITH-FOUNDER-NAME",
+  //   name: "Margaret",
   //   url: `${siteUrl}/about`,
-  //   worksFor: { "@type": "Organization", name: "Jiaempower Pathways Limited" },
+  //   worksFor: { "@type": "Organization", name: "SciNest" },
   //   jobTitle: "Founder",
-  //   sameAs: ["REPLACE-WITH-GITHUB-OR-LINKEDIN"],
+  //   sameAs: ["https://github.com/margaret1123"],
   // },
   {
     "@context": "https://schema.org",
@@ -111,7 +111,7 @@ const structuredData = [
       "@type": "Audience",
       audienceType: "Postgraduate students, final-year students and early researchers",
     },
-    author: { "@type": "Organization", name: "Jiaempower Pathways Limited" },
+    author: { "@type": "Person", name: "Margaret" },
   },
 ];
 

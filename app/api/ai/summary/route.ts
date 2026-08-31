@@ -8,7 +8,7 @@ export async function GET() {
         alternateName: "科研小棉袄",
         tagline: "Academic work, finished",
         url: "https://scinest.app",
-        operator: "Jiaempower Pathways Limited",
+        operator: "Margaret (New Zealand sole trader)",
         platform: "Windows desktop",
         languages: ["en", "zh-CN"],
         lastModified: "2026-07-25",
