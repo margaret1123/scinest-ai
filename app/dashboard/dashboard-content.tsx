@@ -19,6 +19,7 @@ interface DashboardContentProps {
   earlyBirdEligible: boolean;
   earlyBirdExpired: boolean;
   license: string;
+  proExpiresAt?: string | null;
   orders: Order[];
   locale: "zh" | "en";
   stripeSuccess?: boolean;
@@ -39,11 +40,22 @@ const t = {
     freeBadge: "SCINEST FREE",
     freeTitle: "SciNest Free",
     freeBody: "你当前使用 SciNest Free。升级到 Pro 解锁无水印导出、图层编辑和可编辑 PPTX。",
-    buyCny: "升级 Pro · ¥299",
-    buyUsd: "Upgrade · $49",
+    buyCnyYearly: "升级 Pro · ¥299/年",
+    buyCnyMonthly: "升级 Pro · ¥29/月",
+    buyUsdYearly: "Upgrade · $49/yr",
+    buyUsdMonthly: "Upgrade · $9/mo",
+    planMonthly: "月付",
+    planYearly: "年付",
+    saveNote: "年付省 ¥49",
+    subBadge: "PRO SUBSCRIPTION",
+    subTitle: "Pro 订阅生效中",
+    subBody: "订阅期间全部 Pro 功能可用。自动续费，可随时在订阅管理中取消。",
+    subRenewsOn: "本期到期时间：",
+    manage: "管理订阅",
+    subActivating: "支付成功，订阅激活中（最多数秒）…",
     buying: "处理中…",
     buyingEn: "Processing…",
-    priceNote: "365 天 Pro 授权 · 无水印导出 · 图层编辑 · 可编辑 PPTX · 无限项目",
+    priceNote: "订阅期间可用 · 无水印导出 · 图层编辑 · 可编辑 PPTX · 无限项目 · 随时取消",
     foundingOrder: "已有 Founding Edition 订单",
     foundingOrderNote: "现有付费订单与授权记录保留。",
     ordersTitle: "订单记录",
@@ -53,7 +65,7 @@ const t = {
     compareFree: "Free",
     comparePro: "Pro",
     comparePriceFree: "免费",
-    comparePricePro: "¥299/年",
+    comparePricePro: "¥29/月 · ¥299/年",
     compareGroups: [
       {
         label: "SciNest 生成",
@@ -74,7 +86,7 @@ const t = {
         label: "科研图",
         rows: [
           ["科研图生成", "✓", "✓"],
-          ["导出", "带水印", "无水印"],
+          ["导出", "每月 2 次（带水印）", "不限（无水印）"],
           ["图层/标签/元素编辑", "—", "✓"],
           ["选中区域重新生成", "—", "✓"],
         ],
@@ -102,11 +114,22 @@ const t = {
     freeBadge: "SCINEST FREE",
     freeTitle: "SciNest Free",
     freeBody: "You're on SciNest Free. Upgrade to Pro for watermark-free export, layer editing, and editable PPTX.",
-    buyCny: "Upgrade Pro · ¥299",
-    buyUsd: "Upgrade · $49",
+    buyCnyYearly: "Upgrade Pro · ¥299/yr",
+    buyCnyMonthly: "Upgrade Pro · ¥29/mo",
+    buyUsdYearly: "Upgrade · $49/yr",
+    buyUsdMonthly: "Upgrade · $9/mo",
+    planMonthly: "Monthly",
+    planYearly: "Yearly",
+    saveNote: "Save $40 with yearly",
+    subBadge: "PRO SUBSCRIPTION",
+    subTitle: "Pro Subscription Active",
+    subBody: "All Pro features are available while subscribed. Auto-renews — cancel anytime in subscription management.",
+    subRenewsOn: "Current period ends: ",
+    manage: "Manage subscription",
+    subActivating: "Payment received — subscription activating (a few seconds)…",
     buying: "Processing…",
     buyingEn: "Processing…",
-    priceNote: "365-day Pro license · Watermark-free · Layer editing · Editable PPTX · Unlimited projects",
+    priceNote: "Available while subscribed · Watermark-free · Layer editing · Editable PPTX · Unlimited projects · Cancel anytime",
     foundingOrder: "Founding Edition Order",
     foundingOrderNote: "Existing order and license records are preserved.",
     ordersTitle: "Order History",
@@ -116,7 +139,7 @@ const t = {
     compareFree: "Free",
     comparePro: "Pro",
     comparePriceFree: "Free",
-    comparePricePro: "$49/year",
+    comparePricePro: "$9/mo · $49/yr",
     compareGroups: [
       {
         label: "SciNest Generations",
@@ -137,7 +160,7 @@ const t = {
         label: "Scientific Figures",
         rows: [
           ["Figure generation", "✓", "✓"],
-          ["Export", "Watermarked", "Watermark-free"],
+          ["Export", "2 / month (watermarked)", "Unlimited (watermark-free)"],
           ["Layer, label & element editing", "—", "✓"],
           ["Selected-area regeneration", "—", "✓"],
         ],
@@ -154,7 +177,7 @@ const t = {
   },
 } as const;
 
-export function DashboardContent({ email, hasFoundingEdition, earlyBirdEligible, earlyBirdExpired, license, orders, locale, stripeSuccess, stripeSessionId }: DashboardContentProps) {
+export function DashboardContent({ email, hasFoundingEdition, earlyBirdEligible, earlyBirdExpired, license, proExpiresAt, orders, locale, stripeSuccess, stripeSessionId }: DashboardContentProps) {
   const router = useRouter();
   const trackedPurchase = useRef(false);
   const c = t[locale];
@@ -175,17 +198,18 @@ export function DashboardContent({ email, hasFoundingEdition, earlyBirdEligible,
 
   const [buying, setBuying] = useState(false);
   const [buyError, setBuyError] = useState<string | null>(null);
+  const [plan, setPlan] = useState<"yearly" | "monthly">("yearly");
 
-  const handlePurchase = async (market: "cny" | "usd") => {
+  const handlePurchase = async (market: "cny" | "usd", selectedPlan: "yearly" | "monthly") => {
     if (buying) return;
     setBuying(true);
     setBuyError(null);
-    trackEvent("begin_checkout", { market });
+    trackEvent("begin_checkout", { market, plan: selectedPlan });
     try {
       const res = await fetch("/api/stripe/checkout", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ market }),
+        body: JSON.stringify({ market, plan: selectedPlan }),
       });
       const data = await res.json();
       if (!res.ok || !data.url) {
@@ -200,6 +224,21 @@ export function DashboardContent({ email, hasFoundingEdition, earlyBirdEligible,
     }
   };
 
+  const handlePortal = async () => {
+    setBuyError(null);
+    try {
+      const res = await fetch("/api/stripe/portal", { method: "POST" });
+      const data = await res.json();
+      if (res.ok && data.url) {
+        window.location.href = data.url;
+      } else {
+        setBuyError(data.error || "Portal unavailable");
+      }
+    } catch {
+      setBuyError("Network error. Please try again.");
+    }
+  };
+
   const formatAmount = (order: Order) => {
     const currency = order.currency?.toUpperCase() || "CNY";
     return new Intl.NumberFormat(locale === "zh" ? "zh-CN" : "en-US", {
@@ -208,7 +247,11 @@ export function DashboardContent({ email, hasFoundingEdition, earlyBirdEligible,
     }).format(order.amount / 100);
   };
 
-  const isPro = license === "pro_founding" || (license === "early_bird_pro" && !earlyBirdExpired);
+  const proActive =
+    license === "pro_subscription" &&
+    !!proExpiresAt &&
+    new Date(proExpiresAt).getTime() > Date.now();
+  const isPro = license === "pro_founding" || proActive || (license === "early_bird_pro" && !earlyBirdExpired);
 
   return (
     <div style={{ minHeight: "100vh", background: "#f7fbfb", color: "#102326" }}>
@@ -244,6 +287,24 @@ export function DashboardContent({ email, hasFoundingEdition, earlyBirdEligible,
             <p style={{ color: "#72e3d4", fontWeight: 700, marginTop: 0 }}>{c.foundingBadge}</p>
             <h2>{c.foundingTitle}</h2>
             <p style={{ color: "#c2dad7", lineHeight: 1.7 }}>{c.foundingBody}</p>
+          </section>
+        ) : proActive ? (
+          <section style={{ marginTop: 32, padding: 32, borderRadius: 24, background: "#0c2d32", color: "#fff", border: "1px solid #1a4a52" }}>
+            <p style={{ color: "#72e3d4", fontWeight: 700, marginTop: 0 }}>{c.subBadge}</p>
+            <h2>{c.subTitle}</h2>
+            <p style={{ color: "#c2dad7", lineHeight: 1.7 }}>{c.subBody}</p>
+            {proExpiresAt && (
+              <p style={{ color: "#72e3d4", fontSize: 14, marginTop: 4 }}>
+                {c.subRenewsOn}{new Date(proExpiresAt).toLocaleDateString(locale === "zh" ? "zh-CN" : "en-US")}
+              </p>
+            )}
+            <button
+              onClick={handlePortal}
+              style={{ marginTop: 16, padding: "10px 22px", borderRadius: 10, background: "#72e3d4", color: "#0c2d32", border: "none", fontWeight: 700, fontSize: 14, cursor: "pointer" }}
+            >
+              {c.manage}
+            </button>
+            {buyError && <p style={{ color: "#fda4af", fontSize: 13, marginTop: 12, marginBottom: 0 }}>{buyError}</p>}
           </section>
         ) : (
           <section style={{ marginTop: 32, padding: 32, borderRadius: 24, background: isPro ? "#0c2d32" : "#fff", color: isPro ? "#fff" : "#102326", border: "1px solid #dcebea" }}>
@@ -288,23 +349,38 @@ export function DashboardContent({ email, hasFoundingEdition, earlyBirdEligible,
           {/* Purchase CTA for Free users */}
           {!isPro && (
             <div style={{ marginTop: 24, textAlign: "center" }}>
+              <div style={{ display: "flex", gap: 8, justifyContent: "center", marginBottom: 12 }}>
+                {(["yearly", "monthly"] as const).map((p) => (
+                  <button
+                    key={p}
+                    onClick={() => setPlan(p)}
+                    style={{ padding: "8px 18px", borderRadius: 999, border: "1px solid #b9d8d5", background: plan === p ? "#0c2d32" : "#fff", color: plan === p ? "#fff" : "#314554", fontWeight: 600, fontSize: 13, cursor: "pointer" }}
+                  >
+                    {p === "yearly" ? c.planYearly : c.planMonthly}
+                  </button>
+                ))}
+              </div>
+              <p style={{ color: "#087c75", fontSize: 12, marginTop: -4 }}>{plan === "yearly" ? c.saveNote : ""}</p>
               <div style={{ display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap" }}>
                 <button
-                  onClick={() => handlePurchase("cny")}
+                  onClick={() => handlePurchase("cny", plan)}
                   disabled={buying}
                   style={{ padding: "12px 28px", borderRadius: 12, background: "#0D9488", color: "#fff", border: "none", fontWeight: 700, fontSize: 15, cursor: buying ? "wait" : "pointer" }}
                 >
-                  {buying ? c.buying : c.buyCny}
+                  {buying ? c.buying : plan === "yearly" ? c.buyCnyYearly : c.buyCnyMonthly}
                 </button>
                 <button
-                  onClick={() => handlePurchase("usd")}
+                  onClick={() => handlePurchase("usd", plan)}
                   disabled={buying}
                   style={{ padding: "12px 28px", borderRadius: 12, background: "#f1f8f7", color: "#0D9488", border: "1px solid #0D9488", fontWeight: 600, fontSize: 14, cursor: buying ? "wait" : "pointer" }}
                 >
-                  {buying ? c.buyingEn : c.buyUsd}
+                  {buying ? c.buyingEn : plan === "yearly" ? c.buyUsdYearly : c.buyUsdMonthly}
                 </button>
               </div>
               {buyError && <p style={{ color: "#dc2626", fontSize: 13, marginTop: 8 }}>{buyError}</p>}
+              {stripeSuccess && !proActive && (
+                <p style={{ color: "#087c75", fontSize: 13, marginTop: 8 }}>{c.subActivating}</p>
+              )}
               <p style={{ color: "#94A3A8", fontSize: 12, marginTop: 8, marginBottom: 0 }}>{c.priceNote}</p>
             </div>
           )}

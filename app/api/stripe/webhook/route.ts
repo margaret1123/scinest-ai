@@ -5,6 +5,20 @@ import type Stripe from "stripe";
 
 // ─── helpers ────────────────────────────────────────────────────────────────
 
+// New API: subscription period lives on items, not the subscription itself
+function subscriptionPeriodEnd(sub: Stripe.Subscription): number {
+  const items = sub.items?.data ?? [];
+  if (!items.length) return Math.floor(Date.now() / 1000) + 30 * 86400;
+  return Math.max(...items.map((i) => i.current_period_end));
+}
+
+// New API: the invoice's subscription lives under parent.subscription_details
+function invoiceSubscriptionId(invoice: Stripe.Invoice): string | null {
+  const sub = invoice.parent?.subscription_details?.subscription;
+  if (!sub) return null;
+  return typeof sub === "string" ? sub : sub.id;
+}
+
 function getAdmin() {
   const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
   const serviceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
@@ -137,14 +151,15 @@ async function handleCheckoutCompleted(session: Stripe.Checkout.Session) {
   await grantPro(userId, {
     customerId: session.customer as string,
     subscriptionId: sub.id,
-    periodEndUnix: sub.current_period_end,
+    periodEndUnix: subscriptionPeriodEnd(sub),
   });
 }
 
 async function handleInvoicePaid(invoice: Stripe.Invoice) {
-  if (!invoice.subscription) return;
+  const subId = invoiceSubscriptionId(invoice);
+  if (!subId) return;
   const stripe = getStripe();
-  const sub = await stripe.subscriptions.retrieve(invoice.subscription as string);
+  const sub = await stripe.subscriptions.retrieve(subId);
   const userId = sub.metadata?.userId;
   if (!userId) {
     console.error("invoice.paid without userId metadata:", invoice.id);
@@ -155,7 +170,7 @@ async function handleInvoicePaid(invoice: Stripe.Invoice) {
   await grantPro(userId, {
     customerId,
     subscriptionId: sub.id,
-    periodEndUnix: sub.current_period_end,
+    periodEndUnix: subscriptionPeriodEnd(sub),
   });
 }
 
@@ -167,7 +182,7 @@ async function handleSubscriptionUpdated(subscription: Stripe.Subscription) {
   await grantPro(userId, {
     customerId,
     subscriptionId: subscription.id,
-    periodEndUnix: subscription.current_period_end,
+    periodEndUnix: subscriptionPeriodEnd(subscription),
   });
 }
 
@@ -210,7 +225,7 @@ export async function POST(req: NextRequest) {
         const invoice = event.data.object as Stripe.Invoice;
         console.error(
           "[stripe] payment_failed",
-          JSON.stringify({ invoice: invoice.id, subscription: invoice.subscription, attempt: invoice.attempt_count })
+          JSON.stringify({ invoice: invoice.id, subscription: invoiceSubscriptionId(invoice), attempt: invoice.attempt_count })
         );
         break; // dunning retries; access revoked only on final subscription.deleted
       }

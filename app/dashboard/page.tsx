@@ -35,13 +35,14 @@ export default async function DashboardPage({ searchParams }: Props) {
     .order("created_at", { ascending: false });
 
   const hasFoundingEdition = orders?.some((order: { product_id?: string }) => order.product_id === "scinest_founding");
-  const appMeta = (user.app_metadata as Record<string, string> | undefined);
+  const appMeta = (user.app_metadata as Record<string, string | null> | undefined);
   const license = appMeta?.license ?? "free";
+  const proExpiresAt = appMeta?.pro_expires_at ?? null;
   const earlyBirdExpiresAt = appMeta?.early_bird_expires_at;
   const earlyBirdExpired = license === "early_bird_pro"
     && earlyBirdExpiresAt != null
     && new Date(earlyBirdExpiresAt) < new Date();
   const locale = await detectLocale();
 
-  return <DashboardContent email={user.email!} hasFoundingEdition={hasFoundingEdition || false} earlyBirdEligible={license === "early_bird_pro"} earlyBirdExpired={earlyBirdExpired} license={license} orders={orders || []} locale={locale} stripeSuccess={stripeSuccess} stripeSessionId={stripeSessionId ?? undefined} />;
+  return <DashboardContent email={user.email!} hasFoundingEdition={hasFoundingEdition || false} earlyBirdEligible={license === "early_bird_pro"} earlyBirdExpired={earlyBirdExpired} license={license} proExpiresAt={proExpiresAt} orders={orders || []} locale={locale} stripeSuccess={stripeSuccess} stripeSessionId={stripeSessionId ?? undefined} />;
 }
