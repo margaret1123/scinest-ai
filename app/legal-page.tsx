@@ -51,7 +51,7 @@ export function LegalPage({
         <div className={styles.notice}>{notice}</div>
       </main>
       <footer className={styles.footer}>
-        <span>© {new Date().getFullYear()} Jiaempower Pathways Limited</span>
+        <span>© {new Date().getFullYear()} Margaret</span>
         <span>SciNest · Academic work, finished</span>
       </footer>
     </div>

@@ -248,6 +248,6 @@ export function SciNestHome({ locale }: { locale: Locale }) {
       )}
       <section className={styles.final}><h2>{c.finalTitle}</h2><p>{c.finalBody}</p><DownloadCTA className={styles.lightButton} href={downloadUrl} placement="final">{c.finalCta} ↗</DownloadCTA></section>
     </main>
-    <footer><div><strong>SciNest · {locale === "zh" ? "科研小棉袄" : "Academic work, simplified."}</strong><span>{locale === "zh" ? "由 Jiaempower Pathways Limited 运营" : "Operated by Jiaempower Pathways Limited"}</span></div><nav><a href="/privacy">{locale === "zh" ? "隐私政策" : "Privacy"}</a><a href="/terms">{locale === "zh" ? "服务条款" : "Terms"}</a><a href="/refund-policy">{locale === "zh" ? "退款政策" : "Refund policy"}</a><a href="https://github.com/margaret1123/scinest-ai/issues/new/choose" target="_blank" rel="noopener noreferrer">{locale === "zh" ? "反馈" : "Feedback"}</a></nav><small>© {new Date().getFullYear()} Jiaempower Pathways Limited</small></footer>
+    <footer><div><strong>SciNest · {locale === "zh" ? "科研小棉袄" : "Academic work, simplified."}</strong><span>Crafted by Margaret, New Zealand</span></div><nav><a href="/privacy">{locale === "zh" ? "隐私政策" : "Privacy"}</a><a href="/terms">{locale === "zh" ? "服务条款" : "Terms"}</a><a href="/refund-policy">{locale === "zh" ? "退款政策" : "Refund policy"}</a><a href="https://github.com/margaret1123/scinest-ai/issues/new/choose" target="_blank" rel="noopener noreferrer">{locale === "zh" ? "反馈" : "Feedback"}</a></nav><small>© {new Date().getFullYear()} Margaret</small></footer>
   </div>;
 }
