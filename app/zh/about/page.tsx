@@ -47,6 +47,7 @@ const aboutJsonLd = {
     "@type": "Organization",
     name: "Jiaempower Pathways Limited",
     url: siteUrl,
+    founder: { "@type": "Person", name: "Margaret" },
   },
 };
 
@@ -79,7 +80,7 @@ export default function Page() {
         <section style={{ maxWidth: 780, margin: "0 auto", padding: "24px 28px" }}>
           <h2 style={{ fontSize: 23, fontFamily: "Georgia,Times New Roman,serif", margin: "0 0 12px" }}>我们是谁</h2>
           <p style={{ fontSize: 15, lineHeight: 1.8, color: "#42606c", margin: 0 }}>
-            SciNest 由 <strong>Margaret</strong> 个人开发（Jiaempower Pathways Limited，新西兰）。故事始于一位执业心理咨询师：临床工作之余还要写论文、申报书和报告，厌倦了在聊天窗口和绘图软件之间来回搬运、反复解释同一份研究——于是自己动手做了想要的工具：上传一次，保持上下文，直到成稿。
+            SciNest 由 <strong>Margaret</strong> 个人开发，通过 Margaret 的一人公司 Jiaempower Pathways Limited（新西兰）运营。故事始于一位执业心理咨询师：临床工作之余还要写论文、申报书和报告，厌倦了在聊天窗口和绘图软件之间来回搬运、反复解释同一份研究——于是自己动手做了想要的工具：上传一次，保持上下文，直到成稿。
           </p>
         </section>
 

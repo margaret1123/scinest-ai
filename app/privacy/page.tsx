@@ -12,13 +12,13 @@ export default function PrivacyPage() {
     <LegalPage
       eyebrow="Privacy"
       title="Privacy Policy"
-      intro="This policy explains how Jiaempower Pathways Limited handles personal information connected with the SciNest website, account, trial, purchase and support experience."
+      intro="This policy explains how Jiaempower Pathways Limited — the one-person New Zealand company behind SciNest, individually developed by Margaret — handles personal information connected with the SciNest website, account, trial, purchase and support experience."
       updated="25 July 2026"
       sections={[
         {
           title: "Who we are",
           paragraphs: [
-            "SciNest is operated by Jiaempower Pathways Limited, a New Zealand company. In this policy, “SciNest”, “we”, “us” and “our” refer to Jiaempower Pathways Limited in connection with the SciNest product and website.",
+            "SciNest is individually developed by Margaret and operated through Jiaempower Pathways Limited, Margaret's one-person New Zealand company. In this policy, “SciNest”, “we”, “us” and “our” refer to Jiaempower Pathways Limited in connection with the SciNest product and website.",
           ],
         },
         {

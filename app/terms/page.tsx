@@ -12,10 +12,10 @@ export default function TermsPage() {
     <LegalPage
       eyebrow="Terms"
       title="Terms of Service"
-      intro="These terms govern your use of the SciNest website, trial, software licence, downloads and related support provided by Jiaempower Pathways Limited."
+      intro="These terms govern your use of the SciNest website, trial, software licence, downloads and related support provided by Jiaempower Pathways Limited — the one-person New Zealand company behind SciNest, individually developed by Margaret."
       updated="25 July 2026"
       sections={[
-        { title: "Operator and acceptance", paragraphs: ["SciNest is operated by Jiaempower Pathways Limited. By creating an account, starting a trial, purchasing a licence, downloading the software or using the service, you agree to these terms."] },
+        { title: "Operator and acceptance", paragraphs: ["SciNest is individually developed by Margaret and operated through Jiaempower Pathways Limited, Margaret's one-person New Zealand company. By creating an account, starting a trial, purchasing a licence, downloading the software or using the service, you agree to these terms."] },
         { title: "Eligibility and account responsibility", bullets: ["You must provide accurate account information and keep your login details secure.", "You are responsible for activity carried out through your account and configured model-provider credentials.", "You must notify us if you reasonably believe your account or licence has been compromised."] },
         { title: "Software licence", paragraphs: ["A paid SciNest Personal licence is a limited, personal, non-exclusive and non-transferable right to use the purchased version of the software, subject to the device and user limits shown at purchase."], bullets: ["You may not resell, sublicense, share, reverse engineer for commercial replication, bypass licence controls, or use the software to operate a competing hosted service.", "Feature updates are provided for the period stated at purchase. Continued use of the purchased version after that period remains subject to these terms and technical compatibility."] },
         { title: "Bring your own AI provider", paragraphs: ["AI-powered tasks require a supported third-party model provider and the user’s own API key unless the product states otherwise. Provider fees, availability, policies, model behaviour and outages are separate from the SciNest licence." ] },
