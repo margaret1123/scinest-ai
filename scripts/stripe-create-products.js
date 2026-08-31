@@ -42,7 +42,7 @@ async function main() {
       product: product.id,
       currency: v.market,
       unit_amount: v.amount,
-      recurring: { interval: v.plan },
+      recurring: { interval: v.plan === "monthly" ? "month" : "year" },
       nickname: v.nickname,
       metadata: { market: v.market, plan: v.plan },
     });
