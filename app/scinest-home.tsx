@@ -12,7 +12,7 @@ const content = {
     login: "Sign in",
     start: "Download SciNest Free",
     strip: "SciNest Free for Windows",
-    stripOffer: "Pro unlocked for new accounts",
+    stripOffer: "New users get 7 days of Pro free",
     eyebrow: "WINDOWS DESKTOP · BRING YOUR OWN API KEY · CHATGPT, DEEPSEEK, CLAUDE",
     title: "No complex prompts.\nNo tool switching.\nPapers, presentations, diagrams —\nall in one place.",
     intro: "Upload once into your free AI academic writing workspace. Choose ChatGPT, DeepSeek or Claude — and take every project from draft to done. Start free.",
@@ -71,7 +71,8 @@ const content = {
       ],
     },
     planKicker: "FREE TO START · PRO WHEN YOU NEED TO FINISH",
-    planTitle: "Generate freely. Upgrade for professional editing and final delivery.",
+    planTitle: "Unlimited free generation. Upgrade to Pro for more professional features.",
+    upgradeCta: "Upgrade to Pro",
     freeName: "SciNest Free",
     freeDesc: "For occasional work and one active project.",
     freeFeatures: ["Unlimited SciNest generations", "1 active project", "Writing generation and revision", "Scientific figure export with watermark (2/month)", "Presentation export as PDF", "No figure layer editing"],
@@ -99,7 +100,7 @@ const content = {
     login: "登录",
     start: "下载 SciNest Free",
     strip: "SciNest Free · Windows 版",
-    stripOffer: "新账户即享 Pro",
+    stripOffer: "新用户赠送7天 pro功能",
     eyebrow: "WINDOWS 桌面端 · 自带 API KEY · CHATGPT / DEEPSEEK / CLAUDE",
     title: "无需换窗口。\n无需复杂指令。\n论文、PPT、科研图——\n一站式打通。",
     intro: "上传一次，无需反复解释，无需重复上传。用你喜欢的模型——ChatGPT、DeepSeek、Claude 任选——论文、PPT、科研图一站打通。免费开始。",
@@ -158,7 +159,8 @@ const content = {
       ],
     },
     planKicker: "FREE 免费开始 · PRO 完成专业交付",
-    planTitle: "自由生成，需要专业编辑与最终交付时再升级。",
+    planTitle: "免费无限生成，升级pro更多专业功能",
+    upgradeCta: "升级 Pro",
     freeName: "SciNest Free",
     freeDesc: "适合偶尔使用和单个活跃项目。",
     freeFeatures: ["SciNest 生成不限次数", "1个活跃项目", "文稿生成与修改", "科研图导出带水印（每月 2 次）", "PPT 导出为 PDF", "不支持科研图图层编辑"],
@@ -241,7 +243,7 @@ export function SciNestHome({ locale }: { locale: Locale }) {
         </article>
       </section>
       <section className={`${styles.section} ${styles.bento}`}><div className={styles.bentoIntro}><p className={styles.kicker}>{c.bentoKicker}</p><h2>{c.bentoTitle}</h2><p>{c.bentoBody}</p></div><article className={styles.bentoMain}><span>01</span><h3>{c.contextTitle}</h3><p>{c.contextBody}</p></article><article><span>02</span><h3>{c.editTitle}</h3><p>{c.editBody}</p></article><article><span>03</span><h3>{c.modelTitle}</h3><p>{c.modelBody}</p></article></section>
-      <section className={styles.section} id="pricing"><div className={styles.sectionHead}><p>{c.planKicker}</p><h2>{c.planTitle}</h2></div><div className={launchStyles.planGrid}><article className={launchStyles.planCard}><span className={launchStyles.planBadge}>FREE</span><h3>{c.freeName}</h3><p>{c.freeDesc}</p><p style={{fontSize:28,fontWeight:900,color:"#087569",margin:"0 0 8px"}}>{locale === "zh" ? "免费" : "Free"}</p><ul>{c.freeFeatures.map(x => <li key={x}><span>✓</span>{x}</li>)}</ul></article><article className={`${launchStyles.planCard} ${launchStyles.planCardPro}`}><span className={launchStyles.planBadge}>PRO</span><h3>{c.proName}</h3><p>{c.proDesc}</p><p style={{fontSize:28,fontWeight:900,color:"#72e3d4",margin:"0 0 8px"}}>{pricing[locale].pro}</p><ul>{c.proFeatures.map(x => <li key={x}><span>✓</span>{x}</li>)}</ul></article></div><p className={launchStyles.planNote}>{c.planNote}</p><div className={styles.ctas} style={{justifyContent:"center"}}><DownloadCTA className={styles.primary} href={downloadUrl} placement="hero">{c.primary} ↗</DownloadCTA></div></section>
+      <section className={styles.section} id="pricing"><div className={styles.sectionHead}><p>{c.planKicker}</p><h2>{c.planTitle}</h2></div><div className={launchStyles.planGrid}><article className={launchStyles.planCard}><span className={launchStyles.planBadge}>FREE</span><h3>{c.freeName}</h3><p>{c.freeDesc}</p><p style={{fontSize:28,fontWeight:900,color:"#087569",margin:"0 0 8px"}}>{locale === "zh" ? "免费" : "Free"}</p><ul>{c.freeFeatures.map(x => <li key={x}><span>✓</span>{x}</li>)}</ul></article><article className={`${launchStyles.planCard} ${launchStyles.planCardPro}`}><span className={launchStyles.planBadge}>PRO</span><h3>{c.proName}</h3><p>{c.proDesc}</p><p style={{fontSize:28,fontWeight:900,color:"#72e3d4",margin:"0 0 8px"}}>{pricing[locale].pro}</p><ul>{c.proFeatures.map(x => <li key={x}><span>✓</span>{x}</li>)}</ul></article></div><p className={launchStyles.planNote}>{c.planNote}</p><div className={styles.ctas} style={{justifyContent:"center"}}><a className={styles.primary} href="/dashboard">{c.upgradeCta}</a><DownloadCTA className={styles.secondary} href={downloadUrl} placement="hero">{c.primary} ↗</DownloadCTA></div></section>
       <section className={`${styles.section} ${styles.faqSection}`} id="faq"><div className={styles.sectionHead}><h2>{c.faqTitle}</h2></div><div className={styles.faq}>{c.faq.map(([q, a]) => <details key={q}><summary>{q}<b>+</b></summary><p>{a}</p></details>)}</div></section>
       {"disclaimer" in c && (
         <p style={{textAlign:"center", fontSize:12, color:"#8599a3", padding:"32px 28px 0", margin:0}}>{c.disclaimer}</p>
