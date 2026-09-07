@@ -2,12 +2,12 @@
 // Creates: Product "SciNest Pro" + 4 recurring Prices (CNY/USD × monthly/yearly)
 //          + Customer Portal configuration (plan switching, cancel at period end)
 // Usage: node scripts/stripe-create-products.js
-// Key: restricted key (rk_) in C:/Users/GGPC/Desktop/stripe-rak.json as {"key":"rk_..."}
+// Key: restricted key (rk_) in stripe-rak.json (repo root, gitignored) as {"key":"rk_..."}
 //      (override: STRIPE_RAK_PATH or STRIPE_RESTRICTED_KEY env)
 const fs = require("fs");
 const Stripe = require("stripe");
 
-const RAK_PATH = process.env.STRIPE_RAK_PATH || "C:/Users/GGPC/Desktop/stripe-rak.json";
+const RAK_PATH = process.env.STRIPE_RAK_PATH || "stripe-rak.json";
 const PRODUCT_NAME = "SciNest Pro";
 const HEADLINE = "Manage your SciNest Pro subscription";
 

@@ -25,6 +25,22 @@ yarn-error.log*
 # local env files
 .env*.local
 
+# credential files
+*-rak.json
+scinest-auth*.json
+
+# personal agent tooling (local only)
+.claude/
+docs/superpowers/
+docs/seo-geo-checklist.md
+
+# personal scripts (local only)
+scripts/ga*.js
+scripts/pdf-text.js
+
+# video production working files (local only)
+video-production/
+
 # vercel
 .vercel
 

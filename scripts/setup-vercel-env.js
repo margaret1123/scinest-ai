@@ -9,8 +9,8 @@ const path = require("path");
 const { spawnSync } = require("child_process");
 const Stripe = require("stripe");
 
-const RAK_PATH = process.env.STRIPE_RAK_PATH || "C:/Users/GGPC/Desktop/stripe-rak.json";
-const REPO_ROOT = "G:/版本统一/scinest-ai_new";
+const RAK_PATH = process.env.STRIPE_RAK_PATH || "stripe-rak.json";
+const REPO_ROOT = path.resolve(__dirname, "..");
 const ENDPOINT_URL = "https://scinest.app/api/stripe/webhook";
 const EVENTS = [
   "checkout.session.completed",

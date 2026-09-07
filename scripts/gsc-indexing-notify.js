@@ -8,7 +8,9 @@ const crypto = require('crypto');
 const https = require('https');
 const fs = require('fs');
 
-const key = JSON.parse(fs.readFileSync('C:/Users/GGPC/Desktop/scinest-auth-93254b701484.json', 'utf8'));
+const KEY_PATH = process.env.SCINEST_AUTH_KEY || 'scinest-auth.json';
+if (!fs.existsSync(KEY_PATH)) throw new Error(`Service account key not found: ${KEY_PATH} — set SCINEST_AUTH_KEY`);
+const key = JSON.parse(fs.readFileSync(KEY_PATH, 'utf8'));
 
 // 8 new pages from the Aug-30 SEO deploy + 4 pages touched by the keyword-weaving pass
 const URLS = [

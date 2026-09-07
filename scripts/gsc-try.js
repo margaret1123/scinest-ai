@@ -2,7 +2,9 @@
 const crypto = require('crypto');
 const https = require('https');
 const fs = require('fs');
-const key = JSON.parse(fs.readFileSync('C:/Users/GGPC/Desktop/scinest-auth-93254b701484.json', 'utf8'));
+const KEY_PATH = process.env.SCINEST_AUTH_KEY || 'scinest-auth.json';
+if (!fs.existsSync(KEY_PATH)) throw new Error(`Service account key not found: ${KEY_PATH} — set SCINEST_AUTH_KEY`);
+const key = JSON.parse(fs.readFileSync(KEY_PATH, 'utf8'));
 function b64(b) { return b.toString('base64').replace(/\+/g, '-').replace(/\//g, '_').replace(/=/g, ''); }
 function jwt(scope) {
   const h = b64(Buffer.from(JSON.stringify({ alg: 'RS256', typ: 'JWT' })));

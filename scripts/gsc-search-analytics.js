@@ -1,13 +1,15 @@
 // GSC Search Analytics — pull query/page data for a GSC property
 // Usage: node scripts/gsc-search-analytics.js queries|opportunities|pages [site]
 //   site: 'https://scinest.app/' (default) — URL-prefix property, https form
-// Prereq: Search Console API enabled + service account (ga-reader@scinest-auth.iam.gserviceaccount.com)
-// added to the property in GSC with full permission.
+// Prereq: Search Console API enabled + a service account added to the property
+// in GSC with full permission.
 const crypto = require('crypto');
 const https = require('https');
 const fs = require('fs');
 
-const key = JSON.parse(fs.readFileSync('C:/Users/GGPC/Desktop/scinest-auth-93254b701484.json', 'utf8'));
+const KEY_PATH = process.env.SCINEST_AUTH_KEY || 'scinest-auth.json';
+if (!fs.existsSync(KEY_PATH)) throw new Error(`Service account key not found: ${KEY_PATH} — set SCINEST_AUTH_KEY`);
+const key = JSON.parse(fs.readFileSync(KEY_PATH, 'utf8'));
 const SITE = process.argv[3] || 'https://scinest.app/';
 
 function b64(b) { return b.toString('base64').replace(/\+/g, '-').replace(/\//g, '_').replace(/=/g, ''); }

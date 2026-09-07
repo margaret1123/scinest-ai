@@ -4,7 +4,7 @@
 const fs = require("fs");
 const Stripe = require("stripe");
 
-const RAK_PATH = process.env.STRIPE_RAK_PATH || "C:/Users/GGPC/Desktop/stripe-rak.json";
+const RAK_PATH = process.env.STRIPE_RAK_PATH || "stripe-rak.json";
 const ENDPOINT_URL = "https://scinest.app/api/stripe/webhook";
 const EVENTS = [
   "checkout.session.completed",
